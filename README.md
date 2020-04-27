@@ -36,8 +36,8 @@
 30) The git Repo should have been succesfully cloned. To check this, open the folder on Windows Explorer, there should be a new folder under the repo's name inside the directory made in step 1
 ### Check whether or not the repository on your computer is up-to-date
 31) We need to move to the `master` branch of the repository. There are two ways to do so
-32a) The cooler CLI way: type in a new line on Gitbash `cd datenbanksystem01/` You should directly able to see the word `(master)` right next to the directory line
-32b) The simpler GUI way: double click the folder of the cloned repo in Windows Explorer and redo step 3 and 4
+32) a) The cooler CLI way: type in a new line on Gitbash `cd datenbanksystem01/` You should directly able to see the word `(master)` right next to the directory line
+32) b) The simpler GUI way: double click the folder of the cloned repo in Windows Explorer and redo step 3 and 4
 33) Type in Gitbash `git status` to check your files.
 34) Whatever response you get from step 33, it is always a good practice to update your local folder with the one on Github, even though nothing might have changed (Do this before you do anything else) in which you type `git pull`
 
