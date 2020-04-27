@@ -51,6 +51,8 @@ Any Visual Studio file related to this project should be saved inside the reposi
 5) `git push` : To upload all changes and information to Github
 
 ### Process
+Please note that when you enter a new command, make sure that the CLI has done loading/processing (This can be known when the CLI has given you a new command line (the line where you can type onto after the $ sign))
+
 1) Everytime you run the gitbash by right clicking inside the repository folder, enter the command `git status` to update if any changes are made
 2) Then pull the changes by entering the command `git pull`
 3) Then go to the repository folder in Windows Explorer and you should already find the updated file (in this case a Visual Studio Projektmappe *datenbanksystem01*)
@@ -58,4 +60,3 @@ Any Visual Studio file related to this project should be saved inside the reposi
 5) Then enter the command `git add --a`
 6) Then enter the command `git commit -m "enter any message about the changes made"`
 7) Then enter the command `git push`
-Please note that when you enter a new command, make sure that the CLI has done loading/processing (This can be known when the CLI has given you a new command line (the line where you can type onto after the $ sign))
