@@ -7,9 +7,9 @@
 3) Right click anywhere inside the folder
 4) Choose `Git Bash Here`
 5) The Command Line Interface (CLI) should show up (the one with the MINGW64 on it)
-6) Type directly after $ sign `git config --global user.email "`*your email for Github* `"` and hit Enter on keyboard
+6) Type directly after $ sign `git config --global user.email "`*your email for Github*`"` and hit Enter on keyboard
 7) A new line should show up
-8) Type directly after $ sign on new line `git config --global user.name "`your username`"`and hit Enter
+8) Type directly after $ sign on new line `git config --global user.name "`*your username*`"`and hit Enter
 ### Configuring SSH Key for Github account
 9) Now we are going to add a public SSH Key to your Github account
 10) Type directly after $ sign on new line `ssh-keygen` and hit Enter
@@ -36,7 +36,7 @@
 30) The git Repo should have been succesfully cloned. To check this, open the folder on Windows Explorer, there should be a new folder under the repo's name inside the directory made in step 1
 ### Check whether or not the repository on your computer is up-to-date
 31) We need to move to the `master` branch of the repository. There are two ways to do so
-32a) The cooler CLI way: type in a new line on Gitbash `cd ` "Folder name (in this case "datenbanksystem01" referring to the repo name)". You should directly able to see the word `(master)` right next to the directory line
+32a) The cooler CLI way: type in a new line on Gitbash `cd datenbanksystem01/` You should directly able to see the word `(master)` right next to the directory line
 32b) The simpler GUI way: double click the folder of the cloned repo in Windows Explorer and redo step 3 and 4
 33) Type in Gitbash `git status` to check your files.
 34) Whatever response you get from step 33, it is always a good practice to update your local folder with the one on Github, even though nothing might have changed (Do this before you do anything else) in which you type `git pull`
