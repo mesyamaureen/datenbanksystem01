@@ -7,7 +7,7 @@
 3) Right click anywhere inside the folder
 4) Choose `Git Bash Here`
 5) The Command Line Interface (CLI) should show up (the one with the MINGW64 on it)
-6) Type directly after $ sign `git config --global user.email *your email for Github*` and hit Enter on keyboard
+6) Type directly after $ sign `git config --global user.email "`*your email for Github* `"` and hit Enter on keyboard
 7) A new line should show up
 8) Type directly after $ sign on new line `git config --global user.name "`your username`"`and hit Enter
 ### Configuring SSH Key for Github account
