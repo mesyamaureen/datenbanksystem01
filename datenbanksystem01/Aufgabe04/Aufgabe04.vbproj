@@ -73,18 +73,35 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\dlgAnmeldung.Designer.vb">
+      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\dlgAnmeldung.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmHauptfensterKunde.designer.vb">
+      <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmHauptfensterKunde.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\HauptfensterMitarbeiter.Designer.vb">
+      <DependentUpon>HauptfensterMitarbeiter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HauptfensterMitarbeiter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmStart.designer.vb">
+      <DependentUpon>frmStart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmStart.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Model\Benutzer.vb" />
     <Compile Include="Model\Weiterbildungen.vb" />
     <Compile Include="Model\Kurs.vb" />
     <Compile Include="Model\Kunde.vb" />
     <Compile Include="Model\Mitarbeiter.vb" />
-    <Compile Include="Form\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -102,6 +119,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\dlgAnmeldung.resx">
+      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmHauptfensterKunde.resx">
+      <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmStart.resx">
+      <DependentUpon>frmStart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\HauptfensterMitarbeiter.resx">
+      <DependentUpon>HauptfensterMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
