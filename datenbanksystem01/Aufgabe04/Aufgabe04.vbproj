@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Benutzer.vb" />
+    <Compile Include="Weiterbildungen.vb" />
+    <Compile Include="Kurs.vb" />
+    <Compile Include="Kunde.vb" />
+    <Compile Include="Mitarbeiter.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
