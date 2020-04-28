@@ -74,7 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Benutzer.vb" />
-    <Compile Include="Model\Weiterbildungen.vb" />
+    <Compile Include="Model\fachkonzept.vb" />
+    <Compile Include="Model\Weiterbildung.vb" />
     <Compile Include="Model\Kurs.vb" />
     <Compile Include="Model\Kunde.vb" />
     <Compile Include="Model\Mitarbeiter.vb" />
@@ -102,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
