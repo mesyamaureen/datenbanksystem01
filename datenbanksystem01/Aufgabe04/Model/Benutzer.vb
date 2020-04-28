@@ -1,10 +1,10 @@
 ﻿Public Class Benutzer
 
     'Properties
-    Public Property strBenutezrname As String
+    Public Property strBenutzername As String
     Public Property strVorname As String
     Public Property strName As String
-    Public Property intPasswort As Integer
+    Public Property strPasswort As String
     Public Property datGebDat As Date
 
 
