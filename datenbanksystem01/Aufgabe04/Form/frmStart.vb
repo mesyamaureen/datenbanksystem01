@@ -11,27 +11,27 @@
         Dim strPasswort As String 'im Anmeldedialog übergegeben werden
 
         'Initialisierung
-        Aufgabe04.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer
+        'Aufgabe04.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 'TODO: Uncomment
 
         'Aufrufen anderer Prozedur
 
 
         'Nachprüfende Schleife 
-        Do dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen
+        'Do dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 'TODO: Uncomment
 
-            'Prüfen, ob der Dialog mit OK geschlossen wurde
-            If Not dlgAnmeldung.DialogResult = Windows.Forms.DialogResult.OK Then
-                'wenn nicht, dann Fenster schliessen und damit endet die Anwendung
-                Me.Close()
-                Exit Sub 'Prozedur verlassen, damit die Anwendung hier endet
-            End If
+        '    'Prüfen, ob der Dialog mit OK geschlossen wurde
+        '    If Not dlgAnmeldung.DialogResult = Windows.Forms.DialogResult.OK Then
+        '        'wenn nicht, dann Fenster schliessen und damit endet die Anwendung
+        '        Me.Close()
+        '        Exit Sub 'Prozedur verlassen, damit die Anwendung hier endet
+        '    End If
 
-            'Benutzername und Passwort von dem Dialogfenster ermitteln
-            strBenutzername = dlgAnmeldung.txtBenutzername.Text
-            strPasswort = dlgAnmeldung.txtBenutzername.Text
+        'Benutzername und Passwort von dem Dialogfenster ermitteln
+        'strBenutzername = dlgAnmeldung.txtBenutzername.Text
+        '    strPasswort = dlgAnmeldung.txtBenutzername.Text 'TODO: Uncomment
 
-            'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
-            For Each
+        'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
+        'For Each 'TODO: Uncomment
 
 
 
@@ -42,5 +42,5 @@
         Me.Close()
     End Sub
 
-    P
+
 End Class
