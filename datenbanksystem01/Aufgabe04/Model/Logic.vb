@@ -8,12 +8,17 @@
     Private Property lstListeKurs As List(Of Kurs)
     Private Property lstListeWeiterbildung As List(Of Weiterbildung)
 
+    Sub Main()
+        System.Console.WriteLine("Hello World.")
+        System.Console.ReadLine()
+        End
+    End Sub
+
 
     Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, strFirma As String, datGebDat As Date) As Integer
 
         Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, strFirma, datGebDat)
         lstListeKunde.Add(kunde)
-
         Dim intKundenID As Integer = kunde.getIntKundenID()
         Return intKundenID
 
