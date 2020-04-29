@@ -7,6 +7,8 @@
     Public Property intKundenID As Integer
 
 
+
+
     Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, strFirma As String, datGebDat As Date)
 
         Me.strBenutzername = strBenutzername
