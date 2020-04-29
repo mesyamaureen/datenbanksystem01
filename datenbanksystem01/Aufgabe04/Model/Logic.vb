@@ -1,4 +1,4 @@
-﻿Public Class fachkonzept
+﻿Module Logic
 
     'Properties
 
@@ -9,15 +9,12 @@
     Private Property lstListeWeiterbildung As List(Of Weiterbildung)
 
 
-    'bekommt übergeben die parameter des Kurses
-    'alle Use Case funktionen
-
     Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, strFirma As String, datGebDat As Date) As Integer
 
-        Dim customer As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, strFirma, datGebDat)
-        lstListeKunde.Add(customer)
+        Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, strFirma, datGebDat)
+        lstListeKunde.Add(kunde)
 
-        Dim intKundenID As Integer = customer.getIntKundenID()
+        Dim intKundenID As Integer = kunde.getIntKundenID()
         Return intKundenID
 
     End Function
@@ -38,4 +35,5 @@
         'remeber to also remove the ListItem in fachkonzept
 
     End Function
-End Class
+
+End Module
