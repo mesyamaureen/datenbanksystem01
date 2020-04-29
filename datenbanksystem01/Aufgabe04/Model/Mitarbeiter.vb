@@ -4,7 +4,7 @@
     'Properties
     Public Property intMitarbeiterID As Integer
 
-    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, strFirma As String, datGebDat As Date)
+    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
 
         Me.strBenutzername = strBenutzername
         Me.strPasswort = strPasswort
@@ -14,7 +14,6 @@
         ' TODO: create record In Database And Set intMitarbeiterID
 
     End Sub
-
 
 
     'ruft nur fks auf
@@ -35,10 +34,10 @@
     End Function
 
     Function deleteMitarbeiter()
+        'TODO delete object in database
 
+
+        Finalize()
     End Function
 
-
-
 End Class
-

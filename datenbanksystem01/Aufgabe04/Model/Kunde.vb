@@ -17,14 +17,11 @@
         Me.datGebDat = datGebDat
         ' TODO: create record In Database And Set intKundenID
 
-
-
     End Sub
 
     Function getStrBenutzername()
 
         Return strBenutzername
-
 
     End Function
 
