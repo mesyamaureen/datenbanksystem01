@@ -38,4 +38,8 @@
         Return intKundenID
     End Function
 
+    Function deleteKunde()
+
+    End Function
+
 End Class

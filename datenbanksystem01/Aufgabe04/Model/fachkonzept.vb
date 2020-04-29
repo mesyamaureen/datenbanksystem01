@@ -3,6 +3,7 @@
     'Properties
 
     Private Property lstListeKunde As List(Of Kunde)
+    Private Property lstListeMitarbeiter As List(Of Mitarbeiter)
 
 
 
@@ -20,7 +21,15 @@
 
     End Function
 
+    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As intMitarbeiterID
 
+        Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
+        lstListeMitarbeiter.Add(mitarbeiter)
+
+        Dim intMitarbeiterID As Integer = mitarbeiter.getIntMitarbeiterID()
+        Return intMitarbeiterID
+
+    End Function
 
 
 End Class
