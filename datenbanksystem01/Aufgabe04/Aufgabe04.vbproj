@@ -114,10 +114,10 @@
     <Compile Include="Model\Benutzer.vb" />
     <Compile Include="Model\Buchung.vb" />
     <Compile Include="Model\Logic.vb" />
-    <Compile Include="Model\testLogic.Designer.vb">
+    <Compile Include="Form\testLogic.Designer.vb">
       <DependentUpon>testLogic.vb</DependentUpon>
     </Compile>
-    <Compile Include="Model\testLogic.vb">
+    <Compile Include="Form\testLogic.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\Weiterbildung.vb" />
@@ -156,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\testLogic.resx">
+      <DependentUpon>testLogic.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

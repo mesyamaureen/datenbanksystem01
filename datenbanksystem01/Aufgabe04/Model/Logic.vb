@@ -22,18 +22,19 @@
     End Function
 
     Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
+        Console.WriteLine(lstListeMitarbeiter(0).getStrBenutzername)
 
         Dim result = New Dictionary(Of String, String) From {{"attempt", "failed"}, {"role", Nothing}}
 
         For Each mitarbeiter As Mitarbeiter In lstListeMitarbeiter
-            If strBenutzername Is mitarbeiter.getStrBenutzername And strPasswort Is mitarbeiter.getStrPasswort Then
+            If strBenutzername.Equals(mitarbeiter.getStrBenutzername) And strPasswort.Equals(mitarbeiter.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
             End If
         Next
 
         For Each kunde As Kunde In lstListeKunde
-            If strBenutzername Is kunde.getStrBenutzername And strPasswort Is kunde.getStrPasswort Then
+            If strBenutzername.Equals(kunde.getStrBenutzername) And strPasswort.Equals(kunde.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "kunde"
             End If

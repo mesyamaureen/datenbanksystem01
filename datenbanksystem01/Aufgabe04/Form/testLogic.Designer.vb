@@ -22,9 +22,54 @@ Partial Class testLogic
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.btnLogIn = New System.Windows.Forms.Button()
+        Me.lblattempt = New System.Windows.Forms.Label()
+        Me.lblrole = New System.Windows.Forms.Label()
+        Me.SuspendLayout()
+        '
+        'btnLogIn
+        '
+        Me.btnLogIn.Location = New System.Drawing.Point(599, 371)
+        Me.btnLogIn.Name = "btnLogIn"
+        Me.btnLogIn.Size = New System.Drawing.Size(179, 57)
+        Me.btnLogIn.TabIndex = 0
+        Me.btnLogIn.Text = "LogIn"
+        Me.btnLogIn.UseVisualStyleBackColor = True
+        '
+        'lblattempt
+        '
+        Me.lblattempt.AutoSize = True
+        Me.lblattempt.Location = New System.Drawing.Point(368, 236)
+        Me.lblattempt.Name = "lblattempt"
+        Me.lblattempt.Size = New System.Drawing.Size(40, 17)
+        Me.lblattempt.TabIndex = 1
+        Me.lblattempt.Text = "Hallo"
+        '
+        'lblrole
+        '
+        Me.lblrole.AutoSize = True
+        Me.lblrole.Location = New System.Drawing.Point(371, 294)
+        Me.lblrole.Name = "lblrole"
+        Me.lblrole.Size = New System.Drawing.Size(40, 17)
+        Me.lblrole.TabIndex = 2
+        Me.lblrole.Text = "Rolle"
+        '
+        'testLogic
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblrole)
+        Me.Controls.Add(Me.lblattempt)
+        Me.Controls.Add(Me.btnLogIn)
+        Me.Name = "testLogic"
         Me.Text = "testLogic"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
+
+    Friend WithEvents btnLogIn As Button
+    Friend WithEvents lblattempt As Label
+    Friend WithEvents lblrole As Label
 End Class
