@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmHauptfensterKunde
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmHauptfensterMitarbeiter
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmHauptfensterKunde
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuStripWeiterbildungen = New System.Windows.Forms.ToolStripMenuItem()
@@ -28,6 +28,7 @@ Partial Class frmHauptfensterKunde
         Me.MenuStripKonto = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStripHilfe = New System.Windows.Forms.ToolStripMenuItem()
         Me.grpboxThemen = New System.Windows.Forms.GroupBox()
+        Me.vsbThemen = New System.Windows.Forms.VScrollBar()
         Me.rbtnRechnundFinanz = New System.Windows.Forms.RadioButton()
         Me.rbtnProjProzChange = New System.Windows.Forms.RadioButton()
         Me.rbtnOrganisationsdesign = New System.Windows.Forms.RadioButton()
@@ -39,20 +40,23 @@ Partial Class frmHauptfensterKunde
         Me.rbtnControlling = New System.Windows.Forms.RadioButton()
         Me.rbtnBetriebswirtschaft = New System.Windows.Forms.RadioButton()
         Me.rbtnAlle = New System.Windows.Forms.RadioButton()
-        Me.vsbThemen = New System.Windows.Forms.VScrollBar()
         Me.grpboxWeiterbildung = New System.Windows.Forms.GroupBox()
         Me.lblScrum = New System.Windows.Forms.Label()
         Me.lblProjektman = New System.Windows.Forms.Label()
         Me.lblAgiles = New System.Windows.Forms.Label()
+        Me.btnBearbeitenScrum = New System.Windows.Forms.Button()
+        Me.btnBearbeitenProjektman = New System.Windows.Forms.Button()
+        Me.btnBearbeitenAgiles = New System.Windows.Forms.Button()
         Me.btnMehrScrum = New System.Windows.Forms.Button()
         Me.btnMehrProjektman = New System.Windows.Forms.Button()
         Me.btnMehrAgiles = New System.Windows.Forms.Button()
+        Me.vsbWeiterbildung = New System.Windows.Forms.VScrollBar()
         Me.picboxScrum = New System.Windows.Forms.PictureBox()
         Me.picboxProjektmanagement = New System.Windows.Forms.PictureBox()
         Me.picboxAgiles = New System.Windows.Forms.PictureBox()
-        Me.vsbWeiterbildung = New System.Windows.Forms.VScrollBar()
-        Me.btnWarenkorb = New System.Windows.Forms.Button()
         Me.btnBeenden = New System.Windows.Forms.Button()
+        Me.btnNeueWeiterbildung = New System.Windows.Forms.Button()
+        Me.btnNeuesThema = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.grpboxThemen.SuspendLayout()
         Me.grpboxWeiterbildung.SuspendLayout()
@@ -97,6 +101,7 @@ Partial Class frmHauptfensterKunde
         '
         'grpboxThemen
         '
+        Me.grpboxThemen.Controls.Add(Me.vsbThemen)
         Me.grpboxThemen.Controls.Add(Me.rbtnRechnundFinanz)
         Me.grpboxThemen.Controls.Add(Me.rbtnProjProzChange)
         Me.grpboxThemen.Controls.Add(Me.rbtnOrganisationsdesign)
@@ -108,7 +113,6 @@ Partial Class frmHauptfensterKunde
         Me.grpboxThemen.Controls.Add(Me.rbtnControlling)
         Me.grpboxThemen.Controls.Add(Me.rbtnBetriebswirtschaft)
         Me.grpboxThemen.Controls.Add(Me.rbtnAlle)
-        Me.grpboxThemen.Controls.Add(Me.vsbThemen)
         Me.grpboxThemen.Location = New System.Drawing.Point(12, 36)
         Me.grpboxThemen.Name = "grpboxThemen"
         Me.grpboxThemen.Size = New System.Drawing.Size(326, 836)
@@ -116,13 +120,21 @@ Partial Class frmHauptfensterKunde
         Me.grpboxThemen.TabStop = False
         Me.grpboxThemen.Text = "Themen"
         '
+        'vsbThemen
+        '
+        Me.vsbThemen.Location = New System.Drawing.Point(293, 9)
+        Me.vsbThemen.Name = "vsbThemen"
+        Me.vsbThemen.Size = New System.Drawing.Size(30, 827)
+        Me.vsbThemen.TabIndex = 11
+        '
         'rbtnRechnundFinanz
         '
         Me.rbtnRechnundFinanz.AutoSize = True
         Me.rbtnRechnundFinanz.Location = New System.Drawing.Point(6, 574)
         Me.rbtnRechnundFinanz.Name = "rbtnRechnundFinanz"
         Me.rbtnRechnundFinanz.Size = New System.Drawing.Size(263, 24)
-        Me.rbtnRechnundFinanz.TabIndex = 11
+        Me.rbtnRechnundFinanz.TabIndex = 10
+        Me.rbtnRechnundFinanz.TabStop = True
         Me.rbtnRechnundFinanz.Text = "Rechnungswesen und Finanzen"
         Me.rbtnRechnundFinanz.UseVisualStyleBackColor = True
         '
@@ -131,7 +143,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnProjProzChange.Location = New System.Drawing.Point(6, 502)
         Me.rbtnProjProzChange.Name = "rbtnProjProzChange"
         Me.rbtnProjProzChange.Size = New System.Drawing.Size(288, 51)
-        Me.rbtnProjProzChange.TabIndex = 10
+        Me.rbtnProjProzChange.TabIndex = 9
+        Me.rbtnProjProzChange.TabStop = True
         Me.rbtnProjProzChange.Text = "Projekt-, Prozess- und Changemanagement"
         Me.rbtnProjProzChange.UseVisualStyleBackColor = True
         '
@@ -141,7 +154,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnOrganisationsdesign.Location = New System.Drawing.Point(6, 457)
         Me.rbtnOrganisationsdesign.Name = "rbtnOrganisationsdesign"
         Me.rbtnOrganisationsdesign.Size = New System.Drawing.Size(179, 24)
-        Me.rbtnOrganisationsdesign.TabIndex = 9
+        Me.rbtnOrganisationsdesign.TabIndex = 8
+        Me.rbtnOrganisationsdesign.TabStop = True
         Me.rbtnOrganisationsdesign.Text = "Organisationsdesign"
         Me.rbtnOrganisationsdesign.UseVisualStyleBackColor = True
         '
@@ -151,7 +165,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnMarketingundProdman.Location = New System.Drawing.Point(6, 403)
         Me.rbtnMarketingundProdman.Name = "rbtnMarketingundProdman"
         Me.rbtnMarketingundProdman.Size = New System.Drawing.Size(288, 24)
-        Me.rbtnMarketingundProdman.TabIndex = 8
+        Me.rbtnMarketingundProdman.TabIndex = 7
+        Me.rbtnMarketingundProdman.TabStop = True
         Me.rbtnMarketingundProdman.Text = "Marketing und Produktmanagement"
         Me.rbtnMarketingundProdman.UseVisualStyleBackColor = True
         '
@@ -161,7 +176,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnGrundInnov.Location = New System.Drawing.Point(6, 351)
         Me.rbtnGrundInnov.Name = "rbtnGrundInnov"
         Me.rbtnGrundInnov.Size = New System.Drawing.Size(215, 24)
-        Me.rbtnGrundInnov.TabIndex = 7
+        Me.rbtnGrundInnov.TabIndex = 6
+        Me.rbtnGrundInnov.TabStop = True
         Me.rbtnGrundInnov.Text = "Gründung und Innovation"
         Me.rbtnGrundInnov.UseVisualStyleBackColor = True
         '
@@ -171,7 +187,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnGesundheit.Location = New System.Drawing.Point(6, 301)
         Me.rbtnGesundheit.Name = "rbtnGesundheit"
         Me.rbtnGesundheit.Size = New System.Drawing.Size(117, 24)
-        Me.rbtnGesundheit.TabIndex = 6
+        Me.rbtnGesundheit.TabIndex = 5
+        Me.rbtnGesundheit.TabStop = True
         Me.rbtnGesundheit.Text = "Gesundheit"
         Me.rbtnGesundheit.UseVisualStyleBackColor = True
         '
@@ -181,7 +198,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnGenManagement.Location = New System.Drawing.Point(6, 252)
         Me.rbtnGenManagement.Name = "rbtnGenManagement"
         Me.rbtnGenManagement.Size = New System.Drawing.Size(189, 24)
-        Me.rbtnGenManagement.TabIndex = 5
+        Me.rbtnGenManagement.TabIndex = 4
+        Me.rbtnGenManagement.TabStop = True
         Me.rbtnGenManagement.Text = "General Management"
         Me.rbtnGenManagement.UseVisualStyleBackColor = True
         '
@@ -191,7 +209,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnDigBusiness.Location = New System.Drawing.Point(6, 200)
         Me.rbtnDigBusiness.Name = "rbtnDigBusiness"
         Me.rbtnDigBusiness.Size = New System.Drawing.Size(147, 24)
-        Me.rbtnDigBusiness.TabIndex = 4
+        Me.rbtnDigBusiness.TabIndex = 3
+        Me.rbtnDigBusiness.TabStop = True
         Me.rbtnDigBusiness.Text = "Digital Business"
         Me.rbtnDigBusiness.UseVisualStyleBackColor = True
         '
@@ -201,7 +220,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnControlling.Location = New System.Drawing.Point(6, 150)
         Me.rbtnControlling.Name = "rbtnControlling"
         Me.rbtnControlling.Size = New System.Drawing.Size(109, 24)
-        Me.rbtnControlling.TabIndex = 3
+        Me.rbtnControlling.TabIndex = 2
+        Me.rbtnControlling.TabStop = True
         Me.rbtnControlling.Text = "Controlling"
         Me.rbtnControlling.UseVisualStyleBackColor = True
         '
@@ -211,7 +231,8 @@ Partial Class frmHauptfensterKunde
         Me.rbtnBetriebswirtschaft.Location = New System.Drawing.Point(6, 97)
         Me.rbtnBetriebswirtschaft.Name = "rbtnBetriebswirtschaft"
         Me.rbtnBetriebswirtschaft.Size = New System.Drawing.Size(161, 24)
-        Me.rbtnBetriebswirtschaft.TabIndex = 2
+        Me.rbtnBetriebswirtschaft.TabIndex = 1
+        Me.rbtnBetriebswirtschaft.TabStop = True
         Me.rbtnBetriebswirtschaft.Text = "Betriebswirtschaft"
         Me.rbtnBetriebswirtschaft.UseVisualStyleBackColor = True
         '
@@ -222,36 +243,32 @@ Partial Class frmHauptfensterKunde
         Me.rbtnAlle.Location = New System.Drawing.Point(6, 43)
         Me.rbtnAlle.Name = "rbtnAlle"
         Me.rbtnAlle.Size = New System.Drawing.Size(60, 24)
-        Me.rbtnAlle.TabIndex = 1
+        Me.rbtnAlle.TabIndex = 0
         Me.rbtnAlle.TabStop = True
         Me.rbtnAlle.Text = "Alle"
         Me.rbtnAlle.UseVisualStyleBackColor = True
-        '
-        'vsbThemen
-        '
-        Me.vsbThemen.Location = New System.Drawing.Point(293, 9)
-        Me.vsbThemen.Name = "vsbThemen"
-        Me.vsbThemen.Size = New System.Drawing.Size(30, 827)
-        Me.vsbThemen.TabIndex = 0
         '
         'grpboxWeiterbildung
         '
         Me.grpboxWeiterbildung.Controls.Add(Me.lblScrum)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblProjektman)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblAgiles)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenScrum)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenProjektman)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenAgiles)
         Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrScrum)
         Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrProjektman)
         Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrAgiles)
+        Me.grpboxWeiterbildung.Controls.Add(Me.vsbWeiterbildung)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxScrum)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxProjektmanagement)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxAgiles)
-        Me.grpboxWeiterbildung.Controls.Add(Me.vsbWeiterbildung)
         Me.grpboxWeiterbildung.Location = New System.Drawing.Point(344, 36)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
         Me.grpboxWeiterbildung.Size = New System.Drawing.Size(902, 836)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
-        Me.grpboxWeiterbildung.Text = "Weiterbildungsangebote"
+        Me.grpboxWeiterbildung.Text = "Weiterbildungsangebot"
         '
         'lblScrum
         '
@@ -260,7 +277,7 @@ Partial Class frmHauptfensterKunde
         Me.lblScrum.Location = New System.Drawing.Point(247, 626)
         Me.lblScrum.Name = "lblScrum"
         Me.lblScrum.Size = New System.Drawing.Size(229, 29)
-        Me.lblScrum.TabIndex = 9
+        Me.lblScrum.TabIndex = 12
         Me.lblScrum.Text = "SCRUM - Workshop"
         '
         'lblProjektman
@@ -270,7 +287,7 @@ Partial Class frmHauptfensterKunde
         Me.lblProjektman.Location = New System.Drawing.Point(247, 346)
         Me.lblProjektman.Name = "lblProjektman"
         Me.lblProjektman.Size = New System.Drawing.Size(229, 29)
-        Me.lblProjektman.TabIndex = 8
+        Me.lblProjektman.TabIndex = 11
         Me.lblProjektman.Text = "Projektmanagement"
         '
         'lblAgiles
@@ -280,8 +297,35 @@ Partial Class frmHauptfensterKunde
         Me.lblAgiles.Location = New System.Drawing.Point(247, 97)
         Me.lblAgiles.Name = "lblAgiles"
         Me.lblAgiles.Size = New System.Drawing.Size(302, 29)
-        Me.lblAgiles.TabIndex = 7
+        Me.lblAgiles.TabIndex = 10
         Me.lblAgiles.Text = "Agiles Projektmanagement"
+        '
+        'btnBearbeitenScrum
+        '
+        Me.btnBearbeitenScrum.Location = New System.Drawing.Point(374, 692)
+        Me.btnBearbeitenScrum.Name = "btnBearbeitenScrum"
+        Me.btnBearbeitenScrum.Size = New System.Drawing.Size(102, 38)
+        Me.btnBearbeitenScrum.TabIndex = 9
+        Me.btnBearbeitenScrum.Text = "Bearbeiten"
+        Me.btnBearbeitenScrum.UseVisualStyleBackColor = True
+        '
+        'btnBearbeitenProjektman
+        '
+        Me.btnBearbeitenProjektman.Location = New System.Drawing.Point(374, 422)
+        Me.btnBearbeitenProjektman.Name = "btnBearbeitenProjektman"
+        Me.btnBearbeitenProjektman.Size = New System.Drawing.Size(102, 38)
+        Me.btnBearbeitenProjektman.TabIndex = 8
+        Me.btnBearbeitenProjektman.Text = "Bearbeiten"
+        Me.btnBearbeitenProjektman.UseVisualStyleBackColor = True
+        '
+        'btnBearbeitenAgiles
+        '
+        Me.btnBearbeitenAgiles.Location = New System.Drawing.Point(374, 162)
+        Me.btnBearbeitenAgiles.Name = "btnBearbeitenAgiles"
+        Me.btnBearbeitenAgiles.Size = New System.Drawing.Size(102, 38)
+        Me.btnBearbeitenAgiles.TabIndex = 7
+        Me.btnBearbeitenAgiles.Text = "Bearbeiten"
+        Me.btnBearbeitenAgiles.UseVisualStyleBackColor = True
         '
         'btnMehrScrum
         '
@@ -310,12 +354,19 @@ Partial Class frmHauptfensterKunde
         Me.btnMehrAgiles.Text = "Mehr"
         Me.btnMehrAgiles.UseVisualStyleBackColor = True
         '
+        'vsbWeiterbildung
+        '
+        Me.vsbWeiterbildung.Location = New System.Drawing.Point(869, 9)
+        Me.vsbWeiterbildung.Name = "vsbWeiterbildung"
+        Me.vsbWeiterbildung.Size = New System.Drawing.Size(30, 827)
+        Me.vsbWeiterbildung.TabIndex = 3
+        '
         'picboxScrum
         '
         Me.picboxScrum.Location = New System.Drawing.Point(15, 571)
         Me.picboxScrum.Name = "picboxScrum"
         Me.picboxScrum.Size = New System.Drawing.Size(209, 211)
-        Me.picboxScrum.TabIndex = 3
+        Me.picboxScrum.TabIndex = 2
         Me.picboxScrum.TabStop = False
         '
         'picboxProjektmanagement
@@ -323,7 +374,7 @@ Partial Class frmHauptfensterKunde
         Me.picboxProjektmanagement.Location = New System.Drawing.Point(15, 301)
         Me.picboxProjektmanagement.Name = "picboxProjektmanagement"
         Me.picboxProjektmanagement.Size = New System.Drawing.Size(209, 211)
-        Me.picboxProjektmanagement.TabIndex = 2
+        Me.picboxProjektmanagement.TabIndex = 1
         Me.picboxProjektmanagement.TabStop = False
         '
         'picboxAgiles
@@ -331,46 +382,51 @@ Partial Class frmHauptfensterKunde
         Me.picboxAgiles.Location = New System.Drawing.Point(15, 42)
         Me.picboxAgiles.Name = "picboxAgiles"
         Me.picboxAgiles.Size = New System.Drawing.Size(209, 211)
-        Me.picboxAgiles.TabIndex = 1
+        Me.picboxAgiles.TabIndex = 0
         Me.picboxAgiles.TabStop = False
-        '
-        'vsbWeiterbildung
-        '
-        Me.vsbWeiterbildung.Location = New System.Drawing.Point(869, 9)
-        Me.vsbWeiterbildung.Name = "vsbWeiterbildung"
-        Me.vsbWeiterbildung.Size = New System.Drawing.Size(30, 827)
-        Me.vsbWeiterbildung.TabIndex = 0
-        '
-        'btnWarenkorb
-        '
-        Me.btnWarenkorb.Location = New System.Drawing.Point(928, 916)
-        Me.btnWarenkorb.Name = "btnWarenkorb"
-        Me.btnWarenkorb.Size = New System.Drawing.Size(135, 39)
-        Me.btnWarenkorb.TabIndex = 3
-        Me.btnWarenkorb.Text = "Warenkorb"
-        Me.btnWarenkorb.UseVisualStyleBackColor = True
         '
         'btnBeenden
         '
+        Me.btnBeenden.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnBeenden.Location = New System.Drawing.Point(1110, 916)
         Me.btnBeenden.Name = "btnBeenden"
         Me.btnBeenden.Size = New System.Drawing.Size(135, 39)
-        Me.btnBeenden.TabIndex = 4
+        Me.btnBeenden.TabIndex = 3
         Me.btnBeenden.Text = "Beenden"
         Me.btnBeenden.UseVisualStyleBackColor = True
         '
-        'frmHauptfensterKunde
+        'btnNeueWeiterbildung
+        '
+        Me.btnNeueWeiterbildung.Location = New System.Drawing.Point(928, 916)
+        Me.btnNeueWeiterbildung.Name = "btnNeueWeiterbildung"
+        Me.btnNeueWeiterbildung.Size = New System.Drawing.Size(169, 38)
+        Me.btnNeueWeiterbildung.TabIndex = 4
+        Me.btnNeueWeiterbildung.Text = "Neue Weiterbildung"
+        Me.btnNeueWeiterbildung.UseVisualStyleBackColor = True
+        '
+        'btnNeuesThema
+        '
+        Me.btnNeuesThema.Location = New System.Drawing.Point(769, 916)
+        Me.btnNeuesThema.Name = "btnNeuesThema"
+        Me.btnNeuesThema.Size = New System.Drawing.Size(134, 38)
+        Me.btnNeuesThema.TabIndex = 5
+        Me.btnNeuesThema.Text = "Neues Thema"
+        Me.btnNeuesThema.UseVisualStyleBackColor = True
+        '
+        'frmHauptfensterMitarbeiter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnBeenden
         Me.ClientSize = New System.Drawing.Size(1258, 968)
+        Me.Controls.Add(Me.btnNeuesThema)
+        Me.Controls.Add(Me.btnNeueWeiterbildung)
         Me.Controls.Add(Me.btnBeenden)
-        Me.Controls.Add(Me.btnWarenkorb)
         Me.Controls.Add(Me.grpboxWeiterbildung)
         Me.Controls.Add(Me.grpboxThemen)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "frmHauptfensterKunde"
+        Me.Name = "frmHauptfensterMitarbeiter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weiterbildung time2-Akademie"
         Me.MenuStrip1.ResumeLayout(False)
@@ -395,7 +451,6 @@ Partial Class frmHauptfensterKunde
     Friend WithEvents grpboxThemen As GroupBox
     Friend WithEvents grpboxWeiterbildung As GroupBox
     Friend WithEvents vsbThemen As VScrollBar
-    Friend WithEvents vsbWeiterbildung As VScrollBar
     Friend WithEvents rbtnRechnundFinanz As RadioButton
     Friend WithEvents rbtnProjProzChange As RadioButton
     Friend WithEvents rbtnOrganisationsdesign As RadioButton
@@ -410,12 +465,17 @@ Partial Class frmHauptfensterKunde
     Friend WithEvents lblScrum As Label
     Friend WithEvents lblProjektman As Label
     Friend WithEvents lblAgiles As Label
+    Friend WithEvents btnBearbeitenScrum As Button
+    Friend WithEvents btnBearbeitenProjektman As Button
+    Friend WithEvents btnBearbeitenAgiles As Button
     Friend WithEvents btnMehrScrum As Button
     Friend WithEvents btnMehrProjektman As Button
     Friend WithEvents btnMehrAgiles As Button
+    Friend WithEvents vsbWeiterbildung As VScrollBar
     Friend WithEvents picboxScrum As PictureBox
     Friend WithEvents picboxProjektmanagement As PictureBox
     Friend WithEvents picboxAgiles As PictureBox
-    Friend WithEvents btnWarenkorb As Button
     Friend WithEvents btnBeenden As Button
+    Friend WithEvents btnNeueWeiterbildung As Button
+    Friend WithEvents btnNeuesThema As Button
 End Class

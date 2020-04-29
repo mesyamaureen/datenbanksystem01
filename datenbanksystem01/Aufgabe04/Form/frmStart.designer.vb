@@ -52,18 +52,20 @@ Partial Class frmStart
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(241, 37)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'frmStart
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnBeenden
         Me.ClientSize = New System.Drawing.Size(1258, 968)
         Me.Controls.Add(Me.btnBeenden)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmStart"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weiterbildung time2-Akademie"
         Me.ResumeLayout(False)
         Me.PerformLayout()

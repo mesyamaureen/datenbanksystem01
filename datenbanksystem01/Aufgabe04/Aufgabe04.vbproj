@@ -79,16 +79,22 @@
     <Compile Include="Form\dlgAnmeldung.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmHauptfensterKunde.designer.vb">
+    <Compile Include="Form\frmGruss.Designer.vb">
+      <DependentUpon>frmGruss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmGruss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmHauptfensterKunde.Designer.vb">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\frmHauptfensterKunde.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\HauptfensterMitarbeiter.Designer.vb">
-      <DependentUpon>HauptfensterMitarbeiter.vb</DependentUpon>
+    <Compile Include="Form\frmHauptfensterMitarbeiter.Designer.vb">
+      <DependentUpon>frmHauptfensterMitarbeiter.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form\HauptfensterMitarbeiter.vb">
+    <Compile Include="Form\frmHauptfensterMitarbeiter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\frmStart.designer.vb">
@@ -123,14 +129,17 @@
     <EmbeddedResource Include="Form\dlgAnmeldung.resx">
       <DependentUpon>dlgAnmeldung.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmGruss.resx">
+      <DependentUpon>frmGruss.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHauptfensterKunde.resx">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmHauptfensterMitarbeiter.resx">
+      <DependentUpon>frmHauptfensterMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\HauptfensterMitarbeiter.resx">
-      <DependentUpon>HauptfensterMitarbeiter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
