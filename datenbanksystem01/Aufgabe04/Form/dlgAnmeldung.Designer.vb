@@ -26,7 +26,7 @@ Partial Class dlgAnmeldung
         Me.lblPasswort = New System.Windows.Forms.Label()
         Me.lblNeuesKonto = New System.Windows.Forms.LinkLabel()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPasswort = New System.Windows.Forms.TextBox()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnOK = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -67,14 +67,14 @@ Partial Class dlgAnmeldung
         Me.txtBenutzername.Size = New System.Drawing.Size(336, 35)
         Me.txtBenutzername.TabIndex = 4
         '
-        'TextBox2
+        'txtPasswort
         '
-        Me.TextBox2.Location = New System.Drawing.Point(141, 76)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(336, 35)
-        Me.TextBox2.TabIndex = 5
-        Me.TextBox2.UseSystemPasswordChar = True
+        Me.txtPasswort.Location = New System.Drawing.Point(141, 76)
+        Me.txtPasswort.Multiline = True
+        Me.txtPasswort.Name = "txtPasswort"
+        Me.txtPasswort.Size = New System.Drawing.Size(336, 35)
+        Me.txtPasswort.TabIndex = 5
+        Me.txtPasswort.UseSystemPasswordChar = True
         '
         'btnAbbrechen
         '
@@ -88,11 +88,12 @@ Partial Class dlgAnmeldung
         '
         'btnOK
         '
+        Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOK.Location = New System.Drawing.Point(239, 169)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(109, 41)
-        Me.btnOK.TabIndex = 7
-        Me.btnOK.Text = "OK"
+        Me.btnOK.TabIndex = 0
+        Me.btnOK.Text = "&OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
         'dlgAnmeldung
@@ -104,7 +105,7 @@ Partial Class dlgAnmeldung
         Me.ClientSize = New System.Drawing.Size(494, 222)
         Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.btnAbbrechen)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtPasswort)
         Me.Controls.Add(Me.txtBenutzername)
         Me.Controls.Add(Me.lblNeuesKonto)
         Me.Controls.Add(Me.lblPasswort)
@@ -125,7 +126,7 @@ Partial Class dlgAnmeldung
     Friend WithEvents lblPasswort As Label
     Friend WithEvents lblNeuesKonto As LinkLabel
     Friend WithEvents txtBenutzername As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPasswort As TextBox
     Friend WithEvents btnAbbrechen As Button
     Friend WithEvents btnOK As Button
 End Class

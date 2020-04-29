@@ -1,7 +1,12 @@
 ﻿Imports System.Windows.Forms
 
 Public Class dlgAnmeldung
-
+    ''' <summary>
+    ''' Beim Klick auf OK folgt das Standardverhalten des Dialogs
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks>Die Schaltfläche OK ist als Accept-Button eingestellt und liefert das DialogResult OK.</remarks>
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         'Nichts zu tun
     End Sub
