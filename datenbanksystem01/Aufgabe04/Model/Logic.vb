@@ -42,14 +42,7 @@
 
         Return result
 
-
     End Function
-
-    Sub Main()
-        System.Console.WriteLine("Hello World.")
-        System.Console.ReadLine()
-        End
-    End Sub
 
 
     Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String) As Integer
