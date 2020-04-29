@@ -93,6 +93,12 @@
     <Compile Include="Form\frmGruss.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmGrussMitarbeiter.Designer.vb">
+      <DependentUpon>frmGrussMitarbeiter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmGrussMitarbeiter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmHauptfensterKunde.Designer.vb">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmGruss.resx">
       <DependentUpon>frmGruss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmGrussMitarbeiter.resx">
+      <DependentUpon>frmGrussMitarbeiter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHauptfensterKunde.resx">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>

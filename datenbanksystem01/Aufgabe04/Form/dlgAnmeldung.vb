@@ -2,14 +2,18 @@
 
 Public Class dlgAnmeldung
 
-    Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Close()
+    Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
+        'Nichts zu tun
     End Sub
 
-    Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
-        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Close()
-    End Sub
+    Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
+        Dim msgErgebnis As MsgBoxResult
 
+        msgErgebnis = MsgBox("Möchten Sie wirklich abbrechen?", vbQuestion + vbYesNo, "Abbrechen")
+
+        If msgErgebnis = vbNo Then
+            DialogResult = Windows.Forms.DialogResult.None
+            Exit Sub
+        End If
+    End Sub
 End Class

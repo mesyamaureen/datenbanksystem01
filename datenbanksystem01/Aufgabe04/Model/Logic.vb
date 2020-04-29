@@ -1,7 +1,7 @@
 ﻿Module Logic
 
     'Properties
-
+    Public AktuellAngemeldeterBenutzer As Benutzer
     Private Property lstListeKunde As List(Of Kunde)
     Private Property lstListeMitarbeiter As List(Of Mitarbeiter)
     Private Property lstListeBuchung As List(Of Buchung)
@@ -30,6 +30,8 @@
             If strBenutzername.Equals(mitarbeiter.getStrBenutzername) And strPasswort.Equals(mitarbeiter.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
+                AktuellAngemeldeterBenutzer = mitarbeiter
+                Exit For
             End If
         Next
 
@@ -37,6 +39,8 @@
             If strBenutzername.Equals(kunde.getStrBenutzername) And strPasswort.Equals(kunde.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "kunde"
+                AktuellAngemeldeterBenutzer = kunde
+                Exit For
             End If
         Next
 

@@ -11,31 +11,41 @@
         Dim strPasswort As String 'im Anmeldedialog übergegeben werden
 
         'Initialisierung
-        'Aufgabe04.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 'TODO: Uncomment
+        Logic.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 'TODO: Uncomment
 
-        'Aufrufen anderer Prozedur
+        'Aufrufen anderer Funktion
+        Logic.initialise()
 
 
         'Nachprüfende Schleife 
-        'Do dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 'TODO: Uncomment
+        Do
+            dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 'TODO: Uncomment
 
-        '    'Prüfen, ob der Dialog mit OK geschlossen wurde
-        '    If Not dlgAnmeldung.DialogResult = Windows.Forms.DialogResult.OK Then
-        '        'wenn nicht, dann Fenster schliessen und damit endet die Anwendung
-        '        Me.Close()
-        '        Exit Sub 'Prozedur verlassen, damit die Anwendung hier endet
-        '    End If
+            '    'Prüfen, ob der Dialog mit OK geschlossen wurde
+            If Not dlgAnmeldung.DialogResult = Windows.Forms.DialogResult.OK Then
+                '        'wenn nicht, dann Fenster schliessen und damit endet die Anwendung
+                Me.Close()
+                Exit Sub 'Prozedur verlassen, damit die Anwendung hier endet
+            End If
 
-        'Benutzername und Passwort von dem Dialogfenster ermitteln
-        'strBenutzername = dlgAnmeldung.txtBenutzername.Text
-        '    strPasswort = dlgAnmeldung.txtBenutzername.Text 'TODO: Uncomment
+            'Benutzername und Passwort von dem Dialogfenster ermitteln
+            strBenutzername = dlgAnmeldung.txtBenutzername.Text
+            strPasswort = dlgAnmeldung.txtBenutzername.Text
 
-        'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
-        'For Each 'TODO: Uncomment
+            'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
+            Dim anmeldenResult As Dictionary(Of String, String) = Logic.logIn(strBenutzername, strPasswort)
+            If anmeldenResult.ContainsKey("mitarbeiter") Then
+                frmGrussMitarbeiter.Show()
+            ElseIf anmeldenResult.ContainsKey("kunde") Then
+                frmGruss.Show()
+            Else
+                MsgBox("Anmeldung fehlgeschlagen!")
+            End If
 
+        Loop While Logic.AktuellAngemeldeterBenutzer Is Nothing
 
-
-
+        'Aktuelles Fenster schließen und Anwendung läuft weiter, weil zuvor ein weiteres Hauptfenster geöffnet wurde
+        Me.Close()
 
     End Sub
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click

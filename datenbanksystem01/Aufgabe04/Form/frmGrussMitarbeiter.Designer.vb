@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmGruss
+Partial Class frmGrussMitarbeiter
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,15 +35,14 @@ Partial Class frmGruss
         Me.btnBeenden.Text = "Beenden"
         Me.btnBeenden.UseVisualStyleBackColor = True
         '
-        'frmGruss
+        'frmGrussMitarbeiter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnBeenden
-        Me.ClientSize = New System.Drawing.Size(1258, 978)
+        Me.ClientSize = New System.Drawing.Size(1258, 968)
         Me.Controls.Add(Me.btnBeenden)
-        Me.Name = "frmGruss"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Name = "frmGrussMitarbeiter"
         Me.Text = "Weiterbildung time2-Akademie"
         Me.ResumeLayout(False)
 
