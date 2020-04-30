@@ -17,4 +17,8 @@
         MsgBox(strBegruessungMitarbeiter, MsgBoxStyle.OkOnly, "Willkommen")
 
     End Sub
+
+    Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
+        Me.Close()
+    End Sub
 End Class
