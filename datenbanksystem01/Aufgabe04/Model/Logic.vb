@@ -31,7 +31,6 @@
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
                 AktuellAngemeldeterBenutzer = mitarbeiter
-                Exit For
             End If
         Next
 
@@ -40,7 +39,6 @@
                 result("attempt") = "successful"
                 result("role") = "kunde"
                 AktuellAngemeldeterBenutzer = kunde
-                Exit For
             End If
         Next
 

@@ -30,16 +30,16 @@
 
             'Benutzername und Passwort von dem Dialogfenster ermitteln
             strBenutzername = dlgAnmeldung.txtBenutzername.Text
-            strPasswort = dlgAnmeldung.txtBenutzername.Text
+            strPasswort = dlgAnmeldung.txtPasswort.Text
 
             'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
             Dim anmeldenResult As Dictionary(Of String, String) = Logic.logIn(strBenutzername, strPasswort)
-            If anmeldenResult.ContainsKey("mitarbeiter") Then
+            If anmeldenResult("role") = "mitarbeiter" Then
                 frmGrussMitarbeiter.Show()
-            ElseIf anmeldenResult.ContainsKey("kunde") Then
+            ElseIf anmeldenResult("role") = "kunde" Then
                 frmGruss.Show()
             Else
-                MsgBox("Anmeldung fehlgeschlagen!")
+                MsgBox("Anmeldung fehlgeschlagen!", MsgBoxStyle.OkOnly, "Fehler")
             End If
 
         Loop While Logic.AktuellAngemeldeterBenutzer Is Nothing

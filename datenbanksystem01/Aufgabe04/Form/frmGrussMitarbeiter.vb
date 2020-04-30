@@ -10,7 +10,7 @@
         strNachname = Logic.AktuellAngemeldeterBenutzer.strName
 
         'eine Begrüßung wird aus Vorname und Nachname zusammengebaut
-        strBegruessungMitarbeiter = "Willkommen " & strVorname & strNachname & "! " & vbCrLf &
+        strBegruessungMitarbeiter = "Willkommen " & strVorname & " " & strNachname & "! " & vbCrLf &
                                     "Sie sind als Mitarbeiter angemeldet."
 
         'Anzeige der Begrüßung in einem Meldungsfenster

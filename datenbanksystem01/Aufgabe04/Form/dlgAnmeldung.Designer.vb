@@ -70,9 +70,8 @@ Partial Class dlgAnmeldung
         'txtPasswort
         '
         Me.txtPasswort.Location = New System.Drawing.Point(141, 76)
-        Me.txtPasswort.Multiline = True
         Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(336, 35)
+        Me.txtPasswort.Size = New System.Drawing.Size(336, 26)
         Me.txtPasswort.TabIndex = 5
         Me.txtPasswort.UseSystemPasswordChar = True
         '
