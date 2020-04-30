@@ -9,11 +9,11 @@
         strVorname = Logic.AktuellAngemeldeterBenutzer.strVorname
         strNachname = Logic.AktuellAngemeldeterBenutzer.strName
 
-        'zwei verschiedene Begrüßungen werden aus Vorname und Nachname zusammengebaut
+        'eine Begrüßung wird aus Vorname und Nachname zusammengebaut
         strBegruessungKunde = "Willkommen " & strVorname & " " & strNachname & "! " & vbCrLf &
                               "Sie sind als Kunde angemeldet."
 
-        'Ausgabe im Meldungsfenster 'TODO: Connection to the result of Login
+        'Ausgabe im Meldungsfenster
         MsgBox(strBegruessungKunde, MsgBoxStyle.OkOnly, "Willkommen")
 
 

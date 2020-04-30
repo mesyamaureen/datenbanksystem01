@@ -11,7 +11,7 @@
         Dim strPasswort As String 'im Anmeldedialog übergegeben werden
 
         'Initialisierung
-        Logic.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 'TODO: Uncomment
+        Logic.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 
 
         'Aufrufen anderer Funktion
         Logic.initialise()
@@ -19,7 +19,7 @@
 
         'Nachprüfende Schleife 
         Do
-            dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 'TODO: Uncomment
+            dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 
 
             '    'Prüfen, ob der Dialog mit OK geschlossen wurde
             If Not dlgAnmeldung.DialogResult = Windows.Forms.DialogResult.OK Then
