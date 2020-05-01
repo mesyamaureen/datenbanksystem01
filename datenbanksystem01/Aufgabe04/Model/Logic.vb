@@ -2,6 +2,7 @@
 
     'Properties
 
+    Public AktuellAngemeldeterBenutzer As Benutzer
     Private Property lstKunde As List(Of Kunde)
     Private Property lstMitarbeiter As List(Of Mitarbeiter)
     Private Property lstBuchung As List(Of Buchung)
