@@ -4,9 +4,9 @@
     'Properties
     Public Property intMitarbeiterID As Integer
 
-    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String)
+    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
 
-        MyBase.New(strBenutzername, strPasswort, strName, strVorname)
+        MyBase.New(strBenutzername, strPasswort, strName, strVorname, datGebDat)
 
         ' TODO: create record In Database And Set intMitarbeiterID
 

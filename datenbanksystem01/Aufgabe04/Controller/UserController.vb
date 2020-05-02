@@ -2,6 +2,16 @@
 
     Private Property lstKunde As List(Of Kunde)
     Private Property lstMitarbeiter As List(Of Mitarbeiter)
+    Private Property intMitarbeiterID As Integer
+    Private Property intKundenID As Integer
+
+
+    Sub New(lstMitarbeiter As List(Of Mitarbeiter), lstKunde As List(Of Kunde))
+
+        Me.lstMitarbeiter = lstMitarbeiter
+        Me.lstKunde = lstKunde
+
+    End Sub
 
     Function getLstMitarbeiter() As List(Of Mitarbeiter)
         Return lstMitarbeiter
@@ -19,12 +29,23 @@
         Me.lstKunde = lstKunde
     End Function
 
-    Sub New(lstMitarbeiter As List(Of Mitarbeiter), lstKunde As List(Of Kunde))
+    Function getintMitarbeiterID()
+        Return intMitarbeiterID
+    End Function
 
-        Me.lstMitarbeiter = lstMitarbeiter
-        Me.lstKunde = lstKunde
+    Function setintMitarbeiterID()
+        Me.intMitarbeiterID = intMitarbeiterID
+    End Function
 
-    End Sub
+    Function getintKundenID()
+        Return intKundenID
+    End Function
+
+    Function setintKundenID()
+        Me.intKundenID = intKundenID
+    End Function
+
+
 
     Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
 
@@ -48,10 +69,40 @@
 
     End Function
 
+
+    Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As intKundenID
+
+    End Function
+
+
+    Public Function viewKunde(intKundenID As Integer) As Array
+
+    End Function
+
     Public Function changeKunde(intKundenID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
 
     End Function
 
+    Public Function deleteKunde(intKundenID As Integer) As Boolean
+
+    End Function
+
+
+    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String) As intMitarbeiterID
+
+    End Function
+
+    Public Function viewMitarbeiter(intMitarbeiterID As Integer) As Array
+
+    End Function
+
+    Public Function changeMitarbeiter(intMitarbeiterID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+
+    End Function
+
+    Public Function deleteMitarbeiter(iintMitarbeiterID As Integer) As Boolean
+
+    End Function
 
     ' 1. Alle Controller Klassen erstellen mit Properties, Konstruktor, getter, setter 
     ' 2. Im Modul Logic alle Controller in initialise funktion instanzieren 
