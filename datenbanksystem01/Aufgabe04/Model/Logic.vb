@@ -10,6 +10,7 @@
     Private Property lstWeiterbildungen As List(Of Weiterbildung)
     Private Property userController As UserController
     Private Property weiterbildungscontroller As WeiterbildungsController
+    Private Property bookingController As BookingController
 
     'init funktion
 
@@ -23,6 +24,7 @@
 
         userController = New UserController(lstMitarbeiter, lstKunde)
         weiterbildungscontroller = New WeiterbildungsController(lstKurse, lstWeiterbildungen)
+        bookingController = New BookingController(lstBuchung)
 
     End Function
     'UserController
@@ -141,7 +143,30 @@
 
     End Function
 
+    'BookingController
+    Public Function createBooking(decPreis As Decimal, datDatum As Date) As Integer
 
+        Return bookingController.createBooking(decPreis, datDatum)
+
+    End Function
+
+    Public Function viewBooking(intBuchungsID) As Array
+
+        Return bookingController.viewBooking(intBuchungsID)
+
+    End Function
+
+    Public Function changeBooking(intBuchungsID As Integer, decPreis As Decimal, datDatum As Date)
+
+        Return bookingController.changeBooking(intBuchungsID, decPreis, datDatum)
+
+    End Function
+
+    Public Function deleteBooking(intKundenID As Integer) As Boolean
+
+        Return bookingController.deleteBooking(intKundenID)
+
+    End Function
 
 
 
