@@ -16,8 +16,17 @@
         connect.Open()
         'Command = connect.CreateCommand
         'Command.commandText
+        Command = connect.CreateCommand
+        Command.commandText = "CREATE TABLE  "
+        Command.executeNonQuery()
+        Command.dispose()
         connect.Close()
 
+        'tblKunde(kundenID INTEGER PRIMARY KEY AUTOINCREMENT, kndBenutzername TEXT, kndPasswort TEXT, kndVorname TEXT, kndName TEXT, kndGebDat **Text?
+        'tblMitarbeiter (MitarbeiterID INTEGER PRIMARY KEY AUTOINCREMENT, maBenutzername TEXT, maPasswort TEXT, maVorname TEXT, maName TEXT, maGebDat
+        'tblBuchung (BuchungsID INTEGER PRIMARY KEY AUTOINCREMENT, buchPreis REAL, buchDatum 
+        'tblKurs ( KursID INTEGER PRIMARY KEY AUTOINCREMENT, kursPreis REAL, kursZeit, kursOrt TEXT, kursAvailable INTEGER)
+        'tblWeiterbildung (WeiterbildungsID INTEGER PRIMARY KEY AUTOINCREMENT, wbBezeichnung TEXT, wbThema TEXT, wbCurriculum TEXT)
 
         Console.WriteLine(appPath)
 
