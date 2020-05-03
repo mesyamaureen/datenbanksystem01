@@ -6,8 +6,7 @@
     Public Property intKundenID As Integer
     Public Property strFirma As String
 
-
-
+    'Konstruktoren
     Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
 
         MyBase.New(strBenutzername, strPasswort, strName, strVorname, datGebDat)
@@ -19,10 +18,6 @@
 
     Function getIntKundenID()
         Return intKundenID
-    End Function
-
-    Function deleteKunde()
-
     End Function
 
 End Class
