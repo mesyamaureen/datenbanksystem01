@@ -6,9 +6,10 @@
     Private Property lstKunde As List(Of Kunde)
     Private Property lstMitarbeiter As List(Of Mitarbeiter)
     Private Property lstBuchung As List(Of Buchung)
-    Private Property lstKurs As List(Of Kurs)
-    Private Property lstWeiterbildung As List(Of Weiterbildung)
+    Private Property lstKurse As List(Of Kurs)
+    Private Property lstWeiterbildungen As List(Of Weiterbildung)
     Private Property userController As UserController
+    Private Property weiterbildungscontroller As WeiterbildungsController
 
     'init funktion
 
@@ -21,9 +22,10 @@
         {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
 
         userController = New UserController(lstMitarbeiter, lstKunde)
+        weiterbildungscontroller = New WeiterbildungsController(lstKurse, lstWeiterbildungen)
 
     End Function
-
+    'UserController
     Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
 
         Return userController.logIn(strBenutzername, strPasswort)
@@ -88,5 +90,62 @@
     End Function
 
     'TODO Datenbank erstellen (fill with records)
+
+    'WeiterbildungsController
+    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As Integer
+
+        Return weiterbildungscontroller.createKurs(strOrt, datZeitpunkt, bolavailable, decPreis)
+
+    End Function
+
+    Public Function viewKurs(intKundenID As Integer) As Array
+
+        Return weiterbildungscontroller.viewKurs(intKundenID)
+
+    End Function
+
+    Public Function changeKurs(intKundenID As Integer, strOrt As String, datZeitpunkt As Date, decPreis As Decimal) As Boolean
+
+        Return weiterbildungscontroller.changeKurs(intKundenID, strOrt, datZeitpunkt, decPreis)
+
+    End Function
+
+    Public Function deleteKurs(intKundenID) As Boolean
+
+        Return weiterbildungscontroller.deleteKurs(intKundenID)
+
+    End Function
+
+    'Weiterbildung
+    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As Integer
+
+        Return weiterbildungscontroller.createWeiterbildung(strBezeichnung, strThema, strCurriculum)
+
+    End Function
+
+    Public Function viewWeiterbildung(intWeiterbildungsID As Integer) As Array
+
+        Return weiterbildungscontroller.viewWeiterbildung(intWeiterbildungsID)
+
+    End Function
+
+    Public Function changeWeiterbildung(intWeiterbildungsID As Integer, strBezeichnung As String, strThema As String, strCurriculum As String) As Boolean
+
+        Return weiterbildungscontroller.changeWeiterbildung(intWeiterbildungsID, strBezeichnung, strThema, strCurriculum)
+
+    End Function
+
+    Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean
+
+        Return weiterbildungscontroller.deleteWeiterbildung(intWeiterbildungID)
+
+    End Function
+
+
+
+
+
+
+
 
 End Module
