@@ -130,6 +130,12 @@
     <Compile Include="Form\frmHauptfensterMitarbeiter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmKundenkontoErstellung.Designer.vb">
+      <DependentUpon>frmKundenkontoErstellung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmKundenkontoErstellung.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmStart.designer.vb">
       <DependentUpon>frmStart.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHauptfensterMitarbeiter.resx">
       <DependentUpon>frmHauptfensterMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmKundenkontoErstellung.resx">
+      <DependentUpon>frmKundenkontoErstellung.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
