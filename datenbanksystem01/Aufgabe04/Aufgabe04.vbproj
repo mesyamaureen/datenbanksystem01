@@ -112,6 +112,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BookingController.vb" />
     <Compile Include="Form\dlgAnmeldung.Designer.vb">
       <DependentUpon>dlgAnmeldung.vb</DependentUpon>
     </Compile>
@@ -144,6 +145,7 @@
     </Compile>
     <Compile Include="Model\Benutzer.vb" />
     <Compile Include="Model\Buchung.vb" />
+    <Compile Include="Controller\UserController.vb" />
     <Compile Include="Model\Logic.vb" />
     <Compile Include="Form\testLogic.Designer.vb">
       <DependentUpon>testLogic.vb</DependentUpon>
@@ -155,6 +157,7 @@
     <Compile Include="Model\Kurs.vb" />
     <Compile Include="Model\Kunde.vb" />
     <Compile Include="Model\Mitarbeiter.vb" />
+    <Compile Include="Controller\WeiterbildungsController.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -224,6 +227,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
