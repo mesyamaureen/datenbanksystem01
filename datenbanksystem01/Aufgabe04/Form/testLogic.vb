@@ -16,11 +16,11 @@
         connect.Open()
         'Command = connect.CreateCommand
         'Command.commandText
-        Command = connect.CreateCommand
-        Command.commandText = "CREATE TABLE  "
-        Command.executeNonQuery()
-        Command.dispose()
-        connect.Close()
+        ' Command = connect.CreateCommand
+        ' Command.commandText = "CREATE TABLE  "
+        ' Command.executeNonQuery()
+        ' Command.dispose()
+        ' connect.Close()
 
         'tblKunde(kundenID INTEGER PRIMARY KEY AUTOINCREMENT, kndBenutzername TEXT, kndPasswort TEXT, kndVorname TEXT, kndName TEXT, kndGebDat **Text?
         'tblMitarbeiter (MitarbeiterID INTEGER PRIMARY KEY AUTOINCREMENT, maBenutzername TEXT, maPasswort TEXT, maVorname TEXT, maName TEXT, maGebDat
