@@ -143,6 +143,18 @@
     <Compile Include="Form\frmStart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmWeiterbildungsfensterMitarb.Designer.vb">
+      <DependentUpon>frmWeiterbildungsfensterMitarb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmWeiterbildungsfensterMitarb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmWeiterbildungsfensterKunde.Designer.vb">
+      <DependentUpon>frmWeiterbildungsfensterKunde.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmWeiterbildungsfensterKunde.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Model\Benutzer.vb" />
     <Compile Include="Model\Buchung.vb" />
     <Compile Include="Controller\UserController.vb" />
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmWeiterbildungsfensterKunde.resx">
+      <DependentUpon>frmWeiterbildungsfensterKunde.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmWeiterbildungsfensterMitarb.resx">
+      <DependentUpon>frmWeiterbildungsfensterMitarb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\testLogic.resx">
       <DependentUpon>testLogic.vb</DependentUpon>
