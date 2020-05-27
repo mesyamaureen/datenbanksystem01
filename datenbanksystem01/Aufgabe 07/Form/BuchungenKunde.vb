@@ -7,7 +7,7 @@
         'Deklaration das Ergebnis des MsgBox
         Dim msgResult As MsgBoxResult
         'Initialisierung für das Ergebnis zwischen Ja und Nein
-        msgResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verwirft.", MsgBoxStyle.Question, MsgBoxStyle.YesNo)
+        msgResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question, MsgBoxStyle.YesNo)
         'Verzweigung des Ergebnisses
         'Ergebnis: JA
         If msgResult = vbYes Then
@@ -19,4 +19,15 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
+    Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
+        Me.colKurs = colKurs
+        Me.colWeiterbildung = colWeiterbildung
+
+        btnLoeschen.Enabled = False
+        btnHinzufuegen.Enabled = True
+
+
+
+    End Sub
+
 End Class

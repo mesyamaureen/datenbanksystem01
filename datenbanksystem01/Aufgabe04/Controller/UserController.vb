@@ -100,7 +100,7 @@
 
     End Function
 
-    Public Function deleteMitarbeiter(iintMitarbeiterID As Integer) As Boolean
+    Public Function deleteMitarbeiter(intMitarbeiterID As Integer) As Boolean
 
     End Function
 
