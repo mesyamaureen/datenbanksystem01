@@ -26,4 +26,10 @@
         Me.Close()
 
     End Sub
+
+    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs) Handles MenuStripBuchungen.Click
+        Me.Close() 'Hauptfenster des Kunde schließen
+        Exit Sub 'Prozedur verlassen
+        BuchungenKunde.Show() 'Dialogfenster von Buchungen öffnen
+    End Sub
 End Class
