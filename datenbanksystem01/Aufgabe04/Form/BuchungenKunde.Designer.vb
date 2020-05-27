@@ -110,6 +110,7 @@ Partial Class BuchungenKunde
         Me.txtKundenID.Location = New System.Drawing.Point(133, 12)
         Me.txtKundenID.Multiline = True
         Me.txtKundenID.Name = "txtKundenID"
+        Me.txtKundenID.ReadOnly = True
         Me.txtKundenID.Size = New System.Drawing.Size(206, 31)
         Me.txtKundenID.TabIndex = 4
         '

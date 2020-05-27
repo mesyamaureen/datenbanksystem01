@@ -22,7 +22,7 @@ Partial Class BuchungenMitarbeiter
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnAbbrechen = New System.Windows.Forms.Button()
+        Me.btnSchließen = New System.Windows.Forms.Button()
         Me.tbsBuchungen = New System.Windows.Forms.TabControl()
         Me.tbsAktBuchungen = New System.Windows.Forms.TabPage()
         Me.tbsStornoBuchungen = New System.Windows.Forms.TabPage()
@@ -45,14 +45,14 @@ Partial Class BuchungenMitarbeiter
         Me.tbsStornoBuchungen.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btnAbbrechen
+        'btnSchließen
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1108, 662)
-        Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(126, 46)
-        Me.btnAbbrechen.TabIndex = 0
-        Me.btnAbbrechen.Text = "Abbrechen"
-        Me.btnAbbrechen.UseVisualStyleBackColor = True
+        Me.btnSchließen.Location = New System.Drawing.Point(1108, 662)
+        Me.btnSchließen.Name = "btnSchließen"
+        Me.btnSchließen.Size = New System.Drawing.Size(126, 46)
+        Me.btnSchließen.TabIndex = 0
+        Me.btnSchließen.Text = "Schließen"
+        Me.btnSchließen.UseVisualStyleBackColor = True
         '
         'tbsBuchungen
         '
@@ -190,7 +190,7 @@ Partial Class BuchungenMitarbeiter
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 729)
         Me.Controls.Add(Me.tbsBuchungen)
-        Me.Controls.Add(Me.btnAbbrechen)
+        Me.Controls.Add(Me.btnSchließen)
         Me.Name = "BuchungenMitarbeiter"
         Me.Text = "Alle Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)
@@ -200,7 +200,7 @@ Partial Class BuchungenMitarbeiter
 
     End Sub
 
-    Friend WithEvents btnAbbrechen As Button
+    Friend WithEvents btnSchließen As Button
     Friend WithEvents tbsBuchungen As TabControl
     Friend WithEvents tbsAktBuchungen As TabPage
     Friend WithEvents ListView1 As ListView
