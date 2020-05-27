@@ -22,10 +22,7 @@
         Me.Close()
     End Sub
 
-    Private Sub btnBearbeitenAgiles_Click(sender As Object, e As EventArgs) Handles btnBearbeitenAgiles.Click
-        frmWeiterbildungsfensterMitarb.Show()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnMehrAgiles.Click
+    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs) Handles MenuStripBuchungen.Click
+        BuchungenMitarbeiter.Show()
     End Sub
 End Class

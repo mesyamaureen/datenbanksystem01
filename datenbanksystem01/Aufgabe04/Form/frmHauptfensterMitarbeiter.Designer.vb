@@ -72,32 +72,32 @@ Partial Class frmHauptfensterMitarbeiter
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 3)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1677, 42)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1677, 44)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MenuStripWeiterbildungen
         '
         Me.MenuStripWeiterbildungen.Name = "MenuStripWeiterbildungen"
-        Me.MenuStripWeiterbildungen.Size = New System.Drawing.Size(205, 36)
+        Me.MenuStripWeiterbildungen.Size = New System.Drawing.Size(205, 38)
         Me.MenuStripWeiterbildungen.Text = "Weiterbildungen"
         '
         'MenuStripBuchungen
         '
         Me.MenuStripBuchungen.Name = "MenuStripBuchungen"
-        Me.MenuStripBuchungen.Size = New System.Drawing.Size(149, 36)
+        Me.MenuStripBuchungen.Size = New System.Drawing.Size(149, 38)
         Me.MenuStripBuchungen.Text = "Buchungen"
         '
         'MenuStripKonto
         '
         Me.MenuStripKonto.Name = "MenuStripKonto"
-        Me.MenuStripKonto.Size = New System.Drawing.Size(90, 36)
+        Me.MenuStripKonto.Size = New System.Drawing.Size(90, 38)
         Me.MenuStripKonto.Text = "Konto"
         '
         'MenuStripHilfe
         '
         Me.MenuStripHilfe.Name = "MenuStripHilfe"
-        Me.MenuStripHilfe.Size = New System.Drawing.Size(77, 36)
+        Me.MenuStripHilfe.Size = New System.Drawing.Size(77, 38)
         Me.MenuStripHilfe.Text = "Hilfe"
         '
         'grpboxThemen
