@@ -18,12 +18,14 @@
         MsgBox(strBegruessungMitarbeiter, MsgBoxStyle.OkOnly, "Willkommen")
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles grpboxWeiterbildung.Enter
-
-    End Sub
-
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         Me.Close()
     End Sub
 
+    Private Sub btnBearbeitenAgiles_Click(sender As Object, e As EventArgs) Handles btnBearbeitenAgiles.Click
+        frmWeiterbildungsfensterMitarb.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnMehrAgiles.Click
+    End Sub
 End Class

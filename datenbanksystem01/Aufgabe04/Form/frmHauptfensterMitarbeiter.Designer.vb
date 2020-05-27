@@ -41,11 +41,14 @@ Partial Class frmHauptfensterMitarbeiter
         Me.rbtnBetriebswirtschaft = New System.Windows.Forms.RadioButton()
         Me.rbtnAlle = New System.Windows.Forms.RadioButton()
         Me.grpboxWeiterbildung = New System.Windows.Forms.GroupBox()
+        Me.btnMehrScrum = New System.Windows.Forms.Button()
+        Me.btnMehrProjektmngmt = New System.Windows.Forms.Button()
+        Me.btnMehrAgiles = New System.Windows.Forms.Button()
         Me.lblScrum = New System.Windows.Forms.Label()
         Me.lblProjektman = New System.Windows.Forms.Label()
         Me.lblAgiles = New System.Windows.Forms.Label()
         Me.btnBearbeitenScrum = New System.Windows.Forms.Button()
-        Me.btnBearbeitenProjektman = New System.Windows.Forms.Button()
+        Me.btnBearbeitenProjektmgmt = New System.Windows.Forms.Button()
         Me.btnBearbeitenAgiles = New System.Windows.Forms.Button()
         Me.vsbWeiterbildung = New System.Windows.Forms.VScrollBar()
         Me.picboxScrum = New System.Windows.Forms.PictureBox()
@@ -53,10 +56,7 @@ Partial Class frmHauptfensterMitarbeiter
         Me.picboxAgiles = New System.Windows.Forms.PictureBox()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.btnNeueWeiterbildung = New System.Windows.Forms.Button()
-        Me.btnNeuesThema = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnBearbThema = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.grpboxThemen.SuspendLayout()
         Me.grpboxWeiterbildung.SuspendLayout()
@@ -71,33 +71,33 @@ Partial Class frmHauptfensterMitarbeiter
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuStripWeiterbildungen, Me.MenuStripBuchungen, Me.MenuStripKonto, Me.MenuStripHilfe})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1118, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 3)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1677, 42)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MenuStripWeiterbildungen
         '
         Me.MenuStripWeiterbildungen.Name = "MenuStripWeiterbildungen"
-        Me.MenuStripWeiterbildungen.Size = New System.Drawing.Size(131, 24)
+        Me.MenuStripWeiterbildungen.Size = New System.Drawing.Size(205, 36)
         Me.MenuStripWeiterbildungen.Text = "Weiterbildungen"
         '
         'MenuStripBuchungen
         '
         Me.MenuStripBuchungen.Name = "MenuStripBuchungen"
-        Me.MenuStripBuchungen.Size = New System.Drawing.Size(94, 24)
+        Me.MenuStripBuchungen.Size = New System.Drawing.Size(149, 36)
         Me.MenuStripBuchungen.Text = "Buchungen"
         '
         'MenuStripKonto
         '
         Me.MenuStripKonto.Name = "MenuStripKonto"
-        Me.MenuStripKonto.Size = New System.Drawing.Size(61, 24)
+        Me.MenuStripKonto.Size = New System.Drawing.Size(90, 36)
         Me.MenuStripKonto.Text = "Konto"
         '
         'MenuStripHilfe
         '
         Me.MenuStripHilfe.Name = "MenuStripHilfe"
-        Me.MenuStripHilfe.Size = New System.Drawing.Size(53, 24)
+        Me.MenuStripHilfe.Size = New System.Drawing.Size(77, 36)
         Me.MenuStripHilfe.Text = "Hilfe"
         '
         'grpboxThemen
@@ -114,29 +114,29 @@ Partial Class frmHauptfensterMitarbeiter
         Me.grpboxThemen.Controls.Add(Me.rbtnControlling)
         Me.grpboxThemen.Controls.Add(Me.rbtnBetriebswirtschaft)
         Me.grpboxThemen.Controls.Add(Me.rbtnAlle)
-        Me.grpboxThemen.Location = New System.Drawing.Point(11, 29)
-        Me.grpboxThemen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.grpboxThemen.Location = New System.Drawing.Point(16, 45)
+        Me.grpboxThemen.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpboxThemen.Name = "grpboxThemen"
-        Me.grpboxThemen.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grpboxThemen.Size = New System.Drawing.Size(290, 669)
+        Me.grpboxThemen.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.grpboxThemen.Size = New System.Drawing.Size(435, 1045)
         Me.grpboxThemen.TabIndex = 1
         Me.grpboxThemen.TabStop = False
         Me.grpboxThemen.Text = "Themen"
         '
         'vsbThemen
         '
-        Me.vsbThemen.Location = New System.Drawing.Point(260, 7)
+        Me.vsbThemen.Location = New System.Drawing.Point(390, 11)
         Me.vsbThemen.Name = "vsbThemen"
-        Me.vsbThemen.Size = New System.Drawing.Size(30, 662)
+        Me.vsbThemen.Size = New System.Drawing.Size(30, 1034)
         Me.vsbThemen.TabIndex = 11
         '
         'rbtnRechnundFinanz
         '
         Me.rbtnRechnundFinanz.AutoSize = True
-        Me.rbtnRechnundFinanz.Location = New System.Drawing.Point(5, 459)
-        Me.rbtnRechnundFinanz.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnRechnundFinanz.Location = New System.Drawing.Point(8, 717)
+        Me.rbtnRechnundFinanz.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnRechnundFinanz.Name = "rbtnRechnundFinanz"
-        Me.rbtnRechnundFinanz.Size = New System.Drawing.Size(231, 21)
+        Me.rbtnRechnundFinanz.Size = New System.Drawing.Size(351, 29)
         Me.rbtnRechnundFinanz.TabIndex = 10
         Me.rbtnRechnundFinanz.TabStop = True
         Me.rbtnRechnundFinanz.Text = "Rechnungswesen und Finanzen"
@@ -144,10 +144,10 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'rbtnProjProzChange
         '
-        Me.rbtnProjProzChange.Location = New System.Drawing.Point(5, 402)
-        Me.rbtnProjProzChange.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnProjProzChange.Location = New System.Drawing.Point(8, 628)
+        Me.rbtnProjProzChange.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnProjProzChange.Name = "rbtnProjProzChange"
-        Me.rbtnProjProzChange.Size = New System.Drawing.Size(256, 41)
+        Me.rbtnProjProzChange.Size = New System.Drawing.Size(384, 64)
         Me.rbtnProjProzChange.TabIndex = 9
         Me.rbtnProjProzChange.TabStop = True
         Me.rbtnProjProzChange.Text = "Projekt-, Prozess- und Changemanagement"
@@ -156,10 +156,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnOrganisationsdesign
         '
         Me.rbtnOrganisationsdesign.AutoSize = True
-        Me.rbtnOrganisationsdesign.Location = New System.Drawing.Point(5, 366)
-        Me.rbtnOrganisationsdesign.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnOrganisationsdesign.Location = New System.Drawing.Point(8, 572)
+        Me.rbtnOrganisationsdesign.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnOrganisationsdesign.Name = "rbtnOrganisationsdesign"
-        Me.rbtnOrganisationsdesign.Size = New System.Drawing.Size(159, 21)
+        Me.rbtnOrganisationsdesign.Size = New System.Drawing.Size(240, 29)
         Me.rbtnOrganisationsdesign.TabIndex = 8
         Me.rbtnOrganisationsdesign.TabStop = True
         Me.rbtnOrganisationsdesign.Text = "Organisationsdesign"
@@ -168,10 +168,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnMarketingundProdman
         '
         Me.rbtnMarketingundProdman.AutoSize = True
-        Me.rbtnMarketingundProdman.Location = New System.Drawing.Point(5, 322)
-        Me.rbtnMarketingundProdman.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnMarketingundProdman.Location = New System.Drawing.Point(8, 503)
+        Me.rbtnMarketingundProdman.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnMarketingundProdman.Name = "rbtnMarketingundProdman"
-        Me.rbtnMarketingundProdman.Size = New System.Drawing.Size(254, 21)
+        Me.rbtnMarketingundProdman.Size = New System.Drawing.Size(384, 29)
         Me.rbtnMarketingundProdman.TabIndex = 7
         Me.rbtnMarketingundProdman.TabStop = True
         Me.rbtnMarketingundProdman.Text = "Marketing und Produktmanagement"
@@ -180,10 +180,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnGrundInnov
         '
         Me.rbtnGrundInnov.AutoSize = True
-        Me.rbtnGrundInnov.Location = New System.Drawing.Point(5, 281)
-        Me.rbtnGrundInnov.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnGrundInnov.Location = New System.Drawing.Point(8, 439)
+        Me.rbtnGrundInnov.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnGrundInnov.Name = "rbtnGrundInnov"
-        Me.rbtnGrundInnov.Size = New System.Drawing.Size(190, 21)
+        Me.rbtnGrundInnov.Size = New System.Drawing.Size(285, 29)
         Me.rbtnGrundInnov.TabIndex = 6
         Me.rbtnGrundInnov.TabStop = True
         Me.rbtnGrundInnov.Text = "Gründung und Innovation"
@@ -192,10 +192,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnGesundheit
         '
         Me.rbtnGesundheit.AutoSize = True
-        Me.rbtnGesundheit.Location = New System.Drawing.Point(5, 241)
-        Me.rbtnGesundheit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnGesundheit.Location = New System.Drawing.Point(8, 377)
+        Me.rbtnGesundheit.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnGesundheit.Name = "rbtnGesundheit"
-        Me.rbtnGesundheit.Size = New System.Drawing.Size(102, 21)
+        Me.rbtnGesundheit.Size = New System.Drawing.Size(153, 29)
         Me.rbtnGesundheit.TabIndex = 5
         Me.rbtnGesundheit.TabStop = True
         Me.rbtnGesundheit.Text = "Gesundheit"
@@ -204,10 +204,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnGenManagement
         '
         Me.rbtnGenManagement.AutoSize = True
-        Me.rbtnGenManagement.Location = New System.Drawing.Point(5, 202)
-        Me.rbtnGenManagement.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnGenManagement.Location = New System.Drawing.Point(8, 316)
+        Me.rbtnGenManagement.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnGenManagement.Name = "rbtnGenManagement"
-        Me.rbtnGenManagement.Size = New System.Drawing.Size(166, 21)
+        Me.rbtnGenManagement.Size = New System.Drawing.Size(250, 29)
         Me.rbtnGenManagement.TabIndex = 4
         Me.rbtnGenManagement.TabStop = True
         Me.rbtnGenManagement.Text = "General Management"
@@ -216,10 +216,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnDigBusiness
         '
         Me.rbtnDigBusiness.AutoSize = True
-        Me.rbtnDigBusiness.Location = New System.Drawing.Point(5, 160)
-        Me.rbtnDigBusiness.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnDigBusiness.Location = New System.Drawing.Point(8, 250)
+        Me.rbtnDigBusiness.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnDigBusiness.Name = "rbtnDigBusiness"
-        Me.rbtnDigBusiness.Size = New System.Drawing.Size(129, 21)
+        Me.rbtnDigBusiness.Size = New System.Drawing.Size(197, 29)
         Me.rbtnDigBusiness.TabIndex = 3
         Me.rbtnDigBusiness.TabStop = True
         Me.rbtnDigBusiness.Text = "Digital Business"
@@ -228,10 +228,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnControlling
         '
         Me.rbtnControlling.AutoSize = True
-        Me.rbtnControlling.Location = New System.Drawing.Point(5, 120)
-        Me.rbtnControlling.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnControlling.Location = New System.Drawing.Point(8, 188)
+        Me.rbtnControlling.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnControlling.Name = "rbtnControlling"
-        Me.rbtnControlling.Size = New System.Drawing.Size(96, 21)
+        Me.rbtnControlling.Size = New System.Drawing.Size(146, 29)
         Me.rbtnControlling.TabIndex = 2
         Me.rbtnControlling.TabStop = True
         Me.rbtnControlling.Text = "Controlling"
@@ -240,10 +240,10 @@ Partial Class frmHauptfensterMitarbeiter
         'rbtnBetriebswirtschaft
         '
         Me.rbtnBetriebswirtschaft.AutoSize = True
-        Me.rbtnBetriebswirtschaft.Location = New System.Drawing.Point(5, 78)
-        Me.rbtnBetriebswirtschaft.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnBetriebswirtschaft.Location = New System.Drawing.Point(8, 122)
+        Me.rbtnBetriebswirtschaft.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnBetriebswirtschaft.Name = "rbtnBetriebswirtschaft"
-        Me.rbtnBetriebswirtschaft.Size = New System.Drawing.Size(140, 21)
+        Me.rbtnBetriebswirtschaft.Size = New System.Drawing.Size(213, 29)
         Me.rbtnBetriebswirtschaft.TabIndex = 1
         Me.rbtnBetriebswirtschaft.TabStop = True
         Me.rbtnBetriebswirtschaft.Text = "Betriebswirtschaft"
@@ -253,10 +253,10 @@ Partial Class frmHauptfensterMitarbeiter
         '
         Me.rbtnAlle.AutoSize = True
         Me.rbtnAlle.Checked = True
-        Me.rbtnAlle.Location = New System.Drawing.Point(5, 34)
-        Me.rbtnAlle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.rbtnAlle.Location = New System.Drawing.Point(8, 53)
+        Me.rbtnAlle.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.rbtnAlle.Name = "rbtnAlle"
-        Me.rbtnAlle.Size = New System.Drawing.Size(52, 21)
+        Me.rbtnAlle.Size = New System.Drawing.Size(79, 29)
         Me.rbtnAlle.TabIndex = 0
         Me.rbtnAlle.TabStop = True
         Me.rbtnAlle.Text = "Alle"
@@ -264,35 +264,66 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'grpboxWeiterbildung
         '
-        Me.grpboxWeiterbildung.Controls.Add(Me.Button3)
-        Me.grpboxWeiterbildung.Controls.Add(Me.Button2)
-        Me.grpboxWeiterbildung.Controls.Add(Me.Button1)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrScrum)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrProjektmngmt)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnMehrAgiles)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblScrum)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblProjektman)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblAgiles)
         Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenScrum)
-        Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenProjektman)
+        Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenProjektmgmt)
         Me.grpboxWeiterbildung.Controls.Add(Me.btnBearbeitenAgiles)
         Me.grpboxWeiterbildung.Controls.Add(Me.vsbWeiterbildung)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxScrum)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxProjektmanagement)
         Me.grpboxWeiterbildung.Controls.Add(Me.picboxAgiles)
-        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(306, 29)
-        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(459, 45)
+        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
-        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grpboxWeiterbildung.Size = New System.Drawing.Size(802, 669)
+        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.grpboxWeiterbildung.Size = New System.Drawing.Size(1203, 1045)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
         Me.grpboxWeiterbildung.Text = "Weiterbildungsangebot"
+        '
+        'btnMehrScrum
+        '
+        Me.btnMehrScrum.Location = New System.Drawing.Point(338, 848)
+        Me.btnMehrScrum.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnMehrScrum.Name = "btnMehrScrum"
+        Me.btnMehrScrum.Size = New System.Drawing.Size(136, 47)
+        Me.btnMehrScrum.TabIndex = 15
+        Me.btnMehrScrum.Text = "Mehr"
+        Me.btnMehrScrum.UseVisualStyleBackColor = True
+        '
+        'btnMehrProjektmngmt
+        '
+        Me.btnMehrProjektmngmt.Location = New System.Drawing.Point(338, 503)
+        Me.btnMehrProjektmngmt.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnMehrProjektmngmt.Name = "btnMehrProjektmngmt"
+        Me.btnMehrProjektmngmt.Size = New System.Drawing.Size(136, 47)
+        Me.btnMehrProjektmngmt.TabIndex = 14
+        Me.btnMehrProjektmngmt.Text = "Mehr"
+        Me.btnMehrProjektmngmt.UseVisualStyleBackColor = True
+        '
+        'btnMehrAgiles
+        '
+        Me.btnMehrAgiles.Location = New System.Drawing.Point(338, 180)
+        Me.btnMehrAgiles.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnMehrAgiles.Name = "btnMehrAgiles"
+        Me.btnMehrAgiles.Size = New System.Drawing.Size(136, 47)
+        Me.btnMehrAgiles.TabIndex = 13
+        Me.btnMehrAgiles.Text = "Mehr"
+        Me.btnMehrAgiles.UseVisualStyleBackColor = True
         '
         'lblScrum
         '
         Me.lblScrum.AutoSize = True
         Me.lblScrum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.lblScrum.Location = New System.Drawing.Point(220, 501)
+        Me.lblScrum.Location = New System.Drawing.Point(330, 783)
+        Me.lblScrum.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblScrum.Name = "lblScrum"
-        Me.lblScrum.Size = New System.Drawing.Size(192, 25)
+        Me.lblScrum.Size = New System.Drawing.Size(306, 37)
         Me.lblScrum.TabIndex = 12
         Me.lblScrum.Text = "SCRUM - Workshop"
         '
@@ -300,9 +331,10 @@ Partial Class frmHauptfensterMitarbeiter
         '
         Me.lblProjektman.AutoSize = True
         Me.lblProjektman.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.lblProjektman.Location = New System.Drawing.Point(220, 277)
+        Me.lblProjektman.Location = New System.Drawing.Point(330, 433)
+        Me.lblProjektman.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblProjektman.Name = "lblProjektman"
-        Me.lblProjektman.Size = New System.Drawing.Size(186, 25)
+        Me.lblProjektman.Size = New System.Drawing.Size(303, 37)
         Me.lblProjektman.TabIndex = 11
         Me.lblProjektman.Text = "Projektmanagement"
         '
@@ -310,148 +342,122 @@ Partial Class frmHauptfensterMitarbeiter
         '
         Me.lblAgiles.AutoSize = True
         Me.lblAgiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.lblAgiles.Location = New System.Drawing.Point(220, 78)
+        Me.lblAgiles.Location = New System.Drawing.Point(330, 122)
+        Me.lblAgiles.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAgiles.Name = "lblAgiles"
-        Me.lblAgiles.Size = New System.Drawing.Size(245, 25)
+        Me.lblAgiles.Size = New System.Drawing.Size(399, 37)
         Me.lblAgiles.TabIndex = 10
         Me.lblAgiles.Text = "Agiles Projektmanagement"
         '
         'btnBearbeitenScrum
         '
-        Me.btnBearbeitenScrum.Location = New System.Drawing.Point(332, 543)
-        Me.btnBearbeitenScrum.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBearbeitenScrum.Location = New System.Drawing.Point(498, 848)
+        Me.btnBearbeitenScrum.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnBearbeitenScrum.Name = "btnBearbeitenScrum"
-        Me.btnBearbeitenScrum.Size = New System.Drawing.Size(91, 30)
+        Me.btnBearbeitenScrum.Size = New System.Drawing.Size(136, 47)
         Me.btnBearbeitenScrum.TabIndex = 9
         Me.btnBearbeitenScrum.Text = "Bearbeiten"
         Me.btnBearbeitenScrum.UseVisualStyleBackColor = True
         '
-        'btnBearbeitenProjektman
+        'btnBearbeitenProjektmgmt
         '
-        Me.btnBearbeitenProjektman.Location = New System.Drawing.Point(332, 322)
-        Me.btnBearbeitenProjektman.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBearbeitenProjektman.Name = "btnBearbeitenProjektman"
-        Me.btnBearbeitenProjektman.Size = New System.Drawing.Size(91, 30)
-        Me.btnBearbeitenProjektman.TabIndex = 8
-        Me.btnBearbeitenProjektman.Text = "Bearbeiten"
-        Me.btnBearbeitenProjektman.UseVisualStyleBackColor = True
+        Me.btnBearbeitenProjektmgmt.Location = New System.Drawing.Point(498, 503)
+        Me.btnBearbeitenProjektmgmt.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.btnBearbeitenProjektmgmt.Name = "btnBearbeitenProjektmgmt"
+        Me.btnBearbeitenProjektmgmt.Size = New System.Drawing.Size(136, 47)
+        Me.btnBearbeitenProjektmgmt.TabIndex = 8
+        Me.btnBearbeitenProjektmgmt.Text = "Bearbeiten"
+        Me.btnBearbeitenProjektmgmt.UseVisualStyleBackColor = True
         '
         'btnBearbeitenAgiles
         '
-        Me.btnBearbeitenAgiles.Location = New System.Drawing.Point(332, 115)
-        Me.btnBearbeitenAgiles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBearbeitenAgiles.Location = New System.Drawing.Point(498, 180)
+        Me.btnBearbeitenAgiles.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnBearbeitenAgiles.Name = "btnBearbeitenAgiles"
-        Me.btnBearbeitenAgiles.Size = New System.Drawing.Size(91, 30)
+        Me.btnBearbeitenAgiles.Size = New System.Drawing.Size(136, 47)
         Me.btnBearbeitenAgiles.TabIndex = 7
         Me.btnBearbeitenAgiles.Text = "Bearbeiten"
         Me.btnBearbeitenAgiles.UseVisualStyleBackColor = True
         '
         'vsbWeiterbildung
         '
-        Me.vsbWeiterbildung.Location = New System.Drawing.Point(772, 7)
+        Me.vsbWeiterbildung.Location = New System.Drawing.Point(1158, 11)
         Me.vsbWeiterbildung.Name = "vsbWeiterbildung"
-        Me.vsbWeiterbildung.Size = New System.Drawing.Size(30, 662)
+        Me.vsbWeiterbildung.Size = New System.Drawing.Size(30, 1034)
         Me.vsbWeiterbildung.TabIndex = 3
         '
         'picboxScrum
         '
-        Me.picboxScrum.Location = New System.Drawing.Point(13, 457)
-        Me.picboxScrum.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picboxScrum.Location = New System.Drawing.Point(20, 714)
+        Me.picboxScrum.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picboxScrum.Name = "picboxScrum"
-        Me.picboxScrum.Size = New System.Drawing.Size(186, 169)
+        Me.picboxScrum.Size = New System.Drawing.Size(279, 264)
         Me.picboxScrum.TabIndex = 2
         Me.picboxScrum.TabStop = False
         '
         'picboxProjektmanagement
         '
-        Me.picboxProjektmanagement.Location = New System.Drawing.Point(13, 241)
-        Me.picboxProjektmanagement.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picboxProjektmanagement.Location = New System.Drawing.Point(20, 377)
+        Me.picboxProjektmanagement.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picboxProjektmanagement.Name = "picboxProjektmanagement"
-        Me.picboxProjektmanagement.Size = New System.Drawing.Size(186, 169)
+        Me.picboxProjektmanagement.Size = New System.Drawing.Size(279, 264)
         Me.picboxProjektmanagement.TabIndex = 1
         Me.picboxProjektmanagement.TabStop = False
         '
         'picboxAgiles
         '
-        Me.picboxAgiles.Location = New System.Drawing.Point(13, 34)
-        Me.picboxAgiles.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.picboxAgiles.Location = New System.Drawing.Point(20, 53)
+        Me.picboxAgiles.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picboxAgiles.Name = "picboxAgiles"
-        Me.picboxAgiles.Size = New System.Drawing.Size(186, 169)
+        Me.picboxAgiles.Size = New System.Drawing.Size(279, 264)
         Me.picboxAgiles.TabIndex = 0
         Me.picboxAgiles.TabStop = False
         '
         'btnBeenden
         '
         Me.btnBeenden.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnBeenden.Location = New System.Drawing.Point(987, 733)
-        Me.btnBeenden.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBeenden.Location = New System.Drawing.Point(1480, 1145)
+        Me.btnBeenden.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnBeenden.Name = "btnBeenden"
-        Me.btnBeenden.Size = New System.Drawing.Size(120, 31)
+        Me.btnBeenden.Size = New System.Drawing.Size(180, 48)
         Me.btnBeenden.TabIndex = 3
         Me.btnBeenden.Text = "Beenden"
         Me.btnBeenden.UseVisualStyleBackColor = True
         '
         'btnNeueWeiterbildung
         '
-        Me.btnNeueWeiterbildung.Location = New System.Drawing.Point(825, 733)
-        Me.btnNeueWeiterbildung.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnNeueWeiterbildung.Location = New System.Drawing.Point(1238, 1145)
+        Me.btnNeueWeiterbildung.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnNeueWeiterbildung.Name = "btnNeueWeiterbildung"
-        Me.btnNeueWeiterbildung.Size = New System.Drawing.Size(150, 30)
+        Me.btnNeueWeiterbildung.Size = New System.Drawing.Size(225, 47)
         Me.btnNeueWeiterbildung.TabIndex = 4
         Me.btnNeueWeiterbildung.Text = "Neue Weiterbildung"
         Me.btnNeueWeiterbildung.UseVisualStyleBackColor = True
         '
-        'btnNeuesThema
+        'btnBearbThema
         '
-        Me.btnNeuesThema.Location = New System.Drawing.Point(638, 733)
-        Me.btnNeuesThema.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnNeuesThema.Name = "btnNeuesThema"
-        Me.btnNeuesThema.Size = New System.Drawing.Size(165, 30)
-        Me.btnNeuesThema.TabIndex = 5
-        Me.btnNeuesThema.Text = "Themen bearbeiten"
-        Me.btnNeuesThema.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(225, 115)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(91, 30)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Mehr"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(225, 322)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 30)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Mehr"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(225, 543)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(91, 30)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Mehr"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnBearbThema.Location = New System.Drawing.Point(957, 1145)
+        Me.btnBearbThema.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.btnBearbThema.Name = "btnBearbThema"
+        Me.btnBearbThema.Size = New System.Drawing.Size(248, 47)
+        Me.btnBearbThema.TabIndex = 5
+        Me.btnBearbThema.Text = "Themen bearbeiten"
+        Me.btnBearbThema.UseVisualStyleBackColor = True
         '
         'frmHauptfensterMitarbeiter
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnBeenden
-        Me.ClientSize = New System.Drawing.Size(1118, 774)
-        Me.Controls.Add(Me.btnNeuesThema)
+        Me.ClientSize = New System.Drawing.Size(1677, 1209)
+        Me.Controls.Add(Me.btnBearbThema)
         Me.Controls.Add(Me.btnNeueWeiterbildung)
         Me.Controls.Add(Me.btnBeenden)
         Me.Controls.Add(Me.grpboxWeiterbildung)
         Me.Controls.Add(Me.grpboxThemen)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "frmHauptfensterMitarbeiter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weiterbildung time2-Akademie"
@@ -492,7 +498,7 @@ Partial Class frmHauptfensterMitarbeiter
     Friend WithEvents lblProjektman As Label
     Friend WithEvents lblAgiles As Label
     Friend WithEvents btnBearbeitenScrum As Button
-    Friend WithEvents btnBearbeitenProjektman As Button
+    Friend WithEvents btnBearbeitenProjektmgmt As Button
     Friend WithEvents btnBearbeitenAgiles As Button
     Friend WithEvents vsbWeiterbildung As VScrollBar
     Friend WithEvents picboxScrum As PictureBox
@@ -500,8 +506,8 @@ Partial Class frmHauptfensterMitarbeiter
     Friend WithEvents picboxAgiles As PictureBox
     Friend WithEvents btnBeenden As Button
     Friend WithEvents btnNeueWeiterbildung As Button
-    Friend WithEvents btnNeuesThema As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBearbThema As Button
+    Friend WithEvents btnMehrScrum As Button
+    Friend WithEvents btnMehrProjektmngmt As Button
+    Friend WithEvents btnMehrAgiles As Button
 End Class

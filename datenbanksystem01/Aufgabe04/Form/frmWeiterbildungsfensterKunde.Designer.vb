@@ -23,156 +23,190 @@ Partial Class Weiterbildungsfenster_Kunde
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tabctrlWeiterb = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.lblSeminartitelWeiterb = New System.Windows.Forms.Label()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.clmheaderDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.tabctrlWeiterb.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1161, 711)
+        Me.Button1.Location = New System.Drawing.Point(1742, 1111)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 30)
+        Me.Button1.Size = New System.Drawing.Size(134, 47)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Schließen"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'tabctrlWeiterb
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(172, 171)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.tabctrlWeiterb.Controls.Add(Me.TabPage1)
+        Me.tabctrlWeiterb.Controls.Add(Me.TabPage2)
+        Me.tabctrlWeiterb.Controls.Add(Me.TabPage3)
+        Me.tabctrlWeiterb.Controls.Add(Me.TabPage4)
+        Me.tabctrlWeiterb.Location = New System.Drawing.Point(12, 135)
+        Me.tabctrlWeiterb.Name = "tabctrlWeiterb"
+        Me.tabctrlWeiterb.SelectedIndex = 0
+        Me.tabctrlWeiterb.Size = New System.Drawing.Size(1869, 950)
+        Me.tabctrlWeiterb.TabIndex = 1
         '
-        'Label1
+        'TabPage1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label1.Location = New System.Drawing.Point(199, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(302, 29)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Agiles Projektmanagement"
+        Me.TabPage1.Controls.Add(Me.RichTextBox1)
+        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1853, 903)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Seminarbeschreibung"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TableLayoutPanel1
+        'TabPage2
         '
-        Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.01794!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.98206!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(786, 232)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.06383!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.93617!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(464, 193)
-        Me.TableLayoutPanel1.TabIndex = 3
+        Me.TabPage2.Controls.Add(Me.RichTextBox2)
+        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1853, 903)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Teilnehmerkreis"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.RichTextBox3)
+        Me.TabPage3.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1853, 903)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Seminarinformationen"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.ListView1)
+        Me.TabPage4.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(1853, 903)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Kurse"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'lblSeminartitelWeiterb
+        '
+        Me.lblSeminartitelWeiterb.AutoSize = True
+        Me.lblSeminartitelWeiterb.Location = New System.Drawing.Point(15, 35)
+        Me.lblSeminartitelWeiterb.Name = "lblSeminartitelWeiterb"
+        Me.lblSeminartitelWeiterb.Size = New System.Drawing.Size(125, 25)
+        Me.lblSeminartitelWeiterb.TabIndex = 2
+        Me.lblSeminartitelWeiterb.Text = "Seminartitel"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(204, 87)
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(1046, 96)
-        Me.RichTextBox1.TabIndex = 4
+        Me.RichTextBox1.Size = New System.Drawing.Size(1847, 897)
+        Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(12, 232)
+        Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox2.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(747, 96)
-        Me.RichTextBox2.TabIndex = 5
+        Me.RichTextBox2.Size = New System.Drawing.Size(1847, 897)
+        Me.RichTextBox2.TabIndex = 0
         Me.RichTextBox2.Text = ""
         '
         'RichTextBox3
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(12, 379)
+        Me.RichTextBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox3.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(747, 324)
-        Me.RichTextBox3.TabIndex = 6
+        Me.RichTextBox3.Size = New System.Drawing.Size(1847, 897)
+        Me.RichTextBox3.TabIndex = 0
         Me.RichTextBox3.Text = ""
         '
-        'Label2
+        'ListView1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(201, 67)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(146, 17)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Seminarbeschreibung"
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.clmheaderDatum, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader1})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(3, 3)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1847, 897)
+        Me.ListView1.TabIndex = 0
+        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
-        'Label3
+        'clmheaderDatum
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 212)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 17)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Teilnehmerkreis"
+        Me.clmheaderDatum.Text = "Datum"
         '
-        'Label4
+        'ColumnHeader2
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 359)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(146, 17)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Seminarinformationen"
+        Me.ColumnHeader2.Text = "Kurs ID"
         '
-        'Label5
+        'ColumnHeader3
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(783, 212)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 17)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Kurse"
+        Me.ColumnHeader3.Text = "Anzahl Personen"
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Buchen"
         '
         'Weiterbildungsfenster_Kunde
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1262, 753)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.RichTextBox3)
-        Me.Controls.Add(Me.RichTextBox2)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.ClientSize = New System.Drawing.Size(1893, 1177)
+        Me.Controls.Add(Me.lblSeminartitelWeiterb)
+        Me.Controls.Add(Me.tabctrlWeiterb)
         Me.Controls.Add(Me.Button1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Weiterbildungsfenster_Kunde"
         Me.Text = "Weiterbildung time2-Akademie"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabctrlWeiterb.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents tabctrlWeiterb As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents lblSeminartitelWeiterb As Label
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents RichTextBox3 As RichTextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents clmheaderDatum As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader1 As ColumnHeader
 End Class
