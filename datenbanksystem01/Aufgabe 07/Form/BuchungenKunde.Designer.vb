@@ -41,7 +41,6 @@ Partial Class BuchungenKunde
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.lblKundenID = New System.Windows.Forms.Label()
         Me.txtKundenID = New System.Windows.Forms.TextBox()
-        Me.btnHinzufuegen = New System.Windows.Forms.Button()
         Me.tbsBuchungen.SuspendLayout()
         Me.tbsAktivBuchungen.SuspendLayout()
         Me.tbsInaktiv.SuspendLayout()
@@ -52,7 +51,7 @@ Partial Class BuchungenKunde
         Me.tbsBuchungen.Controls.Add(Me.tbsAktivBuchungen)
         Me.tbsBuchungen.Controls.Add(Me.tbsInaktiv)
         Me.tbsBuchungen.Location = New System.Drawing.Point(8, 45)
-        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
         Me.tbsBuchungen.Size = New System.Drawing.Size(820, 369)
@@ -62,9 +61,9 @@ Partial Class BuchungenKunde
         '
         Me.tbsAktivBuchungen.Controls.Add(Me.ListViewAktBuchungen)
         Me.tbsAktivBuchungen.Location = New System.Drawing.Point(4, 25)
-        Me.tbsAktivBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktivBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsAktivBuchungen.Name = "tbsAktivBuchungen"
-        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(2)
         Me.tbsAktivBuchungen.Size = New System.Drawing.Size(812, 340)
         Me.tbsAktivBuchungen.TabIndex = 0
         Me.tbsAktivBuchungen.Text = "Aktiv"
@@ -80,7 +79,7 @@ Partial Class BuchungenKunde
         Me.ListViewAktBuchungen.HideSelection = False
         Me.ListViewAktBuchungen.HoverSelection = True
         Me.ListViewAktBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewAktBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListViewAktBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.ListViewAktBuchungen.MultiSelect = False
         Me.ListViewAktBuchungen.Name = "ListViewAktBuchungen"
         Me.ListViewAktBuchungen.Size = New System.Drawing.Size(808, 336)
@@ -121,9 +120,9 @@ Partial Class BuchungenKunde
         '
         Me.tbsInaktiv.Controls.Add(Me.ListViewInaktBuchungen)
         Me.tbsInaktiv.Location = New System.Drawing.Point(4, 25)
-        Me.tbsInaktiv.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsInaktiv.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsInaktiv.Name = "tbsInaktiv"
-        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(2)
         Me.tbsInaktiv.Size = New System.Drawing.Size(812, 340)
         Me.tbsInaktiv.TabIndex = 1
         Me.tbsInaktiv.Text = "Inaktiv"
@@ -137,7 +136,7 @@ Partial Class BuchungenKunde
         Me.ListViewInaktBuchungen.GridLines = True
         Me.ListViewInaktBuchungen.HideSelection = False
         Me.ListViewInaktBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewInaktBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListViewInaktBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.ListViewInaktBuchungen.Name = "ListViewInaktBuchungen"
         Me.ListViewInaktBuchungen.Size = New System.Drawing.Size(808, 336)
         Me.ListViewInaktBuchungen.TabIndex = 0
@@ -177,7 +176,7 @@ Partial Class BuchungenKunde
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAbbrechen.Location = New System.Drawing.Point(731, 424)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
         Me.btnAbbrechen.Size = New System.Drawing.Size(91, 29)
         Me.btnAbbrechen.TabIndex = 1
@@ -187,7 +186,7 @@ Partial Class BuchungenKunde
         'btnLoeschen
         '
         Me.btnLoeschen.Location = New System.Drawing.Point(640, 424)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoeschen.Name = "btnLoeschen"
         Me.btnLoeschen.Size = New System.Drawing.Size(84, 29)
         Me.btnLoeschen.TabIndex = 2
@@ -207,21 +206,12 @@ Partial Class BuchungenKunde
         'txtKundenID
         '
         Me.txtKundenID.Location = New System.Drawing.Point(89, 8)
-        Me.txtKundenID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtKundenID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtKundenID.Multiline = True
         Me.txtKundenID.Name = "txtKundenID"
         Me.txtKundenID.ReadOnly = True
         Me.txtKundenID.Size = New System.Drawing.Size(139, 21)
         Me.txtKundenID.TabIndex = 4
-        '
-        'btnHinzufuegen
-        '
-        Me.btnHinzufuegen.Location = New System.Drawing.Point(544, 424)
-        Me.btnHinzufuegen.Name = "btnHinzufuegen"
-        Me.btnHinzufuegen.Size = New System.Drawing.Size(91, 29)
-        Me.btnHinzufuegen.TabIndex = 5
-        Me.btnHinzufuegen.Text = "Hinzufügen"
-        Me.btnHinzufuegen.UseVisualStyleBackColor = True
         '
         'BuchungenKunde
         '
@@ -229,13 +219,12 @@ Partial Class BuchungenKunde
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(836, 467)
-        Me.Controls.Add(Me.btnHinzufuegen)
         Me.Controls.Add(Me.txtKundenID)
         Me.Controls.Add(Me.lblKundenID)
         Me.Controls.Add(Me.btnLoeschen)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.tbsBuchungen)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BuchungenKunde"
         Me.Text = "Meine Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)

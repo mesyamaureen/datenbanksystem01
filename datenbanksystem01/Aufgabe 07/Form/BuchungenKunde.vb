@@ -19,15 +19,23 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
-    Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
-        Me.colKurs = colKurs
-        Me.colWeiterbildung = colWeiterbildung
+    Private Sub hinzufuegen(pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
+
+        Dim zeile As Windows.Forms.ListViewItem
+        With Me.ListViewAktBuchungen.Items
+
+            zeile = .Add(pintBuchungsId)
+
+            zeile.SubItems.Add(pstrKurs)
+            zeile.SubItems.Add(pstrWeiterbildung)
+
+        End With
 
         btnLoeschen.Enabled = False
-        btnHinzufuegen.Enabled = True
-
-
 
     End Sub
 
+    Private Sub ListViewAktBuchungen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewAktBuchungen.SelectedIndexChanged
+
+    End Sub
 End Class
