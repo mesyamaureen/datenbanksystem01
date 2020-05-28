@@ -19,23 +19,37 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
-    Private Sub hinzufuegen(pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
+    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
 
         Dim zeile As Windows.Forms.ListViewItem
-        With Me.ListViewAktBuchungen.Items
-
-            zeile = .Add(pintBuchungsId)
-
-            zeile.SubItems.Add(pstrKurs)
-            zeile.SubItems.Add(pstrWeiterbildung)
-
-        End With
-
-        btnLoeschen.Enabled = False
-
+        zeile = Me.ListViewAktBuchungen.Items.Add(1)
+        zeile.SubItems.Add(2)
+        zeile.SubItems.Add(3)
     End Sub
+
 
     Private Sub ListViewAktBuchungen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewAktBuchungen.SelectedIndexChanged
 
+        If ListViewAktBuchungen.SelectedItems.Count > 0 Then
+            btnLaden.Enabled = True
+        Else
+            btnLaden.Enabled = False
+        End If
+
     End Sub
+
+    Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
+
+        Dim intBuchungsID As Integer
+        Dim strKurs As String
+        Dim strWeiterbildungen As String
+
+        Dim lviZeile As ListViewItem
+        lviZeile = ListViewAktBuchungen.SelectedItems(0)
+
+        intBuchungsID = Integer.Parse(lviZeile.SubItems(0).Text)
+        strKurs = lviZeile.SubItems(1).Text
+        strWeiterbildungen = lviZeile.SubItems(2).Text
+    End Sub
+
 End Class

@@ -41,6 +41,7 @@ Partial Class BuchungenKunde
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.lblKundenID = New System.Windows.Forms.Label()
         Me.txtKundenID = New System.Windows.Forms.TextBox()
+        Me.btnLaden = New System.Windows.Forms.Button()
         Me.tbsBuchungen.SuspendLayout()
         Me.tbsAktivBuchungen.SuspendLayout()
         Me.tbsInaktiv.SuspendLayout()
@@ -213,12 +214,22 @@ Partial Class BuchungenKunde
         Me.txtKundenID.Size = New System.Drawing.Size(139, 21)
         Me.txtKundenID.TabIndex = 4
         '
+        'btnLaden
+        '
+        Me.btnLaden.Location = New System.Drawing.Point(492, 428)
+        Me.btnLaden.Name = "btnLaden"
+        Me.btnLaden.Size = New System.Drawing.Size(111, 24)
+        Me.btnLaden.TabIndex = 5
+        Me.btnLaden.Text = "Laden"
+        Me.btnLaden.UseVisualStyleBackColor = True
+        '
         'BuchungenKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(836, 467)
+        Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.txtKundenID)
         Me.Controls.Add(Me.lblKundenID)
         Me.Controls.Add(Me.btnLoeschen)
@@ -255,4 +266,5 @@ Partial Class BuchungenKunde
     Friend WithEvents colAnzahlPersInakt As ColumnHeader
     Friend WithEvents colPreisInakt As ColumnHeader
     Friend WithEvents btnHinzufuegen As Button
+    Friend WithEvents btnLaden As Button
 End Class
