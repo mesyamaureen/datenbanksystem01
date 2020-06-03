@@ -1,7 +1,7 @@
 ﻿Public Class Kurs
 
     'Properties
-    Public Property intKursID As Integer
+    Public Property strKursID As String
     Public Property datZeitpunkt As Date
     Public Property strOrt As String
     Public Property bolavailable As Boolean

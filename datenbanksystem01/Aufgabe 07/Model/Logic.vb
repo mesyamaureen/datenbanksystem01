@@ -38,26 +38,26 @@
 
         Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat)
         lstKunde.Add(kunde)
-        Dim intKundenID As Integer = kunde.getIntKundenID()
-        Return intKundenID
+        Dim strKundenID As String = kunde.getStrKundenID()
+        Return strKundenID
 
     End Function
 
-    Public Function viewKunde(intKundenID) As Array
+    Public Function viewKunde(strKundenID) As Array
 
-        Return userController.viewKunde(intKundenID)
-
-    End Function
-
-    Public Function changeKunde(intKundenID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
-
-        Return userController.changeKunde(intKundenID, strBenutzername, strPasswort, strVorname, strName)
+        Return userController.viewKunde(strKundenID)
 
     End Function
 
-    Public Function deleteKunde(intKundenID As Integer) As Boolean
+    Public Function changeKunde(strKundenId As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
 
-        Return userController.deleteKunde(intKundenID)
+        Return userController.changeKunde(strKundenId, strBenutzername, strPasswort, strVorname, strName)
+
+    End Function
+
+    Public Function deleteKunde(strKundenID As Integer) As Boolean
+
+        Return userController.deleteKunde(strKundenID)
 
     End Function
 
@@ -67,54 +67,54 @@
         Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
         lstMitarbeiter.Add(mitarbeiter)
 
-        Dim intMitarbeiterID As Integer = mitarbeiter.getIntMitarbeiterID()
-        Return intMitarbeiterID
+        Dim strMitarbeiterID As String = mitarbeiter.getStrMitarbeiterID()
+        Return strMitarbeiterID
 
     End Function
 
-    Public Function viewMitarbeiter(intMitarbeiterID As Integer) As Array
+    Public Function viewMitarbeiter(strMitarbeiterID As String) As Array
 
-        Return userController.viewMitarbeiter(intMitarbeiterID)
-
-    End Function
-
-    Public Function changeMitarbeiter(intMitarbeiterID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
-
-        Return userController.changeMitarbeiter(intMitarbeiterID, strBenutzername, strPasswort, strVorname, strName)
+        Return userController.viewMitarbeiter(strMitarbeiterID)
 
     End Function
 
-    Public Function deleteMitarbeiter(intMitarbeiterID As Integer) As Boolean
+    Public Function changeMitarbeiter(strMitarbeiterID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+
+        Return userController.changeMitarbeiter(strMitarbeiterID, strBenutzername, strPasswort, strVorname, strName)
+
+    End Function
+
+    Public Function deleteMitarbeiter(strMitarbeiterID As Integer) As Boolean
 
         'remember to also remove the ListItem in fachkonzept
-        Return userController.deleteMitarbeiter(intMitarbeiterID)
+        Return userController.deleteMitarbeiter(strMitarbeiterID)
 
     End Function
 
     'TODO Datenbank erstellen (fill with records)
 
     'WeiterbildungsController
-    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As Integer
+    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As String
 
         Return weiterbildungscontroller.createKurs(strOrt, datZeitpunkt, bolavailable, decPreis)
 
     End Function
 
-    Public Function viewKurs(intKundenID As Integer) As Array
+    Public Function viewKurs(strKundenID As String) As Array
 
-        Return weiterbildungscontroller.viewKurs(intKundenID)
-
-    End Function
-
-    Public Function changeKurs(intKundenID As Integer, strOrt As String, datZeitpunkt As Date, decPreis As Decimal) As Boolean
-
-        Return weiterbildungscontroller.changeKurs(intKundenID, strOrt, datZeitpunkt, decPreis)
+        Return weiterbildungscontroller.viewKurs(strKundenID)
 
     End Function
 
-    Public Function deleteKurs(intKundenID) As Boolean
+    Public Function changeKurs(strKundenID As Integer, strOrt As String, datZeitpunkt As Date, decPreis As Decimal) As Boolean
 
-        Return weiterbildungscontroller.deleteKurs(intKundenID)
+        Return weiterbildungscontroller.changeKurs(strKundenID, strOrt, datZeitpunkt, decPreis)
+
+    End Function
+
+    Public Function deleteKurs(strKundenID As String) As Boolean
+
+        Return weiterbildungscontroller.deleteKurs(strKundenID)
 
     End Function
 
@@ -125,46 +125,46 @@
 
     End Function
 
-    Public Function viewWeiterbildung(intWeiterbildungsID As Integer) As Array
+    Public Function viewWeiterbildung(strWeiterbildungsID As String) As Array
 
-        Return weiterbildungscontroller.viewWeiterbildung(intWeiterbildungsID)
-
-    End Function
-
-    Public Function changeWeiterbildung(intWeiterbildungsID As Integer, strBezeichnung As String, strThema As String, strCurriculum As String) As Boolean
-
-        Return weiterbildungscontroller.changeWeiterbildung(intWeiterbildungsID, strBezeichnung, strThema, strCurriculum)
+        Return weiterbildungscontroller.viewWeiterbildung(strWeiterbildungsID)
 
     End Function
 
-    Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean
+    Public Function changeWeiterbildung(strWeiterbildungsID As String, strBezeichnung As String, strThema As String, strCurriculum As String) As Boolean
 
-        Return weiterbildungscontroller.deleteWeiterbildung(intWeiterbildungID)
+        Return weiterbildungscontroller.changeWeiterbildung(strWeiterbildungsID, strBezeichnung, strThema, strCurriculum)
+
+    End Function
+
+    Public Function deleteWeiterbildung(strWeiterbildungID As String) As Boolean
+
+        Return weiterbildungscontroller.deleteWeiterbildung(strWeiterbildungID)
 
     End Function
 
     'BookingController
-    Public Function createBooking(decPreis As Decimal, datDatum As Date) As Integer
+    Public Function createBooking(decPreis As Decimal, datDatum As Date) As String
 
         Return bookingController.createBooking(decPreis, datDatum)
 
     End Function
 
-    Public Function viewBooking(intBuchungsID) As Array
+    Public Function viewBooking(strBuchungsID) As Array
 
-        Return bookingController.viewBooking(intBuchungsID)
-
-    End Function
-
-    Public Function changeBooking(intBuchungsID As Integer, decPreis As Decimal, datDatum As Date)
-
-        Return bookingController.changeBooking(intBuchungsID, decPreis, datDatum)
+        Return bookingController.viewBooking(strBuchungsID)
 
     End Function
 
-    Public Function deleteBooking(intKundenID As Integer) As Boolean
+    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date)
 
-        Return bookingController.deleteBooking(intKundenID)
+        Return bookingController.changeBooking(strBuchungsID, decPreis, datDatum)
+
+    End Function
+
+    Public Function deleteBooking(strKundenID As String) As Boolean
+
+        Return bookingController.deleteBooking(strKundenID)
 
     End Function
 

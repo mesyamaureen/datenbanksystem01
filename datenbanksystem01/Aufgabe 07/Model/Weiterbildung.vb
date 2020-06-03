@@ -1,7 +1,7 @@
 ﻿Public Class Weiterbildung
 
     'Properties
-    Public Property intWeiterbildungsID As Integer
+    Public Property strWeiterbildungsID As String
     Public Property strBezeichnung As String
     Public Property strThema As String
     Public Property strCurriculum As String

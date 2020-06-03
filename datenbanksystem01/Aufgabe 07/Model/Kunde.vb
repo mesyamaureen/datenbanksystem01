@@ -3,7 +3,7 @@
 
 
     'Properties
-    Public Property intKundenID As Integer
+    Public Property strKundenID As String
     Public Property strFirma As String
 
     'Konstruktoren
@@ -16,8 +16,8 @@
     End Sub
 
 
-    Function getIntKundenID()
-        Return intKundenID
+    Function getStrKundenID()
+        Return strKundenID
     End Function
 
 End Class

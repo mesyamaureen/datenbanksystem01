@@ -2,7 +2,7 @@
     Inherits Benutzer
 
     'Properties
-    Public Property intMitarbeiterID As Integer
+    Public Property strMitarbeiterID As Integer
 
     'Konstruktor
     Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
@@ -17,8 +17,8 @@
     'ruft nur fks auf
 
     'Get & Set
-    Function getIntMitarbeiterID()
-        Return intMitarbeiterID
+    Function getStrMitarbeiterID()
+        Return strMitarbeiterID
     End Function
 
     Function deleteMitarbeiter()
