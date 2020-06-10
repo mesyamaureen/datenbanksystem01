@@ -124,7 +124,7 @@ Partial Class frmHauptfensterKunde
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
         Me.lstviewWeiterbildungKunde.HoverSelection = True
-        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(10, 101)
+        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(10, 97)
         Me.lstviewWeiterbildungKunde.MultiSelect = False
         Me.lstviewWeiterbildungKunde.Name = "lstviewWeiterbildungKunde"
         Me.lstviewWeiterbildungKunde.Size = New System.Drawing.Size(1185, 870)
@@ -135,19 +135,19 @@ Partial Class frmHauptfensterKunde
         'colWeiterbildungID
         '
         Me.colWeiterbildungID.Text = "Weiterbildung ID"
-        Me.colWeiterbildungID.Width = 200
+        Me.colWeiterbildungID.Width = 225
         '
         'colWeiterbildung
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 581
+        Me.colWeiterbildung.Width = 608
         '
         'colThema
         '
         Me.colThema.Text = "Thema"
         Me.colThema.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colThema.Width = 400
+        Me.colThema.Width = 346
         '
         'lblSuchen
         '

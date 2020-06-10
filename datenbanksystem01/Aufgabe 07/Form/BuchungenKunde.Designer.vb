@@ -22,6 +22,7 @@ Partial Class BuchungenKunde
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuchungenKunde))
         Me.tbsBuchungen = New System.Windows.Forms.TabControl()
         Me.tbsAktivBuchungen = New System.Windows.Forms.TabPage()
         Me.ListViewAktBuchungen = New System.Windows.Forms.ListView()
@@ -51,21 +52,19 @@ Partial Class BuchungenKunde
         '
         Me.tbsBuchungen.Controls.Add(Me.tbsAktivBuchungen)
         Me.tbsBuchungen.Controls.Add(Me.tbsInaktiv)
-        Me.tbsBuchungen.Location = New System.Drawing.Point(8, 45)
-        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbsBuchungen.Location = New System.Drawing.Point(12, 70)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
-        Me.tbsBuchungen.Size = New System.Drawing.Size(820, 369)
+        Me.tbsBuchungen.Size = New System.Drawing.Size(1230, 577)
         Me.tbsBuchungen.TabIndex = 0
         '
         'tbsAktivBuchungen
         '
         Me.tbsAktivBuchungen.Controls.Add(Me.ListViewAktBuchungen)
-        Me.tbsAktivBuchungen.Location = New System.Drawing.Point(4, 25)
-        Me.tbsAktivBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbsAktivBuchungen.Location = New System.Drawing.Point(8, 39)
         Me.tbsAktivBuchungen.Name = "tbsAktivBuchungen"
-        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(2)
-        Me.tbsAktivBuchungen.Size = New System.Drawing.Size(812, 340)
+        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tbsAktivBuchungen.Size = New System.Drawing.Size(1214, 530)
         Me.tbsAktivBuchungen.TabIndex = 0
         Me.tbsAktivBuchungen.Text = "Aktiv"
         Me.tbsAktivBuchungen.UseVisualStyleBackColor = True
@@ -79,11 +78,10 @@ Partial Class BuchungenKunde
         Me.ListViewAktBuchungen.GridLines = True
         Me.ListViewAktBuchungen.HideSelection = False
         Me.ListViewAktBuchungen.HoverSelection = True
-        Me.ListViewAktBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewAktBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListViewAktBuchungen.Location = New System.Drawing.Point(3, 3)
         Me.ListViewAktBuchungen.MultiSelect = False
         Me.ListViewAktBuchungen.Name = "ListViewAktBuchungen"
-        Me.ListViewAktBuchungen.Size = New System.Drawing.Size(808, 336)
+        Me.ListViewAktBuchungen.Size = New System.Drawing.Size(1208, 524)
         Me.ListViewAktBuchungen.TabIndex = 0
         Me.ListViewAktBuchungen.UseCompatibleStateImageBehavior = False
         Me.ListViewAktBuchungen.View = System.Windows.Forms.View.Details
@@ -120,11 +118,10 @@ Partial Class BuchungenKunde
         'tbsInaktiv
         '
         Me.tbsInaktiv.Controls.Add(Me.ListViewInaktBuchungen)
-        Me.tbsInaktiv.Location = New System.Drawing.Point(4, 25)
-        Me.tbsInaktiv.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbsInaktiv.Location = New System.Drawing.Point(8, 39)
         Me.tbsInaktiv.Name = "tbsInaktiv"
-        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(2)
-        Me.tbsInaktiv.Size = New System.Drawing.Size(812, 340)
+        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tbsInaktiv.Size = New System.Drawing.Size(1214, 530)
         Me.tbsInaktiv.TabIndex = 1
         Me.tbsInaktiv.Text = "Inaktiv"
         Me.tbsInaktiv.UseVisualStyleBackColor = True
@@ -136,10 +133,9 @@ Partial Class BuchungenKunde
         Me.ListViewInaktBuchungen.Enabled = False
         Me.ListViewInaktBuchungen.GridLines = True
         Me.ListViewInaktBuchungen.HideSelection = False
-        Me.ListViewInaktBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewInaktBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListViewInaktBuchungen.Location = New System.Drawing.Point(3, 3)
         Me.ListViewInaktBuchungen.Name = "ListViewInaktBuchungen"
-        Me.ListViewInaktBuchungen.Size = New System.Drawing.Size(808, 336)
+        Me.ListViewInaktBuchungen.Size = New System.Drawing.Size(1208, 524)
         Me.ListViewInaktBuchungen.TabIndex = 0
         Me.ListViewInaktBuchungen.UseCompatibleStateImageBehavior = False
         Me.ListViewInaktBuchungen.View = System.Windows.Forms.View.Details
@@ -176,20 +172,18 @@ Partial Class BuchungenKunde
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(731, 424)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1096, 662)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(91, 29)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(136, 45)
         Me.btnAbbrechen.TabIndex = 1
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnLoeschen
         '
-        Me.btnLoeschen.Location = New System.Drawing.Point(640, 424)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnLoeschen.Location = New System.Drawing.Point(960, 662)
         Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(84, 29)
+        Me.btnLoeschen.Size = New System.Drawing.Size(126, 45)
         Me.btnLoeschen.TabIndex = 2
         Me.btnLoeschen.Text = "Löschen"
         Me.btnLoeschen.UseVisualStyleBackColor = True
@@ -197,45 +191,44 @@ Partial Class BuchungenKunde
         'lblKundenID
         '
         Me.lblKundenID.AutoSize = True
-        Me.lblKundenID.Location = New System.Drawing.Point(10, 12)
-        Me.lblKundenID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblKundenID.Location = New System.Drawing.Point(15, 19)
         Me.lblKundenID.Name = "lblKundenID"
-        Me.lblKundenID.Size = New System.Drawing.Size(74, 17)
+        Me.lblKundenID.Size = New System.Drawing.Size(112, 25)
         Me.lblKundenID.TabIndex = 3
         Me.lblKundenID.Text = "Kunden ID"
         '
         'txtKundenID
         '
-        Me.txtKundenID.Location = New System.Drawing.Point(89, 8)
-        Me.txtKundenID.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtKundenID.Location = New System.Drawing.Point(134, 12)
         Me.txtKundenID.Multiline = True
         Me.txtKundenID.Name = "txtKundenID"
         Me.txtKundenID.ReadOnly = True
-        Me.txtKundenID.Size = New System.Drawing.Size(139, 21)
+        Me.txtKundenID.Size = New System.Drawing.Size(206, 31)
         Me.txtKundenID.TabIndex = 4
         '
         'btnLaden
         '
-        Me.btnLaden.Location = New System.Drawing.Point(492, 428)
+        Me.btnLaden.Location = New System.Drawing.Point(738, 669)
+        Me.btnLaden.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLaden.Name = "btnLaden"
-        Me.btnLaden.Size = New System.Drawing.Size(111, 24)
+        Me.btnLaden.Size = New System.Drawing.Size(166, 38)
         Me.btnLaden.TabIndex = 5
         Me.btnLaden.Text = "Laden"
         Me.btnLaden.UseVisualStyleBackColor = True
         '
         'BuchungenKunde
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(836, 467)
+        Me.ClientSize = New System.Drawing.Size(1254, 730)
         Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.txtKundenID)
         Me.Controls.Add(Me.lblKundenID)
         Me.Controls.Add(Me.btnLoeschen)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.tbsBuchungen)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BuchungenKunde"
         Me.Text = "Meine Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)

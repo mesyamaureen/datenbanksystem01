@@ -22,6 +22,7 @@ Partial Class BuchungenMitarbeiter
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuchungenMitarbeiter))
         Me.btnSchließen = New System.Windows.Forms.Button()
         Me.tbsBuchungen = New System.Windows.Forms.TabControl()
         Me.tbsAktBuchungen = New System.Windows.Forms.TabPage()
@@ -193,6 +194,7 @@ Partial Class BuchungenMitarbeiter
         Me.ClientSize = New System.Drawing.Size(1254, 729)
         Me.Controls.Add(Me.tbsBuchungen)
         Me.Controls.Add(Me.btnSchließen)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BuchungenMitarbeiter"
         Me.Text = "Alle Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)

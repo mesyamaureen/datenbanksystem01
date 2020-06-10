@@ -27,4 +27,8 @@
         Exit Sub 'Prozedur verlassen
         BuchungenMitarbeiter.ShowDialog() 'Dialogfenster BuchungenMitarbeiter öffnen
     End Sub
+
+    Private Sub frmHauptfensterMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

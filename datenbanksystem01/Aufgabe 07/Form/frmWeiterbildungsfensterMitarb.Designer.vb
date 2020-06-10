@@ -22,6 +22,7 @@ Partial Class frmWeiterbildungsfensterMitarb
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWeiterbildungsfensterMitarb))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -52,217 +53,241 @@ Partial Class frmWeiterbildungsfensterMitarb
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 17)
+        Me.Label1.Location = New System.Drawing.Point(18, 27)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 17)
+        Me.Label1.Size = New System.Drawing.Size(125, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Seminartitel"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 95)
+        Me.Label2.Location = New System.Drawing.Point(18, 148)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(146, 17)
+        Me.Label2.Size = New System.Drawing.Size(221, 25)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Seminarbeschreibung"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 205)
+        Me.Label3.Location = New System.Drawing.Point(18, 320)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(109, 17)
+        Me.Label3.Size = New System.Drawing.Size(165, 25)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Teilnehmerkreis"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 325)
+        Me.Label4.Location = New System.Drawing.Point(18, 508)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 17)
+        Me.Label4.Size = New System.Drawing.Size(143, 25)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Seminarinhalt"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 467)
+        Me.Label5.Location = New System.Drawing.Point(18, 730)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 17)
+        Me.Label5.Size = New System.Drawing.Size(68, 25)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Kurse"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(622, 467)
+        Me.Label6.Location = New System.Drawing.Point(933, 730)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 17)
+        Me.Label6.Size = New System.Drawing.Size(90, 25)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Themen"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(558, 545)
+        Me.Label7.Location = New System.Drawing.Point(837, 852)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 17)
+        Me.Label7.Size = New System.Drawing.Size(191, 25)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Preis (zzgl. MwSt.)"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(936, 545)
+        Me.Label8.Location = New System.Drawing.Point(1404, 852)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(120, 17)
+        Me.Label8.Size = New System.Drawing.Size(185, 25)
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "Preis (inkl. MwSt.)"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(635, 599)
+        Me.Label9.Location = New System.Drawing.Point(952, 936)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(47, 17)
+        Me.Label9.Size = New System.Drawing.Size(70, 25)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = "Dauer"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(629, 639)
+        Me.Label10.Location = New System.Drawing.Point(944, 998)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(53, 17)
+        Me.Label10.Size = New System.Drawing.Size(80, 25)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = "Uhrzeit"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(188, 9)
+        Me.TextBox1.Location = New System.Drawing.Point(282, 14)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(1062, 37)
+        Me.TextBox1.Size = New System.Drawing.Size(1591, 56)
         Me.TextBox1.TabIndex = 10
         '
         'Button1
         '
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.Location = New System.Drawing.Point(1153, 709)
+        Me.Button1.Location = New System.Drawing.Point(1730, 1108)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 32)
+        Me.Button1.Size = New System.Drawing.Size(146, 50)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Abbrechen"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1039, 709)
+        Me.Button2.Location = New System.Drawing.Point(1558, 1108)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(97, 32)
+        Me.Button2.Size = New System.Drawing.Size(146, 50)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "Speichern"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(188, 62)
+        Me.RichTextBox1.Location = New System.Drawing.Point(282, 97)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox1.Size = New System.Drawing.Size(1062, 84)
+        Me.RichTextBox1.Size = New System.Drawing.Size(1591, 129)
         Me.RichTextBox1.TabIndex = 13
         Me.RichTextBox1.Text = ""
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(188, 169)
+        Me.RichTextBox2.Location = New System.Drawing.Point(282, 264)
+        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox2.Size = New System.Drawing.Size(1062, 83)
+        Me.RichTextBox2.Size = New System.Drawing.Size(1591, 127)
         Me.RichTextBox2.TabIndex = 14
         Me.RichTextBox2.Text = ""
         '
         'RichTextBox3
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(188, 274)
+        Me.RichTextBox3.Location = New System.Drawing.Point(282, 428)
+        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RichTextBox3.Name = "RichTextBox3"
         Me.RichTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox3.Size = New System.Drawing.Size(1062, 137)
+        Me.RichTextBox3.Size = New System.Drawing.Size(1591, 212)
         Me.RichTextBox3.TabIndex = 15
         Me.RichTextBox3.Text = ""
         '
         'CheckedListBox1
         '
         Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(707, 434)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(1060, 678)
+        Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CheckedListBox1.Name = "CheckedListBox1"
         Me.CheckedListBox1.ScrollAlwaysVisible = True
-        Me.CheckedListBox1.Size = New System.Drawing.Size(543, 72)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(812, 108)
         Me.CheckedListBox1.TabIndex = 16
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(1070, 536)
+        Me.TextBox2.Location = New System.Drawing.Point(1605, 838)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(180, 32)
+        Me.TextBox2.Size = New System.Drawing.Size(268, 48)
         Me.TextBox2.TabIndex = 17
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(707, 536)
+        Me.TextBox3.Location = New System.Drawing.Point(1060, 838)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(180, 32)
+        Me.TextBox3.Size = New System.Drawing.Size(268, 48)
         Me.TextBox3.TabIndex = 18
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(707, 591)
+        Me.TextBox4.Location = New System.Drawing.Point(1060, 923)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(543, 32)
+        Me.TextBox4.Size = New System.Drawing.Size(812, 48)
         Me.TextBox4.TabIndex = 19
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(707, 633)
+        Me.TextBox5.Location = New System.Drawing.Point(1060, 989)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(543, 32)
+        Me.TextBox5.Size = New System.Drawing.Size(812, 48)
         Me.TextBox5.TabIndex = 20
         '
         'MonthCalendar1
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(188, 423)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(282, 661)
+        Me.MonthCalendar1.Margin = New System.Windows.Forms.Padding(14, 14, 14, 14)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 21
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 645)
+        Me.Label11.Location = New System.Drawing.Point(18, 1008)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(112, 17)
+        Me.Label11.Size = New System.Drawing.Size(172, 25)
         Me.Label11.TabIndex = 22
         Me.Label11.Text = "Max. Teilnehmer"
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(188, 643)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(282, 1005)
+        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(65, 22)
+        Me.NumericUpDown1.Size = New System.Drawing.Size(98, 31)
         Me.NumericUpDown1.TabIndex = 23
         '
         'frmWeiterbildungsfensterMitarb
         '
         Me.AcceptButton = Me.Button2
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Button1
-        Me.ClientSize = New System.Drawing.Size(1262, 753)
+        Me.ClientSize = New System.Drawing.Size(1893, 1177)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.MonthCalendar1)
@@ -287,6 +312,8 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmWeiterbildungsfensterMitarb"
         Me.Text = "Weiterbildung bearbeiten"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
