@@ -28,20 +28,21 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.lblSeminartitel = New System.Windows.Forms.Label()
         Me.tabcontrolWeiterbildungM = New System.Windows.Forms.TabControl()
         Me.tabSeminarbeschreibung = New System.Windows.Forms.TabPage()
-        Me.tabTeilnehmerkreis = New System.Windows.Forms.TabPage()
-        Me.tabSeminarinfo = New System.Windows.Forms.TabPage()
-        Me.tabKurse = New System.Windows.Forms.TabPage()
         Me.rtxtboxSeminarbeschreibungM = New System.Windows.Forms.RichTextBox()
+        Me.tabTeilnehmerkreis = New System.Windows.Forms.TabPage()
         Me.rtxtboxTeilnkreisM = New System.Windows.Forms.RichTextBox()
+        Me.tabSeminarinfo = New System.Windows.Forms.TabPage()
         Me.rtxtboxSeminarinfoM = New System.Windows.Forms.RichTextBox()
-        Me.lstviewKurseM = New System.Windows.Forms.ListView()
-        Me.btnLoeschen = New System.Windows.Forms.Button()
-        Me.btnLeerenKurs = New System.Windows.Forms.Button()
+        Me.tabKurse = New System.Windows.Forms.TabPage()
         Me.btnNeuerKurs = New System.Windows.Forms.Button()
+        Me.btnLeerenKurs = New System.Windows.Forms.Button()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
+        Me.lstviewKurseM = New System.Windows.Forms.ListView()
         Me.colKursIdM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursDatumM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursVerfuegbarkeitM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.tabcontrolWeiterbildungM.SuspendLayout()
         Me.tabSeminarbeschreibung.SuspendLayout()
         Me.tabTeilnehmerkreis.SuspendLayout()
@@ -100,6 +101,15 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.tabSeminarbeschreibung.Text = "Seminarbeschreibung"
         Me.tabSeminarbeschreibung.UseVisualStyleBackColor = True
         '
+        'rtxtboxSeminarbeschreibungM
+        '
+        Me.rtxtboxSeminarbeschreibungM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarbeschreibungM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarbeschreibungM.Name = "rtxtboxSeminarbeschreibungM"
+        Me.rtxtboxSeminarbeschreibungM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarbeschreibungM.TabIndex = 0
+        Me.rtxtboxSeminarbeschreibungM.Text = ""
+        '
         'tabTeilnehmerkreis
         '
         Me.tabTeilnehmerkreis.Controls.Add(Me.rtxtboxTeilnkreisM)
@@ -111,6 +121,15 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.tabTeilnehmerkreis.Text = "Teilnehmerkreis"
         Me.tabTeilnehmerkreis.UseVisualStyleBackColor = True
         '
+        'rtxtboxTeilnkreisM
+        '
+        Me.rtxtboxTeilnkreisM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxTeilnkreisM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxTeilnkreisM.Name = "rtxtboxTeilnkreisM"
+        Me.rtxtboxTeilnkreisM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxTeilnkreisM.TabIndex = 0
+        Me.rtxtboxTeilnkreisM.Text = ""
+        '
         'tabSeminarinfo
         '
         Me.tabSeminarinfo.Controls.Add(Me.rtxtboxSeminarinfoM)
@@ -121,6 +140,15 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.tabSeminarinfo.TabIndex = 2
         Me.tabSeminarinfo.Text = "Seminarinformationen"
         Me.tabSeminarinfo.UseVisualStyleBackColor = True
+        '
+        'rtxtboxSeminarinfoM
+        '
+        Me.rtxtboxSeminarinfoM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarinfoM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarinfoM.Name = "rtxtboxSeminarinfoM"
+        Me.rtxtboxSeminarinfoM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarinfoM.TabIndex = 0
+        Me.rtxtboxSeminarinfoM.Text = ""
         '
         'tabKurse
         '
@@ -136,32 +164,32 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.tabKurse.Text = "Kurse"
         Me.tabKurse.UseVisualStyleBackColor = True
         '
-        'rtxtboxSeminarbeschreibungM
+        'btnNeuerKurs
         '
-        Me.rtxtboxSeminarbeschreibungM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarbeschreibungM.Location = New System.Drawing.Point(3, 3)
-        Me.rtxtboxSeminarbeschreibungM.Name = "rtxtboxSeminarbeschreibungM"
-        Me.rtxtboxSeminarbeschreibungM.Size = New System.Drawing.Size(1207, 475)
-        Me.rtxtboxSeminarbeschreibungM.TabIndex = 0
-        Me.rtxtboxSeminarbeschreibungM.Text = ""
+        Me.btnNeuerKurs.Location = New System.Drawing.Point(615, 437)
+        Me.btnNeuerKurs.Name = "btnNeuerKurs"
+        Me.btnNeuerKurs.Size = New System.Drawing.Size(179, 36)
+        Me.btnNeuerKurs.TabIndex = 3
+        Me.btnNeuerKurs.Text = "Neuer Kurs"
+        Me.btnNeuerKurs.UseVisualStyleBackColor = True
         '
-        'rtxtboxTeilnkreisM
+        'btnLeerenKurs
         '
-        Me.rtxtboxTeilnkreisM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxTeilnkreisM.Location = New System.Drawing.Point(3, 3)
-        Me.rtxtboxTeilnkreisM.Name = "rtxtboxTeilnkreisM"
-        Me.rtxtboxTeilnkreisM.Size = New System.Drawing.Size(1207, 475)
-        Me.rtxtboxTeilnkreisM.TabIndex = 0
-        Me.rtxtboxTeilnkreisM.Text = ""
+        Me.btnLeerenKurs.Location = New System.Drawing.Point(823, 437)
+        Me.btnLeerenKurs.Name = "btnLeerenKurs"
+        Me.btnLeerenKurs.Size = New System.Drawing.Size(179, 36)
+        Me.btnLeerenKurs.TabIndex = 2
+        Me.btnLeerenKurs.Text = "Leeren"
+        Me.btnLeerenKurs.UseVisualStyleBackColor = True
         '
-        'rtxtboxSeminarinfoM
+        'btnLoeschen
         '
-        Me.rtxtboxSeminarinfoM.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarinfoM.Location = New System.Drawing.Point(3, 3)
-        Me.rtxtboxSeminarinfoM.Name = "rtxtboxSeminarinfoM"
-        Me.rtxtboxSeminarinfoM.Size = New System.Drawing.Size(1207, 475)
-        Me.rtxtboxSeminarinfoM.TabIndex = 0
-        Me.rtxtboxSeminarinfoM.Text = ""
+        Me.btnLoeschen.Location = New System.Drawing.Point(1030, 437)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(179, 36)
+        Me.btnLoeschen.TabIndex = 1
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
         '
         'lstviewKurseM
         '
@@ -178,33 +206,6 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.lstviewKurseM.TabIndex = 0
         Me.lstviewKurseM.UseCompatibleStateImageBehavior = False
         Me.lstviewKurseM.View = System.Windows.Forms.View.Details
-        '
-        'btnLoeschen
-        '
-        Me.btnLoeschen.Location = New System.Drawing.Point(1030, 437)
-        Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(179, 36)
-        Me.btnLoeschen.TabIndex = 1
-        Me.btnLoeschen.Text = "Löschen"
-        Me.btnLoeschen.UseVisualStyleBackColor = True
-        '
-        'btnLeerenKurs
-        '
-        Me.btnLeerenKurs.Location = New System.Drawing.Point(823, 437)
-        Me.btnLeerenKurs.Name = "btnLeerenKurs"
-        Me.btnLeerenKurs.Size = New System.Drawing.Size(179, 36)
-        Me.btnLeerenKurs.TabIndex = 2
-        Me.btnLeerenKurs.Text = "Leeren"
-        Me.btnLeerenKurs.UseVisualStyleBackColor = True
-        '
-        'btnNeuerKurs
-        '
-        Me.btnNeuerKurs.Location = New System.Drawing.Point(615, 437)
-        Me.btnNeuerKurs.Name = "btnNeuerKurs"
-        Me.btnNeuerKurs.Size = New System.Drawing.Size(179, 36)
-        Me.btnNeuerKurs.TabIndex = 3
-        Me.btnNeuerKurs.Text = "Neuer Kurs"
-        Me.btnNeuerKurs.UseVisualStyleBackColor = True
         '
         'colKursIdM
         '
@@ -229,12 +230,22 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.colKursPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colKursPreis.Width = 308
         '
+        'btnSpeichern
+        '
+        Me.btnSpeichern.Location = New System.Drawing.Point(843, 659)
+        Me.btnSpeichern.Name = "btnSpeichern"
+        Me.btnSpeichern.Size = New System.Drawing.Size(191, 56)
+        Me.btnSpeichern.TabIndex = 15
+        Me.btnSpeichern.Text = "Speichern"
+        Me.btnSpeichern.UseVisualStyleBackColor = True
+        '
         'frmWeiterbildungsfensterMitarb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.tabcontrolWeiterbildungM)
         Me.Controls.Add(Me.lblSeminartitel)
         Me.Controls.Add(Me.txtboxSeminartitel)
@@ -271,4 +282,5 @@ Partial Class frmWeiterbildungsfensterMitarb
     Friend WithEvents colKursDatumM As ColumnHeader
     Friend WithEvents colKursVerfuegbarkeitM As ColumnHeader
     Friend WithEvents colKursPreis As ColumnHeader
+    Friend WithEvents btnSpeichern As Button
 End Class
