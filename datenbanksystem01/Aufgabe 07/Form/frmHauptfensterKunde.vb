@@ -18,7 +18,7 @@
         MsgBox(strBegruessungKunde, MsgBoxStyle.OkOnly, "Willkommen")
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnBetriebswirtschaft.CheckedChanged
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -27,9 +27,10 @@
 
     End Sub
 
-    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs) Handles MenuStripBuchungen.Click
+    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs)
         Me.Close() 'Hauptfenster des Kunde schließen
         Exit Sub 'Prozedur verlassen
         BuchungenKunde.ShowDialog() 'Dialogfenster von Buchungen öffnen
     End Sub
+
 End Class

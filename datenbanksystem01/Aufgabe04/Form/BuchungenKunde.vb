@@ -19,4 +19,5 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
+
 End Class

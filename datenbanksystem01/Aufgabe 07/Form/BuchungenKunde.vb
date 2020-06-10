@@ -7,7 +7,7 @@
         'Deklaration das Ergebnis des MsgBox
         Dim msgResult As MsgBoxResult
         'Initialisierung für das Ergebnis zwischen Ja und Nein
-        msgResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question, MsgBoxStyle.YesNo)
+        msgResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
         'Verzweigung des Ergebnisses
         'Ergebnis: JA
         If msgResult = vbYes Then
