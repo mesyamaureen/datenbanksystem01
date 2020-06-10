@@ -23,327 +23,252 @@ Partial Class frmWeiterbildungsfensterMitarb
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWeiterbildungsfensterMitarb))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnAbbrechen = New System.Windows.Forms.Button()
+        Me.txtboxSeminartitel = New System.Windows.Forms.TextBox()
+        Me.lblSeminartitel = New System.Windows.Forms.Label()
+        Me.tabcontrolWeiterbildungM = New System.Windows.Forms.TabControl()
+        Me.tabSeminarbeschreibung = New System.Windows.Forms.TabPage()
+        Me.tabTeilnehmerkreis = New System.Windows.Forms.TabPage()
+        Me.tabSeminarinfo = New System.Windows.Forms.TabPage()
+        Me.tabKurse = New System.Windows.Forms.TabPage()
+        Me.rtxtboxSeminarbeschreibungM = New System.Windows.Forms.RichTextBox()
+        Me.rtxtboxTeilnkreisM = New System.Windows.Forms.RichTextBox()
+        Me.rtxtboxSeminarinfoM = New System.Windows.Forms.RichTextBox()
+        Me.lstviewKurseM = New System.Windows.Forms.ListView()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
+        Me.btnLeerenKurs = New System.Windows.Forms.Button()
+        Me.btnNeuerKurs = New System.Windows.Forms.Button()
+        Me.colKursIdM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKursDatumM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKursVerfuegbarkeitM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.tabcontrolWeiterbildungM.SuspendLayout()
+        Me.tabSeminarbeschreibung.SuspendLayout()
+        Me.tabTeilnehmerkreis.SuspendLayout()
+        Me.tabSeminarinfo.SuspendLayout()
+        Me.tabKurse.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'btnAbbrechen
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Seminartitel"
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1050, 659)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnAbbrechen.Name = "btnAbbrechen"
+        Me.btnAbbrechen.Size = New System.Drawing.Size(191, 56)
+        Me.btnAbbrechen.TabIndex = 11
+        Me.btnAbbrechen.Text = "Abbrechen"
+        Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
-        'Label2
+        'txtboxSeminartitel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(18, 148)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(221, 25)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Seminarbeschreibung"
+        Me.txtboxSeminartitel.Location = New System.Drawing.Point(158, 22)
+        Me.txtboxSeminartitel.Multiline = True
+        Me.txtboxSeminartitel.Name = "txtboxSeminartitel"
+        Me.txtboxSeminartitel.Size = New System.Drawing.Size(538, 48)
+        Me.txtboxSeminartitel.TabIndex = 12
         '
-        'Label3
+        'lblSeminartitel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(18, 320)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(165, 25)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Teilnehmerkreis"
+        Me.lblSeminartitel.AutoSize = True
+        Me.lblSeminartitel.Location = New System.Drawing.Point(15, 35)
+        Me.lblSeminartitel.Name = "lblSeminartitel"
+        Me.lblSeminartitel.Size = New System.Drawing.Size(125, 25)
+        Me.lblSeminartitel.TabIndex = 13
+        Me.lblSeminartitel.Text = "Seminartitel"
         '
-        'Label4
+        'tabcontrolWeiterbildungM
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 508)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 25)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Seminarinhalt"
+        Me.tabcontrolWeiterbildungM.Controls.Add(Me.tabSeminarbeschreibung)
+        Me.tabcontrolWeiterbildungM.Controls.Add(Me.tabTeilnehmerkreis)
+        Me.tabcontrolWeiterbildungM.Controls.Add(Me.tabSeminarinfo)
+        Me.tabcontrolWeiterbildungM.Controls.Add(Me.tabKurse)
+        Me.tabcontrolWeiterbildungM.Location = New System.Drawing.Point(12, 118)
+        Me.tabcontrolWeiterbildungM.Name = "tabcontrolWeiterbildungM"
+        Me.tabcontrolWeiterbildungM.SelectedIndex = 0
+        Me.tabcontrolWeiterbildungM.Size = New System.Drawing.Size(1229, 528)
+        Me.tabcontrolWeiterbildungM.TabIndex = 14
         '
-        'Label5
+        'tabSeminarbeschreibung
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(18, 730)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 25)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Kurse"
+        Me.tabSeminarbeschreibung.Controls.Add(Me.rtxtboxSeminarbeschreibungM)
+        Me.tabSeminarbeschreibung.Location = New System.Drawing.Point(8, 39)
+        Me.tabSeminarbeschreibung.Name = "tabSeminarbeschreibung"
+        Me.tabSeminarbeschreibung.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabSeminarbeschreibung.Size = New System.Drawing.Size(1213, 481)
+        Me.tabSeminarbeschreibung.TabIndex = 0
+        Me.tabSeminarbeschreibung.Text = "Seminarbeschreibung"
+        Me.tabSeminarbeschreibung.UseVisualStyleBackColor = True
         '
-        'Label6
+        'tabTeilnehmerkreis
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(933, 730)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 25)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Themen"
+        Me.tabTeilnehmerkreis.Controls.Add(Me.rtxtboxTeilnkreisM)
+        Me.tabTeilnehmerkreis.Location = New System.Drawing.Point(8, 39)
+        Me.tabTeilnehmerkreis.Name = "tabTeilnehmerkreis"
+        Me.tabTeilnehmerkreis.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabTeilnehmerkreis.Size = New System.Drawing.Size(1213, 481)
+        Me.tabTeilnehmerkreis.TabIndex = 1
+        Me.tabTeilnehmerkreis.Text = "Teilnehmerkreis"
+        Me.tabTeilnehmerkreis.UseVisualStyleBackColor = True
         '
-        'Label7
+        'tabSeminarinfo
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(837, 852)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(191, 25)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Preis (zzgl. MwSt.)"
+        Me.tabSeminarinfo.Controls.Add(Me.rtxtboxSeminarinfoM)
+        Me.tabSeminarinfo.Location = New System.Drawing.Point(8, 39)
+        Me.tabSeminarinfo.Name = "tabSeminarinfo"
+        Me.tabSeminarinfo.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabSeminarinfo.Size = New System.Drawing.Size(1213, 481)
+        Me.tabSeminarinfo.TabIndex = 2
+        Me.tabSeminarinfo.Text = "Seminarinformationen"
+        Me.tabSeminarinfo.UseVisualStyleBackColor = True
         '
-        'Label8
+        'tabKurse
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(1404, 852)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(185, 25)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Preis (inkl. MwSt.)"
+        Me.tabKurse.Controls.Add(Me.btnNeuerKurs)
+        Me.tabKurse.Controls.Add(Me.btnLeerenKurs)
+        Me.tabKurse.Controls.Add(Me.btnLoeschen)
+        Me.tabKurse.Controls.Add(Me.lstviewKurseM)
+        Me.tabKurse.Location = New System.Drawing.Point(8, 39)
+        Me.tabKurse.Name = "tabKurse"
+        Me.tabKurse.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabKurse.Size = New System.Drawing.Size(1213, 481)
+        Me.tabKurse.TabIndex = 3
+        Me.tabKurse.Text = "Kurse"
+        Me.tabKurse.UseVisualStyleBackColor = True
         '
-        'Label9
+        'rtxtboxSeminarbeschreibungM
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(952, 936)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(70, 25)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Dauer"
+        Me.rtxtboxSeminarbeschreibungM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarbeschreibungM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarbeschreibungM.Name = "rtxtboxSeminarbeschreibungM"
+        Me.rtxtboxSeminarbeschreibungM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarbeschreibungM.TabIndex = 0
+        Me.rtxtboxSeminarbeschreibungM.Text = ""
         '
-        'Label10
+        'rtxtboxTeilnkreisM
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(944, 998)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(80, 25)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "Uhrzeit"
+        Me.rtxtboxTeilnkreisM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxTeilnkreisM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxTeilnkreisM.Name = "rtxtboxTeilnkreisM"
+        Me.rtxtboxTeilnkreisM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxTeilnkreisM.TabIndex = 0
+        Me.rtxtboxTeilnkreisM.Text = ""
         '
-        'TextBox1
+        'rtxtboxSeminarinfoM
         '
-        Me.TextBox1.Location = New System.Drawing.Point(282, 14)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(1591, 56)
-        Me.TextBox1.TabIndex = 10
+        Me.rtxtboxSeminarinfoM.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarinfoM.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarinfoM.Name = "rtxtboxSeminarinfoM"
+        Me.rtxtboxSeminarinfoM.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarinfoM.TabIndex = 0
+        Me.rtxtboxSeminarinfoM.Text = ""
         '
-        'Button1
+        'lstviewKurseM
         '
-        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.Location = New System.Drawing.Point(1730, 1108)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(146, 50)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Abbrechen"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.lstviewKurseM.Activation = System.Windows.Forms.ItemActivation.OneClick
+        Me.lstviewKurseM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursIdM, Me.colKursDatumM, Me.colKursVerfuegbarkeitM, Me.colKursPreis})
+        Me.lstviewKurseM.FullRowSelect = True
+        Me.lstviewKurseM.GridLines = True
+        Me.lstviewKurseM.HideSelection = False
+        Me.lstviewKurseM.HoverSelection = True
+        Me.lstviewKurseM.Location = New System.Drawing.Point(0, 0)
+        Me.lstviewKurseM.MultiSelect = False
+        Me.lstviewKurseM.Name = "lstviewKurseM"
+        Me.lstviewKurseM.Size = New System.Drawing.Size(1213, 418)
+        Me.lstviewKurseM.TabIndex = 0
+        Me.lstviewKurseM.UseCompatibleStateImageBehavior = False
+        Me.lstviewKurseM.View = System.Windows.Forms.View.Details
         '
-        'Button2
+        'btnLoeschen
         '
-        Me.Button2.Location = New System.Drawing.Point(1558, 1108)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(146, 50)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Speichern"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnLoeschen.Location = New System.Drawing.Point(1030, 437)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(179, 36)
+        Me.btnLoeschen.TabIndex = 1
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
         '
-        'RichTextBox1
+        'btnLeerenKurs
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(282, 97)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox1.Size = New System.Drawing.Size(1591, 129)
-        Me.RichTextBox1.TabIndex = 13
-        Me.RichTextBox1.Text = ""
+        Me.btnLeerenKurs.Location = New System.Drawing.Point(823, 437)
+        Me.btnLeerenKurs.Name = "btnLeerenKurs"
+        Me.btnLeerenKurs.Size = New System.Drawing.Size(179, 36)
+        Me.btnLeerenKurs.TabIndex = 2
+        Me.btnLeerenKurs.Text = "Leeren"
+        Me.btnLeerenKurs.UseVisualStyleBackColor = True
         '
-        'RichTextBox2
+        'btnNeuerKurs
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(282, 264)
-        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox2.Size = New System.Drawing.Size(1591, 127)
-        Me.RichTextBox2.TabIndex = 14
-        Me.RichTextBox2.Text = ""
+        Me.btnNeuerKurs.Location = New System.Drawing.Point(615, 437)
+        Me.btnNeuerKurs.Name = "btnNeuerKurs"
+        Me.btnNeuerKurs.Size = New System.Drawing.Size(179, 36)
+        Me.btnNeuerKurs.TabIndex = 3
+        Me.btnNeuerKurs.Text = "Neuer Kurs"
+        Me.btnNeuerKurs.UseVisualStyleBackColor = True
         '
-        'RichTextBox3
+        'colKursIdM
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(282, 428)
-        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
-        Me.RichTextBox3.Size = New System.Drawing.Size(1591, 212)
-        Me.RichTextBox3.TabIndex = 15
-        Me.RichTextBox3.Text = ""
+        Me.colKursIdM.Text = "Kurs ID"
+        Me.colKursIdM.Width = 180
         '
-        'CheckedListBox1
+        'colKursDatumM
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(1060, 678)
-        Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.ScrollAlwaysVisible = True
-        Me.CheckedListBox1.Size = New System.Drawing.Size(812, 108)
-        Me.CheckedListBox1.TabIndex = 16
+        Me.colKursDatumM.Text = "Datum"
+        Me.colKursDatumM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colKursDatumM.Width = 455
         '
-        'TextBox2
+        'colKursVerfuegbarkeitM
         '
-        Me.TextBox2.Location = New System.Drawing.Point(1605, 838)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(268, 48)
-        Me.TextBox2.TabIndex = 17
+        Me.colKursVerfuegbarkeitM.Text = "Verfügbarkeit"
+        Me.colKursVerfuegbarkeitM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colKursVerfuegbarkeitM.Width = 260
         '
-        'TextBox3
+        'colKursPreis
         '
-        Me.TextBox3.Location = New System.Drawing.Point(1060, 838)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(268, 48)
-        Me.TextBox3.TabIndex = 18
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(1060, 923)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(812, 48)
-        Me.TextBox4.TabIndex = 19
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(1060, 989)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox5.Multiline = True
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(812, 48)
-        Me.TextBox5.TabIndex = 20
-        '
-        'MonthCalendar1
-        '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(282, 661)
-        Me.MonthCalendar1.Margin = New System.Windows.Forms.Padding(14, 14, 14, 14)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 21
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 1008)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(172, 25)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "Max. Teilnehmer"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(282, 1005)
-        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(98, 31)
-        Me.NumericUpDown1.TabIndex = 23
+        Me.colKursPreis.Text = "Preis"
+        Me.colKursPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colKursPreis.Width = 308
         '
         'frmWeiterbildungsfensterMitarb
         '
-        Me.AcceptButton = Me.Button2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Button1
-        Me.ClientSize = New System.Drawing.Size(1893, 1177)
-        Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.MonthCalendar1)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.CheckedListBox1)
-        Me.Controls.Add(Me.RichTextBox3)
-        Me.Controls.Add(Me.RichTextBox2)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.CancelButton = Me.btnAbbrechen
+        Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.Controls.Add(Me.tabcontrolWeiterbildungM)
+        Me.Controls.Add(Me.lblSeminartitel)
+        Me.Controls.Add(Me.txtboxSeminartitel)
+        Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmWeiterbildungsfensterMitarb"
         Me.Text = "Weiterbildung bearbeiten"
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabcontrolWeiterbildungM.ResumeLayout(False)
+        Me.tabSeminarbeschreibung.ResumeLayout(False)
+        Me.tabTeilnehmerkreis.ResumeLayout(False)
+        Me.tabSeminarinfo.ResumeLayout(False)
+        Me.tabKurse.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents RichTextBox2 As RichTextBox
-    Friend WithEvents RichTextBox3 As RichTextBox
-    Friend WithEvents CheckedListBox1 As CheckedListBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents MonthCalendar1 As MonthCalendar
-    Friend WithEvents Label11 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents btnAbbrechen As Button
+    Friend WithEvents txtboxSeminartitel As TextBox
+    Friend WithEvents lblSeminartitel As Label
+    Friend WithEvents tabcontrolWeiterbildungM As TabControl
+    Friend WithEvents tabSeminarbeschreibung As TabPage
+    Friend WithEvents tabTeilnehmerkreis As TabPage
+    Friend WithEvents tabSeminarinfo As TabPage
+    Friend WithEvents tabKurse As TabPage
+    Friend WithEvents rtxtboxSeminarbeschreibungM As RichTextBox
+    Friend WithEvents rtxtboxTeilnkreisM As RichTextBox
+    Friend WithEvents rtxtboxSeminarinfoM As RichTextBox
+    Friend WithEvents btnNeuerKurs As Button
+    Friend WithEvents btnLeerenKurs As Button
+    Friend WithEvents btnLoeschen As Button
+    Friend WithEvents lstviewKurseM As ListView
+    Friend WithEvents colKursIdM As ColumnHeader
+    Friend WithEvents colKursDatumM As ColumnHeader
+    Friend WithEvents colKursVerfuegbarkeitM As ColumnHeader
+    Friend WithEvents colKursPreis As ColumnHeader
 End Class
