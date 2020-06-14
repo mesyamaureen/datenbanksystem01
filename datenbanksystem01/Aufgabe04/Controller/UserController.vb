@@ -1,33 +1,42 @@
 ﻿Public Class UserController
 
-    Private Property lstKunde As List(Of Kunde)
-    Private Property lstMitarbeiter As List(Of Mitarbeiter)
-    Private Property intMitarbeiterID As Integer
-    Private Property intKundenID As Integer
+    Private Property mlstKunde As List(Of Kunde)
+    Private Property mlstMitarbeiter As List(Of Mitarbeiter)
+    Private Property mstrMitarbeiterID As String
+    Private Property mstrKundenID As String
 
 
-    Sub New(lstMitarbeiter As List(Of Mitarbeiter), lstKunde As List(Of Kunde))
+    Sub New(plstMitarbeiter As List(Of Mitarbeiter), plstKunde As List(Of Kunde))
 
-        Me.lstMitarbeiter = lstMitarbeiter
-        Me.lstKunde = lstKunde
+        mlstMitarbeiter = plstMitarbeiter
+        mlstKunde = plstKunde
 
     End Sub
 
-    Function getLstMitarbeiter() As List(Of Mitarbeiter)
-        Return lstMitarbeiter
-    End Function
 
-    Function setLstMitarbeiter(lstMitarbeiter As List(Of Mitarbeiter))
-        Me.lstMitarbeiter = lstMitarbeiter
-    End Function
+    Public Property ListeKunde As List(Of Kunde)
+        Get
+            Return mlstKunde
+        End Get
+        Set(value As List(Of Kunde))
+            mlstKunde = value
+        End Set
+    End Property
 
-    Function getLstKunde() As List(Of Kunde)
-        Return lstKunde
-    End Function
+    Public Property ListeMitarbeiter As List(Of Mitarbeiter)
+        Get
+            Return mlstMitarbeiter
+        End Get
+        Set(value As List(Of Mitarbeiter))
+            mlstMitarbeiter = value
+        End Set
+    End Property
 
-    Function setLstKunde(lstKunde As List(Of Kunde))
-        Me.lstKunde = lstKunde
-    End Function
+
+
+
+
+
 
     Function getintMitarbeiterID()
         Return intMitarbeiterID
@@ -51,14 +60,14 @@
 
         Dim result = New Dictionary(Of String, String) From {{"attempt", "failed"}, {"role", Nothing}}
 
-        For Each mitarbeiter As Mitarbeiter In lstMitarbeiter
+        For Each mitarbeiter As Mitarbeiter In mlstMitarbeiter
             If strBenutzername.Equals(mitarbeiter.getStrBenutzername) And strPasswort.Equals(mitarbeiter.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
             End If
         Next
 
-        For Each kunde As Kunde In lstKunde
+        For Each kunde As Kunde In mlstKunde
             If strBenutzername.Equals(kunde.getStrBenutzername) And strPasswort.Equals(kunde.getStrPasswort) Then
                 result("attempt") = "successful"
                 result("role") = "kunde"

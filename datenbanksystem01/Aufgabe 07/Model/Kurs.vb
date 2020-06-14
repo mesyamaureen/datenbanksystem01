@@ -1,19 +1,21 @@
 ﻿Public Class Kurs
 
     'Properties
-    Public Property strKursID As String
-    Public Property datZeitpunkt As Date
-    Public Property strOrt As String
-    Public Property bolavailable As Boolean
-    Public Property decPreis As Decimal
+    Public mstrKursID As String
+    Public mdatZeitpunkt As Date
+    Public mstrOrt As String
+    Public mbolVerfuegbar As Boolean
+    Public mdecPreis As Decimal
+    Protected mbolAbgesagt As Boolean
 
     'Konstruktor
-    Sub New(datZeitpunkt As Date, strOrt As String, bolAvailable As Boolean, decPreis As Decimal)
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean)
 
-        Me.datZeitpunkt = datZeitpunkt
-        Me.strOrt = strOrt
-        Me.bolavailable = bolAvailable
-        Me.decPreis = decPreis
+        mdatZeitpunkt = pdatZeitpunkt
+        mstrOrt = pstrOrt
+        mbolVerfuegbar = pbolVerfuegbar
+        mdecPreis = pdecPreis
+        mbolAbgesagt = pbolAbgesagt
 
     End Sub
 

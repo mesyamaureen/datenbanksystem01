@@ -1,17 +1,19 @@
 ﻿Public Class Weiterbildung
 
     'Properties
-    Public Property strWeiterbildungsID As String
-    Public Property strBezeichnung As String
-    Public Property strThema As String
-    Public Property strCurriculum As String
+    Public Property mstrWeiterbildungsID As String
+    Public Property mstrBezeichnung As String
+    Public Property mstrThema As String
+    Public Property mstrCurriculum As String
+    Public mstrTeilnehmerkreis As String
 
     'Konstruktor
-    Sub New(strBezeichnung As String, strThema As String, strCurriculum As String)
+    Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String)
 
-        Me.strBezeichnung = strBezeichnung
-        Me.strThema = strThema
-        Me.strCurriculum = strCurriculum
+        mstrBezeichnung = pstrBezeichnung
+        mstrThema = pstrThema
+        mstrCurriculum = pstrCurriculum
+        mstrTeilnehmerkreis = pstrTeilnehmerkreis
 
     End Sub
 

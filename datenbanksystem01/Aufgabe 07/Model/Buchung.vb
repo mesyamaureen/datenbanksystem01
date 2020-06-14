@@ -1,15 +1,15 @@
 ﻿Public Class Buchung
 
-    Public Property strBuchungsID As String
-    Public Property decPreis As Decimal
-    Public Property datDatum As Date
+    Public Property mstrBuchungsID As String
+    Public Property mdecPreis As Decimal
+    Public Property mdatDatum As Date
 
 
     'Konstruktor
-    Sub New(decPreis As Decimal, datDatum As Date)
+    Sub New(pdecPreis As Decimal, pdatDatum As Date)
 
-        Me.decPreis = decPreis
-        Me.datDatum = datDatum
+        mdecPreis = pdecPreis
+        mdatDatum = pdatDatum
 
     End Sub
 

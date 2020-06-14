@@ -2,12 +2,13 @@
     Inherits Benutzer
 
     'Properties
-    Public Property strMitarbeiterID As Integer
+    Public mstrMitarbeiterID As String
 
     'Konstruktor
-    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date)
 
-        MyBase.New(strBenutzername, strPasswort, strName, strVorname, datGebDat)
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)
+
 
         ' TODO: create record In Database And Set intMitarbeiterID
 
@@ -17,9 +18,13 @@
     'ruft nur fks auf
 
     'Get & Set
-    Function getStrMitarbeiterID()
-        Return strMitarbeiterID
-    End Function
+    Public ReadOnly Property MitarbeiterID
+        Get
+            Return mstrMitarbeiterID
+        End Get
+    End Property
+
+
 
     Function deleteMitarbeiter()
         'TODO delete object in database

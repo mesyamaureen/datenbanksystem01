@@ -1,43 +1,70 @@
 ﻿Public Class Benutzer
 
     'Properties
-    Public Property strBenutzername As String
-    Public Property strVorname As String
-    Public Property strName As String
-    Public Property strPasswort As String
-    Public Property datGebDat As Date
+
+    Public mstrName As String
+    Public mstrVorname As String
+    Public mstrBenutzername As String
+    Public mstrPasswort As String
+    Public mdatGebDat As Date
 
 
-    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date)
 
-        Me.strBenutzername = strBenutzername
-        Me.strPasswort = strPasswort
-        Me.strName = strName
-        Me.strVorname = strVorname
-        Me.datGebDat = datGebDat
+        mstrBenutzername = pstrBenutzername
+        mstrPasswort = pstrPasswort
+        mstrName = pstrName
+        mstrVorname = pstrVorname
+        mdatGebDat = pdatGebDat
 
         ' TODO: create record In Database And Set intKundenID
 
     End Sub
 
-    Function getStrPasswort() As String
+    Public Property Name As String
+        Get
+            Return mstrName
+        End Get
+        Set(value As String)
+            mstrName = value
+        End Set
+    End Property
 
-        Return strPasswort
+    Public ReadOnly Property Vorname As String
+        Get
+            Return mstrVorname
+        End Get
+    End Property
 
-    End Function
+    Public ReadOnly Property Benutzername As String
+        Get
+            Return mstrBenutzername
+        End Get
+    End Property
 
-    Function getStrBenutzername()
+    Public Property Passwort As String
+        Get
+            Return mstrPasswort
+        End Get
+        Set(value As String)
+            mstrPasswort = value
+        End Set
+    End Property
 
-        Return strBenutzername
-
-    End Function
-
-    Function setStrBenutzername(strBenutzername As String)
-
-        Me.strBenutzername = strBenutzername
-
-    End Function
-
+    Public Property Geburtsdatum As Date
+        Get
+            Return mstrPasswort
+        End Get
+        Set(value As Date)
+            ' Prüfen, ob Geburtsdatum in Vergangenheit
+            If value < Now() Then
+                mdatGebDatum = value
+            Else
+                ' Fehler!
+                Debug.Print("Fehler: Geburtsdatum muss in der Vergangenheit liegen.")
+            End If
+        End Set
+    End Property
 
 
 

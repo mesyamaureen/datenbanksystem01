@@ -3,28 +3,28 @@
     'Properties
 
     Public AktuellAngemeldeterBenutzer As Benutzer
-    Private Property lstKunde As List(Of Kunde)
-    Private Property lstMitarbeiter As List(Of Mitarbeiter)
-    Private Property lstBuchung As List(Of Buchung)
-    Private Property lstKurse As List(Of Kurs)
-    Private Property lstWeiterbildungen As List(Of Weiterbildung)
+    Private Property mlstKunde As List(Of Kunde)
+    Private Property mlstMitarbeiter As List(Of Mitarbeiter)
+    Private Property mlstBuchung As List(Of Buchung)
+    Private Property mlstKurse As List(Of Kurs)
+    Private Property mlstWeiterbildungen As List(Of Weiterbildung)
     Private Property userController As UserController
     Private Property weiterbildungscontroller As WeiterbildungsController
     Private Property bookingController As BookingController
 
-    'init funktion
+
 
     'funktion initialise
     Public Function initialise()
         'TODO initialise lists from database
-        lstMitarbeiter = New List(Of Mitarbeiter) From
+        mlstMitarbeiter = New List(Of Mitarbeiter) From
         {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
-        lstKunde = New List(Of Kunde) From
+        mlstKunde = New List(Of Kunde) From
         {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
 
-        userController = New UserController(lstMitarbeiter, lstKunde)
-        weiterbildungscontroller = New WeiterbildungsController(lstKurse, lstWeiterbildungen)
-        bookingController = New BookingController(lstBuchung)
+        userController = New UserController(mlstMitarbeiter, mlstKunde)
+        weiterbildungscontroller = New WeiterbildungsController(mlstKurse, mlstWeiterbildungen)
+        bookingController = New BookingController(mlstBuchung)
 
     End Function
     'UserController
@@ -37,7 +37,7 @@
     Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As Integer
 
         Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat)
-        lstKunde.Add(kunde)
+        mlstKunde.Add(kunde)
         Dim intKundenID As Integer = kunde.getIntKundenID()
         Return intKundenID
 
@@ -65,7 +65,7 @@
     Public Function createMitarbeiter(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As Integer
 
         Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
-        lstMitarbeiter.Add(mitarbeiter)
+        mlstMitarbeiter.Add(mitarbeiter)
 
         Dim intMitarbeiterID As Integer = mitarbeiter.getIntMitarbeiterID()
         Return intMitarbeiterID

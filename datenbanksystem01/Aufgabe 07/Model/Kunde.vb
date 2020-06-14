@@ -3,14 +3,14 @@
 
 
     'Properties
-    Public Property strKundenID As String
-    Public Property strFirma As String
+    Public Property mstrKundenID As String
+    Public Property mstrFirma As String
 
     'Konstruktoren
-    Sub New(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
 
-        MyBase.New(strBenutzername, strPasswort, strName, strVorname, datGebDat)
-
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)
+        mstrFirma = pstrFirma
         ' TODO: create record In Database And Set intKundenID
 
     End Sub
