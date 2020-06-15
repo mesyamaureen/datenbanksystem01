@@ -5,6 +5,7 @@
     'Attribute
     Public mstrKundenID As String
     Public mstrFirma As String
+    Public mlstListeEigeneBuchungen As List(Of Buchung)
 
     'Konstruktoren
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
@@ -31,6 +32,13 @@
         End Get
     End Property
 
-
+    Public Property EigeneBuchungen As List(Of Buchung)
+        Get
+            Return mlstListeEigeneBuchungen
+        End Get
+        Set(value As List(Of Buchung))
+            mlstListeEigeneBuchungen = value
+        End Set
+    End Property
 
 End Class

@@ -7,6 +7,7 @@
     Public mbolVerfuegbar As Boolean
     Public mdecPreis As Decimal
     Protected mbolAbgesagt As Boolean
+    Public mlstBuchungen As List(Of Buchung)
 
     'Konstruktor
     Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean)
@@ -74,7 +75,14 @@
         End Set
     End Property
 
-
+    Public Property Buchungen As List(Of Buchung)
+        Get
+            Return mlstBuchungen
+        End Get
+        Set(value As List(Of Buchung))
+            mlstBuchungen = value
+        End Set
+    End Property
 
 
 

@@ -3,6 +3,7 @@
     Public mstrBuchungsID As String
     Public mdecPreis As Decimal
     Public mdatDatum As Date
+    Public mlstKurse As List(Of Kurs)
 
 
     'Konstruktor
@@ -33,6 +34,16 @@
             mdatDatum = value
         End Set
     End Property
+
+    Public Property ListeKurse As Date
+        Get
+            Return mlstKurse
+        End Get
+        Set(value As Date)
+            mlstKurse = value
+        End Set
+    End Property
+
 
 
 End Class
