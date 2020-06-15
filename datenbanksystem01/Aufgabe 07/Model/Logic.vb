@@ -94,40 +94,40 @@
     'TODO Datenbank erstellen (fill with records)
 
     'WeiterbildungsController
-    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As String
+    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As String
 
-        Return weiterbildungscontroller.createKurs(strOrt, datZeitpunkt, bolavailable, decPreis)
-
-    End Function
-
-    Public Function viewKurs(strKundenID As String) As Array
-
-        Return weiterbildungscontroller.viewKurs(strKundenID)
+        Return weiterbildungscontroller.createKurs(pstrOrt, pdatZeitpunkt, pbolavailable, pdecPreis)
 
     End Function
 
-    Public Function changeKurs(strKundenID As Integer, strOrt As String, datZeitpunkt As Date, decPreis As Decimal) As Boolean
+    Public Function viewKurs(pstrKundenID As String) As Array
 
-        Return weiterbildungscontroller.changeKurs(strKundenID, strOrt, datZeitpunkt, decPreis)
+        Return weiterbildungscontroller.viewKurs(pstrKundenID)
 
     End Function
 
-    Public Function deleteKurs(strKundenID As String) As Boolean
+    Public Function changeKurs(pstrKundenID As Integer, pstrOrt As String, datZeitpunkt As Date, pdecPreis As Decimal) As Boolean
 
-        Return weiterbildungscontroller.deleteKurs(strKundenID)
+        Return weiterbildungscontroller.changeKurs(pstrKundenID, pstrOrt, datZeitpunkt, pdecPreis)
+
+    End Function
+
+    Public Function deleteKurs(pstrKundenID As String) As Boolean
+
+        Return weiterbildungscontroller.deleteKurs(pstrKundenID)
 
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As Integer
+    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String) As Integer
 
-        Return weiterbildungscontroller.createWeiterbildung(strBezeichnung, strThema, strCurriculum)
+        Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum)
 
     End Function
 
-    Public Function viewWeiterbildung(strWeiterbildungsID As String) As Array
+    Public Function viewWeiterbildung(pstrWeiterbildungsID As String) As Array
 
-        Return weiterbildungscontroller.viewWeiterbildung(strWeiterbildungsID)
+        Return weiterbildungscontroller.viewWeiterbildung(pstrWeiterbildungsID)
 
     End Function
 
@@ -144,27 +144,27 @@
     End Function
 
     'BookingController
-    Public Function createBooking(decPreis As Decimal, datDatum As Date) As String
+    Public Function createBooking(pdecPreis As Decimal, pdatDatum As Date) As String
 
-        Return bookingController.createBooking(decPreis, datDatum)
-
-    End Function
-
-    Public Function viewBooking(strBuchungsID) As Array
-
-        Return bookingController.viewBooking(strBuchungsID)
+        Return bookingController.createBooking(pdecPreis, pdatDatum)
 
     End Function
 
-    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date)
+    Public Function viewBooking(pstrBuchungsID) As Array
 
-        Return bookingController.changeBooking(strBuchungsID, decPreis, datDatum)
+        Return bookingController.viewBooking(pstrBuchungsID)
 
     End Function
 
-    Public Function deleteBooking(strKundenID As String) As Boolean
+    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date)
 
-        Return bookingController.deleteBooking(strKundenID)
+        Return bookingController.changeBooking(pstrBuchungsID, pdecPreis, pdatDatum)
+
+    End Function
+
+    Public Function deleteBooking(pstrKundenID As String) As Boolean
+
+        Return bookingController.deleteBooking(pstrKundenID)
 
     End Function
 

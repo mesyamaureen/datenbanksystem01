@@ -2,9 +2,9 @@
     Inherits Benutzer
 
 
-    'Properties
-    Public Property mstrKundenID As String
-    Public Property mstrFirma As String
+    'Attribute
+    Public mstrKundenID As String
+    Public mstrFirma As String
 
     'Konstruktoren
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
@@ -15,9 +15,22 @@
 
     End Sub
 
+    ' Properties 
+    Public Property Firma
+        Get
+            Return mstrFirma
+        End Get
+        Set(value)
+            mstrFirma = value
+        End Set
+    End Property
 
-    Function getStrKundenID()
-        Return strKundenID
-    End Function
+    Public ReadOnly Property KundenID
+        Get
+            Return mstrKundenID
+        End Get
+    End Property
+
+
 
 End Class
