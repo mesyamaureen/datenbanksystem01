@@ -7,6 +7,15 @@
     Private mstrWeiterbildungsID As String
 
     'Konstruktor
+
+    Sub New()
+        mlstKurse = New List(Of Kurs)
+        mlstWeiterbildungen = New List(Of Weiterbildung)
+        mstrKursID = String.Empty
+        mstrWeiterbildungsID = String.Empty
+
+    End Sub
+
     Sub New(plstKurse As List(Of Kurs), plstWeiterbildungen As List(Of Weiterbildung))
 
         mlstKurse = plstKurse

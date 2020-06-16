@@ -8,6 +8,15 @@
     Public mstrPasswort As String
     Public mdatGebDat As Date
 
+    'Konstruktoren
+    Sub New()
+        mstrName = String.Empty
+        mstrVorname = String.Empty
+        mstrBenutzername = String.Empty
+        mstrPasswort = String.Empty
+        mdatGebDat = Nothing
+    End Sub
+
 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date)
 

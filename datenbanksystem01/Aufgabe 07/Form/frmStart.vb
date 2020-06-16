@@ -11,7 +11,7 @@
         Dim strPasswort As String 'im Anmeldedialog übergegeben werden
 
         'Initialisierung
-        Logic.AktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 
+        Logic.mlstAktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 
 
         'Aufrufen anderer Funktion
         Logic.initialise()
@@ -42,7 +42,7 @@
                 MsgBox("Anmeldung fehlgeschlagen!", MsgBoxStyle.OkOnly, "Fehler")
             End If
 
-        Loop While Logic.AktuellAngemeldeterBenutzer Is Nothing
+        Loop While Logic.mlstAktuellAngemeldeterBenutzer Is Nothing
 
         'Aktuelles Fenster schließen und Anwendung läuft weiter, weil zuvor ein weiteres Hauptfenster geöffnet wurde
         Me.Close()

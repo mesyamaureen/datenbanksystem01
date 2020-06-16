@@ -8,6 +8,16 @@
     Public mstrTeilnehmerkreis As String
 
     'Konstruktor
+    'Parameterloser Konstruktor
+    Sub New()
+        mstrBezeichnung = String.Empty
+        mstrThema = String.Empty
+        mstrCurriculum = String.Empty
+        mstrTeilnehmerkreis = String.Empty
+    End Sub
+
+
+    'Konstruktor mit Parametern
     Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String)
 
         mstrBezeichnung = pstrBezeichnung
@@ -18,10 +28,13 @@
     End Sub
 
 
-    Public ReadOnly Property WeiterbildungsID As String
+    Public Property WeiterbildungsID As String
         Get
             Return mstrWeiterbildungsID
         End Get
+        Set(value As String)
+            mstrWeiterbildungsID = value
+        End Set
     End Property
 
 

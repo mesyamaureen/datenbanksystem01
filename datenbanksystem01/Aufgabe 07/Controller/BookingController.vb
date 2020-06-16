@@ -5,6 +5,9 @@
     Public mstrBuchungsID As String
 
     'Konstruktor
+
+
+
     Sub New(plstBooking As List(Of Buchung))
 
         mlstBooking = plstBooking

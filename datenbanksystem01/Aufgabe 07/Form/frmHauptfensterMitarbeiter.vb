@@ -7,8 +7,8 @@
         Dim strNachname As String
 
         'Initialisierung
-        strVorname = Logic.AktuellAngemeldeterBenutzer.strVorname
-        strNachname = Logic.AktuellAngemeldeterBenutzer.strName
+        strVorname = Logic.mlstAktuellAngemeldeterBenutzer.strVorname
+        strNachname = Logic.mlstAktuellAngemeldeterBenutzer.strName
 
         'eine Begrüßung wird aus Vorname und Nachname zusammengebaut
         strBegruessungMitarbeiter = "Willkommen " & strVorname & " " & strNachname & "! " & vbCrLf &

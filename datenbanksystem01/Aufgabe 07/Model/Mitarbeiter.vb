@@ -5,6 +5,15 @@
     Public mstrMitarbeiterID As String
 
     'Konstruktor
+    'Parameterloser Konstruktor 
+    Sub New()
+        MyBase.New
+    End Sub
+
+
+
+
+    'Konstruktor mit Parametern 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date)
 
         MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)

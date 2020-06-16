@@ -7,14 +7,25 @@
 
 
     'Konstruktor
-    Sub New(pdecPreis As Decimal, pdatDatum As Date)
 
-        mdecPreis = pdecPreis
-        mdatDatum = pdatDatum
+    Sub New()
+        mdecPreis = Nothing
+        mdatDatum = Nothing
+        mlstKurse = New List(Of Kurs)
 
     End Sub
 
 
+    Sub New(pdecPreis As Decimal, pdatDatum As Date, plstKurse As List(Of Kurs))
+
+        mdecPreis = pdecPreis
+        mdatDatum = pdatDatum
+        mlstKurse = New List(Of Kurs)
+
+    End Sub
+
+
+    'Properties
     Public Property Preis As Decimal
         Get
             Return mdecPreis
@@ -35,11 +46,11 @@
         End Set
     End Property
 
-    Public Property ListeKurse As Date
+    Public Property ListeKurse As List(Of Kurs)
         Get
             Return mlstKurse
         End Get
-        Set(value As Date)
+        Set(value As List(Of Kurs))
             mlstKurse = value
         End Set
     End Property

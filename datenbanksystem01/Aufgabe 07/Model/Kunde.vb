@@ -8,6 +8,13 @@
     Public mlstListeEigeneBuchungen As List(Of Buchung)
 
     'Konstruktoren
+
+    Sub New()
+        MyBase.New
+        mstrFirma = String.Empty
+        mlstListeEigeneBuchungen = New List(Of Buchung)
+    End Sub
+
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
 
         MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)

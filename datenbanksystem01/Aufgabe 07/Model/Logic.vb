@@ -1,30 +1,90 @@
 ﻿Module Logic
 
-    'Properties
+    'Attribute
 
-    Public AktuellAngemeldeterBenutzer As Benutzer
-    Private Property mlstKunde As List(Of Kunde)
-    Private Property lstMitarbeiter As List(Of Mitarbeiter)
-    Private Property lstBuchung As List(Of Buchung)
-    Private Property lstKurse As List(Of Kurs)
-    Private Property lstWeiterbildungen As List(Of Weiterbildung)
-    Private Property userController As UserController
-    Private Property weiterbildungscontroller As WeiterbildungsController
-    Private Property bookingController As BookingController
+    Public mlstAktuellAngemeldeterBenutzer As List(Of Benutzer)
+    Public mlstKunde As List(Of Kunde)
+    Public mlstMitarbeiter As List(Of Mitarbeiter)
+    Public mlstBuchung As List(Of Buchung)
+    Public mlstKurse As List(Of Kurs)
+    Public mlstWeiterbildungen As List(Of Weiterbildung)
+    Public userController As UserController
+    Public weiterbildungscontroller As WeiterbildungsController
+    Public bookingController As BookingController
 
     'init funktion
+
+
+    'Properties 
+    Public Property AngemeldeteBenutzer As List(Of Benutzer)
+        Get
+            Return mlstAktuellAngemeldeterBenutzer
+        End Get
+        Set(value As List(Of Benutzer))
+            mlstAktuellAngemeldeterBenutzer = value
+        End Set
+    End Property
+
+    Public Property ListeKunden As List(Of Kunde)
+        Get
+            Return mlstKunde
+        End Get
+        Set(value As List(Of Kunde))
+            mlstKunde = value
+        End Set
+    End Property
+
+    Public Property ListeMitarbeiter As List(Of Mitarbeiter)
+        Get
+            Return mlstMitarbeiter
+        End Get
+        Set(value As List(Of Mitarbeiter))
+            mlstMitarbeiter = value
+        End Set
+    End Property
+
+    Public Property ListeBuchung As List(Of Buchung)
+        Get
+            Return mlstBuchung
+        End Get
+        Set(value As List(Of Buchung))
+            mlstBuchung = value
+        End Set
+    End Property
+
+    Public Property ListeKurse As List(Of Kurs)
+        Get
+            Return mlstKurse
+        End Get
+        Set(value As List(Of Kurs))
+            mlstKurse = value
+        End Set
+    End Property
+
+    Public Property ListeWeiterbildung As List(Of Weiterbildung)
+        Get
+            Return mlstWeiterbildungen
+        End Get
+        Set(value As List(Of Weiterbildung))
+            mlstWeiterbildungen = value
+        End Set
+    End Property
+
+
+
+
 
     'funktion initialise
     Public Function initialise()
         'TODO initialise lists from database
-        lstMitarbeiter = New List(Of Mitarbeiter) From
+        mlstMitarbeiter = New List(Of Mitarbeiter) From
         {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
         mlstKunde = New List(Of Kunde) From
         {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
 
-        userController = New UserController(lstMitarbeiter, mlstKunde)
-        weiterbildungscontroller = New WeiterbildungsController(lstKurse, lstWeiterbildungen)
-        bookingController = New BookingController(lstBuchung)
+        userController = New UserController(mlstMitarbeiter, mlstKunde)
+        weiterbildungscontroller = New WeiterbildungsController(mlstKurse, mlstWeiterbildungen)
+        bookingController = New BookingController(mlstBuchung)
 
     End Function
     'UserController
@@ -65,7 +125,7 @@
     Public Function createMitarbeiter(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As Integer
 
         Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
-        lstMitarbeiter.Add(mitarbeiter)
+        mlstMitarbeiter.Add(mitarbeiter)
 
         Dim strMitarbeiterID As String = mitarbeiter.MitarbeiterID()
         Return strMitarbeiterID
@@ -92,6 +152,7 @@
     End Function
 
     'TODO Datenbank erstellen (fill with records)
+
 
     'WeiterbildungsController
     Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As String

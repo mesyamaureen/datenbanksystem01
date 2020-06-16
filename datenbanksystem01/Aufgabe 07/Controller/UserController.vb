@@ -6,6 +6,14 @@
     Private mstrKundenID As String
 
 
+    Sub New()
+        mlstKunde = New List(Of Kunde)
+        mlstMitarbeiter = New List(Of Mitarbeiter)
+        mstrKundenID = String.Empty
+        mstrMitarbeiterID = String.Empty
+    End Sub
+
+
     Sub New(plstMitarbeiter As List(Of Mitarbeiter), plstKunde As List(Of Kunde))
 
         mlstMitarbeiter = plstMitarbeiter

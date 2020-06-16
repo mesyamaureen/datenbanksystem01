@@ -9,7 +9,18 @@
     Public mbolAbgesagt As Boolean
     Public mlstBuchungen As List(Of Buchung)
 
-    'Konstruktor
+    'Konstruktoren
+    'Parameterloser Konstruktor
+    Sub New()
+        mdatZeitpunkt = Nothing
+        mstrOrt = String.Empty
+        mbolVerfuegbar = False
+        mdecPreis = Nothing
+        mbolAbgesagt = False
+        mlstBuchungen = New List(Of Buchung)
+    End Sub
+
+    'Konstruktor mit Parameter
     Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean)
 
         mdatZeitpunkt = pdatZeitpunkt
