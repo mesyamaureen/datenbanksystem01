@@ -1,27 +1,36 @@
 ﻿Public Class BookingController
 
     'Properties
-    Public Property lstBooking As List(Of Buchung)
-    Public Property intBuchungsID As Integer
+    Public mlstBooking As List(Of Buchung)
+    Public mstrBuchungsID As String
 
     'Konstruktor
-    Sub New(lstBooking As List(Of Buchung))
+    Sub New(plstBooking As List(Of Buchung))
 
-        Me.lstBooking = lstBooking
+        mlstBooking = plstBooking
 
     End Sub
 
     'get&set
-    Public Function getLstBooking()
-        Return lstBooking
-    End Function
+    Public Property ListeBuchungen As List(Of Buchung)
+        Get
+            Return mlstBooking
+        End Get
+        Set(value As List(Of Buchung))
+            mlstBooking = value
+        End Set
+    End Property
 
-    Public Function setLstBooking()
-        Me.lstBooking = lstBooking
-    End Function
+    Public ReadOnly Property BuchungsID As String
+        Get
+            Return mstrBuchungsID
+        End Get
+    End Property
+
+
 
     'Funktionen
-    Public Function createBooking(decPreis As Decimal, datDatum As Date) As intBuchungsID
+    Public Function createBooking(decPreis As Decimal, datDatum As Date) As String
 
     End Function
 

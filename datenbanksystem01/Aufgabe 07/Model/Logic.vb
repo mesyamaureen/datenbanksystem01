@@ -3,7 +3,7 @@
     'Properties
 
     Public AktuellAngemeldeterBenutzer As Benutzer
-    Private Property lstKunde As List(Of Kunde)
+    Private Property mlstKunde As List(Of Kunde)
     Private Property lstMitarbeiter As List(Of Mitarbeiter)
     Private Property lstBuchung As List(Of Buchung)
     Private Property lstKurse As List(Of Kurs)
@@ -19,10 +19,10 @@
         'TODO initialise lists from database
         lstMitarbeiter = New List(Of Mitarbeiter) From
         {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
-        lstKunde = New List(Of Kunde) From
+        mlstKunde = New List(Of Kunde) From
         {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
 
-        userController = New UserController(lstMitarbeiter, lstKunde)
+        userController = New UserController(lstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(lstKurse, lstWeiterbildungen)
         bookingController = New BookingController(lstBuchung)
 
@@ -34,11 +34,11 @@
 
     End Function
 
-    Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As Integer
+    Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date, pstrFirma As String) As Integer
 
-        Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat)
-        lstKunde.Add(kunde)
-        Dim strKundenID As String = kunde.getStrKundenID()
+        Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat, pstrFirma)
+        mlstKunde.Add(kunde)
+        Dim strKundenID As String = kunde.KundenID
         Return strKundenID
 
     End Function
@@ -67,7 +67,7 @@
         Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
         lstMitarbeiter.Add(mitarbeiter)
 
-        Dim strMitarbeiterID As String = mitarbeiter.getStrMitarbeiterID()
+        Dim strMitarbeiterID As String = mitarbeiter.MitarbeiterID()
         Return strMitarbeiterID
 
     End Function

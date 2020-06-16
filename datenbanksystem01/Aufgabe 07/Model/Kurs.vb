@@ -6,7 +6,7 @@
     Public mstrOrt As String
     Public mbolVerfuegbar As Boolean
     Public mdecPreis As Decimal
-    Protected mbolAbgesagt As Boolean
+    Public mbolAbgesagt As Boolean
     Public mlstBuchungen As List(Of Buchung)
 
     'Konstruktor

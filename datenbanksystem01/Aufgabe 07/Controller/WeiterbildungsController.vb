@@ -1,39 +1,63 @@
 ﻿Public Class WeiterbildungsController
 
     'Properties
-    Private Property lstKurse As List(Of Kurs)
-    Private Property lstWeiterbildungen As List(Of Weiterbildung)
-    Private Property intKursID As Integer
-    Private Property intWeiterbildungsID As Integer
+    Private mlstKurse As List(Of Kurs)
+    Private mlstWeiterbildungen As List(Of Weiterbildung)
+    Private mstrKursID As String
+    Private mstrWeiterbildungsID As String
 
     'Konstruktor
-    Sub New(lstKurse As List(Of Kurs), lstWeiterbildungen As List(Of Weiterbildung))
+    Sub New(plstKurse As List(Of Kurs), plstWeiterbildungen As List(Of Weiterbildung))
 
-        Me.lstKurse = lstKurse
-        Me.lstWeiterbildungen = lstWeiterbildungen
+        mlstKurse = plstKurse
+        mlstWeiterbildungen = plstWeiterbildungen
 
     End Sub
 
     'Getter & Setter
-    Public Function getLstKurse()
-        Return lstKurse
-    End Function
 
-    Public Function setListKurse()
-        Me.lstKurse = lstKurse
-    End Function
+    Public Property ListeKurse As List(Of Kurs)
+        Get
+            Return mlstKurse
+        End Get
+        Set(value As List(Of Kurs))
+            mlstKurse = value
+        End Set
+    End Property
 
-    Public Function getLstWeiterbildungen()
-        Return lstWeiterbildungen
-    End Function
+    Public Property ListeWeiterbildungen As List(Of Weiterbildung)
+        Get
+            Return mlstWeiterbildungen
+        End Get
+        Set(value As List(Of Weiterbildung))
+            mlstWeiterbildungen = value
+        End Set
+    End Property
 
-    Public Function setlstWeiterbildungen()
-        Me.lstWeiterbildungen = lstWeiterbildungen
-    End Function
+    Public Property KursID As String
+        Get
+            Return mstrKursID
+        End Get
+        Set(value As String)
+            mstrKursID = value
+        End Set
+    End Property
+
+    Public Property WeiterbildungsID As String
+        Get
+            Return mstrWeiterbildungsID
+        End Get
+        Set(value As String)
+            mstrWeiterbildungsID = value
+        End Set
+    End Property
+
+
+
 
     'Funktionen
     'Kurse
-    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As intKursID
+    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As String
 
     End Function
 
@@ -50,7 +74,7 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As intWeiterbildungsID
+    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As String
 
     End Function
 

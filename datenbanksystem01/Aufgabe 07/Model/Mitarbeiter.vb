@@ -10,7 +10,7 @@
         MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)
 
 
-        ' TODO: create record In Database And Set intMitarbeiterID
+        ' TODO: create record In Database And Set mstrMitarbeiterID
 
     End Sub
 
