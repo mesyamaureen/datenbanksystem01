@@ -6,7 +6,6 @@
 
 Public Class Benutzer
 
-    'Properties
 
     Private mstrName As String
     Private mstrVorname As String
