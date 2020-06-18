@@ -1,12 +1,18 @@
-﻿Public Class Benutzer
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+
+
+
+Public Class Benutzer
 
     'Properties
 
-    Public mstrName As String
-    Public mstrVorname As String
-    Public mstrBenutzername As String
-    Public mstrPasswort As String
-    Public mdatGebDat As Date
+    Private mstrName As String
+    Private mstrVorname As String
+    Private mstrBenutzername As String
+    Private mstrPasswort As String
+    Private mdatGebDat As Date
 
     'Konstruktoren
     Sub New()
