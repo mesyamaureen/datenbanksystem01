@@ -6,7 +6,7 @@
     Public mlstKunde As List(Of Kunde)
     Public mlstMitarbeiter As List(Of Mitarbeiter)
     Public mlstBuchung As List(Of Buchung)
-    Public mlstKurse As List(Of Kurs)
+    Public mlstKurs As List(Of Kurs)
     Public mlstWeiterbildungen As List(Of Weiterbildung)
     Public userController As UserController
     Public weiterbildungscontroller As WeiterbildungsController
@@ -54,10 +54,10 @@
 
     Public Property ListeKurse As List(Of Kurs)
         Get
-            Return mlstKurse
+            Return mlstKurs
         End Get
         Set(value As List(Of Kurs))
-            mlstKurse = value
+            mlstKurs = value
         End Set
     End Property
 
@@ -81,9 +81,14 @@
         {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
         mlstKunde = New List(Of Kunde) From
         {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
+        mlstKurs = New List(Of Kurs) From {
+          New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
+        mlstWeiterbildungen = New List(Of Weiterbildung) From {
+            New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
+
 
         userController = New UserController(mlstMitarbeiter, mlstKunde)
-        weiterbildungscontroller = New WeiterbildungsController(mlstKurse, mlstWeiterbildungen)
+        weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)
         bookingController = New BookingController(mlstBuchung)
 
     End Function

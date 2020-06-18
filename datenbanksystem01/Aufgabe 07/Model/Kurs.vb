@@ -12,7 +12,7 @@
     'Konstruktoren
     'Parameterloser Konstruktor
     Sub New()
-        mdatZeitpunkt = Nothing
+        mdatZeitpunkt = Date.MinValue
         mstrOrt = String.Empty
         mbolVerfuegbar = False
         mdecPreis = Nothing

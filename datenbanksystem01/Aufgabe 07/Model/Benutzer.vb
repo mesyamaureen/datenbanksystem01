@@ -14,7 +14,7 @@
         mstrVorname = String.Empty
         mstrBenutzername = String.Empty
         mstrPasswort = String.Empty
-        mdatGebDat = Nothing
+        mdatGebDat = Date.MinValue
     End Sub
 
 
