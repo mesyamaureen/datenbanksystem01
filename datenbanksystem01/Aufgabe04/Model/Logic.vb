@@ -96,7 +96,7 @@
     'WeiterbildungsController
     Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As Integer
 
-        Return weiterbildungscontroller.createKurs(strOrt, datZeitpunkt, bolavailable, decPreis)
+        'TODO: Return weiterbildungscontroller.createKurs(strOrt, datZeitpunkt, bolavailable, decPreis)
 
     End Function
 
@@ -121,7 +121,7 @@
     'Weiterbildung
     Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As Integer
 
-        Return weiterbildungscontroller.createWeiterbildung(strBezeichnung, strThema, strCurriculum)
+        'TODO: Return weiterbildungscontroller.createWeiterbildung(strBezeichnung, strThema, strCurriculum)
 
     End Function
 

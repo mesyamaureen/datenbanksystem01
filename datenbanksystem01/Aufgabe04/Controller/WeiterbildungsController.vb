@@ -33,9 +33,9 @@
 
     'Funktionen
     'Kurse
-    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As intKursID
+    'TODO: Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As intKursID
 
-    End Function
+    'TODO: End Function
 
     Public Function viewKurs(intKundenID As Integer) As Array
 
@@ -50,9 +50,9 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As intWeiterbildungsID
+    'TODO: Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As intWeiterbildungsID
 
-    End Function
+    'TODO: End Function
 
     Public Function viewWeiterbildung(intWeiterbildungsID As Integer) As Array
 

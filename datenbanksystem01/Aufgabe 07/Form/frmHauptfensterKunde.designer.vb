@@ -37,6 +37,7 @@ Partial Class frmHauptfensterKunde
         Me.lblSuchen = New System.Windows.Forms.Label()
         Me.txtboxSuche = New System.Windows.Forms.TextBox()
         Me.btnBeenden = New System.Windows.Forms.Button()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grpboxMenü.SuspendLayout()
         Me.grpboxWeiterbildung.SuspendLayout()
         Me.SuspendLayout()
@@ -119,7 +120,7 @@ Partial Class frmHauptfensterKunde
         'lstviewWeiterbildungKunde
         '
         Me.lstviewWeiterbildungKunde.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.lstviewWeiterbildungKunde.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colWeiterbildungID, Me.colWeiterbildung, Me.colThema})
+        Me.lstviewWeiterbildungKunde.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colWeiterbildungID, Me.colWeiterbildung, Me.colThema})
         Me.lstviewWeiterbildungKunde.FullRowSelect = True
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
@@ -141,7 +142,7 @@ Partial Class frmHauptfensterKunde
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 608
+        Me.colWeiterbildung.Width = 549
         '
         'colThema
         '
@@ -176,6 +177,10 @@ Partial Class frmHauptfensterKunde
         Me.btnBeenden.Text = "Beenden"
         Me.btnBeenden.UseVisualStyleBackColor = True
         '
+        'colIndex
+        '
+        Me.colIndex.Text = "Nr"
+        '
         'frmHauptfensterKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -209,4 +214,5 @@ Partial Class frmHauptfensterKunde
     Friend WithEvents colThema As ColumnHeader
     Friend WithEvents lblSuchen As Label
     Friend WithEvents colWeiterbildung As ColumnHeader
+    Friend WithEvents colIndex As ColumnHeader
 End Class
