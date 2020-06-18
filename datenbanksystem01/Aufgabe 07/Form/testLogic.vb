@@ -11,9 +11,9 @@
 
 
         Dim appPath As String = Application.StartupPath()
-        Dim connect As New SQLite.SQLiteConnection
-        connect.ConnectionString = "Data Source=" + appPath + "\user.s3db;"
-        connect.Open()
+        'TODO: Dim connect As New SQLite.SQLiteConnection
+        'TODO: connect.ConnectionString = "Data Source=" + appPath + "\user.s3db;"
+        'TODO: connect.Open()
         'Command = connect.CreateCommand
         'Command.commandText
         ' Command = connect.CreateCommand

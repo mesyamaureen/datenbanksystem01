@@ -73,16 +73,14 @@
     ''' <summary>
     ''' Erzeugt Beispieldaten von Benutzern, Mitarbeiter, Weiterbildung, mit denen beim ersten Programmstart gearbeitet werden kann.
     ''' </summary>
-    ''' <returns></returns>
-
-
-    'funktion initialise
+    '''<remarks>funktion initialise
+    '''</remarks>
     Public Function initialise()
         'TODO initialise lists from database
         mlstMitarbeiter = New List(Of Mitarbeiter) From
         {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
         mlstKunde = New List(Of Kunde) From
-        {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#)}
+        {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "bplus"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "strato")}
 
         userController = New UserController(mlstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(mlstKurse, mlstWeiterbildungen)
@@ -140,12 +138,6 @@
         Return mlstWeiterbildungen
 
     End Function
-
-
-
-
-
-
 
     'UserController
     Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)

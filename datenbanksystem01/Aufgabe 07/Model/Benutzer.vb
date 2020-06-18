@@ -67,7 +67,7 @@
         Set(value As Date)
             ' Prüfen, ob Geburtsdatum in Vergangenheit
             If value < Now() Then
-                mdatGebDatum = value
+                mdatGebDat = value
             Else
                 ' Fehler!
                 Debug.Print("Fehler: Geburtsdatum muss in der Vergangenheit liegen.")

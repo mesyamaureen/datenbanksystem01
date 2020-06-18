@@ -7,8 +7,8 @@
         Dim strNachname As String
 
         'Initialisierung
-        strVorname = Logic.mlstAktuellAngemeldeterBenutzer.strVorname
-        strNachname = Logic.mlstAktuellAngemeldeterBenutzer.strName
+        strVorname = Logic.AngemeldeteBenutzer.Item(0).Vorname
+        strNachname = Logic.AngemeldeteBenutzer.Item(0).Name
 
         'eine Begrüßung wird aus Vorname und Nachname zusammengebaut
         strBegruessungKunde = "Willkommen " & strVorname & " " & strNachname & "! " & vbCrLf &
@@ -18,52 +18,6 @@
         MsgBox(strBegruessungKunde, MsgBoxStyle.OkOnly, "Willkommen")
     End Sub
 
-    ''' <summary>
-    ''' Laden allen Weiterbildungen und füllen die Oberfläche mit den geladenen Daten
-    ''' </summary>
-    ''' <remarks></remarks>
-    Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ' Alle Weiterbildungen laden
-        mlstWeiterbildungen = Logic.mlstWeiterbildungen
-
-        'Anzeigen der Weiterbildungen in der Tabelle
-        anzeigen()
-
-    End Sub
-
-    ''' <summary>
-    ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
-    ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
-    ''' </summary>
-    ''' <remarks></remarks>
-
-    Private Sub anzeigen()
-        'Deklaration
-        Dim weiterbil As Weiterbildung 'Weiterbildung
-
-        'Anzuzeigende Attribute
-        Dim strWeiterbilID As String
-        Dim strWeiterbilName As String
-        Dim strWeiterbilThema As String
-
-        'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To mlstWeiterbildungen.Count - 1
-            weiterbil = mlstWeiterbildungen.Item(i)
-
-            'Attributwerte aus der Weiterbildung lesen
-            strWeiterbilID = weiterbil.WeiterbildungsID
-            strWeiterbilName = weiterbil.Bezeichnung
-            strWeiterbilThema = weiterbil.Thema
-
-            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, strWeiterbilID, strWeiterbilName, strWeiterbilThema)
-
-        Next
-        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
-        aktivierenSchaltflächen()
-
-    End Sub
 
     ''' <summary>
     ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
@@ -120,6 +74,55 @@
         End With
 
     End Sub
+
+    ''' <summary>
+    ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
+    ''' </summary>
+    ''' <remarks></remarks>
+
+    Private Sub anzeigen()
+        'Deklaration
+        Dim weiterbil As Weiterbildung 'Weiterbildung
+
+        'Anzuzeigende Attribute
+        Dim strWeiterbilID As String
+        Dim strWeiterbilName As String
+        Dim strWeiterbilThema As String
+
+        'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
+        For i = 0 To mlstWeiterbildungen.Count - 1
+            weiterbil = mlstWeiterbildungen.Item(i)
+
+            'Attributwerte aus der Weiterbildung lesen
+            strWeiterbilID = weiterbil.WeiterbildungsID
+            strWeiterbilName = weiterbil.Bezeichnung
+            strWeiterbilThema = weiterbil.Thema
+
+            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+            anzeigenZeile(i, strWeiterbilID, strWeiterbilName, strWeiterbilThema)
+
+        Next
+        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
+        aktivierenSchaltflächen()
+
+    End Sub
+
+    ''' <summary>
+    ''' Laden allen Weiterbildungen und füllen die Oberfläche mit den geladenen Daten
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ' Alle Weiterbildungen laden
+        'von Logic oder Weiterbildungscontroller?
+        mlstWeiterbildungen = Logic.ListeWeiterbildung
+
+        'Anzeigen der Weiterbildungen in der Tabelle
+        anzeigen()
+
+    End Sub
+
 
     ''' <summary>
     ''' Verlassen des Hauptfensters
