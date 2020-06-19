@@ -41,18 +41,7 @@
         End If
 
     End Sub
-    ''' <summary>
-    ''' Leert die Liste mit den Urlaubsanträgen komplett. Weil nach dem leeren keine Auswahl in der Liste mehr getroffen ist,
-    ''' setzt den Status des Formulars zurük, z.B. deaktiviert sie die Schaltflächen Bearbeiten und Löschen
-    ''' HIER WIRD NUR IM HAUPTFESTERMITARBEITER BENUTZT!!!
-    ''' </summary>
-    Sub leeren()
-        'Liste leeren
-        Me.lstviewWeiterbildungKunde.Items.Clear()
-        'Schaltflächen aktivieren/deaktivieren
-        aktivierenSchaltflächen()
 
-    End Sub
     ''' <summary>
     ''' Wird aufgerufen, um die Daten einer Weiterbldung in der Liste der Weiterbildung als Zeile anzuzeigen
     ''' </summary>
@@ -115,7 +104,6 @@
     Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Alle Weiterbildungen laden
-        'von Logic oder Weiterbildungscontroller?
         mlstWeiterbildungen = Logic.ListeWeiterbildung
 
         'Anzeigen der Weiterbildungen in der Tabelle

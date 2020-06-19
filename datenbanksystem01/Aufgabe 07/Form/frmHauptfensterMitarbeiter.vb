@@ -48,7 +48,6 @@
     ''' <summary>
     ''' Leert die Liste mit den Urlaubsanträgen komplett. Weil nach dem leeren keine Auswahl in der Liste mehr getroffen ist,
     ''' setzt den Status des Formulars zurük, z.B. deaktiviert sie die Schaltflächen Bearbeiten und Löschen
-    ''' HIER WIRD NUR IM HAUPTFESTERMITARBEITER BENUTZT!!!
     ''' </summary>
     Sub leeren()
         'Liste leeren
