@@ -23,26 +23,45 @@ Partial Class frmAlleMitarbeiter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Index = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Benutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Vorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.btnNeu = New System.Windows.Forms.Button()
         Me.btnDetails = New System.Windows.Forms.Button()
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.lblBenutzerAlle = New System.Windows.Forms.Label()
-        Me.Index = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Benutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Vorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Index, Me.Benutzername, Me.Name, Me.Vorname})
+        Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(163, 93)
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(169, 95)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(696, 298)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'Index
+        '
+        Me.Index.Text = "Index"
+        '
+        'Benutzername
+        '
+        Me.Benutzername.Text = "Benutzername"
+        '
+        'Name
+        '
+        Me.Name.Text = "Name"
+        '
+        'Vorname
+        '
+        Me.Vorname.Text = "Vorname"
         '
         'btnBeenden
         '
@@ -88,22 +107,6 @@ Partial Class frmAlleMitarbeiter
         Me.lblBenutzerAlle.Size = New System.Drawing.Size(318, 17)
         Me.lblBenutzerAlle.TabIndex = 5
         Me.lblBenutzerAlle.Text = "Alle Mitarbeiter und Kunden der Time2-Akademie"
-        '
-        'Index
-        '
-        Me.Index.Text = "Index"
-        '
-        'Benutzername
-        '
-        Me.Benutzername.Text = "Benutzername"
-        '
-        'Name
-        '
-        Me.Name.Text = "Name"
-        '
-        'Vorname
-        '
-        Me.Vorname.Text = "Vorname"
         '
         'frmAlleMitarbeiter
         '
