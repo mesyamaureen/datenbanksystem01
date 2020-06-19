@@ -126,5 +126,11 @@
         BuchungenKunde.ShowDialog() 'Dialogfenster von Buchungen öffnen
     End Sub
 
+    Private Sub grpboxWeiterbildung_Enter(sender As Object, e As EventArgs) Handles grpboxWeiterbildung.Enter
 
+    End Sub
+
+    Private Sub btnWeiterbildungen_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungen.Click
+
+    End Sub
 End Class

@@ -94,6 +94,12 @@
     <Compile Include="Form\dlgAnmeldung.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmAlleBenutzer.Designer.vb">
+      <DependentUpon>frmAlleBenutzer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmAlleBenutzer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmHauptfensterKunde.designer.vb">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\dlgAnmeldung.resx">
       <DependentUpon>dlgAnmeldung.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmAlleBenutzer.resx">
+      <DependentUpon>frmAlleBenutzer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHauptfensterKunde.resx">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>

@@ -31,13 +31,13 @@ Partial Class frmHauptfensterKunde
         Me.grpboxWeiterbildung = New System.Windows.Forms.GroupBox()
         Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstviewWeiterbildungKunde = New System.Windows.Forms.ListView()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildung = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colThema = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblSuchen = New System.Windows.Forms.Label()
         Me.txtboxSuche = New System.Windows.Forms.TextBox()
         Me.btnBeenden = New System.Windows.Forms.Button()
-        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grpboxMenü.SuspendLayout()
         Me.grpboxWeiterbildung.SuspendLayout()
         Me.SuspendLayout()
@@ -48,47 +48,49 @@ Partial Class frmHauptfensterKunde
         Me.grpboxMenü.Controls.Add(Me.btnKonto)
         Me.grpboxMenü.Controls.Add(Me.btnBuchungen)
         Me.grpboxMenü.Controls.Add(Me.btnWeiterbildungen)
-        Me.grpboxMenü.Location = New System.Drawing.Point(16, 13)
-        Me.grpboxMenü.Margin = New System.Windows.Forms.Padding(4)
+        Me.grpboxMenü.Location = New System.Drawing.Point(11, 8)
         Me.grpboxMenü.Name = "grpboxMenü"
-        Me.grpboxMenü.Padding = New System.Windows.Forms.Padding(4)
-        Me.grpboxMenü.Size = New System.Drawing.Size(435, 1077)
+        Me.grpboxMenü.Size = New System.Drawing.Size(290, 689)
         Me.grpboxMenü.TabIndex = 1
         Me.grpboxMenü.TabStop = False
         Me.grpboxMenü.Text = "Menü"
         '
         'btnHilfe
         '
-        Me.btnHilfe.Location = New System.Drawing.Point(111, 797)
+        Me.btnHilfe.Location = New System.Drawing.Point(74, 510)
+        Me.btnHilfe.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnHilfe.Name = "btnHilfe"
-        Me.btnHilfe.Size = New System.Drawing.Size(191, 56)
+        Me.btnHilfe.Size = New System.Drawing.Size(127, 36)
         Me.btnHilfe.TabIndex = 3
         Me.btnHilfe.Text = "Hilfe"
         Me.btnHilfe.UseVisualStyleBackColor = True
         '
         'btnKonto
         '
-        Me.btnKonto.Location = New System.Drawing.Point(111, 597)
+        Me.btnKonto.Location = New System.Drawing.Point(74, 382)
+        Me.btnKonto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnKonto.Name = "btnKonto"
-        Me.btnKonto.Size = New System.Drawing.Size(191, 56)
+        Me.btnKonto.Size = New System.Drawing.Size(127, 36)
         Me.btnKonto.TabIndex = 2
         Me.btnKonto.Text = "Konto"
         Me.btnKonto.UseVisualStyleBackColor = True
         '
         'btnBuchungen
         '
-        Me.btnBuchungen.Location = New System.Drawing.Point(111, 403)
+        Me.btnBuchungen.Location = New System.Drawing.Point(74, 258)
+        Me.btnBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBuchungen.Name = "btnBuchungen"
-        Me.btnBuchungen.Size = New System.Drawing.Size(191, 56)
+        Me.btnBuchungen.Size = New System.Drawing.Size(127, 36)
         Me.btnBuchungen.TabIndex = 1
         Me.btnBuchungen.Text = "Buchungen"
         Me.btnBuchungen.UseVisualStyleBackColor = True
         '
         'btnWeiterbildungen
         '
-        Me.btnWeiterbildungen.Location = New System.Drawing.Point(111, 211)
+        Me.btnWeiterbildungen.Location = New System.Drawing.Point(74, 135)
+        Me.btnWeiterbildungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnWeiterbildungen.Name = "btnWeiterbildungen"
-        Me.btnWeiterbildungen.Size = New System.Drawing.Size(191, 56)
+        Me.btnWeiterbildungen.Size = New System.Drawing.Size(127, 36)
         Me.btnWeiterbildungen.TabIndex = 0
         Me.btnWeiterbildungen.Text = "Weiterbildungen"
         Me.btnWeiterbildungen.UseVisualStyleBackColor = True
@@ -99,20 +101,19 @@ Partial Class frmHauptfensterKunde
         Me.grpboxWeiterbildung.Controls.Add(Me.lstviewWeiterbildungKunde)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblSuchen)
         Me.grpboxWeiterbildung.Controls.Add(Me.txtboxSuche)
-        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(459, 24)
-        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(4)
+        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(306, 15)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
-        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(4)
-        Me.grpboxWeiterbildung.Size = New System.Drawing.Size(1203, 1066)
+        Me.grpboxWeiterbildung.Size = New System.Drawing.Size(802, 682)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
         Me.grpboxWeiterbildung.Text = "Weiterbildungsangebote"
         '
         'btnOeffnen
         '
-        Me.btnOeffnen.Location = New System.Drawing.Point(1004, 988)
+        Me.btnOeffnen.Location = New System.Drawing.Point(669, 632)
+        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnOeffnen.Name = "btnOeffnen"
-        Me.btnOeffnen.Size = New System.Drawing.Size(191, 56)
+        Me.btnOeffnen.Size = New System.Drawing.Size(127, 36)
         Me.btnOeffnen.TabIndex = 3
         Me.btnOeffnen.Text = "Öffnen"
         Me.btnOeffnen.UseVisualStyleBackColor = True
@@ -125,13 +126,18 @@ Partial Class frmHauptfensterKunde
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
         Me.lstviewWeiterbildungKunde.HoverSelection = True
-        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(10, 97)
+        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(7, 62)
+        Me.lstviewWeiterbildungKunde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lstviewWeiterbildungKunde.MultiSelect = False
         Me.lstviewWeiterbildungKunde.Name = "lstviewWeiterbildungKunde"
-        Me.lstviewWeiterbildungKunde.Size = New System.Drawing.Size(1185, 870)
+        Me.lstviewWeiterbildungKunde.Size = New System.Drawing.Size(791, 558)
         Me.lstviewWeiterbildungKunde.TabIndex = 2
         Me.lstviewWeiterbildungKunde.UseCompatibleStateImageBehavior = False
         Me.lstviewWeiterbildungKunde.View = System.Windows.Forms.View.Details
+        '
+        'colIndex
+        '
+        Me.colIndex.Text = "Nr"
         '
         'colWeiterbildungID
         '
@@ -153,44 +159,40 @@ Partial Class frmHauptfensterKunde
         'lblSuchen
         '
         Me.lblSuchen.AutoSize = True
-        Me.lblSuchen.Location = New System.Drawing.Point(710, 34)
+        Me.lblSuchen.Location = New System.Drawing.Point(473, 22)
+        Me.lblSuchen.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSuchen.Name = "lblSuchen"
-        Me.lblSuchen.Size = New System.Drawing.Size(85, 25)
+        Me.lblSuchen.Size = New System.Drawing.Size(56, 17)
         Me.lblSuchen.TabIndex = 1
         Me.lblSuchen.Text = "Suchen"
         '
         'txtboxSuche
         '
-        Me.txtboxSuche.Location = New System.Drawing.Point(801, 31)
+        Me.txtboxSuche.Location = New System.Drawing.Point(534, 20)
+        Me.txtboxSuche.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxSuche.Multiline = True
         Me.txtboxSuche.Name = "txtboxSuche"
-        Me.txtboxSuche.Size = New System.Drawing.Size(395, 37)
+        Me.txtboxSuche.Size = New System.Drawing.Size(265, 25)
         Me.txtboxSuche.TabIndex = 0
         '
         'btnBeenden
         '
-        Me.btnBeenden.Location = New System.Drawing.Point(1475, 1127)
-        Me.btnBeenden.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBeenden.Location = New System.Drawing.Point(983, 721)
         Me.btnBeenden.Name = "btnBeenden"
-        Me.btnBeenden.Size = New System.Drawing.Size(191, 56)
+        Me.btnBeenden.Size = New System.Drawing.Size(127, 36)
         Me.btnBeenden.TabIndex = 4
         Me.btnBeenden.Text = "Beenden"
         Me.btnBeenden.UseVisualStyleBackColor = True
         '
-        'colIndex
-        '
-        Me.colIndex.Text = "Nr"
-        '
         'frmHauptfensterKunde
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1677, 1210)
+        Me.ClientSize = New System.Drawing.Size(1118, 675)
         Me.Controls.Add(Me.btnBeenden)
         Me.Controls.Add(Me.grpboxWeiterbildung)
         Me.Controls.Add(Me.grpboxMenü)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmHauptfensterKunde"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Weiterbildung time2-Akademie"
