@@ -1,4 +1,7 @@
-﻿Public Class Kunde
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+Public Class Kunde
     Inherits Benutzer
 
 

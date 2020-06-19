@@ -1,4 +1,7 @@
-﻿Public Class Mitarbeiter
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+Public Class Mitarbeiter
     Inherits Benutzer
 
     'Properties

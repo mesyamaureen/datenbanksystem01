@@ -170,6 +170,7 @@
     <Compile Include="Model\Benutzer.vb" />
     <Compile Include="Model\Buchung.vb" />
     <Compile Include="Controller\UserController.vb" />
+    <Compile Include="Model\erzeugeBeispieldaten.vb" />
     <Compile Include="Model\Logic.vb" />
     <Compile Include="Form\testLogic.Designer.vb">
       <DependentUpon>testLogic.vb</DependentUpon>

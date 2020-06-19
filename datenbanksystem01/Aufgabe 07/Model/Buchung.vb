@@ -1,4 +1,7 @@
-﻿Public Class Buchung
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+Public Class Buchung
 
     Public mstrBuchungsID As String
     Public mdecPreis As Decimal

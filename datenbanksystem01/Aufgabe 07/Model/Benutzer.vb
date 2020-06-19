@@ -1,9 +1,7 @@
 ﻿Imports System.Xml.Serialization
 
+
 <System.Serializable()>
-
-
-
 Public Class Benutzer
 
 

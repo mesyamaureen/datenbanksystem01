@@ -1,4 +1,7 @@
-﻿Public Class Kurs
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+Public Class Kurs
 
     'Properties
     Public mstrKursID As String

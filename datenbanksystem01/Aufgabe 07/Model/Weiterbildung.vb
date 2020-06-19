@@ -1,4 +1,7 @@
-﻿Public Class Weiterbildung
+﻿Imports System.Xml.Serialization
+
+<System.Serializable()>
+Public Class Weiterbildung
 
     'Attribiute
     Public mstrWeiterbildungsID As String
