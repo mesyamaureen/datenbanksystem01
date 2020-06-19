@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAlleBenutzer
+Partial Class frmAlleMitarbeiter
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -28,10 +28,16 @@ Partial Class frmAlleBenutzer
         Me.btnDetails = New System.Windows.Forms.Button()
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.lblBenutzerAlle = New System.Windows.Forms.Label()
+        Me.Index = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Benutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Vorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'ListView1
         '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Index, Me.Benutzername, Me.Name, Me.Vorname})
+        Me.ListView1.GridLines = True
         Me.ListView1.Location = New System.Drawing.Point(163, 93)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(696, 298)
@@ -83,7 +89,23 @@ Partial Class frmAlleBenutzer
         Me.lblBenutzerAlle.TabIndex = 5
         Me.lblBenutzerAlle.Text = "Alle Mitarbeiter und Kunden der Time2-Akademie"
         '
-        'frmAlleBenutzer
+        'Index
+        '
+        Me.Index.Text = "Index"
+        '
+        'Benutzername
+        '
+        Me.Benutzername.Text = "Benutzername"
+        '
+        'Name
+        '
+        Me.Name.Text = "Name"
+        '
+        'Vorname
+        '
+        Me.Vorname.Text = "Vorname"
+        '
+        'frmAlleMitarbeiter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -94,8 +116,8 @@ Partial Class frmAlleBenutzer
         Me.Controls.Add(Me.btnNeu)
         Me.Controls.Add(Me.btnBeenden)
         Me.Controls.Add(Me.ListView1)
-        Me.Name = "frmAlleBenutzer"
-        Me.Text = "Alle Benutzer"
+        Me.Name = "frmAlleMitarbeiter"
+        Me.Text = "Alle Mitarbeiter"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -107,4 +129,8 @@ Partial Class frmAlleBenutzer
     Friend WithEvents btnDetails As Button
     Friend WithEvents btnLoeschen As Button
     Friend WithEvents lblBenutzerAlle As Label
+    Friend WithEvents Index As ColumnHeader
+    Friend WithEvents Benutzername As ColumnHeader
+    Friend WithEvents Name As ColumnHeader
+    Friend WithEvents Vorname As ColumnHeader
 End Class

@@ -1,8 +1,14 @@
-﻿Public Class frmAlleBenutzer
+﻿Public Class frmAlleMitarbeiter
 
-    Private mlstBenutzerAlle As List(Of Benutzer)
+    Public mlstMitarbeiter As List(Of Mitarbeiter)
+    Public mlstAktuellAngemeldeteBenutzer As List(Of Benutzer)
     Dim intAusgewaehlteZeilen As Integer
 
+    Public ReadOnly Property AlleMitarbeiter As List(Of Mitarbeiter)
+        Get
+            Return mlstMitarbeiter
+        End Get
+    End Property
 
     ''' <summary>
     ''' Aktiviert oder deaktiviert abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltlächen
@@ -15,7 +21,7 @@
         Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
 
         ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lsvBenutzerAlle.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+        intAnzahlAusgewaehlterZeilen = Me.lsvMitarbeiter.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
         ' Schatlfächen zurücksetzen
         Me.btnLoeschen.Enabled = False
@@ -45,11 +51,11 @@
     ''' setzt den Status des Formulars zurück, z.B. deaktiviert sie die Schaltflächen Bearbeiten und Löschen.
     ''' </summary>
     Sub leeren()
-            ' Liste leeren; ACHTUNG: Items.Clear() nicht einfach nur Clear() sonst sind auch die Spalten weg!
-            Me.lsvBenutzerAlle.Items.Clear()
-            ' Schaltflächen aktivieren/deaktivieren
-            aktivierenSchaltflächen()
-        End Sub
+        ' Liste leeren; ACHTUNG: Items.Clear() nicht einfach nur Clear() sonst sind auch die Spalten weg!
+        Me.lsvMitarbeiter.Items.Clear()
+        ' Schaltflächen aktivieren/deaktivieren
+        aktivierenSchaltflächen()
+    End Sub
 
     ''' <summary>
     ''' Wird aufgerufen, um die Daten eines Benutzers in der Liste der 
@@ -84,12 +90,19 @@
     ''' <remarks></remarks>
     Private Sub anzeigen()
         ' Deklaration
-        Dim BenutzerAnzeigen As Benutzer
+        Dim mit As Mitarbeiter
+        Dim knd As Kunde
         Dim intAnzahlAusgewaehlterZeilen As Integer
         ' Benutzer
         ' Anzuzeigende Attribute
+        Dim strBenutzername As String
+        Dim strName As String
+        Dim strVorname As String
+        Dim strRolle As String
 
         ' Leeren der Tabelle
+
+        leeren()
 
         ' Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         ' Element aus der Liste ermitteln
@@ -102,7 +115,7 @@
 
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die
         ' eine ausgewählte Zeile erfordern
-        If IntAnzahlAusgewaehlterZeilen = 0 Then
+        If intAnzahlAusgewaehlterZeilen = 0 Then
             btnLoeschen.Enabled = False
             btnDetails.Enabled = False
             btnNeu.Enabled = True
@@ -110,17 +123,17 @@
 
     End Sub
 
-        ''' <summary>
-        ''' Sobald sich die getroffene Auswahl in der Liste/Tabelle der Benutzer ändert, müssen die zur Tabelle
-        ''' gehörigen Schaltflächen aktiviert oder deaktiviert werden.
-        ''' </summary>
-        ''' <param name="sender"></param>
-        ''' <param name="e"></param>
-        ''' <remarks></remarks>
-        Private Sub lsvBenutzerAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvBenutzerAlle.SelectedIndexChanged
-            ' Schaltlfächen aktivieren oder dekativieren abhängig von der getroffenen Auswahl
-            aktivierenSchaltflächen()
-        End Sub
+    ''' <summary>
+    ''' Sobald sich die getroffene Auswahl in der Liste/Tabelle der Benutzer ändert, müssen die zur Tabelle
+    ''' gehörigen Schaltflächen aktiviert oder deaktiviert werden.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub lsvBenutzerAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvBenutzerAlle.SelectedIndexChanged
+        ' Schaltlfächen aktivieren oder dekativieren abhängig von der getroffenen Auswahl
+        aktivierenSchaltflächen()
+    End Sub
 
 
 
@@ -131,71 +144,72 @@
     ''' <param name="e"></param>
     ''' <remarks>Die Warnmeldung wird durch die Closing()-Ereignisprozedur angezeigt.</remarks>
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
-            ' Einfach das Fenster zumachen, damit endet auch die Anwendung
-            Me.Close()
-        End Sub
+        ' Einfach das Fenster zumachen, damit endet auch die Anwendung
+        Me.Close()
+    End Sub
 
-        ''' <summary>
-        ''' Klick auf Löschen in der Sekundärnavigation löscht den Benutzer, der zur ausgewählten Zeile der Tabelle gehört nach
-        ''' vorheriger Warnmeldung.
-        ''' </summary>
-        ''' <param name="sender"></param>
-        ''' <param name="e"></param>
-        ''' <remarks>Löschen unterstützt momentan nur die Einfachauswahl in der Tabelle der Benutzer.</remarks>
-        Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
+    ''' <summary>
+    ''' Klick auf Löschen in der Sekundärnavigation löscht den Benutzer, der zur ausgewählten Zeile der Tabelle gehört nach
+    ''' vorheriger Warnmeldung.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks>Löschen unterstützt momentan nur die Einfachauswahl in der Tabelle der Benutzer.</remarks>
+    Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
 
-            ' Deklaration
-            ' Index des ausgewählten Eintrags der Tabelle        
-            ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
-            ' Ausbaustufe2: Zu löschender Benutzer
+        ' Deklaration
+        ' Index des ausgewählten Eintrags der Tabelle   
+        Dim intIndex As Integer
+        ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
+        ' Ausbaustufe2: Zu löschender Benutzer
 
-            ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-
-
-            ' Ausbaustufe 2: Element an der Position der Liste, die der ID entspricht ermitteln
-
-            ' Ausbaustufe 1: Rückfrage mit Warnmeldung und in Ausbaustufe 2 mit Angaben des Benutzers
-
-            ' Benzter löschen
-            ' aus Liste aller Benutzer entfernen
-            ' Referenz auf Benutzer auf Nichts setzen, um Müllabfuhr anzufordern
-
-            ' Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Benutzer nicht mehr zeigt
-            anzeigen()
-
-        End Sub
-
-        ''' <summary>
-        ''' Klick auf Bearbeiten öffnet den aktuell in der Tabelle ausgewählten Benutzer in einem Detaildialog.
-        ''' </summary>
-        ''' <param name="sender"></param>
-        ''' <param name="e"></param>
-        ''' <remarks></remarks>
-        Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnBearbeiten.Click
-
-            ' Deklaration
-            '   Index des ausgewählten Eintrags der Tabelle
-            '   Zu bearbeitener Benutzer
-            '   Detaildialog zum Anzeigen des Benutzers
-
-            ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-
-            ' Element an der Position der Liste, die der ID entspricht ermitteln
-
-            ' Fenster vorbereiten
-
-            ' Auswertung des Dialogergebnisses
-            '   Dialog mit positivem Ergebnis geschlossen
-
-            '   Neuen Benutzer aus dem Formular geben lassen 
-
-            ' Hinweis: WEIL OBJKETE REFERENZTYPEN SIND, IST DIE LISTE DER URLAUBSANTRÄGE
-            ' BEREITS JETZT AKTUALISIERT. ES MUSS NICHTS HINZUGEFÜGT WERDEN!
-
-            ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+        ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
 
 
-        End Sub
+        ' Ausbaustufe 2: Element an der Position der Liste, die der ID entspricht ermitteln
+
+        ' Ausbaustufe 1: Rückfrage mit Warnmeldung und in Ausbaustufe 2 mit Angaben des Benutzers
+
+        ' Benzter löschen
+        ' aus Liste aller Benutzer entfernen
+        ' Referenz auf Benutzer auf Nichts setzen, um Müllabfuhr anzufordern
+
+        ' Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Benutzer nicht mehr zeigt
+        anzeigen()
+
+    End Sub
+
+    ''' <summary>
+    ''' Klick auf Bearbeiten öffnet den aktuell in der Tabelle ausgewählten Benutzer in einem Detaildialog.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub btnDetails_Click(sender As Object, e As EventArgs) Handles btnDetails.Click
+
+        ' Deklaration
+        '   Index des ausgewählten Eintrags der Tabelle
+        '   Zu bearbeitener Benutzer
+        '   Detaildialog zum Anzeigen des Benutzers
+
+        ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+
+        ' Element an der Position der Liste, die der ID entspricht ermitteln
+
+        ' Fenster vorbereiten
+
+        ' Auswertung des Dialogergebnisses
+        '   Dialog mit positivem Ergebnis geschlossen
+
+        '   Neuen Benutzer aus dem Formular geben lassen 
+
+        ' Hinweis: WEIL OBJKETE REFERENZTYPEN SIND, IST DIE LISTE DER URLAUBSANTRÄGE
+        ' BEREITS JETZT AKTUALISIERT. ES MUSS NICHTS HINZUGEFÜGT WERDEN!
+
+        ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+
+
+    End Sub
 
     ''' <summary>
     ''' Klick auf Hinzufügen öffnet einen neuen Benutzer in einem Detaildialog.
@@ -228,30 +242,32 @@
     ''' Laden aller Benutzer und füllen der Oberfläche mit den geladenen Daten
     ''' </summary>
     ''' <remarks></remarks>
-    Private Sub frmBenutzerAlle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-            ' Alle Benutzer laden
+        ' Alle Benutzer laden
+        mlstMitarbeiter = Logic.mlstMitarbeiter
 
-            ' Abhängig von der Rolle die Schaltfläche des Fensters aktivieren
+        ' Abhängig von der Rolle die Schaltfläche des Fensters aktivieren
 
-            ' Anzeigen der Benutzer in der Tabelle
+        ' Anzeigen der Benutzer in der Tabelle
+        anzeigen()
 
-        End Sub
+    End Sub
 
-        ''' <summary>
-        ''' Speichern der Daten, sobald das Fenster geschlossen wurde
-        ''' </summary>
-        ''' <param name="sender"></param>
-        ''' <param name="e"></param>
-        ''' <remarks></remarks>
-        Private Sub frmBenutzerAlle_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+    ''' <summary>
+    ''' Speichern der Daten, sobald das Fenster geschlossen wurde
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub frmMitarbeiter_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 
-            ' Klassenoperation zum aktualiseren der gepeicherten der Daten aufrufen
-        End Sub
+        ' Klassenoperation zum aktualiseren der gepeicherten der Daten aufrufen
+    End Sub
 
-        Private Sub lblBenutzerAlle_Click(sender As Object, e As EventArgs) Handles lblBenutzerAlle.Click
+    Private Sub lblMitarbeiter_Click(sender As Object, e As EventArgs) Handles lblBenutzerAlle.Click
 
-        End Sub
+    End Sub
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
 
