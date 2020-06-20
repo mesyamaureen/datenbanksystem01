@@ -2,6 +2,8 @@
 
     Public mlstMitarbeiter As List(Of Mitarbeiter)
     Public mlstAktuellAngemeldeteBenutzer As List(Of Benutzer)
+    Private lsvMitarbeiterAlle As ListView
+
     Dim intAusgewaehlteZeilen As Integer
 
     Public ReadOnly Property AlleMitarbeiter As List(Of Mitarbeiter)
@@ -70,7 +72,7 @@
 
         ' Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem 
         ' Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.lsvBenutzerAlle.Items.Add(plngIndex)
+        zeile = Me.lsvMitarbeiterAlle.Items.Add(plngIndex)
 
         ' Weitere Eigenschaften des Benutzers in nachfolgenden Spalten 
         ' der Zeile einfügen
@@ -162,6 +164,8 @@
         Dim intIndex As Integer
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
         ' Ausbaustufe2: Zu löschender Benutzer
+        Dim mit As Mitarbeiter
+        intIndex = Me.lsvMitarbeiterAlle.SelectedIndizes(0).Text
 
         ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
 
