@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BookingController.vb" />
+    <Compile Include="Controller\DAO.vb" />
     <Compile Include="Controller\UserController.vb" />
     <Compile Include="Controller\WeiterbildungsController.vb" />
     <Compile Include="Form\BuchungenKunde.Designer.vb">
@@ -166,6 +167,9 @@
     <Compile Include="Form\testLogic.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Model\Data Access\BenutzerDAO.vb" />
+    <Compile Include="Model\Data Access\BuchungsDAO.vb" />
+    <Compile Include="Model\Data Access\Kurs- und WeiterbildungsDAO.vb" />
     <Compile Include="Model\Klassen\Benutzer.vb" />
     <Compile Include="Model\Klassen\Buchung.vb" />
     <Compile Include="Model\Klassen\erzeugeBeispieldaten.vb" />
@@ -255,8 +259,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Data Access\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

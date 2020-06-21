@@ -87,6 +87,10 @@
         mlstWeiterbildungen = New List(Of Weiterbildung) From {
             New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
 
+        mlstBuchung = New List(Of Buchung) From {
+        New Buchung(1200, #07/21/2020#, mlstKurs)
+        }
+
         userController = New UserController(mlstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)
         bookingController = New BookingController(mlstBuchung)

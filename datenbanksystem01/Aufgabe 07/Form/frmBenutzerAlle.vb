@@ -78,6 +78,7 @@
 
         '   Neuen Benutzer aus dem Formular geben lassen 
 
+
         ' Hinweis: WEIL OBJKETE REFERENZTYPEN SIND, IST DIE LISTE DER URLAUBSANTRÄGE
         ' BEREITS JETZT AKTUALISIERT. ES MUSS NICHTS HINZUGEFÜGT WERDEN!
 
