@@ -112,10 +112,34 @@
     <Compile Include="Form\frmHauptfensterMitarbeiter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmKundeKonto.Designer.vb">
+      <DependentUpon>frmKundeKonto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmKundeKonto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmKundenkontoErstellung.Designer.vb">
       <DependentUpon>frmKundenkontoErstellung.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\frmKundenkontoErstellung.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmKundenKontoListe.Designer.vb">
+      <DependentUpon>frmKundenKontoListe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmKundenKontoListe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmMeinKontoMitarbeiter.Designer.vb">
+      <DependentUpon>frmMeinKontoMitarbeiter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmMeinKontoMitarbeiter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmNeueMitarbeiter.Designer.vb">
+      <DependentUpon>frmNeueMitarbeiter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmNeueMitarbeiter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\frmStart.designer.vb">
@@ -185,8 +209,20 @@
     <EmbeddedResource Include="Form\frmHauptfensterMitarbeiter.resx">
       <DependentUpon>frmHauptfensterMitarbeiter.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmKundeKonto.resx">
+      <DependentUpon>frmKundeKonto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmKundenkontoErstellung.resx">
       <DependentUpon>frmKundenkontoErstellung.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmKundenKontoListe.resx">
+      <DependentUpon>frmKundenKontoListe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmMeinKontoMitarbeiter.resx">
+      <DependentUpon>frmMeinKontoMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmNeueMitarbeiter.resx">
+      <DependentUpon>frmNeueMitarbeiter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
@@ -218,6 +254,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logomit Name_time2-Akademie.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
