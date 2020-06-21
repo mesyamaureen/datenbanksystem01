@@ -99,6 +99,21 @@ Public Class Kurs
     End Property
 
 
+    Public Shared Function zeigenAlle() As List(Of Kurs)
+
+        Dim lstKurs As List(Of Kurs)
+
+        lstKurs = Kurs__und_WeiterbildungsDAO.ladenKurse()
+
+        Return lstKurs
+
+    End Function
+
+    Public Shared Sub speichernAlle(pstrKurs As List(Of Kurs))
+
+        Kurs__und_WeiterbildungsDAO.speichernKurs(pstrKurs)
+
+    End Sub
 
 
 

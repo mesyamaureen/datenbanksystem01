@@ -44,4 +44,23 @@ Public Class Mitarbeiter
         Finalize()
     End Function
 
+    Public Shared Function zeigenAlle() As List(Of Mitarbeiter)
+
+        Dim lstMitarbeiter As List(Of Mitarbeiter)
+
+        lstMitarbeiter = BenutzerDAO.ladenMitarbeiter()
+
+        Return lstMitarbeiter
+
+    End Function
+
+    Public Shared Sub speichernAlle(pstrMitarbeiter As List(Of Mitarbeiter))
+
+        BenutzerDAO.speichernMitarbeiter(pstrMitarbeiter)
+
+    End Sub
+
+
+
+
 End Class

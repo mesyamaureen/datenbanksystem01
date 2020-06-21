@@ -51,4 +51,27 @@ Public Class Kunde
         End Set
     End Property
 
+
+    Public Shared Function zeigenAlle() As List(Of Kunde)
+
+        Dim lstKunde As List(Of Kunde)
+
+        lstKunde = BenutzerDAO.ladenKunden()
+
+        Return lstKunde
+
+    End Function
+
+    Public Shared Sub speichernAlle(pstrKunde As List(Of Kunde))
+
+        BenutzerDAO.speichernKunde(pstrKunde)
+
+    End Sub
+
+
+
+
+
+
+
 End Class

@@ -59,5 +59,20 @@ Public Class Buchung
     End Property
 
 
+    Public Shared Function zeigenAlle() As List(Of Buchung)
+
+        Dim lstBuchung As List(Of Buchung)
+
+        lstBuchung = BuchungsDAO.ladenBuchung
+
+        Return lstBuchung
+
+    End Function
+
+    Public Shared Sub speichernAlle(pstrBuchung As List(Of Buchung))
+
+        BuchungsDAO.speichernBuchung(pstrBuchung)
+
+    End Sub
 
 End Class

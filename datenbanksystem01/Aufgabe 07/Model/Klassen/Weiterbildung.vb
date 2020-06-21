@@ -77,6 +77,20 @@ Public Class Weiterbildung
         End Set
     End Property
 
+    Public Shared Function zeigenAlle() As List(Of Weiterbildung)
 
+        Dim lstWeiterbildung As List(Of Weiterbildung)
+
+        lstWeiterbildung = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
+
+        Return lstWeiterbildung
+
+    End Function
+
+    Public Shared Sub speichernAlle(pstrWeiterbildung As List(Of Weiterbildung))
+
+        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(pstrWeiterbildung)
+
+    End Sub
 
 End Class
