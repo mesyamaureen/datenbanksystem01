@@ -2,6 +2,7 @@
 
     Public mlstMitarbeiter As List(Of Mitarbeiter)
     Public mlstAktuellAngemeldeteBenutzer As List(Of Benutzer)
+    Public mlstBenutzerAlle As List(Of Benutzer)
     Public lsvBenutzerAlle As ListView
 
     Dim intAusgewaehlteZeilen As Integer
@@ -66,11 +67,12 @@
         Dim dlgBenutzerEinzeln As frmBenutzerEinzeln
 
         ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        intIndex = Me.lsvBenutzerAlle.Items(0).Text
 
         ' Element an der Position der Liste, die der ID entspricht ermitteln
-
+        mit = Aufgabe_07.mlstBenutzerAlle(intIndex)
         ' Fenster vorbereiten
-
+        dlgAnmeldung = New dlgBenutzerEinzeln
         ' Auswertung des Dialogergebnisses
         '   Dialog mit positivem Ergebnis geschlossen
 
