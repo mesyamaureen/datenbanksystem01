@@ -98,8 +98,11 @@
         weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)
         bookingController = New BookingController(mlstBuchung)
 
-        BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
-        BenutzerDAO.speichernKunde(mlstKunde)
+        BenutzerDAO.speichernMitarbeiter(plstMitarbeiter:=mlstMitarbeiter)
+        BenutzerDAO.speichernKunde(plstKunde:=mlstKunde)
+        BuchungsDAO.speichernBuchung(plstBuchung:=mlstBuchung)
+        Kurs__und_WeiterbildungsDAO.speichernKurs(plstKurs:=mlstKurs)
+        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(plstWeiterbildung:=mlstWeiterbildungen)
 
 
     End Function
