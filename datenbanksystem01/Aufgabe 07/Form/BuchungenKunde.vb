@@ -3,6 +3,30 @@
 
     End Sub
 
+
+    Protected Sub aktivierenSchaltflächen()
+        ' Deklaration
+        Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
+
+        ' Initialisierung
+        intAnzahlAusgewaehlterZeilen = Me.lsvBenutzerAlle.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+
+        ' Schatlfächen zurücksetzen
+        Me.btnLoeschen.Enabled = False
+        Me.btnLaden.Enabled = False
+        Me.btnHinzufuegenBuchung.Enabled = True
+
+        ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
+        If intAnzahlAusgewaehlterZeilen = 1 Then
+            ' Wenn genau eine Zeile ausgewählt ist
+            Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
+            Me.btnLaden.Enabled = True
+        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
+            Me.btnLaden.Enabled = False ' und nicht bearbeiten
+        End If
+    End Sub
+
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         'Deklaration das Ergebnis des MsgBox
         Dim msgResult As MsgBoxResult
@@ -19,7 +43,7 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
-    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
+    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung) Handles btnHinzufuegenBuchung
 
         Dim zeile As Windows.Forms.ListViewItem
         zeile = Me.ListViewAktBuchungen.Items.Add(1)
