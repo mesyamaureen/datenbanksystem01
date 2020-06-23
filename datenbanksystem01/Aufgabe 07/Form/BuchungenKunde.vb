@@ -9,7 +9,7 @@
         Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
 
         ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lsvBenutzerAlle.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+        intAnzahlAusgewaehlterZeilen = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
         ' Schatlfächen zurücksetzen
         Me.btnLoeschen.Enabled = False
@@ -43,7 +43,7 @@
             Return 'Zurück zum Fenster BuchungenKunde
         End If
     End Sub
-    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung) Handles btnHinzufuegenBuchung
+    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
 
         Dim zeile As Windows.Forms.ListViewItem
         zeile = Me.ListViewAktBuchungen.Items.Add(1)
