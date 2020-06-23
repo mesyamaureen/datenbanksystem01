@@ -10,8 +10,7 @@ Public Class Benutzer
     Private mstrBenutzername As String
     Private mstrPasswort As String
     Private mdatGebDat As Date
-    Private mstrRolle As String
-    Private mstrFirma As String
+
 
     'Konstruktoren
     Sub New()
@@ -20,7 +19,6 @@ Public Class Benutzer
         mstrBenutzername = String.Empty
         mstrPasswort = String.Empty
         mdatGebDat = Date.MinValue
-        mstrRolle = String.Empty
     End Sub
 
 
@@ -68,7 +66,7 @@ Public Class Benutzer
 
     Public Property Geburtsdatum As Date
         Get
-            Return mstrPasswort
+            Return mdatGebDat
         End Get
         Set(value As Date)
             ' Prüfen, ob Geburtsdatum in Vergangenheit

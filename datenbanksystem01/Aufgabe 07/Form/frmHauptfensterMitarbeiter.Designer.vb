@@ -64,7 +64,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnHilfeM
         '
         Me.btnHilfeM.Location = New System.Drawing.Point(73, 568)
-        Me.btnHilfeM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnHilfeM.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHilfeM.Name = "btnHilfeM"
         Me.btnHilfeM.Size = New System.Drawing.Size(127, 36)
         Me.btnHilfeM.TabIndex = 4
@@ -74,7 +74,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnMeinKonto
         '
         Me.btnMeinKonto.Location = New System.Drawing.Point(73, 451)
-        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(127, 36)
         Me.btnMeinKonto.TabIndex = 3
@@ -84,7 +84,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnKundenkonto
         '
         Me.btnKundenkonto.Location = New System.Drawing.Point(73, 321)
-        Me.btnKundenkonto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnKundenkonto.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKundenkonto.Name = "btnKundenkonto"
         Me.btnKundenkonto.Size = New System.Drawing.Size(127, 36)
         Me.btnKundenkonto.TabIndex = 2
@@ -94,7 +94,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnBuchungenM
         '
         Me.btnBuchungenM.Location = New System.Drawing.Point(73, 208)
-        Me.btnBuchungenM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuchungenM.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuchungenM.Name = "btnBuchungenM"
         Me.btnBuchungenM.Size = New System.Drawing.Size(127, 36)
         Me.btnBuchungenM.TabIndex = 1
@@ -104,7 +104,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnWeiterbildungenM
         '
         Me.btnWeiterbildungenM.Location = New System.Drawing.Point(73, 103)
-        Me.btnWeiterbildungenM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnWeiterbildungenM.Margin = New System.Windows.Forms.Padding(2)
         Me.btnWeiterbildungenM.Name = "btnWeiterbildungenM"
         Me.btnWeiterbildungenM.Size = New System.Drawing.Size(127, 36)
         Me.btnWeiterbildungenM.TabIndex = 0
@@ -131,7 +131,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnLoeschen
         '
         Me.btnLoeschen.Location = New System.Drawing.Point(366, 632)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoeschen.Name = "btnLoeschen"
         Me.btnLoeschen.Size = New System.Drawing.Size(127, 36)
         Me.btnLoeschen.TabIndex = 5
@@ -141,7 +141,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnHinzufuegen
         '
         Me.btnHinzufuegen.Location = New System.Drawing.Point(521, 632)
-        Me.btnHinzufuegen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnHinzufuegen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHinzufuegen.Name = "btnHinzufuegen"
         Me.btnHinzufuegen.Size = New System.Drawing.Size(127, 36)
         Me.btnHinzufuegen.TabIndex = 4
@@ -151,7 +151,7 @@ Partial Class frmHauptfensterMitarbeiter
         'btnOeffnenM
         '
         Me.btnOeffnenM.Location = New System.Drawing.Point(669, 632)
-        Me.btnOeffnenM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnOeffnenM.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOeffnenM.Name = "btnOeffnenM"
         Me.btnOeffnenM.Size = New System.Drawing.Size(127, 36)
         Me.btnOeffnenM.TabIndex = 3
@@ -167,7 +167,7 @@ Partial Class frmHauptfensterMitarbeiter
         Me.lstviewWeiterbildungenM.HideSelection = False
         Me.lstviewWeiterbildungenM.HoverSelection = True
         Me.lstviewWeiterbildungenM.Location = New System.Drawing.Point(7, 65)
-        Me.lstviewWeiterbildungenM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstviewWeiterbildungenM.Margin = New System.Windows.Forms.Padding(2)
         Me.lstviewWeiterbildungenM.MultiSelect = False
         Me.lstviewWeiterbildungenM.Name = "lstviewWeiterbildungenM"
         Me.lstviewWeiterbildungenM.Size = New System.Drawing.Size(791, 558)
@@ -209,7 +209,7 @@ Partial Class frmHauptfensterMitarbeiter
         'txtboxSucheM
         '
         Me.txtboxSucheM.Location = New System.Drawing.Point(534, 20)
-        Me.txtboxSucheM.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxSucheM.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxSucheM.Multiline = True
         Me.txtboxSucheM.Name = "txtboxSucheM"
         Me.txtboxSucheM.Size = New System.Drawing.Size(265, 25)

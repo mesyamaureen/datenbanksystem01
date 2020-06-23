@@ -69,7 +69,7 @@
         For Each mitarbeiter As Mitarbeiter In mlstMitarbeiter
             If strBenutzername.Equals(mitarbeiter.Benutzername) And strPasswort.Equals(mitarbeiter.Passwort) Then
                 anzumeldenderBenutzer = mitarbeiter
-                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
+                mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
 
@@ -79,7 +79,7 @@
         For Each kunde As Kunde In mlstKunde
             If strBenutzername.Equals(kunde.Benutzername) And strPasswort.Equals(kunde.Passwort) Then
                 anzumeldenderBenutzer = kunde
-                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
+                mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "kunde"
             End If

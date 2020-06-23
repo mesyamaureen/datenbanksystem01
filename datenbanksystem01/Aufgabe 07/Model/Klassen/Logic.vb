@@ -93,9 +93,14 @@
 
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
+
         userController = New UserController(mlstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)
         bookingController = New BookingController(mlstBuchung)
+
+        BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
+        BenutzerDAO.speichernKunde(mlstKunde)
+
 
     End Function
 
