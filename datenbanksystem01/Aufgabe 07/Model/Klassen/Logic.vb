@@ -3,6 +3,7 @@
     'Attribute
 
     Public mlstAktuellAngemeldeterBenutzer As List(Of Benutzer)
+    Public mlstBenutzer As List(Of Benutzer)
     Public mlstKunde As List(Of Kunde)
     Public mlstMitarbeiter As List(Of Mitarbeiter)
     Public mlstBuchung As List(Of Buchung)
@@ -78,18 +79,19 @@
     Public Function initialise()
         'TODO initialise lists from database
         mlstMitarbeiter = New List(Of Mitarbeiter) From
-        {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#)}
+          {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#), New Mitarbeiter("off", "pw", "Off", "Thomas", #10/23/1969#)}
         mlstKunde = New List(Of Kunde) From
-            {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "BlalBla AG"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "ShareNow")}
+          {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "BlalBla AG"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "ShareNow")}
 
         mlstKurs = New List(Of Kurs) From
-            {New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
+          {New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
         mlstWeiterbildungen = New List(Of Weiterbildung) From {
-            New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
+        New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
 
         mlstBuchung = New List(Of Buchung) From {
-        New Buchung(1200, #07/21/2020#, mlstKurs)
-        }
+        New Buchung(1200, #07/21/2020#, mlstKurs)}
+
+        mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
         userController = New UserController(mlstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)

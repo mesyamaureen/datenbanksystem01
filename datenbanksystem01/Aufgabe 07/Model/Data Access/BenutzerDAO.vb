@@ -7,7 +7,7 @@ Public Class BenutzerDAO
     Private Const DateinameMitarbeiter As String = "Mitarbeiter.xml"
     Private Const DateinameKunde As String = "Kunden.xml"
 
-    Public Shared Function ladenMitarbeiter() As List(Of Mitarbeiter)
+    Public Shared Function ladenMitarbeiter() As List(Of Mitarbeiter) 'Benutzer
 
         'Liste aller Mitarbeiter
         Dim lstMitarbeiter As List(Of Mitarbeiter)
@@ -78,5 +78,7 @@ Public Class BenutzerDAO
 
 
     End Sub
+
+
 
 End Class

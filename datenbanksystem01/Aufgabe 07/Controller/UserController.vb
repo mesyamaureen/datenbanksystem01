@@ -63,22 +63,28 @@
     'Funktionen
 
     Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
-
+        Dim anzumeldenderBenutzer As Benutzer
         Dim result = New Dictionary(Of String, String) From {{"attempt", "failed"}, {"role", Nothing}}
 
         For Each mitarbeiter As Mitarbeiter In mlstMitarbeiter
             If strBenutzername.Equals(mitarbeiter.Benutzername) And strPasswort.Equals(mitarbeiter.Passwort) Then
+                anzumeldenderBenutzer = mitarbeiter
+                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
+
             End If
         Next
 
         For Each kunde As Kunde In mlstKunde
             If strBenutzername.Equals(kunde.Benutzername) And strPasswort.Equals(kunde.Passwort) Then
+                anzumeldenderBenutzer = kunde
+                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "kunde"
             End If
         Next
+
 
         Return result
 
@@ -86,10 +92,10 @@
 
 
     Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As String
-        If Not (mlstKunde.Contains(Me)) Then
-            mlstKunde.Add(Me)
+        ' If Not (mlstKunde.Contains(Me)) Then
+        'mlstKunde.Add(Me)
 
-        End If
+        'End If
     End Function
 
 

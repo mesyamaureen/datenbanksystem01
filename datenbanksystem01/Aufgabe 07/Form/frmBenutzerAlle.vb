@@ -57,34 +57,34 @@
         ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
     End Sub
 
-    Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnBearbeiten.Click
-        ' Deklaration
-        '   Index des ausgewählten Eintrags der Tabelle
-        Dim intIndex As Integer
-        '   Zu bearbeitener Benutzer
-        Dim mit As Mitarbeiter
-        '   Detaildialog zum Anzeigen des Benutzers
-        Dim dlgBenutzerEinzeln As frmBenutzerEinzeln
+    'Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnBearbeiten.Click
+    ' Deklaration
+    '   Index des ausgewählten Eintrags der Tabelle
+    'Dim intIndex As Integer
+    '   Zu bearbeitener Benutzer
+    'Dim mit As Mitarbeiter
+    '   Detaildialog zum Anzeigen des Benutzers
+    'Dim dlgBenutzerEinzeln As frmBenutzerEinzeln
 
-        ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-        intIndex = Me.lsvBenutzerAlle.Items(0).Text
+    ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+    '   intIndex = Me.lsvBenutzerAlle.Items(0).Text
 
-        ' Element an der Position der Liste, die der ID entspricht ermitteln
-        mit = Aufgabe_07.mlstBenutzerAlle(intIndex)
-        ' Fenster vorbereiten
-        dlgAnmeldung = New dlgBenutzerEinzeln
-        ' Auswertung des Dialogergebnisses
-        '   Dialog mit positivem Ergebnis geschlossen
+    ' Element an der Position der Liste, die der ID entspricht ermitteln
+    '  mit = Aufgabe_07.mlstBenutzerAlle(intIndex)
+    ' Fenster vorbereiten
+    ' dlgAnmeldung = New dlgBenutzerEinzeln
+    ' Auswertung des Dialogergebnisses
+    '   Dialog mit positivem Ergebnis geschlossen
 
-        '   Neuen Benutzer aus dem Formular geben lassen 
+    '   Neuen Benutzer aus dem Formular geben lassen 
 
 
-        ' Hinweis: WEIL OBJKETE REFERENZTYPEN SIND, IST DIE LISTE DER URLAUBSANTRÄGE
-        ' BEREITS JETZT AKTUALISIERT. ES MUSS NICHTS HINZUGEFÜGT WERDEN!
+    ' Hinweis: WEIL OBJKETE REFERENZTYPEN SIND, IST DIE LISTE DER URLAUBSANTRÄGE
+    ' BEREITS JETZT AKTUALISIERT. ES MUSS NICHTS HINZUGEFÜGT WERDEN!
 
-        ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+    ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
 
-    End Sub
+    'End Sub
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         ' Deklaration
@@ -186,7 +186,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub lsvBenutzerAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvMitarbeiterAlle.SelectedIndexChanged
+    Private Sub lsvBenutzerAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AlleBenutzer.SelectedIndexChanged
         ' Schaltlfächen aktivieren oder dekativieren abhängig von der getroffenen Auswahl
         aktivierenSchaltflächen()
     End Sub
@@ -209,7 +209,7 @@
         ' Klassenoperation zum aktualiseren der gepeicherten der Daten aufrufen
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AlleBenutzer.SelectedIndexChanged
 
     End Sub
 
