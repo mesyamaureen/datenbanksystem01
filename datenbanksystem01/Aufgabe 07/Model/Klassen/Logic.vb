@@ -200,9 +200,9 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String) As Integer
+    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As String
 
-        Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum)
+        Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum, pstrTeilnehmerkreis)
 
     End Function
 

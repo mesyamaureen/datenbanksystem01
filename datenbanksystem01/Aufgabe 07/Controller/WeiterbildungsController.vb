@@ -83,7 +83,7 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String) As String
+    Public Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As String
 
     End Function
 

@@ -131,13 +131,13 @@
     ''' Verlassen des Hauptfensters
     ''' </summary>
 
-    Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
+    Private Sub btnBeendenProgramm_Click(sender As Object, e As EventArgs) Handles btnBeendenProgramm.Click
         Me.Close()
     End Sub
 
     Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs)
         Me.Close() 'Hauptfenster Mitarbeiter schließen
-        Exit Sub 'Prozedur verlassen
+
         BuchungenMitarbeiter.ShowDialog() 'Dialogfenster BuchungenMitarbeiter öffnen
     End Sub
 
@@ -148,4 +148,76 @@
     Private Sub btnBuchungenM_Click(sender As Object, e As EventArgs) Handles btnBuchungenM.Click
 
     End Sub
+
+    ''' <summary>
+    ''' Klick auf Öffnen bzw. Bearbeiten öffnet den aktuell in der Tabelle ausgewählten Benutzer in einem Detaildialog.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnOeffnenM_Click(sender As Object, e As EventArgs) Handles btnOeffnenM.Click
+        'Deklaration
+        ' Index des ausgewählten Eintrags der Tabelle
+        Dim intIndex As Integer
+        ' Zu bearbeitener Weiterbildung
+        Dim weiterbil As Weiterbildung
+        ' Detaildialog zum Anzeigen der Weiterbildung
+        Dim dlg As frmWeiterbildungsfensterMitarb
+
+
+        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
+
+        'Element an der Position der Liste, die der ID entspricht ermitteln
+        weiterbil = erzeugeBeispieldaten.erzeugeBeispieldaten.Item(intIndex)
+
+        'Fenster vorbereiten
+        dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
+        dlg.ShowDialog()
+
+        'Auswertung des Dialogergebnisses
+        If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
+
+            ' Dialog mit positivem Ergebnis geschlossen
+            weiterbil = dlg.gibWeiterbildung
+
+            ' Neuen Benutzer aus dem Formular geben lassen
+
+            'Hinweis: WEIL OBJEKTE REFERENZTYPEN SIND; IST DIE LISTE DER URLAUBSANTRÄGE
+            'BEREITS JETZT AKTUALISIERT: ES MUSS NICHTS HINZUGEFÜGT WERDEN!
+
+            'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+            anzeigen()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Klick auf Hinzufügen öffnet einen neuen Benutzer in einem Detaildialog.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
+        'Deklaration
+        Dim weiterbil As Weiterbildung 'Zu bearbeitener Weiterbildung
+        Dim dlg As frmWeiterbildungsfensterMitarb 'Detaildialog zum Anzeigen der Weiterbildung
+
+        'neue Weiterbildung erzeugen
+
+        'Fenster vorbereiten
+
+        'Auswertung des Dialogergebnisses
+        ' Dialog mit positivem Ergebnis geschlossen
+        ' Neue Weiterbildung aus dem Formular geben lassen und zur Liste der Benutzer hinzufügen
+        ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+
+    End Sub
+
+    'Idee TODO für btnHinzufügen
+    'Dim weiterbil As Weiterbildung
+    'Dim dlg As dlgNeueWeiterbildung
+    'Dim weiterbilcon As WeiterbildungsController
+    'dlg = New dlgNeueWeiterbildung(weiterbil.mstrBezeichnung, weiterbil.mstrThema, weiterbil.mstrCurriculum, weiterbil.mstrTeilnehmerkreis)
+    'dlg.ShowDialog()
+    'If dlg.DialogResult = Windows.Form.DialogResult.OK Then
+    'weiterbil = dlg.
 End Class
