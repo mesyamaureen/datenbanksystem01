@@ -90,6 +90,7 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'btnBuchungenM
         '
+        Me.btnBuchungenM.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnBuchungenM.Location = New System.Drawing.Point(97, 270)
         Me.btnBuchungenM.Name = "btnBuchungenM"
         Me.btnBuchungenM.Size = New System.Drawing.Size(190, 56)
@@ -152,12 +153,10 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'lstviewWeiterbildungenM
         '
-        Me.lstviewWeiterbildungenM.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.lstviewWeiterbildungenM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colWeiterbildungIdM, Me.colWeiterbildungM, Me.colThemaM})
         Me.lstviewWeiterbildungenM.FullRowSelect = True
         Me.lstviewWeiterbildungenM.GridLines = True
         Me.lstviewWeiterbildungenM.HideSelection = False
-        Me.lstviewWeiterbildungenM.HoverSelection = True
         Me.lstviewWeiterbildungenM.Location = New System.Drawing.Point(10, 79)
         Me.lstviewWeiterbildungenM.MultiSelect = False
         Me.lstviewWeiterbildungenM.Name = "lstviewWeiterbildungenM"
@@ -218,7 +217,6 @@ Partial Class frmHauptfensterMitarbeiter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnBeendenProgramm
         Me.ClientSize = New System.Drawing.Size(1674, 1055)
         Me.Controls.Add(Me.btnBeendenProgramm)
         Me.Controls.Add(Me.grpboxWeiterbildung)

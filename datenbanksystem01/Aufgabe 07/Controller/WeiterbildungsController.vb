@@ -134,7 +134,8 @@
     End Function
 
     Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean
-
+        'Logic.mlstWeiterbildungen.RemoveAt(intWeiterbildungID)
+        'Return True
     End Function
 
 End Class

@@ -86,7 +86,7 @@
         mlstKurs = New List(Of Kurs) From
           {New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
 
-        'Für Nina: Wäre es okay, wenn wir nur die Beispieldaten für Weiterbildungen, Kurse wie unten?
+        'Für Nina: Wäre es okay, nur die Beispieldaten für Weiterbildungen & Kurse wie unten benutzen?
         mlstWeiterbildungen = New List(Of Weiterbildung) From {
         New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
 
@@ -120,12 +120,25 @@
                                                                               3) Wie sieht meine Einnahme- und Kostenstruktur aus?", "Unternehmer, Projektmanager oder Marketingmitarbeiter,
                                 die kreative Methoden ausprobieren wollen, um Ihre Projekte schneller und effizientre zu planen. Start-Ups, die Ihr Geschäftsmodell gestalten
                                 möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.")
+        'WeiterbildungsID
+        agiles.WeiterbildungsID = "1"
+        scrum.WeiterbildungsID = "2"
+        controlling.WeiterbildungsID = "3"
+        bmc.WeiterbildungsID = "4"
+
+
 
         'Weiterbildungen zur Liste hinzufügen
         mlstWeiterbildungen.Add(agiles)
         mlstWeiterbildungen.Add(scrum)
         mlstWeiterbildungen.Add(controlling)
         mlstWeiterbildungen.Add(bmc)
+
+        'intIndexAnzahl
+        agiles = mlstWeiterbildungen.Item(0)
+        scrum = mlstWeiterbildungen.Item(1)
+        controlling = mlstWeiterbildungen.Item(2)
+        bmc = mlstWeiterbildungen.Item(3)
 
 
         mlstBuchung = New List(Of Buchung) From {

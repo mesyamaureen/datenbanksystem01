@@ -54,8 +54,6 @@
         'Zuweisen mneueWeiterbildung in Rückgabewert createWeiterbildung
         mneueWeiterbildung = mWeiterbControl.createWeiterbildung(titel, curri, teilkreis, theme)
 
-        'Dialogfenster schließen
-        'Me.Close()
     End Sub
 
     Private Sub frmNeueWeiterbildung_Load(sender As Object, e As EventArgs) Handles MyBase.Load

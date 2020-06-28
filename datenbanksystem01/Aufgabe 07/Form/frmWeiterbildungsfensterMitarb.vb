@@ -7,7 +7,7 @@ Public Class frmWeiterbildungsfensterMitarb
     'Attribute
     Public mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    'eine Liste mit Anreden(?)
+    Public mWeiterbControlle As WeiterbildungsController 'Weiterbildungscontrolle aufrufen
 
     Public Sub New()
 
@@ -16,6 +16,7 @@ Public Class frmWeiterbildungsfensterMitarb
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = New Weiterbildung
+        mWeiterbControlle = New WeiterbildungsController
     End Sub
 
     Public Sub New(pWeiterbil As Weiterbildung)
@@ -25,6 +26,7 @@ Public Class frmWeiterbildungsfensterMitarb
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = pWeiterbil
+        mWeiterbControlle = New WeiterbildungsController
     End Sub
 
     ''' <summary>
@@ -35,16 +37,6 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' <remarks>Die Schaltfläche Abbrechen ist als Cancel-Button eingestellt und liefert das DialogResult Cancel.</remarks>
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         'Nichts zu tun, Standardverhalten bei Abbrechen reicht
-    End Sub
-
-    ''' <summary>
-    '''  Beim Klick auf Speichern bzw. OK müssen nur die Pflichtangaben geprüft werden, der Rest ist Standardverhalten von OK
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks>Die Schaltfläche Speichern bzw. OK ist als Accept-Button eingestellt und liefert das DialogResult OK.</remarks>
-    Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-        ' Nichts zu tun, Standardverhalten bei Speichern reicht
     End Sub
 
     Private Sub anzeigen()
@@ -67,29 +59,34 @@ Public Class frmWeiterbildungsfensterMitarb
     End Sub
 
     Function gibWeiterbildung() As Weiterbildung
-        'Deklaration
-        'Weiterbildung
-        'Kurse
-        'Eigenschaften der Weiterbildung
-        'Eigenschaften der Kursen
         'Eigenschaften der Weiterbildung aus den Feldern der Oberfläche lesen
         mBearbWeiterbildung.Bezeichnung = Me.txtboxSeminartitel.Text
         mBearbWeiterbildung.Curriculum = Me.rtxtboxSeminarbeschreibungM.Text
         mBearbWeiterbildung.Teilnehmerkreis = Me.rtxtboxTeilnkreisM.Text
         mBearbWeiterbildung.Thema = Me.rtxtboxSeminarinfoM.Text
-        ' TODO: m... = Me.listview.Kurs ?????
-
-        'Eigenschaften der Kursen aus den Feldern der Oberfläche lesen
-
-        'Eigenschaften beim aktuell bearbeiteten Weiterbildung setzen
-
-        'Typumwandlung (Kurse -> Weiterbildung? Aber die Beziehung ist keine Vererbung oder????)
-        'Wenn Typumwandlung erfolgreich war, dann weitere Attribute der Kurse setzen
+        ' TODO: m... = Me.listview.Kurs ????
 
         'Bearbeitete Weiterbildung als Ergebnis zurückgeben
         Return mBearbWeiterbildung
 
     End Function
+
+    ''' <summary>
+    '''  Beim Klick auf Speichern bzw. OK müssen nur die Pflichtangaben geprüft werden, der Rest ist Standardverhalten von OK
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks>Die Schaltfläche Speichern bzw. OK ist als Accept-Button eingestellt und liefert das DialogResult OK.</remarks>
+    Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
+        Dim titel As String = Me.txtboxSeminartitel.Text
+        Dim curri As String = Me.rtxtboxSeminarbeschreibungM.Text
+        Dim theme As String = Me.rtxtboxSeminarinfoM.Text
+        Dim teilkreis As String = Me.rtxtboxTeilnkreisM.Text
+        'Aufrufen changeWeiterbildung() in Weiterbildungscontroller
+        mWeiterbControlle.changeWeiterbildung(titel, theme, curri, teilkreis, mBearbWeiterbildung)
+        'Passende bearbeitende Weiterbildung in Datenbank
+        Logic.mlstWeiterbildungen.Item(frmHauptfensterMitarbeiter.intIndex) = mBearbWeiterbildung
+    End Sub
 
 
     Private Sub frmWeiterbildungsfensterMitarb_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -30,9 +30,9 @@
         intAnzahlAusgewaehlterZeilen = Me.lstviewWeiterbildungenM.SelectedItems.Count
 
         'Schaltfläche zurücksetzen
-        Me.btnOeffnenM.Enabled = False
+        Me.btnOeffnenM.Enabled = True
         Me.btnHinzufuegen.Enabled = True
-        Me.btnLoeschen.Enabled = False
+        Me.btnLoeschen.Enabled = True
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
@@ -136,19 +136,8 @@
         Me.Close()
     End Sub
 
-    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs)
-        Me.Close() 'Hauptfenster Mitarbeiter schließen
-
-        BuchungenMitarbeiter.ShowDialog() 'Dialogfenster BuchungenMitarbeiter öffnen
-    End Sub
-
-    Private Sub lstviewWeiterbildungenM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungenM.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub btnBuchungenM_Click(sender As Object, e As EventArgs) Handles btnBuchungenM.Click
-
-    End Sub
+    'Integer Index deklarieren
+    Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
 
     ''' <summary>
     ''' Klick auf Öffnen bzw. Bearbeiten öffnet den aktuell in der Tabelle ausgewählten Benutzer in einem Detaildialog.
@@ -157,19 +146,14 @@
     ''' <param name="e"></param>
     Private Sub btnOeffnenM_Click(sender As Object, e As EventArgs) Handles btnOeffnenM.Click
         'Deklaration
-        ' Index des ausgewählten Eintrags der Tabelle
-        Dim intIndex As Integer
-        ' Zu bearbeitener Weiterbildung
-        Dim weiterbil As Weiterbildung
-        ' Detaildialog zum Anzeigen der Weiterbildung
-        Dim dlg As frmWeiterbildungsfensterMitarb
-
+        Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
+        Dim dlg As frmWeiterbildungsfensterMitarb  ' Detaildialog zum Anzeigen der Weiterbildung
 
         'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
         intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
 
         'Element an der Position der Liste, die der ID entspricht ermitteln
-        weiterbil = Logic.initialise.Item(intIndex)
+        weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
 
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
@@ -192,7 +176,7 @@
     End Sub
 
     ''' <summary>
-    ''' Klick auf Hinzufügen öffnet einen neuen Benutzer in einem Detaildialog.
+    ''' Klick auf Hinzufügen öffnet eine Weiterbildung in der Tabelle.
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -215,7 +199,38 @@
             ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigen()
         End If
+    End Sub
 
+    ''' <summary>
+    ''' Klick auf Löschen löscht eine Weiterbildung in der Tabelle.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
+        Dim weiterbil As Weiterbildung 'Deklaration der zu löschene Weiterbildung und Index, die außer der Funktion deklariert wird.
+        Dim weiterbilController As WeiterbildungsController
+
+        ' aus der ausgeählten Zeile im Dialog die ID der Weiterbildung auslesen
+        intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
+
+        'Messagebox beim Löschen
+        Dim mbrResult As MsgBoxResult
+        'Verzweigung des Msgbox
+        If Me.DialogResult = Windows.Forms.DialogResult.None Then
+            mbrResult = MsgBox("Möchten Sie diese Weiterbildung permanent löschen?",
+                                MsgBoxStyle.Question + vbYesNo, "Abbrechen")
+            If mbrResult = vbNo Then
+                Me.Close()
+            End If
+        End If
+
+        'Weiterbildung löschen
+        'aus Liste aller Weiterbildungen entfernen
+        Logic.mlstWeiterbildungen.RemoveAt(intIndex)
+
+        'Fensterinhalt aktualisieren, so dass Tabelle die gelöschte Weiterbildung nicht mehr zeigt
+        anzeigen()
 
     End Sub
 End Class
