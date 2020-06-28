@@ -57,7 +57,7 @@ Public Class Kurs__und_WeiterbildungsDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strDateipfad) Then
-            lstWeiterbildung = Aufgabe_07.erzeugeBeispieldaten.erzeugeBeispieldaten()
+            lstWeiterbildung = Aufgabe_07.Logic.initialise()
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstWeiterbildung = ladenXml(strDateipfad, GetType(List(Of Weiterbildung)))
 

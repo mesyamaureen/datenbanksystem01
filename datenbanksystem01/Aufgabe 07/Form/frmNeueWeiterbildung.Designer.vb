@@ -230,6 +230,7 @@ Partial Class frmNeueWeiterbildung
         '
         'btnErstellen
         '
+        Me.btnErstellen.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnErstellen.Location = New System.Drawing.Point(843, 659)
         Me.btnErstellen.Name = "btnErstellen"
         Me.btnErstellen.Size = New System.Drawing.Size(191, 56)

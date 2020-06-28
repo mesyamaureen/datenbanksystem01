@@ -178,7 +178,6 @@
     <Compile Include="Model\Data Access\Kurs- und WeiterbildungsDAO.vb" />
     <Compile Include="Model\Klassen\Benutzer.vb" />
     <Compile Include="Model\Klassen\Buchung.vb" />
-    <Compile Include="Model\Klassen\erzeugeBeispieldaten.vb" />
     <Compile Include="Model\Klassen\Kunde.vb" />
     <Compile Include="Model\Klassen\Kurs.vb" />
     <Compile Include="Model\Klassen\Logic.vb" />

@@ -88,10 +88,10 @@
         'Deklaration neue Variabel als Zuweisung von Weiterbildung
         Dim neueWeiterbildung As New Weiterbildung
         'Initialisierung der Parameter
-        pstrBezeichnung = neueWeiterbildung.Bezeichnung
-        pstrCurriculum = neueWeiterbildung.Curriculum
-        pstrTeilnehmerkreis = neueWeiterbildung.Teilnehmerkreis
-        pstrThema = neueWeiterbildung.Thema
+        neueWeiterbildung.Bezeichnung = pstrBezeichnung
+        neueWeiterbildung.Curriculum = pstrCurriculum
+        neueWeiterbildung.Teilnehmerkreis = pstrTeilnehmerkreis
+        neueWeiterbildung.Thema = pstrThema
 
         'WeiterbildungsID generieren
         weiterId += 1

@@ -98,8 +98,8 @@
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To mlstWeiterbildungen.Count - 1
-            weiterbil = mlstWeiterbildungen.Item(i)
+        For i = 0 To ListeWeiterbildung.Count - 1
+            weiterbil = ListeWeiterbildung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
             strWeiterbilID = weiterbil.WeiterbildungsID
@@ -121,6 +121,7 @@
     Private Sub frmHauptfensterMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Alle Weiterbildungen laden
         mlstWeiterbildungen = Logic.mlstWeiterbildungen
+
 
         'Anzeigen der Weiterbildungen in der Tabelle
         anzeigen()
@@ -168,7 +169,7 @@
         intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
 
         'Element an der Position der Liste, die der ID entspricht ermitteln
-        weiterbil = erzeugeBeispieldaten.erzeugeBeispieldaten.Item(intIndex)
+        weiterbil = Logic.initialise.Item(intIndex)
 
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
@@ -198,27 +199,23 @@
     ''' <remarks></remarks>
     Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
         'Deklaration
-        Dim weiterbil As Weiterbildung 'Zu bearbeitener Weiterbildung
+        Dim neueWeiterbil As Weiterbildung 'Zu bearbeitener Weiterbildung
         Dim dlg As frmNeueWeiterbildung 'Detaildialog zum Anzeigen der Weiterbildung
 
-        'neue Weiterbildung erzeugen
+        'Fenster vorbereiten
         dlg = New frmNeueWeiterbildung()
         dlg.ShowDialog()
-        'Fenster vorbereiten
 
         'Auswertung des Dialogergebnisses
-        ' Dialog mit positivem Ergebnis geschlossen
-        ' Neue Weiterbildung aus dem Formular geben lassen und zur Liste der Benutzer hinzufügen
-        ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+        If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
+            ' Dialog mit positivem Ergebnis geschlossen
+            neueWeiterbil = dlg.mneueWeiterbildung
+            'Neue Weiterbildung zur Liste der Weiterbildung hinzufügen
+            Logic.mlstWeiterbildungen.Add(neueWeiterbil)
+            ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+            anzeigen()
+        End If
+
 
     End Sub
-
-    'Idee TODO für btnHinzufügen
-    'Dim weiterbil As Weiterbildung
-    'Dim dlg As dlgNeueWeiterbildung
-    'Dim weiterbilcon As WeiterbildungsController
-    'dlg = New dlgNeueWeiterbildung(weiterbil.mstrBezeichnung, weiterbil.mstrThema, weiterbil.mstrCurriculum, weiterbil.mstrTeilnehmerkreis)
-    'dlg.ShowDialog()
-    'If dlg.DialogResult = Windows.Form.DialogResult.OK Then
-    'weiterbil = dlg.
 End Class
