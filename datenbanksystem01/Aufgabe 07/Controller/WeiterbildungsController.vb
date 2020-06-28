@@ -83,16 +83,54 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As String
+    Private weiterId As UInteger
+    Public Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
+        'Deklaration neue Variabel als Zuweisung von Weiterbildung
+        Dim neueWeiterbildung As New Weiterbildung
+        'Initialisierung der Parameter
+        pstrBezeichnung = neueWeiterbildung.Bezeichnung
+        pstrCurriculum = neueWeiterbildung.Curriculum
+        pstrTeilnehmerkreis = neueWeiterbildung.Teilnehmerkreis
+        pstrThema = neueWeiterbildung.Thema
 
+        'WeiterbildungsID generieren
+        weiterId += 1
+        'Verzweigung für Ausgabe
+        If weiterId < 10 Then
+            neueWeiterbildung.WeiterbildungsID = "00" & weiterId
+        ElseIf 10 <= weiterId < 100 Then
+            neueWeiterbildung.WeiterbildungsID = "0" & weiterId
+        Else
+            neueWeiterbildung.WeiterbildungsID = weiterId
+        End If
+
+        'Return als Weiterbildung
+        Return neueWeiterbildung
     End Function
 
-    Public Function viewWeiterbildung(intWeiterbildungsID As Integer) As Array
-
+    Public Function viewWeiterbildung(strWeiterbildungsID As String) As Array
+        'Deklaration neue Variablen
+        Dim aryWeiterbil(4) As String
+        For Each weiterbil As Weiterbildung In ListeWeiterbildungen
+            If weiterbil.WeiterbildungsID = strWeiterbildungsID Then
+                aryWeiterbil(0) = weiterbil.Bezeichnung
+                aryWeiterbil(1) = weiterbil.Thema
+                aryWeiterbil(2) = weiterbil.Curriculum
+                aryWeiterbil(3) = weiterbil.Teilnehmerkreis
+            End If
+        Next
+        Return aryWeiterbil
     End Function
 
-    Public Function changeWeiterbildung(intWeiterbildungsID As Integer, strBezeichnung As String, strThema As String, strCurriculum As String) As Boolean
-
+    Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
+                                        bearbWeiterbildung As Weiterbildung) As Boolean
+        'Initialisierung der Parameter
+        bearbWeiterbildung.Bezeichnung = strBezeichnung
+        bearbWeiterbildung.Thema = strThema
+        bearbWeiterbildung.Curriculum = strCurriculum
+        bearbWeiterbildung.Teilnehmerkreis = strTeilnehmerkreis
+        'Rückgabewert
+        Return True
     End Function
 
     Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean

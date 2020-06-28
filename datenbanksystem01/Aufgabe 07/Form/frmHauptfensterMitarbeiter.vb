@@ -199,10 +199,11 @@
     Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
         'Deklaration
         Dim weiterbil As Weiterbildung 'Zu bearbeitener Weiterbildung
-        Dim dlg As frmWeiterbildungsfensterMitarb 'Detaildialog zum Anzeigen der Weiterbildung
+        Dim dlg As frmNeueWeiterbildung 'Detaildialog zum Anzeigen der Weiterbildung
 
         'neue Weiterbildung erzeugen
-
+        dlg = New frmNeueWeiterbildung()
+        dlg.ShowDialog()
         'Fenster vorbereiten
 
         'Auswertung des Dialogergebnisses

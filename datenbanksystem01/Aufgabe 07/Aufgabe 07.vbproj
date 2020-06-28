@@ -143,6 +143,12 @@
     <Compile Include="Form\frmNeueMitarbeiter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\frmNeueWeiterbildung.Designer.vb">
+      <DependentUpon>frmNeueWeiterbildung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmNeueWeiterbildung.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\frmStart.designer.vb">
       <DependentUpon>frmStart.vb</DependentUpon>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmNeueMitarbeiter.resx">
       <DependentUpon>frmNeueMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\frmNeueWeiterbildung.resx">
+      <DependentUpon>frmNeueWeiterbildung.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>

@@ -200,7 +200,7 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As String
+    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As Weiterbildung
 
         Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum, pstrTeilnehmerkreis)
 
@@ -212,9 +212,10 @@
 
     End Function
 
-    Public Function changeWeiterbildung(strWeiterbildungsID As String, strBezeichnung As String, strThema As String, strCurriculum As String) As Boolean
+    Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
+                                        bearbWeiterbildung As Weiterbildung) As Boolean
 
-        Return weiterbildungscontroller.changeWeiterbildung(strWeiterbildungsID, strBezeichnung, strThema, strCurriculum)
+        Return weiterbildungscontroller.changeWeiterbildung(strBezeichnung, strThema, strCurriculum, strTeilnehmerkreis, bearbWeiterbildung)
 
     End Function
 
