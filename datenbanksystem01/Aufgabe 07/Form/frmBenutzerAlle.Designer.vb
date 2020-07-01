@@ -23,11 +23,11 @@ Partial Class frmBenutzerAlle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.AlleBenutzer = New System.Windows.Forms.ListView()
-        Me.lblLstvAlleBenutzer = New System.Windows.Forms.Label()
         Me.lblIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtBenutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Name = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Vorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblLstvAlleBenutzer = New System.Windows.Forms.Label()
         Me.btnHinzufuegen = New System.Windows.Forms.Button()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.btnBearbeiten = New System.Windows.Forms.Button()
@@ -47,15 +47,6 @@ Partial Class frmBenutzerAlle
         Me.AlleBenutzer.UseCompatibleStateImageBehavior = False
         Me.AlleBenutzer.View = System.Windows.Forms.View.Details
         '
-        'lblLstvAlleBenutzer
-        '
-        Me.lblLstvAlleBenutzer.AutoSize = True
-        Me.lblLstvAlleBenutzer.Location = New System.Drawing.Point(165, 38)
-        Me.lblLstvAlleBenutzer.Name = "lblLstvAlleBenutzer"
-        Me.lblLstvAlleBenutzer.Size = New System.Drawing.Size(318, 17)
-        Me.lblLstvAlleBenutzer.TabIndex = 1
-        Me.lblLstvAlleBenutzer.Text = "Alle Mitarbeiter und Kunden der Time2-Akademie"
-        '
         'lblIndex
         '
         Me.lblIndex.Text = "Index"
@@ -68,13 +59,22 @@ Partial Class frmBenutzerAlle
         '
         'Name
         '
-        Me.Name.Text = "Name"
+        Me.Name.Text = "frmBenutzerAlle"
         Me.Name.Width = 161
         '
         'Vorname
         '
         Me.Vorname.Text = "Vorname"
         Me.Vorname.Width = 174
+        '
+        'lblLstvAlleBenutzer
+        '
+        Me.lblLstvAlleBenutzer.AutoSize = True
+        Me.lblLstvAlleBenutzer.Location = New System.Drawing.Point(165, 38)
+        Me.lblLstvAlleBenutzer.Name = "lblLstvAlleBenutzer"
+        Me.lblLstvAlleBenutzer.Size = New System.Drawing.Size(318, 17)
+        Me.lblLstvAlleBenutzer.TabIndex = 1
+        Me.lblLstvAlleBenutzer.Text = "Alle Mitarbeiter und Kunden der Time2-Akademie"
         '
         'btnHinzufuegen
         '
@@ -123,7 +123,7 @@ Partial Class frmBenutzerAlle
         Me.Controls.Add(Me.btnHinzufuegen)
         Me.Controls.Add(Me.lblLstvAlleBenutzer)
         Me.Controls.Add(Me.AlleBenutzer)
-        Me.Name.Text = "frmBenutzerAlle"
+        Me.Name = "frmBenutzerAlle"
         Me.Text = "Alle Benutzer"
         Me.ResumeLayout(False)
         Me.PerformLayout()

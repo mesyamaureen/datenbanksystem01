@@ -241,7 +241,8 @@
     End Sub
 
     Private Sub btnKundenkonto_Click(sender As Object, e As EventArgs) Handles btnKundenkonto.Click
-
+        frmKundenKontoListe.ShowDialog()
+        Me.Close()
     End Sub
 
     Private Sub btnWeiterbildungenM_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungenM.Click

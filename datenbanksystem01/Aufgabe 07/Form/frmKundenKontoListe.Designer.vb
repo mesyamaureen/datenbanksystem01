@@ -31,13 +31,15 @@ Partial Class frmKundenKontoListe
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colGebDat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colFirma = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnLaden = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSchliessen
         '
-        Me.btnSchliessen.Location = New System.Drawing.Point(1062, 669)
+        Me.btnSchliessen.Location = New System.Drawing.Point(708, 428)
+        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchliessen.Name = "btnSchliessen"
-        Me.btnSchliessen.Size = New System.Drawing.Size(180, 48)
+        Me.btnSchliessen.Size = New System.Drawing.Size(121, 36)
         Me.btnSchliessen.TabIndex = 0
         Me.btnSchliessen.Text = "Schließen"
         Me.btnSchliessen.UseVisualStyleBackColor = True
@@ -49,10 +51,11 @@ Partial Class frmKundenKontoListe
         Me.lstviewKundenKonten.FullRowSelect = True
         Me.lstviewKundenKonten.GridLines = True
         Me.lstviewKundenKonten.HideSelection = False
-        Me.lstviewKundenKonten.Location = New System.Drawing.Point(12, 12)
+        Me.lstviewKundenKonten.Location = New System.Drawing.Point(8, 8)
+        Me.lstviewKundenKonten.Margin = New System.Windows.Forms.Padding(2)
         Me.lstviewKundenKonten.MultiSelect = False
         Me.lstviewKundenKonten.Name = "lstviewKundenKonten"
-        Me.lstviewKundenKonten.Size = New System.Drawing.Size(1230, 628)
+        Me.lstviewKundenKonten.Size = New System.Drawing.Size(821, 403)
         Me.lstviewKundenKonten.TabIndex = 1
         Me.lstviewKundenKonten.UseCompatibleStateImageBehavior = False
         Me.lstviewKundenKonten.View = System.Windows.Forms.View.Details
@@ -92,14 +95,25 @@ Partial Class frmKundenKontoListe
         Me.colFirma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colFirma.Width = 171
         '
+        'btnLaden
+        '
+        Me.btnLaden.Location = New System.Drawing.Point(552, 428)
+        Me.btnLaden.Name = "btnLaden"
+        Me.btnLaden.Size = New System.Drawing.Size(121, 36)
+        Me.btnLaden.TabIndex = 2
+        Me.btnLaden.Text = "Details"
+        Me.btnLaden.UseVisualStyleBackColor = True
+        '
         'frmKundenKontoListe
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.ClientSize = New System.Drawing.Size(841, 477)
+        Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.lstviewKundenKonten)
         Me.Controls.Add(Me.btnSchliessen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmKundenKontoListe"
         Me.Text = "Liste von Kundenkonten"
         Me.ResumeLayout(False)
@@ -114,4 +128,5 @@ Partial Class frmKundenKontoListe
     Friend WithEvents colName As ColumnHeader
     Friend WithEvents colGebDat As ColumnHeader
     Friend WithEvents colFirma As ColumnHeader
+    Friend WithEvents btnLaden As Button
 End Class
