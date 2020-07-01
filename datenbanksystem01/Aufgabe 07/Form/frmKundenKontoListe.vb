@@ -5,7 +5,7 @@
         Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
 
         ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+        intAnzahlAusgewaehlterZeilen = Me.lstviewKundenKonten.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
         ' Schatlfächen zurücksetzen
 

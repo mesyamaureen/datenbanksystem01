@@ -123,7 +123,7 @@ Partial Class frmBenutzerAlle
         Me.Controls.Add(Me.btnHinzufuegen)
         Me.Controls.Add(Me.lblLstvAlleBenutzer)
         Me.Controls.Add(Me.AlleBenutzer)
-        Me.Name = "frmBenutzerAlle"
+        Me.Name.Text = "frmBenutzerAlle"
         Me.Text = "Alle Benutzer"
         Me.ResumeLayout(False)
         Me.PerformLayout()
