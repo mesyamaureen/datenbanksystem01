@@ -233,4 +233,25 @@
         anzeigen()
 
     End Sub
+
+    Private Sub btnBuchungenM_Click(sender As Object, e As EventArgs) Handles btnBuchungenM.Click
+        BuchungenMitarbeiter.ShowDialog()
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnKundenkonto_Click(sender As Object, e As EventArgs) Handles btnKundenkonto.Click
+
+    End Sub
+
+    Private Sub btnWeiterbildungenM_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungenM.Click
+
+        frmWeiterbildungsfensterMitarb.ShowDialog()
+        Me.Close()
+    End Sub
+
+    Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
+        frmMeinKontoMitarbeiter.ShowDialog()
+        Me.Close()
+    End Sub
 End Class

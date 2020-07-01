@@ -132,5 +132,23 @@
 
     Private Sub btnWeiterbildungen_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungen.Click
 
+
+
+    End Sub
+
+    Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
+        BuchungenKunde.ShowDialog()
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
+        Weiterbildungsfenster_Kunde.ShowDialog()
+        Me.Close()
+    End Sub
+
+    Private Sub btnKonto_Click(sender As Object, e As EventArgs) Handles btnKonto.Click
+        frmKundeKonto.ShowDialog()
+        Me.Close()
     End Sub
 End Class
