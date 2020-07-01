@@ -76,4 +76,10 @@
         strWeiterbildungen = lviZeile.SubItems(2).Text
     End Sub
 
+    Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
+
+        txtKundenID = Me.txtKundenID
+
+
+    End Sub
 End Class

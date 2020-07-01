@@ -44,92 +44,104 @@ Partial Class frmMeinKontoMitarbeiter
         '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(230, 24)
+        Me.txtBenutzername.Location = New System.Drawing.Point(153, 15)
+        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
-        Me.txtBenutzername.Size = New System.Drawing.Size(1012, 50)
+        Me.txtBenutzername.Size = New System.Drawing.Size(676, 33)
         Me.txtBenutzername.TabIndex = 0
         '
         'txtboxAltesPasswort
         '
-        Me.txtboxAltesPasswort.Location = New System.Drawing.Point(230, 99)
+        Me.txtboxAltesPasswort.Location = New System.Drawing.Point(153, 63)
+        Me.txtboxAltesPasswort.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxAltesPasswort.Multiline = True
         Me.txtboxAltesPasswort.Name = "txtboxAltesPasswort"
-        Me.txtboxAltesPasswort.Size = New System.Drawing.Size(1012, 50)
+        Me.txtboxAltesPasswort.Size = New System.Drawing.Size(676, 33)
         Me.txtboxAltesPasswort.TabIndex = 1
         '
         'txtboxNeuesPasswort
         '
-        Me.txtboxNeuesPasswort.Location = New System.Drawing.Point(230, 175)
+        Me.txtboxNeuesPasswort.Location = New System.Drawing.Point(153, 112)
+        Me.txtboxNeuesPasswort.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxNeuesPasswort.Multiline = True
         Me.txtboxNeuesPasswort.Name = "txtboxNeuesPasswort"
-        Me.txtboxNeuesPasswort.Size = New System.Drawing.Size(1012, 47)
+        Me.txtboxNeuesPasswort.Size = New System.Drawing.Size(676, 32)
         Me.txtboxNeuesPasswort.TabIndex = 2
         '
         'txtboxVorname
         '
-        Me.txtboxVorname.Location = New System.Drawing.Point(230, 250)
+        Me.txtboxVorname.Location = New System.Drawing.Point(153, 160)
+        Me.txtboxVorname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxVorname.Multiline = True
         Me.txtboxVorname.Name = "txtboxVorname"
-        Me.txtboxVorname.Size = New System.Drawing.Size(1012, 47)
+        Me.txtboxVorname.Size = New System.Drawing.Size(676, 32)
         Me.txtboxVorname.TabIndex = 3
         '
         'txtboxName
         '
-        Me.txtboxName.Location = New System.Drawing.Point(230, 327)
+        Me.txtboxName.Location = New System.Drawing.Point(153, 209)
+        Me.txtboxName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxName.Multiline = True
         Me.txtboxName.Name = "txtboxName"
-        Me.txtboxName.Size = New System.Drawing.Size(1012, 47)
+        Me.txtboxName.Size = New System.Drawing.Size(676, 32)
         Me.txtboxName.TabIndex = 4
         '
         'txtboxGebDat
         '
-        Me.txtboxGebDat.Location = New System.Drawing.Point(230, 405)
+        Me.txtboxGebDat.Location = New System.Drawing.Point(153, 259)
+        Me.txtboxGebDat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxGebDat.Multiline = True
         Me.txtboxGebDat.Name = "txtboxGebDat"
-        Me.txtboxGebDat.Size = New System.Drawing.Size(1012, 47)
+        Me.txtboxGebDat.Size = New System.Drawing.Size(676, 32)
         Me.txtboxGebDat.TabIndex = 5
         '
         'txtboxMitarbeiterID
         '
-        Me.txtboxMitarbeiterID.Location = New System.Drawing.Point(230, 482)
+        Me.txtboxMitarbeiterID.Location = New System.Drawing.Point(153, 308)
+        Me.txtboxMitarbeiterID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxMitarbeiterID.Multiline = True
         Me.txtboxMitarbeiterID.Name = "txtboxMitarbeiterID"
-        Me.txtboxMitarbeiterID.Size = New System.Drawing.Size(1012, 47)
+        Me.txtboxMitarbeiterID.Size = New System.Drawing.Size(676, 32)
         Me.txtboxMitarbeiterID.TabIndex = 6
         '
         'btnAbbrechen
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1106, 672)
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnAbbrechen.Location = New System.Drawing.Point(737, 430)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(136, 45)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(91, 29)
         Me.btnAbbrechen.TabIndex = 7
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(950, 672)
+        Me.btnSpeichern.Location = New System.Drawing.Point(633, 430)
+        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(136, 45)
+        Me.btnSpeichern.Size = New System.Drawing.Size(91, 29)
         Me.btnSpeichern.TabIndex = 8
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
         '
         'btnLoeschen
         '
-        Me.btnLoeschen.Location = New System.Drawing.Point(788, 672)
+        Me.btnLoeschen.Location = New System.Drawing.Point(525, 430)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(136, 45)
+        Me.btnLoeschen.Size = New System.Drawing.Size(91, 29)
         Me.btnLoeschen.TabIndex = 9
         Me.btnLoeschen.Text = "Löschen"
         Me.btnLoeschen.UseVisualStyleBackColor = True
         '
         'btnErstellen
         '
-        Me.btnErstellen.Location = New System.Drawing.Point(535, 672)
+        Me.btnErstellen.Location = New System.Drawing.Point(357, 430)
+        Me.btnErstellen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnErstellen.Name = "btnErstellen"
-        Me.btnErstellen.Size = New System.Drawing.Size(234, 45)
+        Me.btnErstellen.Size = New System.Drawing.Size(156, 29)
         Me.btnErstellen.TabIndex = 10
         Me.btnErstellen.Text = "Neues Konto erstellen"
         Me.btnErstellen.UseVisualStyleBackColor = True
@@ -137,73 +149,80 @@ Partial Class frmMeinKontoMitarbeiter
         'lblBenutzername
         '
         Me.lblBenutzername.AutoSize = True
-        Me.lblBenutzername.Location = New System.Drawing.Point(12, 27)
+        Me.lblBenutzername.Location = New System.Drawing.Point(8, 17)
+        Me.lblBenutzername.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBenutzername.Name = "lblBenutzername"
-        Me.lblBenutzername.Size = New System.Drawing.Size(151, 25)
+        Me.lblBenutzername.Size = New System.Drawing.Size(100, 17)
         Me.lblBenutzername.TabIndex = 11
         Me.lblBenutzername.Text = "Benutzername"
         '
         'lblAltesPasswort
         '
         Me.lblAltesPasswort.AutoSize = True
-        Me.lblAltesPasswort.Location = New System.Drawing.Point(12, 102)
+        Me.lblAltesPasswort.Location = New System.Drawing.Point(8, 65)
+        Me.lblAltesPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAltesPasswort.Name = "lblAltesPasswort"
-        Me.lblAltesPasswort.Size = New System.Drawing.Size(154, 25)
+        Me.lblAltesPasswort.Size = New System.Drawing.Size(100, 17)
         Me.lblAltesPasswort.TabIndex = 12
         Me.lblAltesPasswort.Text = "Altes Passwort"
         '
         'lblNeuesPasswort
         '
         Me.lblNeuesPasswort.AutoSize = True
-        Me.lblNeuesPasswort.Location = New System.Drawing.Point(12, 178)
+        Me.lblNeuesPasswort.Location = New System.Drawing.Point(8, 114)
+        Me.lblNeuesPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNeuesPasswort.Name = "lblNeuesPasswort"
-        Me.lblNeuesPasswort.Size = New System.Drawing.Size(168, 25)
+        Me.lblNeuesPasswort.Size = New System.Drawing.Size(110, 17)
         Me.lblNeuesPasswort.TabIndex = 13
         Me.lblNeuesPasswort.Text = "Neues Passwort"
         '
         'lblVorname
         '
         Me.lblVorname.AutoSize = True
-        Me.lblVorname.Location = New System.Drawing.Point(12, 253)
+        Me.lblVorname.Location = New System.Drawing.Point(8, 162)
+        Me.lblVorname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblVorname.Name = "lblVorname"
-        Me.lblVorname.Size = New System.Drawing.Size(98, 25)
+        Me.lblVorname.Size = New System.Drawing.Size(65, 17)
         Me.lblVorname.TabIndex = 14
         Me.lblVorname.Text = "Vorname"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(12, 330)
+        Me.lblName.Location = New System.Drawing.Point(8, 211)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(68, 25)
+        Me.lblName.Size = New System.Drawing.Size(45, 17)
         Me.lblName.TabIndex = 15
         Me.lblName.Text = "Name"
         '
         'lblGebDat
         '
         Me.lblGebDat.AutoSize = True
-        Me.lblGebDat.Location = New System.Drawing.Point(12, 408)
+        Me.lblGebDat.Location = New System.Drawing.Point(8, 261)
+        Me.lblGebDat.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGebDat.Name = "lblGebDat"
-        Me.lblGebDat.Size = New System.Drawing.Size(147, 25)
+        Me.lblGebDat.Size = New System.Drawing.Size(98, 17)
         Me.lblGebDat.TabIndex = 16
         Me.lblGebDat.Text = "Geburtsdatum"
         '
         'lblMitarbeiterID
         '
         Me.lblMitarbeiterID.AutoSize = True
-        Me.lblMitarbeiterID.Location = New System.Drawing.Point(12, 485)
+        Me.lblMitarbeiterID.Location = New System.Drawing.Point(8, 310)
+        Me.lblMitarbeiterID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMitarbeiterID.Name = "lblMitarbeiterID"
-        Me.lblMitarbeiterID.Size = New System.Drawing.Size(140, 25)
+        Me.lblMitarbeiterID.Size = New System.Drawing.Size(92, 17)
         Me.lblMitarbeiterID.TabIndex = 17
         Me.lblMitarbeiterID.Text = "Mitarbeiter ID"
         '
         'frmMeinKontoMitarbeiter
         '
         Me.AcceptButton = Me.btnSpeichern
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.ClientSize = New System.Drawing.Size(836, 467)
         Me.Controls.Add(Me.lblMitarbeiterID)
         Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
@@ -222,6 +241,7 @@ Partial Class frmMeinKontoMitarbeiter
         Me.Controls.Add(Me.txtboxNeuesPasswort)
         Me.Controls.Add(Me.txtboxAltesPasswort)
         Me.Controls.Add(Me.txtBenutzername)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmMeinKontoMitarbeiter"
         Me.Text = "frmMeinKontoMitarbeiter"
         Me.ResumeLayout(False)

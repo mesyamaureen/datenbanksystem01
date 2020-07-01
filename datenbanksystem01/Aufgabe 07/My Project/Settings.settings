@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Datenspeicherort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\Mesya\Desktop\Speicherort</Value>
+      <Value Profile="(Default)">C:\Users\Hochtritt\Desktop\nina_datenbanksysteme1\Weiterbildungsanbieter Speicherort</Value>
     </Setting>
   </Settings>
 </SettingsFile>
