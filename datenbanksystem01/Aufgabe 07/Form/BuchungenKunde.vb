@@ -82,4 +82,12 @@
 
 
     End Sub
+
+    Private Sub btnHinzufuegenBuchung_Click(sender As Object, e As EventArgs) Handles btnHinzufuegenBuchung.Click
+
+    End Sub
+
+    Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
+
+    End Sub
 End Class
