@@ -22,6 +22,18 @@
 
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click
 
+        Dim neuerMitarbeiter As Mitarbeiter = New Mitarbeiter(Me.txtboxBenutzername.Text,
+                                            Me.txtboxPasswort.Text,
+                                            Me.txtboxName.Text,
+                                            Me.txtboxVorname.Text,
+                                            Me.datboxGebDatM.Value)
+
+        mlstMitarbeiter.Add(neuerMitarbeiter)
+
+        BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
+
+        Me.Close()
+
     End Sub
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
@@ -36,5 +48,6 @@
             Me.Close()
         End If
     End Sub
+
 
 End Class
