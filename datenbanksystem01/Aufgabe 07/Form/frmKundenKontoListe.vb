@@ -43,5 +43,9 @@
 
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
 
+        'Muss Kunden aus mlstKunden laden
+
+
+
     End Sub
 End Class

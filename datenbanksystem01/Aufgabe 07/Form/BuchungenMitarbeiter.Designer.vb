@@ -49,9 +49,10 @@ Partial Class BuchungenMitarbeiter
         'btnSchließen
         '
         Me.btnSchließen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSchließen.Location = New System.Drawing.Point(1108, 662)
+        Me.btnSchließen.Location = New System.Drawing.Point(739, 424)
+        Me.btnSchließen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSchließen.Name = "btnSchließen"
-        Me.btnSchließen.Size = New System.Drawing.Size(126, 46)
+        Me.btnSchließen.Size = New System.Drawing.Size(84, 29)
         Me.btnSchließen.TabIndex = 0
         Me.btnSchließen.Text = "Schließen"
         Me.btnSchließen.UseVisualStyleBackColor = True
@@ -60,19 +61,21 @@ Partial Class BuchungenMitarbeiter
         '
         Me.tbsBuchungen.Controls.Add(Me.tbsAktBuchungen)
         Me.tbsBuchungen.Controls.Add(Me.tbsStornoBuchungen)
-        Me.tbsBuchungen.Location = New System.Drawing.Point(12, 32)
+        Me.tbsBuchungen.Location = New System.Drawing.Point(8, 20)
+        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
-        Me.tbsBuchungen.Size = New System.Drawing.Size(1230, 614)
+        Me.tbsBuchungen.Size = New System.Drawing.Size(820, 393)
         Me.tbsBuchungen.TabIndex = 1
         '
         'tbsAktBuchungen
         '
         Me.tbsAktBuchungen.Controls.Add(Me.ListView1)
-        Me.tbsAktBuchungen.Location = New System.Drawing.Point(8, 39)
+        Me.tbsAktBuchungen.Location = New System.Drawing.Point(4, 25)
+        Me.tbsAktBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbsAktBuchungen.Name = "tbsAktBuchungen"
-        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbsAktBuchungen.Size = New System.Drawing.Size(1214, 567)
+        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktBuchungen.Size = New System.Drawing.Size(812, 364)
         Me.tbsAktBuchungen.TabIndex = 0
         Me.tbsAktBuchungen.Text = "Aktiv"
         Me.tbsAktBuchungen.UseVisualStyleBackColor = True
@@ -84,9 +87,10 @@ Partial Class BuchungenMitarbeiter
         Me.ListView1.Enabled = False
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(3, 3)
+        Me.ListView1.Location = New System.Drawing.Point(2, 2)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1208, 561)
+        Me.ListView1.Size = New System.Drawing.Size(808, 360)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -129,10 +133,11 @@ Partial Class BuchungenMitarbeiter
         'tbsStornoBuchungen
         '
         Me.tbsStornoBuchungen.Controls.Add(Me.ListViewStorniertBuchungen)
-        Me.tbsStornoBuchungen.Location = New System.Drawing.Point(8, 39)
+        Me.tbsStornoBuchungen.Location = New System.Drawing.Point(4, 25)
+        Me.tbsStornoBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbsStornoBuchungen.Name = "tbsStornoBuchungen"
-        Me.tbsStornoBuchungen.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbsStornoBuchungen.Size = New System.Drawing.Size(1214, 567)
+        Me.tbsStornoBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsStornoBuchungen.Size = New System.Drawing.Size(812, 364)
         Me.tbsStornoBuchungen.TabIndex = 1
         Me.tbsStornoBuchungen.Text = "Storniert"
         Me.tbsStornoBuchungen.UseVisualStyleBackColor = True
@@ -144,9 +149,10 @@ Partial Class BuchungenMitarbeiter
         Me.ListViewStorniertBuchungen.Enabled = False
         Me.ListViewStorniertBuchungen.GridLines = True
         Me.ListViewStorniertBuchungen.HideSelection = False
-        Me.ListViewStorniertBuchungen.Location = New System.Drawing.Point(3, 3)
+        Me.ListViewStorniertBuchungen.Location = New System.Drawing.Point(2, 2)
+        Me.ListViewStorniertBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListViewStorniertBuchungen.Name = "ListViewStorniertBuchungen"
-        Me.ListViewStorniertBuchungen.Size = New System.Drawing.Size(1208, 561)
+        Me.ListViewStorniertBuchungen.Size = New System.Drawing.Size(808, 360)
         Me.ListViewStorniertBuchungen.TabIndex = 0
         Me.ListViewStorniertBuchungen.UseCompatibleStateImageBehavior = False
         Me.ListViewStorniertBuchungen.View = System.Windows.Forms.View.Details
@@ -188,13 +194,14 @@ Partial Class BuchungenMitarbeiter
         '
         'BuchungenMitarbeiter
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSchließen
-        Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.ClientSize = New System.Drawing.Size(842, 463)
         Me.Controls.Add(Me.tbsBuchungen)
         Me.Controls.Add(Me.btnSchließen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "BuchungenMitarbeiter"
         Me.Text = "Alle Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)
