@@ -41,6 +41,73 @@
 
     End Sub
 
+    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
+    Sub anzeigenZeile(plngIndex As Long, pstrKundenID As String, pstrBenutzername As String, pstrVorname As String, pstrName As String)
+
+        'Neue Zeile in der Liste deklarieren
+        Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
+
+        'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
+        'Index als Wert in der ersten Spalte eingetragen wird
+        zeile = Me.lstviewKundenKonten.Items.Add(plngIndex)
+
+        'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
+        With zeile.SubItems
+            .Add(pstrKundenID)
+            .Add(pstrBenutzername)
+            .Add(pstrVorname)
+            .Add(pstrName)
+        End With
+
+    End Sub
+
+
+    ''' <summary>
+    ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
+    ''' </summary>
+    ''' <remarks></remarks>
+
+    Private Sub anzeigen()
+        'Deklaration
+        Dim kund As Kunde 'Weiterbildung
+
+        'Anzuzeigende Attribute
+        Dim strKundenID As String
+        Dim strBenutzername As String
+        Dim strName As String
+        Dim strVorname As String
+
+        'leeren der Tabelle
+        leeren()
+
+        'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
+        For i = 0 To mlstKunde.Count - 1
+            kund = mlstKunde.Item(i)
+
+            'Attributwerte aus der Weiterbildung lesen
+            strKundenID = kund.KundenID
+            strBenutzername = kund.Benutzername
+            strVorname = kund.Vorname
+            strName = kund.Name
+
+            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+            anzeigenZeile(i, strKundenID, strBenutzername, strName, strVorname)
+
+        Next
+        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
+        aktivierenSchaltflächen()
+
+    End Sub
+
+    Sub leeren()
+        'Liste leeren
+        Me.lstviewKundenKonten.Items.Clear()
+        'Schaltflächen aktivieren/deaktivieren
+        aktivierenSchaltflächen()
+
+    End Sub
+
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
 
         'Muss Kunden aus mlstKunden laden
