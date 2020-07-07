@@ -86,7 +86,8 @@
     End Sub
 
     Private Sub frmWeiterbildungsfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Logic.initialise()
+        'Passende ausgewählte Weiterbildung im Datenbank
+        Logic.mlstWeiterbildungen.Item(frmHauptfensterKunde.intIndex) = mWeiterbil
 
         'Deklaration für jede Oberflächenelemente
         Dim weiterbilID As String
@@ -98,7 +99,7 @@
         For i = 0 To ListeWeiterbildung.Count - 1
             mWeiterbil = ListeWeiterbildung.Item(i)
 
-            'Attributwere aus der Weiterbildung lesen
+            'Attributwerte aus der Weiterbildung lesen
             weiterbilID = mWeiterbil.WeiterbildungsID
             titel = mWeiterbil.Bezeichnung
             curriculum = mWeiterbil.Curriculum
@@ -112,12 +113,6 @@
             Me.rtxtboxSeminarinfo.Text = thema
         Next
         'Me.txtboxSeminartitel.Text = Logic.ListeWeiterbildung.Item(i).Bezeichnung
-
-        'Aufrufen viewWeiterbildung in Weiterbildungscontroller
-        mWeiterbilController.viewWeiterbildung(weiterbilID)
-        'Passende ausgewählte Weiterbildung im Datenbank
-        Logic.mlstWeiterbildungen.Item(frmHauptfensterKunde.intIndex) = mWeiterbil
-
     End Sub
 
     'Function gibBuchung() As Buchung
