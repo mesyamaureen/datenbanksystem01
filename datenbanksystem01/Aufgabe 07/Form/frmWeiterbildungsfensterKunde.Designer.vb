@@ -50,6 +50,7 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         'btnAbbrechen
         '
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAbbrechen.Location = New System.Drawing.Point(1050, 659)
         Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAbbrechen.Name = "btnAbbrechen"
@@ -84,6 +85,7 @@ Partial Class frmWeiterbildungsfensterKunde
         'rtxtboxSeminarbeschreibung
         '
         Me.rtxtboxSeminarbeschreibung.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarbeschreibung.Enabled = False
         Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxSeminarbeschreibung.Name = "rtxtboxSeminarbeschreibung"
         Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(1206, 475)
@@ -104,6 +106,7 @@ Partial Class frmWeiterbildungsfensterKunde
         'rtxtboxTeilnkreis
         '
         Me.rtxtboxTeilnkreis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxTeilnkreis.Enabled = False
         Me.rtxtboxTeilnkreis.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxTeilnkreis.Name = "rtxtboxTeilnkreis"
         Me.rtxtboxTeilnkreis.Size = New System.Drawing.Size(1206, 475)
@@ -124,6 +127,7 @@ Partial Class frmWeiterbildungsfensterKunde
         'rtxtboxSeminarinfo
         '
         Me.rtxtboxSeminarinfo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtxtboxSeminarinfo.Enabled = False
         Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxSeminarinfo.Name = "rtxtboxSeminarinfo"
         Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(1206, 475)
@@ -218,6 +222,7 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1254, 730)
         Me.Controls.Add(Me.txtboxSeminartitel)
         Me.Controls.Add(Me.lblSeminartitelWeiterb)

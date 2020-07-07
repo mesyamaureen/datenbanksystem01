@@ -107,23 +107,14 @@
 
     End Sub
 
-    ''' <summary>
-    ''' Laden allen Weiterbildungen und füllen die Oberfläche mit den geladenen Daten
-    ''' </summary>
-    ''' <remarks></remarks>
-    Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ' Alle Weiterbildungen laden
-        mlstWeiterbildungen = Logic.ListeWeiterbildung
-
-        'Anzeigen der Weiterbildungen in der Tabelle
-        anzeigen()
-
-    End Sub
-
     'Index deklarieren
     Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
 
+    ''' <summary>
+    ''' Schaltfläche Öffnen, um die ausgewählte Weiterbildung zu zeigen
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
         'Deklaration
         Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
@@ -138,6 +129,20 @@
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterKunde(weiterbil)
         dlg.ShowDialog()
+
+    End Sub
+
+    ''' <summary>
+    ''' Laden allen Weiterbildungen und füllen die Oberfläche mit den geladenen Daten
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ' Alle Weiterbildungen laden
+        mlstWeiterbildungen = Logic.ListeWeiterbildung
+
+        'Anzeigen der Weiterbildungen in der Tabelle
+        anzeigen()
 
     End Sub
 

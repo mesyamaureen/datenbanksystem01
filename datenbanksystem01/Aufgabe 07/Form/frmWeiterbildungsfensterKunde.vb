@@ -2,7 +2,6 @@
     'Attribute
     Public mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    Public mWeiterbilController As WeiterbildungsController 'Bookingscontroller aufrufen
 
     Public Sub New()
 
@@ -12,7 +11,6 @@
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = New Weiterbildung
         mKurse = New List(Of Kurs)
-        mWeiterbilController = New WeiterbildungsController
     End Sub
 
     Public Sub New(pWeiterbildung As Weiterbildung)
@@ -23,7 +21,6 @@
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = pWeiterbildung
         mKurse = New List(Of Kurs)
-        mWeiterbilController = New WeiterbildungsController
     End Sub
 
     ''' <summary>
@@ -86,33 +83,37 @@
     End Sub
 
     Private Sub frmWeiterbildungsfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Passende ausgewählte Weiterbildung im Datenbank
-        Logic.mlstWeiterbildungen.Item(frmHauptfensterKunde.intIndex) = mWeiterbil
 
         'Deklaration für jede Oberflächenelemente
-        Dim weiterbilID As String
-        Dim titel As String
-        Dim curriculum As String
-        Dim teilnkreis As String
-        Dim thema As String
+        'Dim titel As String
+        'Dim curriculum As String
+        'Dim teilnkreis As String
+        'Dim thema As String
 
-        For i = 0 To ListeWeiterbildung.Count - 1
-            mWeiterbil = ListeWeiterbildung.Item(i)
+        For i = 0 To mlstWeiterbildungen.Count - 1
+            Me.txtboxSeminartitel.Text = Logic.mlstWeiterbildungen.Item(i).Bezeichnung
+            Me.rtxtboxSeminarbeschreibung.Text = Logic.mlstWeiterbildungen.Item(i).Curriculum
+            Me.rtxtboxTeilnkreis.Text = Logic.mlstWeiterbildungen.Item(i).Teilnehmerkreis
+            Me.rtxtboxSeminarinfo.Text = Logic.mlstWeiterbildungen.Item(i).Thema
+            'mWeiterbil = ListeWeiterbildung.Item(i)
 
-            'Attributwerte aus der Weiterbildung lesen
-            weiterbilID = mWeiterbil.WeiterbildungsID
-            titel = mWeiterbil.Bezeichnung
-            curriculum = mWeiterbil.Curriculum
-            teilnkreis = mWeiterbil.Teilnehmerkreis
-            thema = mWeiterbil.Thema
+            ''Attributwerte aus der Weiterbildung lesen
+            'titel = mWeiterbil.Bezeichnung
+            'curriculum = mWeiterbil.Curriculum
+            'teilnkreis = mWeiterbil.Teilnehmerkreis
+            'thema = mWeiterbil.Thema
 
-            'In die Oberflächenelemente zuweisen
-            Me.txtboxSeminartitel.Text = titel
-            Me.rtxtboxSeminarbeschreibung.Text = curriculum
-            Me.rtxtboxTeilnkreis.Text = teilnkreis
-            Me.rtxtboxSeminarinfo.Text = thema
+            ''In die Oberflächenelemente zuweisen
+            'Me.txtboxSeminartitel.Text = titel
+            'Me.rtxtboxSeminarbeschreibung.Text = curriculum
+            'Me.rtxtboxTeilnkreis.Text = teilnkreis
+            'Me.rtxtboxSeminarinfo.Text = thema
+
+            anzeigen()
         Next
-        'Me.txtboxSeminartitel.Text = Logic.ListeWeiterbildung.Item(i).Bezeichnung
+
+        'Passende ausgewählte Weiterbildung im Datenbank
+        Logic.mlstWeiterbildungen.Item(frmHauptfensterKunde.intIndex) = mWeiterbil
     End Sub
 
     'Function gibBuchung() As Buchung

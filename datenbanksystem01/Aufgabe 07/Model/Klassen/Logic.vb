@@ -87,8 +87,8 @@
           {New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
 
         'Für Nina: Wäre es okay, nur die Beispieldaten für Weiterbildungen & Kurse wie unten benutzen?
-        mlstWeiterbildungen = New List(Of Weiterbildung) From {
-        New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
+        mlstWeiterbildungen = New List(Of Weiterbildung) ' From {
+        'New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
 
 
         'Weiterbildungen deklarieren
@@ -137,7 +137,6 @@
         scrum = mlstWeiterbildungen.Item(1)
         controlling = mlstWeiterbildungen.Item(2)
         bmc = mlstWeiterbildungen.Item(3)
-
 
         mlstBuchung = New List(Of Buchung) From {
         New Buchung(1200, #07/21/2020#, mlstKurs)}
