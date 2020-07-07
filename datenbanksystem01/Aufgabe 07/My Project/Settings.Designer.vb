@@ -56,7 +56,8 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Mesya\Documents\SpeicherOrtDatenbank")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Hochtritt\Desktop\nina_datenbanksysteme1\Weiterbildungsanbieter Speicher"& _ 
+            "ort")>  _
         Public Property Datenspeicherort() As String
             Get
                 Return CType(Me("Datenspeicherort"),String)
