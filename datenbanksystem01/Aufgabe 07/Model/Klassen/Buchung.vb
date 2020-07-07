@@ -6,7 +6,7 @@ Public Class Buchung
     Public mstrBuchungsID As String
     Public mdecPreis As Decimal
     Public mdatDatum As Date
-    Public mlstKurse As List(Of Kurs)
+    Public mKurs As Kurs
 
 
     'Konstruktor
@@ -14,7 +14,7 @@ Public Class Buchung
     Sub New()
         mdecPreis = Nothing
         mdatDatum = Nothing
-        mlstKurse = New List(Of Kurs)
+        mKurs = New Kurs
 
     End Sub
 
@@ -23,12 +23,21 @@ Public Class Buchung
 
         mdecPreis = pdecPreis
         mdatDatum = pdatDatum
-        mlstKurse = New List(Of Kurs)
+        mKurs = New Kurs
 
     End Sub
 
 
     'Properties
+    Public Property BuchungsID As String
+        Get
+            Return mstrBuchungsID
+        End Get
+        Set(value As String)
+            mstrBuchungsID = value
+        End Set
+    End Property
+
     Public Property Preis As Decimal
         Get
             Return mdecPreis
@@ -49,12 +58,12 @@ Public Class Buchung
         End Set
     End Property
 
-    Public Property ListeKurse As List(Of Kurs)
+    Public Property Kurse As Kurs
         Get
-            Return mlstKurse
+            Return mKurs
         End Get
-        Set(value As List(Of Kurs))
-            mlstKurse = value
+        Set(value As Kurs)
+            mKurs = value
         End Set
     End Property
 

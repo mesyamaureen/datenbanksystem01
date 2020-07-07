@@ -40,7 +40,7 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblSeminartitelWeiterb = New System.Windows.Forms.Label()
         Me.txtboxSeminartitel = New System.Windows.Forms.TextBox()
-        Me.btnKursBuchen = New System.Windows.Forms.Button()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabctrlWeiterb.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -50,9 +50,10 @@ Partial Class Weiterbildungsfenster_Kunde
         '
         'btnAbbrechen
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(700, 422)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1050, 659)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(127, 36)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(190, 56)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
@@ -63,21 +64,19 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage2)
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage3)
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage4)
-        Me.tabctrlWeiterb.Location = New System.Drawing.Point(8, 73)
-        Me.tabctrlWeiterb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabctrlWeiterb.Location = New System.Drawing.Point(12, 114)
         Me.tabctrlWeiterb.Name = "tabctrlWeiterb"
         Me.tabctrlWeiterb.SelectedIndex = 0
-        Me.tabctrlWeiterb.Size = New System.Drawing.Size(819, 338)
+        Me.tabctrlWeiterb.Size = New System.Drawing.Size(1228, 528)
         Me.tabctrlWeiterb.TabIndex = 1
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.rtxtboxSeminarbeschreibung)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage1.Size = New System.Drawing.Size(811, 309)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1212, 481)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Seminarbeschreibung"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -85,21 +84,19 @@ Partial Class Weiterbildungsfenster_Kunde
         'rtxtboxSeminarbeschreibung
         '
         Me.rtxtboxSeminarbeschreibung.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(2, 2)
-        Me.rtxtboxSeminarbeschreibung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxSeminarbeschreibung.Name = "rtxtboxSeminarbeschreibung"
-        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(807, 305)
+        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(1206, 475)
         Me.rtxtboxSeminarbeschreibung.TabIndex = 0
         Me.rtxtboxSeminarbeschreibung.Text = ""
         '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.rtxtboxTeilnkreis)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(811, 309)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1212, 481)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Teilnehmerkreis"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -107,21 +104,19 @@ Partial Class Weiterbildungsfenster_Kunde
         'rtxtboxTeilnkreis
         '
         Me.rtxtboxTeilnkreis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxTeilnkreis.Location = New System.Drawing.Point(2, 2)
-        Me.rtxtboxTeilnkreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtboxTeilnkreis.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxTeilnkreis.Name = "rtxtboxTeilnkreis"
-        Me.rtxtboxTeilnkreis.Size = New System.Drawing.Size(807, 305)
+        Me.rtxtboxTeilnkreis.Size = New System.Drawing.Size(1206, 475)
         Me.rtxtboxTeilnkreis.TabIndex = 0
         Me.rtxtboxTeilnkreis.Text = ""
         '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.rtxtboxSeminarinfo)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Location = New System.Drawing.Point(8, 39)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage3.Size = New System.Drawing.Size(811, 309)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1212, 481)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Seminarinformationen"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -129,10 +124,9 @@ Partial Class Weiterbildungsfenster_Kunde
         'rtxtboxSeminarinfo
         '
         Me.rtxtboxSeminarinfo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(2, 2)
-        Me.rtxtboxSeminarinfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(3, 3)
         Me.rtxtboxSeminarinfo.Name = "rtxtboxSeminarinfo"
-        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(807, 305)
+        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(1206, 475)
         Me.rtxtboxSeminarinfo.TabIndex = 0
         Me.rtxtboxSeminarinfo.Text = ""
         '
@@ -140,21 +134,19 @@ Partial Class Weiterbildungsfenster_Kunde
         '
         Me.TabPage4.Controls.Add(Me.btnBuchen)
         Me.TabPage4.Controls.Add(Me.lstviewKurse)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Location = New System.Drawing.Point(8, 39)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage4.Size = New System.Drawing.Size(811, 309)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(1212, 481)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Kurse"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'btnBuchen
         '
-        Me.btnBuchen.Location = New System.Drawing.Point(687, 280)
-        Me.btnBuchen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuchen.Location = New System.Drawing.Point(1030, 438)
         Me.btnBuchen.Name = "btnBuchen"
-        Me.btnBuchen.Size = New System.Drawing.Size(119, 23)
+        Me.btnBuchen.Size = New System.Drawing.Size(178, 36)
         Me.btnBuchen.TabIndex = 1
         Me.btnBuchen.Text = "Buchen"
         Me.btnBuchen.UseVisualStyleBackColor = True
@@ -162,17 +154,16 @@ Partial Class Weiterbildungsfenster_Kunde
         'lstviewKurse
         '
         Me.lstviewKurse.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.lstviewKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursID, Me.colKursDatum, Me.colVerfuegbarkeit, Me.colKursPreis})
+        Me.lstviewKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colKursID, Me.colKursDatum, Me.colVerfuegbarkeit, Me.colKursPreis})
         Me.lstviewKurse.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstviewKurse.FullRowSelect = True
         Me.lstviewKurse.GridLines = True
         Me.lstviewKurse.HideSelection = False
         Me.lstviewKurse.HoverSelection = True
-        Me.lstviewKurse.Location = New System.Drawing.Point(2, 2)
-        Me.lstviewKurse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstviewKurse.Location = New System.Drawing.Point(3, 3)
         Me.lstviewKurse.MultiSelect = False
         Me.lstviewKurse.Name = "lstviewKurse"
-        Me.lstviewKurse.Size = New System.Drawing.Size(806, 269)
+        Me.lstviewKurse.Size = New System.Drawing.Size(1207, 418)
         Me.lstviewKurse.TabIndex = 0
         Me.lstviewKurse.UseCompatibleStateImageBehavior = False
         Me.lstviewKurse.View = System.Windows.Forms.View.Details
@@ -186,62 +177,54 @@ Partial Class Weiterbildungsfenster_Kunde
         '
         Me.colKursDatum.Text = "Datum"
         Me.colKursDatum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursDatum.Width = 455
+        Me.colKursDatum.Width = 506
         '
         'colVerfuegbarkeit
         '
         Me.colVerfuegbarkeit.Text = "Verfügbarkeit"
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVerfuegbarkeit.Width = 260
+        Me.colVerfuegbarkeit.Width = 208
         '
         'colKursPreis
         '
         Me.colKursPreis.Text = "Preis"
         Me.colKursPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursPreis.Width = 308
+        Me.colKursPreis.Width = 248
         '
         'lblSeminartitelWeiterb
         '
         Me.lblSeminartitelWeiterb.AutoSize = True
-        Me.lblSeminartitelWeiterb.Location = New System.Drawing.Point(10, 22)
-        Me.lblSeminartitelWeiterb.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblSeminartitelWeiterb.Location = New System.Drawing.Point(15, 34)
         Me.lblSeminartitelWeiterb.Name = "lblSeminartitelWeiterb"
-        Me.lblSeminartitelWeiterb.Size = New System.Drawing.Size(82, 17)
+        Me.lblSeminartitelWeiterb.Size = New System.Drawing.Size(125, 25)
         Me.lblSeminartitelWeiterb.TabIndex = 2
         Me.lblSeminartitelWeiterb.Text = "Seminartitel"
         '
         'txtboxSeminartitel
         '
         Me.txtboxSeminartitel.Enabled = False
-        Me.txtboxSeminartitel.Location = New System.Drawing.Point(105, 14)
-        Me.txtboxSeminartitel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxSeminartitel.Location = New System.Drawing.Point(158, 22)
         Me.txtboxSeminartitel.Multiline = True
         Me.txtboxSeminartitel.Name = "txtboxSeminartitel"
         Me.txtboxSeminartitel.ReadOnly = True
-        Me.txtboxSeminartitel.Size = New System.Drawing.Size(360, 32)
+        Me.txtboxSeminartitel.Size = New System.Drawing.Size(538, 48)
         Me.txtboxSeminartitel.TabIndex = 3
         '
-        'btnKursBuchen
+        'colIndex
         '
-        Me.btnKursBuchen.Location = New System.Drawing.Point(559, 423)
-        Me.btnKursBuchen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnKursBuchen.Name = "btnKursBuchen"
-        Me.btnKursBuchen.Size = New System.Drawing.Size(127, 36)
-        Me.btnKursBuchen.TabIndex = 1
-        Me.btnKursBuchen.Text = "Buchen"
-        Me.btnKursBuchen.UseVisualStyleBackColor = True
+        Me.colIndex.Text = "Nr"
         '
         'Weiterbildungsfenster_Kunde
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 467)
-        Me.Controls.Add(Me.btnKursBuchen)
+        Me.ClientSize = New System.Drawing.Size(1254, 730)
         Me.Controls.Add(Me.txtboxSeminartitel)
         Me.Controls.Add(Me.lblSeminartitelWeiterb)
         Me.Controls.Add(Me.tabctrlWeiterb)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Weiterbildungsfenster_Kunde"
         Me.Text = "Weiterbildung time2-Akademie"
         Me.tabctrlWeiterb.ResumeLayout(False)
@@ -270,6 +253,6 @@ Partial Class Weiterbildungsfenster_Kunde
     Friend WithEvents colVerfuegbarkeit As ColumnHeader
     Friend WithEvents colKursPreis As ColumnHeader
     Friend WithEvents txtboxSeminartitel As TextBox
-    Friend WithEvents btnKursBuchen As Button
     Friend WithEvents btnBuchen As Button
+    Friend WithEvents colIndex As ColumnHeader
 End Class

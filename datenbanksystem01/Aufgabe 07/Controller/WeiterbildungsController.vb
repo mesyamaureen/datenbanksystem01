@@ -66,16 +66,52 @@
 
     'Funktionen
     'Kurse
-    Public Function createKurs(strOrt As String, datZeitpunkt As Date, bolavailable As Boolean, decPreis As Decimal) As String
+    Private kurseId As UInteger
+    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As Kurs
+        'Deklaration neue Variabel
+        Dim neuerKurs As New Kurs
+        'Initialisierung der Parameter
+        neuerKurs.Ort = pstrOrt
+        neuerKurs.Zeitpunkt = pdatZeitpunkt
+        neuerKurs.Verfuegbar = pbolavailable
+        neuerKurs.Preis = pdecPreis
 
+        'KursID generieren
+        kurseId += 1
+        'Verzweigung für Ausgabe
+        If kurseId < 10 Then
+            neuerKurs.KursID = "K00" & kurseId
+        ElseIf 10 <= kurseId < 100 Then
+            neuerKurs.KursID = "K0" & kurseId
+        Else
+            neuerKurs.KursID = kurseId
+        End If
+        'Return als Neuer Kurs
+        Return neuerKurs
     End Function
 
-    Public Function viewKurs(intKundenID As Integer) As Array
-
+    Public Function viewKurs(strKundenID As String) As Array
+        'Deklaration neue Variablen
+        Dim aryKurse(5) As String
+        For Each kurs As Kurs In ListeKurse
+            If kurs.KursID = strKundenID Then
+                aryKurse(0) = kurs.Zeitpunkt
+                aryKurse(1) = kurs.Ort
+                aryKurse(2) = kurs.Verfuegbar
+                aryKurse(3) = kurs.Abgesagt
+                aryKurse(4) = kurs.Preis
+            End If
+        Next
+        Return aryKurse
     End Function
 
-    Public Function changeKurs(intKundenID As Integer, strOrt As String, datZeitpunkt As Date, decPreis As Decimal) As Boolean
-
+    Public Function changeKurs(strKundenID As String, strOrt As String, datZeitpunkt As Date, decPreis As Decimal, bearbKurs As Kurs) As Boolean 'strKundenId ????
+        'Initialisierung der Parameter
+        bearbKurs.Ort = strOrt
+        bearbKurs.Zeitpunkt = datZeitpunkt
+        bearbKurs.Preis = decPreis
+        'Rückgabewert
+        Return True
     End Function
 
     Public Function deleteKurs(intKundenID) As Boolean

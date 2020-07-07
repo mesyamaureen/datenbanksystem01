@@ -126,8 +126,6 @@
         controlling.WeiterbildungsID = "3"
         bmc.WeiterbildungsID = "4"
 
-
-
         'Weiterbildungen zur Liste hinzufügen
         mlstWeiterbildungen.Add(agiles)
         mlstWeiterbildungen.Add(scrum)
@@ -280,7 +278,7 @@
 
 
     'WeiterbildungsController
-    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As String
+    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As Kurs
 
         Return weiterbildungscontroller.createKurs(pstrOrt, pdatZeitpunkt, pbolavailable, pdecPreis)
 
@@ -292,9 +290,9 @@
 
     End Function
 
-    Public Function changeKurs(pstrKundenID As Integer, pstrOrt As String, datZeitpunkt As Date, pdecPreis As Decimal) As Boolean
+    Public Function changeKurs(pstrKundenID As String, pstrOrt As String, pdatZeitpunkt As Date, pdecPreis As Decimal, pbearbKurs As Kurs) As Boolean
 
-        Return weiterbildungscontroller.changeKurs(pstrKundenID, pstrOrt, datZeitpunkt, pdecPreis)
+        Return weiterbildungscontroller.changeKurs(pstrKundenID, pstrOrt, pdatZeitpunkt, pdecPreis, pbearbKurs)
 
     End Function
 
@@ -331,9 +329,9 @@
     End Function
 
     'BookingController
-    Public Function createBooking(pdecPreis As Decimal, pdatDatum As Date) As String
+    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal) As Buchung
 
-        Return bookingController.createBooking(pdecPreis, pdatDatum)
+        Return bookingController.createBooking(pKurs, pdatDatum, pdecPreis)
 
     End Function
 
@@ -343,9 +341,9 @@
 
     End Function
 
-    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date)
+    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date, pbearbBuchung As Buchung) As Boolean
 
-        Return bookingController.changeBooking(pstrBuchungsID, pdecPreis, pdatDatum)
+        Return bookingController.changeBooking(pstrBuchungsID, pdecPreis, pdatDatum, pbearbBuchung)
 
     End Function
 

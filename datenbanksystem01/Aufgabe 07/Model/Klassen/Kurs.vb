@@ -36,10 +36,13 @@ Public Class Kurs
 
     'Properties
 
-    Public ReadOnly Property KursID As String
+    Public Property KursID As String
         Get
             Return mstrKursID
         End Get
+        Set(value As String)
+            mstrKursID = value
+        End Set
     End Property
 
     Public Property Zeitpunkt As Date

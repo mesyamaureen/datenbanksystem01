@@ -43,6 +43,7 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.colKursVerfuegbarkeitM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSpeichern = New System.Windows.Forms.Button()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabcontrolWeiterbildungM.SuspendLayout()
         Me.tabSeminarbeschreibung.SuspendLayout()
         Me.tabTeilnehmerkreis.SuspendLayout()
@@ -194,7 +195,7 @@ Partial Class frmWeiterbildungsfensterMitarb
         'lstviewKurseM
         '
         Me.lstviewKurseM.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.lstviewKurseM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursIdM, Me.colKursDatumM, Me.colKursVerfuegbarkeitM, Me.colKursPreis})
+        Me.lstviewKurseM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colKursIdM, Me.colKursDatumM, Me.colKursVerfuegbarkeitM, Me.colKursPreis})
         Me.lstviewKurseM.FullRowSelect = True
         Me.lstviewKurseM.GridLines = True
         Me.lstviewKurseM.HideSelection = False
@@ -216,19 +217,19 @@ Partial Class frmWeiterbildungsfensterMitarb
         '
         Me.colKursDatumM.Text = "Datum"
         Me.colKursDatumM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursDatumM.Width = 455
+        Me.colKursDatumM.Width = 451
         '
         'colKursVerfuegbarkeitM
         '
         Me.colKursVerfuegbarkeitM.Text = "Verfügbarkeit"
         Me.colKursVerfuegbarkeitM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursVerfuegbarkeitM.Width = 260
+        Me.colKursVerfuegbarkeitM.Width = 247
         '
         'colKursPreis
         '
         Me.colKursPreis.Text = "Preis"
         Me.colKursPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursPreis.Width = 308
+        Me.colKursPreis.Width = 270
         '
         'btnSpeichern
         '
@@ -239,6 +240,10 @@ Partial Class frmWeiterbildungsfensterMitarb
         Me.btnSpeichern.TabIndex = 15
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
+        '
+        'colIndex
+        '
+        Me.colIndex.Text = "Nr"
         '
         'frmWeiterbildungsfensterMitarb
         '
@@ -285,4 +290,5 @@ Partial Class frmWeiterbildungsfensterMitarb
     Friend WithEvents colKursVerfuegbarkeitM As ColumnHeader
     Friend WithEvents colKursPreis As ColumnHeader
     Friend WithEvents btnSpeichern As Button
+    Friend WithEvents colIndex As ColumnHeader
 End Class
