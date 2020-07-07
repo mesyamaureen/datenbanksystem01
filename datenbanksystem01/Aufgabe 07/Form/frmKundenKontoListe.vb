@@ -64,13 +64,13 @@
 
     ''' <summary>
     ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
-    ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
+    ''' dann mit allen Einträgen aus der Liste der Kunden neu gefüllt wird.
     ''' </summary>
     ''' <remarks></remarks>
 
     Private Sub anzeigen()
         'Deklaration
-        Dim kund As Kunde 'Weiterbildung
+        Dim kund As Kunde 'Kunden
 
         'Anzuzeigende Attribute
         Dim strKundenID As String
@@ -111,7 +111,7 @@
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
 
         'Muss Kunden aus mlstKunden laden
-
+        anzeigen()
 
 
     End Sub

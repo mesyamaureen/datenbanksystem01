@@ -88,6 +88,28 @@
     End Sub
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
+        ' Deklaration
+        ' Index des ausgewählten Eintrags der Tabelle   
+        Dim intIndex As Integer
+        ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
+        ' Ausbaustufe2: Zu löschender Benutzer
 
+        ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        intIndex = Me.ListViewAktBuchungen.SelectedItems(0).Text
+
+        ' Ausbaustufe 2: Element an der Position der Liste, die der ID entspricht ermitteln
+
+
+        ' Ausbaustufe 1: Rückfrage mit Warnmeldung und in Ausbaustufe 2 mit Angaben des Benutzers
+
+        ' Benzter löschen
+        Aufgabe_07.ListeMitarbeiter.RemoveAt(intIndex)
+        ' aus Liste aller Benutzer entfernen
+
+        ' Referenz auf Benutzer auf Nichts setzen, um Müllabfuhr anzufordern
+
+        ' Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Benutzer nicht mehr zeigt
+
+        'anzeigen()
     End Sub
 End Class

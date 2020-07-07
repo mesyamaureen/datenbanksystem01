@@ -59,7 +59,7 @@ Partial Class frmBenutzerAlle
         '
         'Name
         '
-        Me.Name.Text = "frmBenutzerAlle"
+        Me.Name.Text = "Name"
         Me.Name.Width = 161
         '
         'Vorname
