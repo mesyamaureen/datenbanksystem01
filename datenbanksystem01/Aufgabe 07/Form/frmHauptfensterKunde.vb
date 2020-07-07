@@ -31,7 +31,7 @@
         intAnzahlAusgewaehlterZeilen = Me.lstviewWeiterbildungKunde.SelectedItems.Count
 
         'Schaltfläche zurücksetzen
-        Me.btnOeffnen.Enabled = False
+        Me.btnOeffnen.Enabled = True
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
@@ -40,6 +40,13 @@
             Me.btnOeffnen.Enabled = False 'kann nicht geöffnet
         End If
 
+    End Sub
+
+    Sub leeren()
+        'Liste leeren
+        Me.lstviewWeiterbildungKunde.Items.Clear()
+        'Schaltflächen aktivieren
+        aktivierenSchaltflächen()
     End Sub
 
     ''' <summary>
@@ -79,6 +86,9 @@
         Dim strWeiterbilName As String
         Dim strWeiterbilThema As String
 
+        'leeren der Tabelle
+        leeren()
+
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To mlstWeiterbildungen.Count - 1
             weiterbil = mlstWeiterbildungen.Item(i)
@@ -111,41 +121,39 @@
 
     End Sub
 
+    'Index deklarieren
+    Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
+
+    Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
+        'Deklaration
+        Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
+        Dim dlg As frmWeiterbildungsfensterKunde  ' Detaildialog zum Anzeigen der Weiterbildung
+
+        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        intIndex = Me.lstviewWeiterbildungKunde.SelectedItems(0).Text
+
+        'Element an der Position der Liste, die der ID entspricht ermitteln
+        weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
+
+        'Fenster vorbereiten
+        dlg = New frmWeiterbildungsfensterKunde(weiterbil)
+        dlg.ShowDialog()
+
+    End Sub
 
     ''' <summary>
     ''' Verlassen des Hauptfensters
     ''' </summary>
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         Me.Close()
-
-    End Sub
-
-    Private Sub MenuStripBuchungen_Click(sender As Object, e As EventArgs)
-        Me.Close() 'Hauptfenster des Kunde schließen
-        Exit Sub 'Prozedur verlassen
-        BuchungenKunde.ShowDialog() 'Dialogfenster von Buchungen öffnen
-    End Sub
-
-    Private Sub grpboxWeiterbildung_Enter(sender As Object, e As EventArgs) Handles grpboxWeiterbildung.Enter
-
-    End Sub
-
-    Private Sub btnWeiterbildungen_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungen.Click
-
-
-
     End Sub
 
     Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
         BuchungenKunde.ShowDialog()
         Me.Close()
-
     End Sub
 
-    Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
-        Weiterbildungsfenster_Kunde.ShowDialog()
-        Me.Close()
-    End Sub
+
 
     Private Sub btnKonto_Click(sender As Object, e As EventArgs) Handles btnKonto.Click
         frmKundeKonto.ShowDialog()

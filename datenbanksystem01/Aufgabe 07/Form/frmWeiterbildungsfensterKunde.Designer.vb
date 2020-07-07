@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Weiterbildungsfenster_Kunde
+Partial Class frmWeiterbildungsfensterKunde
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Weiterbildungsfenster_Kunde
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Weiterbildungsfenster_Kunde))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmWeiterbildungsfensterKunde))
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.tabctrlWeiterb = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -34,13 +34,13 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.btnBuchen = New System.Windows.Forms.Button()
         Me.lstviewKurse = New System.Windows.Forms.ListView()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblSeminartitelWeiterb = New System.Windows.Forms.Label()
         Me.txtboxSeminartitel = New System.Windows.Forms.TextBox()
-        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabctrlWeiterb.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -168,6 +168,10 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.lstviewKurse.UseCompatibleStateImageBehavior = False
         Me.lstviewKurse.View = System.Windows.Forms.View.Details
         '
+        'colIndex
+        '
+        Me.colIndex.Text = "Nr"
+        '
         'colKursID
         '
         Me.colKursID.Text = "Kurs ID"
@@ -210,11 +214,7 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.txtboxSeminartitel.Size = New System.Drawing.Size(538, 48)
         Me.txtboxSeminartitel.TabIndex = 3
         '
-        'colIndex
-        '
-        Me.colIndex.Text = "Nr"
-        '
-        'Weiterbildungsfenster_Kunde
+        'frmWeiterbildungsfensterKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -225,7 +225,7 @@ Partial Class Weiterbildungsfenster_Kunde
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Name = "Weiterbildungsfenster_Kunde"
+        Me.Name = "frmWeiterbildungsfensterKunde"
         Me.Text = "Weiterbildung time2-Akademie"
         Me.tabctrlWeiterb.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
