@@ -52,7 +52,7 @@ Partial Class frmHauptfensterKunde
         Me.grpboxMenü.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.grpboxMenü.Name = "grpboxMenü"
         Me.grpboxMenü.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.grpboxMenü.Size = New System.Drawing.Size(435, 930)
+        Me.grpboxMenü.Size = New System.Drawing.Size(435, 919)
         Me.grpboxMenü.TabIndex = 1
         Me.grpboxMenü.TabStop = False
         Me.grpboxMenü.Text = "Themen"
@@ -99,10 +99,10 @@ Partial Class frmHauptfensterKunde
         Me.grpboxWeiterbildung.Controls.Add(Me.lstviewWeiterbildungKunde)
         Me.grpboxWeiterbildung.Controls.Add(Me.lblSuchen)
         Me.grpboxWeiterbildung.Controls.Add(Me.txtboxSuche)
-        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(459, 23)
-        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpboxWeiterbildung.Location = New System.Drawing.Point(459, 12)
+        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
-        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpboxWeiterbildung.Size = New System.Drawing.Size(1204, 919)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
@@ -119,13 +119,11 @@ Partial Class frmHauptfensterKunde
         '
         'lstviewWeiterbildungKunde
         '
-        Me.lstviewWeiterbildungKunde.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.lstviewWeiterbildungKunde.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colWeiterbildungID, Me.colWeiterbildung, Me.colThema})
         Me.lstviewWeiterbildungKunde.FullRowSelect = True
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
-        Me.lstviewWeiterbildungKunde.HoverSelection = True
-        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(14, 77)
+        Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(10, 80)
         Me.lstviewWeiterbildungKunde.MultiSelect = False
         Me.lstviewWeiterbildungKunde.Name = "lstviewWeiterbildungKunde"
         Me.lstviewWeiterbildungKunde.Size = New System.Drawing.Size(1184, 720)
@@ -146,7 +144,7 @@ Partial Class frmHauptfensterKunde
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 549
+        Me.colWeiterbildung.Width = 545
         '
         'colThema
         '
@@ -157,7 +155,7 @@ Partial Class frmHauptfensterKunde
         'lblSuchen
         '
         Me.lblSuchen.AutoSize = True
-        Me.lblSuchen.Location = New System.Drawing.Point(710, 27)
+        Me.lblSuchen.Location = New System.Drawing.Point(710, 25)
         Me.lblSuchen.Name = "lblSuchen"
         Me.lblSuchen.Size = New System.Drawing.Size(85, 25)
         Me.lblSuchen.TabIndex = 1

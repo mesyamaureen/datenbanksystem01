@@ -36,6 +36,7 @@ Partial Class frmKundenKontoListe
         '
         'btnSchliessen
         '
+        Me.btnSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSchliessen.Location = New System.Drawing.Point(1062, 669)
         Me.btnSchliessen.Name = "btnSchliessen"
         Me.btnSchliessen.Size = New System.Drawing.Size(182, 56)
@@ -105,8 +106,10 @@ Partial Class frmKundenKontoListe
         '
         'frmKundenKontoListe
         '
+        Me.AcceptButton = Me.btnLaden
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnSchliessen
         Me.ClientSize = New System.Drawing.Size(1262, 745)
         Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.lstviewKundenKonten)

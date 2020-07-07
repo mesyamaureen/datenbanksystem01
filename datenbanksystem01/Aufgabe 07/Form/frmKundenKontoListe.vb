@@ -115,4 +115,8 @@
 
 
     End Sub
+
+    Private Sub btnSchliessen_Click(sender As Object, e As EventArgs) Handles btnSchliessen.Click
+        'Nichts zu tun, Standardverhalten
+    End Sub
 End Class

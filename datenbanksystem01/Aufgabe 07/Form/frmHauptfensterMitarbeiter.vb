@@ -235,14 +235,16 @@
     End Sub
 
     Private Sub btnBuchungenM_Click(sender As Object, e As EventArgs) Handles btnBuchungenM.Click
-        BuchungenMitarbeiter.ShowDialog()
-        Me.Close()
-
+        Dim dlg As BuchungenMitarbeiter
+        dlg = New BuchungenMitarbeiter()
+        dlg.ShowDialog()
     End Sub
 
     Private Sub btnKundenkonto_Click(sender As Object, e As EventArgs) Handles btnKundenkonto.Click
-        frmKundenKontoListe.ShowDialog()
-        Me.Close()
+        Dim dlg As frmKundenKontoListe
+        dlg = New frmKundenKontoListe()
+        dlg.ShowDialog()
+
     End Sub
 
     Private Sub btnWeiterbildungenM_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungenM.Click
@@ -252,8 +254,9 @@
     End Sub
 
     Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
-        frmMeinKontoMitarbeiter.ShowDialog()
-        Me.Close()
+        Dim dlg As frmMeinKontoMitarbeiter
+        dlg = New frmMeinKontoMitarbeiter()
+        dlg.ShowDialog()
     End Sub
 
     Private Sub lstviewWeiterbildungenM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungenM.SelectedIndexChanged

@@ -90,30 +90,14 @@
         'Dim teilnkreis As String
         'Dim thema As String
 
-        For i = 0 To mlstWeiterbildungen.Count - 1
+        For i = 0 To frmHauptfensterKunde.intIndex
             Me.txtboxSeminartitel.Text = Logic.mlstWeiterbildungen.Item(i).Bezeichnung
             Me.rtxtboxSeminarbeschreibung.Text = Logic.mlstWeiterbildungen.Item(i).Curriculum
             Me.rtxtboxTeilnkreis.Text = Logic.mlstWeiterbildungen.Item(i).Teilnehmerkreis
             Me.rtxtboxSeminarinfo.Text = Logic.mlstWeiterbildungen.Item(i).Thema
-            'mWeiterbil = ListeWeiterbildung.Item(i)
 
-            ''Attributwerte aus der Weiterbildung lesen
-            'titel = mWeiterbil.Bezeichnung
-            'curriculum = mWeiterbil.Curriculum
-            'teilnkreis = mWeiterbil.Teilnehmerkreis
-            'thema = mWeiterbil.Thema
-
-            ''In die Oberflächenelemente zuweisen
-            'Me.txtboxSeminartitel.Text = titel
-            'Me.rtxtboxSeminarbeschreibung.Text = curriculum
-            'Me.rtxtboxTeilnkreis.Text = teilnkreis
-            'Me.rtxtboxSeminarinfo.Text = thema
-
-            anzeigen()
         Next
 
-        'Passende ausgewählte Weiterbildung im Datenbank
-        Logic.mlstWeiterbildungen.Item(frmHauptfensterKunde.intIndex) = mWeiterbil
     End Sub
 
     'Function gibBuchung() As Buchung
