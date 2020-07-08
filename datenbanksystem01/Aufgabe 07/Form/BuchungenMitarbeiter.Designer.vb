@@ -26,11 +26,11 @@ Partial Class BuchungenMitarbeiter
         Me.btnSchließen = New System.Windows.Forms.Button()
         Me.tbsBuchungen = New System.Windows.Forms.TabControl()
         Me.tbsAktBuchungen = New System.Windows.Forms.TabPage()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.LstViewAlleBuchungen = New System.Windows.Forms.ListView()
         Me.colBuchungIDAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colAnzahlPersAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKundenID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colPreisAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKundeIDAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbsStornoBuchungen = New System.Windows.Forms.TabPage()
@@ -50,7 +50,7 @@ Partial Class BuchungenMitarbeiter
         '
         Me.btnSchließen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSchließen.Location = New System.Drawing.Point(739, 424)
-        Me.btnSchließen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSchließen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchließen.Name = "btnSchließen"
         Me.btnSchließen.Size = New System.Drawing.Size(84, 29)
         Me.btnSchließen.TabIndex = 0
@@ -62,7 +62,7 @@ Partial Class BuchungenMitarbeiter
         Me.tbsBuchungen.Controls.Add(Me.tbsAktBuchungen)
         Me.tbsBuchungen.Controls.Add(Me.tbsStornoBuchungen)
         Me.tbsBuchungen.Location = New System.Drawing.Point(8, 20)
-        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
         Me.tbsBuchungen.Size = New System.Drawing.Size(820, 393)
@@ -70,30 +70,30 @@ Partial Class BuchungenMitarbeiter
         '
         'tbsAktBuchungen
         '
-        Me.tbsAktBuchungen.Controls.Add(Me.ListView1)
+        Me.tbsAktBuchungen.Controls.Add(Me.LstViewAlleBuchungen)
         Me.tbsAktBuchungen.Location = New System.Drawing.Point(4, 25)
-        Me.tbsAktBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsAktBuchungen.Name = "tbsAktBuchungen"
-        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(2)
         Me.tbsAktBuchungen.Size = New System.Drawing.Size(812, 364)
         Me.tbsAktBuchungen.TabIndex = 0
         Me.tbsAktBuchungen.Text = "Aktiv"
         Me.tbsAktBuchungen.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'LstViewAlleBuchungen
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colBuchungIDAkt, Me.colKursAkt, Me.colWeiterbildungAkt, Me.colAnzahlPersAkt, Me.colPreisAkt, Me.colKundeIDAkt})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.Enabled = False
-        Me.ListView1.GridLines = True
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(2, 2)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(808, 360)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.LstViewAlleBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colBuchungIDAkt, Me.colKursAkt, Me.colWeiterbildungAkt, Me.colKundenID, Me.colPreisAkt, Me.colKundeIDAkt})
+        Me.LstViewAlleBuchungen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LstViewAlleBuchungen.Enabled = False
+        Me.LstViewAlleBuchungen.GridLines = True
+        Me.LstViewAlleBuchungen.HideSelection = False
+        Me.LstViewAlleBuchungen.Location = New System.Drawing.Point(2, 2)
+        Me.LstViewAlleBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.LstViewAlleBuchungen.Name = "LstViewAlleBuchungen"
+        Me.LstViewAlleBuchungen.Size = New System.Drawing.Size(808, 360)
+        Me.LstViewAlleBuchungen.TabIndex = 0
+        Me.LstViewAlleBuchungen.UseCompatibleStateImageBehavior = False
+        Me.LstViewAlleBuchungen.View = System.Windows.Forms.View.Details
         '
         'colBuchungIDAkt
         '
@@ -112,11 +112,11 @@ Partial Class BuchungenMitarbeiter
         Me.colWeiterbildungAkt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colWeiterbildungAkt.Width = 379
         '
-        'colAnzahlPersAkt
+        'colKundenID
         '
-        Me.colAnzahlPersAkt.Text = "Anzahl Personen"
-        Me.colAnzahlPersAkt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colAnzahlPersAkt.Width = 190
+        Me.colKundenID.Text = "KundenID"
+        Me.colKundenID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colKundenID.Width = 190
         '
         'colPreisAkt
         '
@@ -134,9 +134,9 @@ Partial Class BuchungenMitarbeiter
         '
         Me.tbsStornoBuchungen.Controls.Add(Me.ListViewStorniertBuchungen)
         Me.tbsStornoBuchungen.Location = New System.Drawing.Point(4, 25)
-        Me.tbsStornoBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsStornoBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsStornoBuchungen.Name = "tbsStornoBuchungen"
-        Me.tbsStornoBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsStornoBuchungen.Padding = New System.Windows.Forms.Padding(2)
         Me.tbsStornoBuchungen.Size = New System.Drawing.Size(812, 364)
         Me.tbsStornoBuchungen.TabIndex = 1
         Me.tbsStornoBuchungen.Text = "Storniert"
@@ -150,7 +150,7 @@ Partial Class BuchungenMitarbeiter
         Me.ListViewStorniertBuchungen.GridLines = True
         Me.ListViewStorniertBuchungen.HideSelection = False
         Me.ListViewStorniertBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewStorniertBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListViewStorniertBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.ListViewStorniertBuchungen.Name = "ListViewStorniertBuchungen"
         Me.ListViewStorniertBuchungen.Size = New System.Drawing.Size(808, 360)
         Me.ListViewStorniertBuchungen.TabIndex = 0
@@ -201,7 +201,7 @@ Partial Class BuchungenMitarbeiter
         Me.Controls.Add(Me.tbsBuchungen)
         Me.Controls.Add(Me.btnSchließen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BuchungenMitarbeiter"
         Me.Text = "Alle Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)
@@ -214,11 +214,11 @@ Partial Class BuchungenMitarbeiter
     Friend WithEvents btnSchließen As Button
     Friend WithEvents tbsBuchungen As TabControl
     Friend WithEvents tbsAktBuchungen As TabPage
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents LstViewAlleBuchungen As ListView
     Friend WithEvents colBuchungIDAkt As ColumnHeader
     Friend WithEvents colKursAkt As ColumnHeader
     Friend WithEvents colWeiterbildungAkt As ColumnHeader
-    Friend WithEvents colAnzahlPersAkt As ColumnHeader
+    Friend WithEvents colKundenID As ColumnHeader
     Friend WithEvents colPreisAkt As ColumnHeader
     Friend WithEvents colKundeIDAkt As ColumnHeader
     Friend WithEvents tbsStornoBuchungen As TabPage

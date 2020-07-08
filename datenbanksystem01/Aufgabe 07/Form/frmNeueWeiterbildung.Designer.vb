@@ -52,18 +52,20 @@ Partial Class frmNeueWeiterbildung
         '
         'txtSeminartitel
         '
-        Me.txtSeminartitel.Location = New System.Drawing.Point(158, 22)
+        Me.txtSeminartitel.Location = New System.Drawing.Point(105, 14)
+        Me.txtSeminartitel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSeminartitel.Multiline = True
         Me.txtSeminartitel.Name = "txtSeminartitel"
-        Me.txtSeminartitel.Size = New System.Drawing.Size(538, 48)
+        Me.txtSeminartitel.Size = New System.Drawing.Size(360, 32)
         Me.txtSeminartitel.TabIndex = 0
         '
         'lblSeminartitel
         '
         Me.lblSeminartitel.AutoSize = True
-        Me.lblSeminartitel.Location = New System.Drawing.Point(15, 35)
+        Me.lblSeminartitel.Location = New System.Drawing.Point(10, 22)
+        Me.lblSeminartitel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSeminartitel.Name = "lblSeminartitel"
-        Me.lblSeminartitel.Size = New System.Drawing.Size(125, 25)
+        Me.lblSeminartitel.Size = New System.Drawing.Size(82, 17)
         Me.lblSeminartitel.TabIndex = 1
         Me.lblSeminartitel.Text = "Seminartitel"
         '
@@ -73,19 +75,21 @@ Partial Class frmNeueWeiterbildung
         Me.tabcontrolNeueWeiterbildung.Controls.Add(Me.tabTeilnehmerkreis)
         Me.tabcontrolNeueWeiterbildung.Controls.Add(Me.tabSeminarinfo)
         Me.tabcontrolNeueWeiterbildung.Controls.Add(Me.tabKurse)
-        Me.tabcontrolNeueWeiterbildung.Location = New System.Drawing.Point(12, 118)
+        Me.tabcontrolNeueWeiterbildung.Location = New System.Drawing.Point(8, 76)
+        Me.tabcontrolNeueWeiterbildung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabcontrolNeueWeiterbildung.Name = "tabcontrolNeueWeiterbildung"
         Me.tabcontrolNeueWeiterbildung.SelectedIndex = 0
-        Me.tabcontrolNeueWeiterbildung.Size = New System.Drawing.Size(1229, 528)
+        Me.tabcontrolNeueWeiterbildung.Size = New System.Drawing.Size(819, 338)
         Me.tabcontrolNeueWeiterbildung.TabIndex = 2
         '
         'tabSeminarbeschreibung
         '
         Me.tabSeminarbeschreibung.Controls.Add(Me.rtxtboxSeminarbeschreibung)
-        Me.tabSeminarbeschreibung.Location = New System.Drawing.Point(8, 39)
+        Me.tabSeminarbeschreibung.Location = New System.Drawing.Point(4, 25)
+        Me.tabSeminarbeschreibung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabSeminarbeschreibung.Name = "tabSeminarbeschreibung"
-        Me.tabSeminarbeschreibung.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSeminarbeschreibung.Size = New System.Drawing.Size(1213, 481)
+        Me.tabSeminarbeschreibung.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabSeminarbeschreibung.Size = New System.Drawing.Size(811, 309)
         Me.tabSeminarbeschreibung.TabIndex = 0
         Me.tabSeminarbeschreibung.Tag = ""
         Me.tabSeminarbeschreibung.Text = "Seminarbeschreibung"
@@ -94,19 +98,21 @@ Partial Class frmNeueWeiterbildung
         'rtxtboxSeminarbeschreibung
         '
         Me.rtxtboxSeminarbeschreibung.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxSeminarbeschreibung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxSeminarbeschreibung.Name = "rtxtboxSeminarbeschreibung"
-        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(807, 305)
         Me.rtxtboxSeminarbeschreibung.TabIndex = 0
         Me.rtxtboxSeminarbeschreibung.Text = ""
         '
         'tabTeilnehmerkreis
         '
         Me.tabTeilnehmerkreis.Controls.Add(Me.rtxtboxTeilnehmerkreis)
-        Me.tabTeilnehmerkreis.Location = New System.Drawing.Point(8, 39)
+        Me.tabTeilnehmerkreis.Location = New System.Drawing.Point(4, 25)
+        Me.tabTeilnehmerkreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabTeilnehmerkreis.Name = "tabTeilnehmerkreis"
-        Me.tabTeilnehmerkreis.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabTeilnehmerkreis.Size = New System.Drawing.Size(1213, 481)
+        Me.tabTeilnehmerkreis.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabTeilnehmerkreis.Size = New System.Drawing.Size(811, 309)
         Me.tabTeilnehmerkreis.TabIndex = 1
         Me.tabTeilnehmerkreis.Text = "Teilnehmerkreis"
         Me.tabTeilnehmerkreis.UseVisualStyleBackColor = True
@@ -114,19 +120,21 @@ Partial Class frmNeueWeiterbildung
         'rtxtboxTeilnehmerkreis
         '
         Me.rtxtboxTeilnehmerkreis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxTeilnehmerkreis.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxTeilnehmerkreis.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxTeilnehmerkreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxTeilnehmerkreis.Name = "rtxtboxTeilnehmerkreis"
-        Me.rtxtboxTeilnehmerkreis.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxTeilnehmerkreis.Size = New System.Drawing.Size(807, 305)
         Me.rtxtboxTeilnehmerkreis.TabIndex = 0
         Me.rtxtboxTeilnehmerkreis.Text = ""
         '
         'tabSeminarinfo
         '
         Me.tabSeminarinfo.Controls.Add(Me.rtxtboxSeminarinfo)
-        Me.tabSeminarinfo.Location = New System.Drawing.Point(8, 39)
+        Me.tabSeminarinfo.Location = New System.Drawing.Point(4, 25)
+        Me.tabSeminarinfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabSeminarinfo.Name = "tabSeminarinfo"
-        Me.tabSeminarinfo.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSeminarinfo.Size = New System.Drawing.Size(1213, 481)
+        Me.tabSeminarinfo.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabSeminarinfo.Size = New System.Drawing.Size(811, 309)
         Me.tabSeminarinfo.TabIndex = 2
         Me.tabSeminarinfo.Text = "Seminarinformationen"
         Me.tabSeminarinfo.UseVisualStyleBackColor = True
@@ -134,9 +142,10 @@ Partial Class frmNeueWeiterbildung
         'rtxtboxSeminarinfo
         '
         Me.rtxtboxSeminarinfo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxSeminarinfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxSeminarinfo.Name = "rtxtboxSeminarinfo"
-        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(1207, 475)
+        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(807, 305)
         Me.rtxtboxSeminarinfo.TabIndex = 0
         Me.rtxtboxSeminarinfo.Text = ""
         '
@@ -146,37 +155,41 @@ Partial Class frmNeueWeiterbildung
         Me.tabKurse.Controls.Add(Me.btnLeeren)
         Me.tabKurse.Controls.Add(Me.btnLoeschen)
         Me.tabKurse.Controls.Add(Me.lstviewKurse)
-        Me.tabKurse.Location = New System.Drawing.Point(8, 39)
+        Me.tabKurse.Location = New System.Drawing.Point(4, 25)
+        Me.tabKurse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabKurse.Name = "tabKurse"
-        Me.tabKurse.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabKurse.Size = New System.Drawing.Size(1213, 481)
+        Me.tabKurse.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabKurse.Size = New System.Drawing.Size(811, 309)
         Me.tabKurse.TabIndex = 3
         Me.tabKurse.Text = "Kurse"
         Me.tabKurse.UseVisualStyleBackColor = True
         '
         'btnNeuerKurs
         '
-        Me.btnNeuerKurs.Location = New System.Drawing.Point(615, 440)
+        Me.btnNeuerKurs.Location = New System.Drawing.Point(410, 282)
+        Me.btnNeuerKurs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNeuerKurs.Name = "btnNeuerKurs"
-        Me.btnNeuerKurs.Size = New System.Drawing.Size(179, 36)
+        Me.btnNeuerKurs.Size = New System.Drawing.Size(119, 23)
         Me.btnNeuerKurs.TabIndex = 3
         Me.btnNeuerKurs.Text = "Neuer Kurs"
         Me.btnNeuerKurs.UseVisualStyleBackColor = True
         '
         'btnLeeren
         '
-        Me.btnLeeren.Location = New System.Drawing.Point(823, 437)
+        Me.btnLeeren.Location = New System.Drawing.Point(549, 280)
+        Me.btnLeeren.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLeeren.Name = "btnLeeren"
-        Me.btnLeeren.Size = New System.Drawing.Size(179, 36)
+        Me.btnLeeren.Size = New System.Drawing.Size(119, 23)
         Me.btnLeeren.TabIndex = 2
         Me.btnLeeren.Text = "Leeren"
         Me.btnLeeren.UseVisualStyleBackColor = True
         '
         'btnLoeschen
         '
-        Me.btnLoeschen.Location = New System.Drawing.Point(1030, 437)
+        Me.btnLoeschen.Location = New System.Drawing.Point(687, 280)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(179, 36)
+        Me.btnLoeschen.Size = New System.Drawing.Size(119, 23)
         Me.btnLoeschen.TabIndex = 1
         Me.btnLoeschen.Text = "Löschen"
         Me.btnLoeschen.UseVisualStyleBackColor = True
@@ -188,9 +201,10 @@ Partial Class frmNeueWeiterbildung
         Me.lstviewKurse.GridLines = True
         Me.lstviewKurse.HideSelection = False
         Me.lstviewKurse.Location = New System.Drawing.Point(0, 0)
+        Me.lstviewKurse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lstviewKurse.MultiSelect = False
         Me.lstviewKurse.Name = "lstviewKurse"
-        Me.lstviewKurse.Size = New System.Drawing.Size(1213, 418)
+        Me.lstviewKurse.Size = New System.Drawing.Size(810, 269)
         Me.lstviewKurse.TabIndex = 0
         Me.lstviewKurse.UseCompatibleStateImageBehavior = False
         Me.lstviewKurse.View = System.Windows.Forms.View.Details
@@ -221,9 +235,10 @@ Partial Class frmNeueWeiterbildung
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1050, 659)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(700, 422)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(191, 56)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(127, 36)
         Me.btnAbbrechen.TabIndex = 3
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
@@ -231,9 +246,10 @@ Partial Class frmNeueWeiterbildung
         'btnErstellen
         '
         Me.btnErstellen.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btnErstellen.Location = New System.Drawing.Point(843, 659)
+        Me.btnErstellen.Location = New System.Drawing.Point(562, 422)
+        Me.btnErstellen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnErstellen.Name = "btnErstellen"
-        Me.btnErstellen.Size = New System.Drawing.Size(191, 56)
+        Me.btnErstellen.Size = New System.Drawing.Size(127, 36)
         Me.btnErstellen.TabIndex = 4
         Me.btnErstellen.Text = "Erstellen"
         Me.btnErstellen.UseVisualStyleBackColor = True
@@ -241,16 +257,17 @@ Partial Class frmNeueWeiterbildung
         'frmNeueWeiterbildung
         '
         Me.AcceptButton = Me.btnErstellen
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(1254, 729)
+        Me.ClientSize = New System.Drawing.Size(836, 467)
         Me.Controls.Add(Me.btnErstellen)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.tabcontrolNeueWeiterbildung)
         Me.Controls.Add(Me.lblSeminartitel)
         Me.Controls.Add(Me.txtSeminartitel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmNeueWeiterbildung"
         Me.Text = "Neue Weiterbildung"
         Me.tabcontrolNeueWeiterbildung.ResumeLayout(False)

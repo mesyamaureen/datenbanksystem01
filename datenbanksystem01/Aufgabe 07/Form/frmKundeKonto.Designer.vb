@@ -259,7 +259,7 @@ Partial Class frmKundeKonto
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmKundeKonto"
-        Me.Text = "vztg"
+        Me.Text = "Kundenkonto"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

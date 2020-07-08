@@ -33,23 +33,29 @@
     End Sub
 
     Private Sub anzeigenNeuerKurs()
-        Me.txtDatum.Enabled = True
+        Me.dtpKursDatum.Enabled = True
         Me.txtOrt.Enabled = True
-        Me.txtVerfuegbarkeit.Enabled = True
+        Me.chkVerfuegbarYes.Enabled = True
+        Me.chkVerfuegbarNein.Enabled = True
         Me.txtPreis.Enabled = True
+        Me.chkVerfuegbarYes.Enabled = True
+        Me.chkVerfuegbarNein.Enabled = True
 
-        Me.txtDatum.Text = mneuerKurs.Zeitpunkt
+
+        Me.dtpKursDatum.Text = mneuerKurs.Zeitpunkt
         Me.txtOrt.Text = mneuerKurs.Ort
-        Me.txtVerfuegbarkeit.Text = mneuerKurs.Verfuegbar
+        Me.chkVerfuegbarYes.Text = mneuerKurs.Verfuegbar
         Me.txtPreis.Text = mneuerKurs.Preis
+        Me.chkAbgesagtNein.Text = mneuerKurs.Verfuegbar
     End Sub
 
     Function gibKurs() As Kurs
         'Eigenschaften der Weiterbildung aus den Feldern der Oberfläche lesen
-        mneuerKurs.Zeitpunkt = Me.txtDatum.Text
+        mneuerKurs.Zeitpunkt = Me.dtpKursDatum.Text
         mneuerKurs.Ort = Me.txtOrt.Text
-        mneuerKurs.Verfuegbar = Me.txtVerfuegbarkeit.Text
+        mneuerKurs.Verfuegbar = Me.chkVerfuegbarYes.Checked
         mneuerKurs.Preis = Me.txtPreis.Text
+        mneuerKurs.Abgesagt = Me.chkAbgesagtNein.Checked
 
         'Bearbeitete Weiterbildung als Ergebnis zurückgeben
         Return mneuerKurs
@@ -57,10 +63,12 @@
     End Function
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-        Dim datum As Date = Me.txtDatum.Text
+        Dim datum As Date = Me.dtpKursDatum.Text
         Dim ort As String = Me.txtOrt.Text
-        Dim verfuegbarkeit As Boolean = Me.txtVerfuegbarkeit.Text
+        Dim verfuegbarkeit As Boolean = Me.chkVerfuegbarYes.Checked
         Dim preis As Decimal = Me.txtPreis.Text
+        Dim abgesagt As Boolean = Me.chkAbgesagtNein.Checked
+
         'Aufrufen changeWeiterbildung() in Weiterbildungscontroller
         mweiterbilController.createKurs(ort, datum, verfuegbarkeit, preis)
         'Passende bearbeitende Weiterbildung in Datenbank

@@ -7,6 +7,9 @@ Public Class Buchung
     Public mdecPreis As Decimal
     Public mdatDatum As Date
     Public mKurs As Kurs
+    Public mstrKundenID As String
+    Public mstrKursID As String
+    Public mstrWeiterbildungsBezeichnung As String
 
 
     'Konstruktor
@@ -67,6 +70,26 @@ Public Class Buchung
         End Set
     End Property
 
+    Public ReadOnly Property KundenID As String
+        Get
+            Return mstrKundenID
+        End Get
+    End Property
+
+    Public ReadOnly Property KursID As String
+        Get
+            Return mstrKursID
+        End Get
+    End Property
+
+    Public Property Weiterbildung As String
+        Get
+            Return mstrWeiterbildungsBezeichnung
+        End Get
+        Set(value As String)
+            mstrWeiterbildungsBezeichnung = value
+        End Set
+    End Property
 
     Public Shared Function zeigenAlle() As List(Of Buchung)
 
