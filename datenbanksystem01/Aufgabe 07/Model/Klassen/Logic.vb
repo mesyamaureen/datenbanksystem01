@@ -83,8 +83,48 @@
         mlstKunde = New List(Of Kunde) From
           {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "BlalBla AG"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "ShareNow")}
 
-        mlstKurs = New List(Of Kurs) From
-          {New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
+        mlstKurs = New List(Of Kurs) 'From
+        '{New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
+        Dim kurs01, kurs02, kurs03, kurs04, kurs05, kurs06 As Kurs
+
+        'Kurse initialisieren ohne Parameter
+        kurs01 = New Kurs()
+        kurs01.Zeitpunkt = #07/30/2020#
+        kurs01.Ort = "Berlin"
+        kurs01.Verfuegbar = True 'Teilnehmeranzahl benötigt???!!!
+        kurs01.Preis = 1500
+        kurs01.Abgesagt = False
+
+        'Kurse initialisieren mit Parameter
+        kurs02 = New Kurs(#08/21/2020#, "Berlin", True, 1800, False)
+        kurs03 = New Kurs(#09/13/2020#, "Stuttgart", True, 800, False)
+        kurs04 = New Kurs(#12/12/2020#, "Hamburg", True, 1200, False)
+        kurs05 = New Kurs(#11/14/2020#, "Stuttgart", True, 800, False)
+        kurs06 = New Kurs(#10/21/2020#, "Berlin", True, 1800, False)
+
+        'KursID
+        kurs01.KursID = "1"
+        kurs02.KursID = "2"
+        kurs03.KursID = "3"
+        kurs04.KursID = "4"
+        kurs05.KursID = "5"
+        kurs06.KursID = "6"
+
+        'Kurse zur Liste hinzufügen
+        mlstKurs.Add(kurs01)
+        mlstKurs.Add(kurs02)
+        mlstKurs.Add(kurs03)
+        mlstKurs.Add(kurs04)
+        mlstKurs.Add(kurs05)
+        mlstKurs.Add(kurs06)
+
+        'intIndex Anzahl
+        kurs01 = mlstKurs.Item(0)
+        kurs02 = mlstKurs.Item(1)
+        kurs03 = mlstKurs.Item(2)
+        kurs04 = mlstKurs.Item(3)
+        kurs05 = mlstKurs.Item(4)
+        kurs06 = mlstKurs.Item(5)
 
         'Für Nina: Wäre es okay, nur die Beispieldaten für Weiterbildungen & Kurse wie unten benutzen?
         mlstWeiterbildungen = New List(Of Weiterbildung) ' From {
@@ -94,7 +134,7 @@
         'Weiterbildungen deklarieren
         Dim agiles, scrum, controlling, bmc As Weiterbildung
 
-        'Weiterbildungen initialisieren
+        'Weiterbildungen initialisieren ohne Parameter
         agiles = New Weiterbildung()
         agiles.Bezeichnung = "Agiles Projektmanagement"
         agiles.Curriculum = "1) Grundlagen des agilen Projektmanagement
@@ -106,7 +146,7 @@
         agiles.Teilnehmerkreis = "Projektmanager und Projektleiter sowie Projektcontroller, -assistenten,
                                  -mitarbeiter und jeder, der seine Fähigkeiten während der Projektarbeit effizienter gestalten möchte."
 
-        ' Liste der Weiterbildungen initialisieren
+        ' Weiterbildungen initialisieren mit Parameter
         scrum = New Weiterbildung("SCRUM", "Projekt-, Prozess- und Changemanagement", "1) Scrum - Herkunft und Entwicklung
                                                                                        2) Die Scrum Philosophie
                                                                                        3) Die Agile Phase", "Dieser Workshop richtet sich an alle, die in ihrem Unternehmen
@@ -138,6 +178,7 @@
         controlling = mlstWeiterbildungen.Item(2)
         bmc = mlstWeiterbildungen.Item(3)
 
+        'Buchung Datenbank
         mlstBuchung = New List(Of Buchung) From {
         New Buchung(1200, #07/21/2020#, mlstKurs)}
 
