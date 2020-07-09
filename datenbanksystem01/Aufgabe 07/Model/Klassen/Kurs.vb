@@ -10,7 +10,7 @@ Public Class Kurs
     Public mbolVerfuegbar As Boolean
     Public mdecPreis As Decimal
     Public mbolAbgesagt As Boolean
-    Public mlstBuchungen As List(Of Buchung)
+    Public mBuchungen As Buchung
 
     'Konstruktoren
     'Parameterloser Konstruktor
@@ -20,11 +20,11 @@ Public Class Kurs
         mbolVerfuegbar = False
         mdecPreis = Nothing
         mbolAbgesagt = False
-        mlstBuchungen = New List(Of Buchung)
+        'mBuchungen = New Buchung
     End Sub
 
     'Konstruktor mit Parameter
-    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean)
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean) ', mBuchungen As Buchung)
 
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
@@ -92,12 +92,12 @@ Public Class Kurs
         End Set
     End Property
 
-    Public Property Buchungen As List(Of Buchung)
+    Public Property Buchungen As Buchung
         Get
-            Return mlstBuchungen
+            Return mBuchungen
         End Get
-        Set(value As List(Of Buchung))
-            mlstBuchungen = value
+        Set(value As Buchung)
+            mBuchungen = value
         End Set
     End Property
 

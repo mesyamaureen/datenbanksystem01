@@ -154,14 +154,16 @@
     End Sub
 
     Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
-        BuchungenKunde.ShowDialog()
-        Me.Close()
+        Dim dlg As BuchungenKunde
+        dlg = New BuchungenKunde()
+        dlg.ShowDialog()
     End Sub
 
 
 
     Private Sub btnKonto_Click(sender As Object, e As EventArgs) Handles btnKonto.Click
-        frmKundeKonto.ShowDialog()
-        Me.Close()
+        Dim dlg As frmKundeKonto
+        dlg = New frmKundeKonto()
+        dlg.ShowDialog()
     End Sub
 End Class

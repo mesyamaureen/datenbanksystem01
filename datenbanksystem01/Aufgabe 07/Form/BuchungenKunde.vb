@@ -28,19 +28,10 @@
     End Sub
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        'Deklaration das Ergebnis des MsgBox
-        Dim msgResult As MsgBoxResult
-        'Initialisierung für das Ergebnis zwischen Ja und Nein
-        msgResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
-        'Verzweigung des Ergebnisses
-        'Ergebnis: JA
-        If msgResult = vbYes Then
-            Me.Close() 'Dialogfenster von BuchungenKunde schließen
-            Exit Sub 'Prozedur verlassen
-            frmHauptfensterKunde.Show() 'HauptfensterKunde öffnen
-            'Ergebnis: NEIN
+        If MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Me.Close()
         Else
-            Return 'Zurück zum Fenster BuchungenKunde
+            'Show Dialog nicht schließen
         End If
     End Sub
     Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)

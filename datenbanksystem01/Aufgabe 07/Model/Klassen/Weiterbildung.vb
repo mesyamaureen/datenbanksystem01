@@ -9,6 +9,7 @@ Public Class Weiterbildung
     Public mstrThema As String
     Public mstrCurriculum As String
     Public mstrTeilnehmerkreis As String
+    'Public mlstKurs As List(Of Kurs)
 
     'Konstruktor
     'Parameterloser Konstruktor
@@ -17,17 +18,18 @@ Public Class Weiterbildung
         mstrThema = String.Empty
         mstrCurriculum = String.Empty
         mstrTeilnehmerkreis = String.Empty
+        'mlstKurs = New List(Of Kurs)
     End Sub
 
 
     'Konstruktor mit Parametern
-    Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String)
+    Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) ', plstKurs As List(Of Kurs))
 
         mstrBezeichnung = pstrBezeichnung
         mstrThema = pstrThema
         mstrCurriculum = pstrCurriculum
         mstrTeilnehmerkreis = pstrTeilnehmerkreis
-
+        ' mlstKurs = plstKurs
     End Sub
 
 

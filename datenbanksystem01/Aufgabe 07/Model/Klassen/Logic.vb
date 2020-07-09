@@ -126,6 +126,7 @@
         kurs05 = mlstKurs.Item(4)
         kurs06 = mlstKurs.Item(5)
 
+
         'Für Nina: Wäre es okay, nur die Beispieldaten für Weiterbildungen & Kurse wie unten benutzen?
         mlstWeiterbildungen = New List(Of Weiterbildung) ' From {
         'New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
