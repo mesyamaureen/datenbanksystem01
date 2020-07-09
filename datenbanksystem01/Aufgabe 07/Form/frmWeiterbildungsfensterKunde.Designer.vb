@@ -157,13 +157,11 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         'lstviewKurse
         '
-        Me.lstviewKurse.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.lstviewKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colKursID, Me.colKursDatum, Me.colVerfuegbarkeit, Me.colKursPreis})
         Me.lstviewKurse.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstviewKurse.FullRowSelect = True
         Me.lstviewKurse.GridLines = True
         Me.lstviewKurse.HideSelection = False
-        Me.lstviewKurse.HoverSelection = True
         Me.lstviewKurse.Location = New System.Drawing.Point(3, 3)
         Me.lstviewKurse.MultiSelect = False
         Me.lstviewKurse.Name = "lstviewKurse"

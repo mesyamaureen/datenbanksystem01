@@ -102,7 +102,7 @@ Public Class frmWeiterbildungsfensterMitarb
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
             Me.btnLoeschen.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        Else
             Me.btnLoeschen.Enabled = False 'kann nicht geöffnet oder gelöscht
         End If
 

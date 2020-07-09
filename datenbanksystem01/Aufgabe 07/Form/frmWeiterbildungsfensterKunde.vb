@@ -41,7 +41,6 @@
         Me.rtxtboxSeminarinfo.Enabled = False
 
         Me.lstviewKurse.Enabled = True
-        Me.btnBuchen.Enabled = True
 
         'TODO: Me.listview.Kurs ?????
     End Sub
@@ -82,6 +81,83 @@
         'Rückgabewert Als Neue Buchung von Weiterbildungscontroller
     End Sub
 
+    Protected Sub aktivierenSchaltflächenKurs()
+        'Deklaration
+        Dim intAnzahlAusgewaehlterZeilen As Integer
+
+        'Initialisierung
+        intAnzahlAusgewaehlterZeilen = Me.lstviewKurse.SelectedItems.Count
+
+        'Schaltfläche zurücksetzen
+        Me.btnBuchen.Enabled = False
+
+        'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
+        If intAnzahlAusgewaehlterZeilen = 1 Then
+            Me.btnBuchen.Enabled = True
+        Else
+            Me.btnBuchen.Enabled = False
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Liste von Kurse anzeigen
+    ''' </summary>
+    ''' <param name="plngIndex"></param>
+    ''' <param name="pstrKursID"></param>
+    ''' <param name="pdatKursDatum"></param>
+    ''' <param name="pbolVerfuegbarkeit"></param>
+    ''' <param name="pdecKursPreis"></param>
+    Sub anzeigenZeileKurs(plngIndex As Long, pstrKursID As String, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
+        'Neue Zeile in der Liste deklarieren
+        Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
+
+        'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
+        'Index als Wert in der ersten Spalte eingetragen wird
+        zeile = Me.lstviewKurse.Items.Add(plngIndex)
+
+        'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
+        With zeile.SubItems
+            .Add(pstrKursID)
+            .Add(pdatKursDatum)
+            .Add(pbolVerfuegbarkeit)
+            .Add(pdecKursPreis)
+        End With
+    End Sub
+
+    ''' <summary>
+    ''' Tabelle mit der Liste von Kurs in Datenbank verknüpfen
+    ''' </summary>
+    Private Sub anzeigenKurs()
+        'Deklaration
+        Dim Kurs As Kurs 'Kurs
+
+        'Anzuzeigende Attribute
+        Dim strKursID As String
+        Dim datKursDatum As Date
+        Dim bolVerfuegbarkeit As Boolean
+        Dim decKursPreis As Decimal
+
+        'leeren der Tabelle
+        Me.lstviewKurse.Items.Clear()
+
+        'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
+        For i = 0 To ListeKurse.Count - 1
+            Kurs = ListeKurse.Item(i)
+
+            'Attributwerte aus der Weiterbildung lesen
+            strKursID = Kurs.KursID
+            datKursDatum = Kurs.Zeitpunkt
+            bolVerfuegbarkeit = Kurs.Verfuegbar
+            decKursPreis = Kurs.Preis
+
+            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+            anzeigenZeileKurs(i, strKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+
+        Next
+        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
+        aktivierenSchaltflächenKurs()
+    End Sub
+
     Private Sub frmWeiterbildungsfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Deklaration für jede Oberflächenelemente
@@ -98,6 +174,9 @@
 
         Next
 
+        'alle anzeigen Funktion aufrufen
+        anzeigen()
+        anzeigenKurs()
     End Sub
 
     'Function gibBuchung() As Buchung
