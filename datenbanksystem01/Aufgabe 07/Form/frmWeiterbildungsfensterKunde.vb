@@ -30,7 +30,7 @@
     ''' <param name="e"></param>
     ''' <remarks>Die Schaltfläche Abbrechen ist als Cancel-Button eingestellt und liefert das DialogResult Cancel.</remarks>
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        'Nichts zu tun, Standardverhalten bei Abbrechen reicht
+        'Nichts zu tun, Standardverhalten
     End Sub
 
     Private Sub anzeigen()

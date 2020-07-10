@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BuchungenKunde
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class BuchungenKunde
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuchungenKunde))
         Me.tbsBuchungen = New System.Windows.Forms.TabControl()
@@ -29,7 +29,6 @@ Partial Class BuchungenKunde
         Me.colBuchungID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildung = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colAnzahlPers = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbsInaktiv = New System.Windows.Forms.TabPage()
         Me.ListViewInaktBuchungen = New System.Windows.Forms.ListView()
@@ -43,7 +42,7 @@ Partial Class BuchungenKunde
         Me.txtKundenID = New System.Windows.Forms.TextBox()
         Me.btnLaden = New System.Windows.Forms.Button()
         Me.btnLoeschen = New System.Windows.Forms.Button()
-        Me.btnHinzufuegenBuchung = New System.Windows.Forms.Button()
+        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbsBuchungen.SuspendLayout()
         Me.tbsAktivBuchungen.SuspendLayout()
         Me.tbsInaktiv.SuspendLayout()
@@ -54,7 +53,7 @@ Partial Class BuchungenKunde
         Me.tbsBuchungen.Controls.Add(Me.tbsAktivBuchungen)
         Me.tbsBuchungen.Controls.Add(Me.tbsInaktiv)
         Me.tbsBuchungen.Location = New System.Drawing.Point(12, 71)
-        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(4)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
         Me.tbsBuchungen.Size = New System.Drawing.Size(1230, 577)
@@ -64,9 +63,9 @@ Partial Class BuchungenKunde
         '
         Me.tbsAktivBuchungen.Controls.Add(Me.ListViewAktBuchungen)
         Me.tbsAktivBuchungen.Location = New System.Drawing.Point(8, 39)
-        Me.tbsAktivBuchungen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbsAktivBuchungen.Margin = New System.Windows.Forms.Padding(4)
         Me.tbsAktivBuchungen.Name = "tbsAktivBuchungen"
-        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbsAktivBuchungen.Padding = New System.Windows.Forms.Padding(4)
         Me.tbsAktivBuchungen.Size = New System.Drawing.Size(1214, 530)
         Me.tbsAktivBuchungen.TabIndex = 0
         Me.tbsAktivBuchungen.Text = "Aktiv"
@@ -75,14 +74,14 @@ Partial Class BuchungenKunde
         'ListViewAktBuchungen
         '
         Me.ListViewAktBuchungen.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.ListViewAktBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colBuchungID, Me.colKurs, Me.colWeiterbildung, Me.colAnzahlPers, Me.colPreis})
+        Me.ListViewAktBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colBuchungID, Me.colKurs, Me.colWeiterbildung, Me.colPreis})
         Me.ListViewAktBuchungen.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListViewAktBuchungen.FullRowSelect = True
         Me.ListViewAktBuchungen.GridLines = True
         Me.ListViewAktBuchungen.HideSelection = False
         Me.ListViewAktBuchungen.HoverSelection = True
         Me.ListViewAktBuchungen.Location = New System.Drawing.Point(4, 4)
-        Me.ListViewAktBuchungen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListViewAktBuchungen.Margin = New System.Windows.Forms.Padding(4)
         Me.ListViewAktBuchungen.MultiSelect = False
         Me.ListViewAktBuchungen.Name = "ListViewAktBuchungen"
         Me.ListViewAktBuchungen.Size = New System.Drawing.Size(1206, 522)
@@ -99,33 +98,27 @@ Partial Class BuchungenKunde
         '
         Me.colKurs.Text = "Kurs"
         Me.colKurs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKurs.Width = 171
+        Me.colKurs.Width = 205
         '
         'colWeiterbildung
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 506
-        '
-        'colAnzahlPers
-        '
-        Me.colAnzahlPers.Text = "Anzahl Personen"
-        Me.colAnzahlPers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colAnzahlPers.Width = 183
+        Me.colWeiterbildung.Width = 440
         '
         'colPreis
         '
         Me.colPreis.Text = "Preis"
         Me.colPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colPreis.Width = 168
+        Me.colPreis.Width = 322
         '
         'tbsInaktiv
         '
         Me.tbsInaktiv.Controls.Add(Me.ListViewInaktBuchungen)
         Me.tbsInaktiv.Location = New System.Drawing.Point(8, 39)
-        Me.tbsInaktiv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbsInaktiv.Margin = New System.Windows.Forms.Padding(4)
         Me.tbsInaktiv.Name = "tbsInaktiv"
-        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbsInaktiv.Padding = New System.Windows.Forms.Padding(4)
         Me.tbsInaktiv.Size = New System.Drawing.Size(1214, 530)
         Me.tbsInaktiv.TabIndex = 1
         Me.tbsInaktiv.Text = "Inaktiv"
@@ -139,7 +132,7 @@ Partial Class BuchungenKunde
         Me.ListViewInaktBuchungen.GridLines = True
         Me.ListViewInaktBuchungen.HideSelection = False
         Me.ListViewInaktBuchungen.Location = New System.Drawing.Point(4, 4)
-        Me.ListViewInaktBuchungen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListViewInaktBuchungen.Margin = New System.Windows.Forms.Padding(4)
         Me.ListViewInaktBuchungen.Name = "ListViewInaktBuchungen"
         Me.ListViewInaktBuchungen.Size = New System.Drawing.Size(1206, 522)
         Me.ListViewInaktBuchungen.TabIndex = 0
@@ -179,7 +172,7 @@ Partial Class BuchungenKunde
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAbbrechen.Location = New System.Drawing.Point(1096, 662)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAbbrechen.Name = "btnAbbrechen"
         Me.btnAbbrechen.Size = New System.Drawing.Size(136, 46)
         Me.btnAbbrechen.TabIndex = 1
@@ -199,7 +192,7 @@ Partial Class BuchungenKunde
         'txtKundenID
         '
         Me.txtKundenID.Location = New System.Drawing.Point(134, 12)
-        Me.txtKundenID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtKundenID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtKundenID.Multiline = True
         Me.txtKundenID.Name = "txtKundenID"
         Me.txtKundenID.ReadOnly = True
@@ -209,7 +202,7 @@ Partial Class BuchungenKunde
         'btnLaden
         '
         Me.btnLaden.Location = New System.Drawing.Point(812, 662)
-        Me.btnLaden.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLaden.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLaden.Name = "btnLaden"
         Me.btnLaden.Size = New System.Drawing.Size(126, 46)
         Me.btnLaden.TabIndex = 5
@@ -219,30 +212,22 @@ Partial Class BuchungenKunde
         'btnLoeschen
         '
         Me.btnLoeschen.Location = New System.Drawing.Point(952, 662)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLoeschen.Name = "btnLoeschen"
         Me.btnLoeschen.Size = New System.Drawing.Size(126, 46)
         Me.btnLoeschen.TabIndex = 2
         Me.btnLoeschen.Text = "Löschen"
         Me.btnLoeschen.UseVisualStyleBackColor = True
         '
-        'btnHinzufuegenBuchung
+        'colIndex
         '
-        Me.btnHinzufuegenBuchung.Location = New System.Drawing.Point(668, 662)
-        Me.btnHinzufuegenBuchung.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnHinzufuegenBuchung.Name = "btnHinzufuegenBuchung"
-        Me.btnHinzufuegenBuchung.Size = New System.Drawing.Size(126, 46)
-        Me.btnHinzufuegenBuchung.TabIndex = 6
-        Me.btnHinzufuegenBuchung.Text = "Neu"
-        Me.btnHinzufuegenBuchung.UseVisualStyleBackColor = True
+        Me.colIndex.Text = "Nr"
         '
         'BuchungenKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1254, 729)
-        Me.Controls.Add(Me.btnHinzufuegenBuchung)
         Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.txtKundenID)
         Me.Controls.Add(Me.lblKundenID)
@@ -250,7 +235,7 @@ Partial Class BuchungenKunde
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.tbsBuchungen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "BuchungenKunde"
         Me.Text = "Meine Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)
@@ -271,7 +256,6 @@ Partial Class BuchungenKunde
     Friend WithEvents colBuchungID As ColumnHeader
     Friend WithEvents colKurs As ColumnHeader
     Friend WithEvents colWeiterbildung As ColumnHeader
-    Friend WithEvents colAnzahlPers As ColumnHeader
     Friend WithEvents colPreis As ColumnHeader
     Friend WithEvents ListViewInaktBuchungen As ListView
     Friend WithEvents colBuchungIDInakt As ColumnHeader
@@ -282,5 +266,5 @@ Partial Class BuchungenKunde
     Friend WithEvents btnHinzufuegen As Button
     Friend WithEvents btnLaden As Button
     Friend WithEvents btnLoeschen As Button
-    Friend WithEvents btnHinzufuegenBuchung As Button
+    Friend WithEvents colIndex As ColumnHeader
 End Class

@@ -1,8 +1,4 @@
 ﻿Public Class BuchungenKunde
-    Private Sub BuchungenKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
 
     Protected Sub aktivierenSchaltflächen()
         ' Deklaration
@@ -14,7 +10,6 @@
         ' Schatlfächen zurücksetzen
         Me.btnLoeschen.Enabled = False
         Me.btnLaden.Enabled = False
-        Me.btnHinzufuegenBuchung.Enabled = True
 
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
@@ -27,13 +22,70 @@
         End If
     End Sub
 
+    Sub leeren()
+        'Liste leeren
+        Me.ListViewAktBuchungen.Items.Clear()
+        'Schaltflächen aktivieren/deaktivieren
+        aktivierenSchaltflächen()
+    End Sub
+
+    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal)
+
+        'Neue Zeile in der Liste deklarieren
+        Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
+
+        'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
+        'Index als Wert in der ersten Spalte eingetragen wird
+        zeile = Me.ListViewAktBuchungen.Items.Add(plngIndex)
+
+        'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
+        With zeile.SubItems
+            .Add(pstrBuchungID)
+            .Add(pdatKurs)
+            .Add(pstrWeiterbilName)
+            .Add(pdecPreis)
+        End With
+    End Sub
+
+    Private Sub anzeigen()
+        'Deklaration
+        Dim buchungen As Buchung
+
+        'Anzuzeigende Attribute
+        Dim strBuchungId As String
+        Dim datKurs As Date
+        Dim strWeiterbilName As String
+        Dim decPreis As Decimal
+
+        'leeren der Tabelle
+        leeren()
+
+        'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
+        For i = 0 To ListeBuchung.Count - 1
+            buchungen = ListeBuchung.Item(i)
+            'Attributwerte aus der Buchung lesen
+            strBuchungId = buchungen.BuchungsID
+            datKurs = buchungen.BuchungsDatum 'Buchungsdatum als Kursdatum und Kursdatum von Attribute des Kurses, which has to be connected in Klasse Kurs
+            strWeiterbilName = buchungen.Weiterbildung 'needs to be proved; is it possible to just connect the Weiterbildung with this Windows form?
+            decPreis = buchungen.Preis
+            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+            anzeigenZeile(i, strBuchungId, datKurs, strWeiterbilName, decPreis)
+        Next
+        'In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
+        aktivierenSchaltflächen()
+    End Sub
+
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        If MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verworfen.", MsgBoxStyle.Question + MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            Me.Close()
-        Else
-            'Show Dialog nicht schließen
+        Dim msgErgebnis As MsgBoxResult
+
+        msgErgebnis = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verwirft.", vbQuestion + vbYesNo, "Abbrechen")
+
+        If msgErgebnis = vbNo Then
+            DialogResult = Windows.Forms.DialogResult.None
+            Exit Sub
         End If
     End Sub
+
     Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
 
         Dim zeile As Windows.Forms.ListViewItem
@@ -44,37 +96,29 @@
 
 
     Private Sub ListViewAktBuchungen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewAktBuchungen.SelectedIndexChanged
-
         If ListViewAktBuchungen.SelectedItems.Count > 0 Then
             btnLaden.Enabled = True
         Else
             btnLaden.Enabled = False
         End If
-
     End Sub
 
     Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
-
-        Dim intBuchungsID As Integer
-        Dim strKurs As String
-        Dim strWeiterbildungen As String
-
-        Dim lviZeile As ListViewItem
-        lviZeile = ListViewAktBuchungen.SelectedItems(0)
-
-        intBuchungsID = Integer.Parse(lviZeile.SubItems(0).Text)
-        strKurs = lviZeile.SubItems(1).Text
-        strWeiterbildungen = lviZeile.SubItems(2).Text
+        'Deklaration
+        'Zu bearbeitener Weiterbildung
+        'Detaildialog zum Anzeigen der Weiterbildung
+        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        'Element an der Position der Liste, die der ID entspricht ermitteln
+        'Fenster vorbereiten
+        'Auswertung des Dialogergebnisses
+        'Dialog mit positivem Ergebnis geschlossen
+        'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
     End Sub
 
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
 
         txtKundenID = Me.txtKundenID
 
-
-    End Sub
-
-    Private Sub btnHinzufuegenBuchung_Click(sender As Object, e As EventArgs) Handles btnHinzufuegenBuchung.Click
 
     End Sub
 
@@ -103,4 +147,13 @@
 
         'anzeigen()
     End Sub
+
+    Private Sub BuchungenKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Alle Buchungen laden
+        mlstBuchung = Logic.mlstBuchung
+        'Anzeigen der Buchungen in der Tabelle
+        anzeigen()
+    End Sub
+
+
 End Class

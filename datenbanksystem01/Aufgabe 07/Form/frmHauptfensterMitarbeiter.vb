@@ -54,7 +54,6 @@
         Me.lstviewWeiterbildungenM.Items.Clear()
         'Schaltflächen aktivieren/deaktivieren
         aktivierenSchaltflächen()
-
     End Sub
     ''' <summary>
     ''' Wird aufgerufen, um die Daten einer Weiterbldung in der Liste der Weiterbildung als Zeile anzuzeigen
@@ -75,7 +74,6 @@
             .Add(pstrWeiterbilName)
             .Add(pstrWeiterbilThema)
         End With
-
     End Sub
 
 
@@ -122,7 +120,6 @@
         ' Alle Weiterbildungen laden
         mlstWeiterbildungen = Logic.mlstWeiterbildungen
 
-
         'Anzeigen der Weiterbildungen in der Tabelle
         anzeigen()
 
@@ -149,7 +146,7 @@
         Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
         Dim dlg As frmWeiterbildungsfensterMitarb  ' Detaildialog zum Anzeigen der Weiterbildung
 
-        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        'aus der ausgewählten Zeile im Dialog die ID der Weiterbildung auslesen
         intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
 
         'Element an der Position der Liste, die der ID entspricht ermitteln
@@ -164,11 +161,6 @@
 
             ' Dialog mit positivem Ergebnis geschlossen
             weiterbil = dlg.gibWeiterbildung
-
-            ' Neuen Benutzer aus dem Formular geben lassen
-
-            'Hinweis: WEIL OBJEKTE REFERENZTYPEN SIND; IST DIE LISTE DER URLAUBSANTRÄGE
-            'BEREITS JETZT AKTUALISIERT: ES MUSS NICHTS HINZUGEFÜGT WERDEN!
 
             'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigen()
@@ -247,19 +239,9 @@
 
     End Sub
 
-    Private Sub btnWeiterbildungenM_Click(sender As Object, e As EventArgs) Handles btnWeiterbildungenM.Click
-
-        frmWeiterbildungsfensterMitarb.ShowDialog()
-        Me.Close()
-    End Sub
-
     Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
         Dim dlg As frmMeinKontoMitarbeiter
         dlg = New frmMeinKontoMitarbeiter()
         dlg.ShowDialog()
-    End Sub
-
-    Private Sub lstviewWeiterbildungenM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungenM.SelectedIndexChanged
-
     End Sub
 End Class
