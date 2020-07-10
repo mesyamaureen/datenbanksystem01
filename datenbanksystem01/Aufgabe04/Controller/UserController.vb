@@ -33,26 +33,21 @@
     End Property
 
 
+    'Function getintMitarbeiterID()
+    '    Return intMitarbeiterID
+    'End Function
 
+    'Function setintMitarbeiterID()
+    '    Me.intMitarbeiterID = intMitarbeiterID
+    'End Function
 
+    'Function getintKundenID()
+    '    Return intKundenID
+    'End Function
 
-
-
-    Function getintMitarbeiterID()
-        Return intMitarbeiterID
-    End Function
-
-    Function setintMitarbeiterID()
-        Me.intMitarbeiterID = intMitarbeiterID
-    End Function
-
-    Function getintKundenID()
-        Return intKundenID
-    End Function
-
-    Function setintKundenID()
-        Me.intKundenID = intKundenID
-    End Function
+    'Function setintKundenID()
+    '    Me.intKundenID = intKundenID
+    'End Function
 
 
 
@@ -79,9 +74,9 @@
     End Function
 
 
-    Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As intKundenID
+    'Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As intKundenID
 
-    End Function
+    'End Function
 
 
     Public Function viewKunde(intKundenID As Integer) As Array
@@ -97,9 +92,9 @@
     End Function
 
 
-    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String) As intMitarbeiterID
+    'Public Function createMitarbeiter(strBenutzername As String, strPasswort As String) As intMitarbeiterID
 
-    End Function
+    'End Function
 
     Public Function viewMitarbeiter(intMitarbeiterID As Integer) As Array
 

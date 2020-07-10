@@ -144,11 +144,11 @@
     End Function
 
     'BookingController
-    Public Function createBooking(decPreis As Decimal, datDatum As Date) As Integer
+    'Public Function createBooking(decPreis As Decimal, datDatum As Date) As Integer
 
-        Return bookingController.createBooking(decPreis, datDatum)
+    '    Return bookingController.createBooking(decPreis, datDatum)
 
-    End Function
+    'End Function
 
     Public Function viewBooking(intBuchungsID) As Array
 

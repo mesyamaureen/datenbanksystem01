@@ -21,9 +21,9 @@
     End Function
 
     'Funktionen
-    Public Function createBooking(decPreis As Decimal, datDatum As Date) As intBuchungsID
+    'Public Function createBooking(decPreis As Decimal, datDatum As Date) As intBuchungsID
 
-    End Function
+    'End Function
 
     Public Function viewBooking(intBuchungsID) As Array
 
