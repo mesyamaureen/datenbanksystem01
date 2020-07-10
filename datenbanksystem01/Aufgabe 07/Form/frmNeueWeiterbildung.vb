@@ -15,15 +15,13 @@
     End Sub
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        'Messagebox
-        Dim mbrResult As MsgBoxResult
-        'Verzweigung
-        If Me.DialogResult = Windows.Forms.DialogResult.None Then
-            mbrResult = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verwirft.",
-                                MsgBoxStyle.Question + vbYesNo, "Abbrechen")
-            If mbrResult = vbNo Then
-                Me.Close()
-            End If
+        Dim msgErgebnis As MsgBoxResult
+
+        msgErgebnis = MsgBox("Möchten Sie wirklich abbrechen? Ihre ungespeicherte Änderungen werden verwirft.", vbQuestion + vbYesNo, "Abbrechen")
+
+        If msgErgebnis = vbNo Then
+            DialogResult = Windows.Forms.DialogResult.None
+            Exit Sub
         End If
     End Sub
 
