@@ -1,5 +1,7 @@
 ﻿Public Class BuchungenKunde
-
+    ''' <summary>
+    ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
+    ''' </summary>
     Protected Sub aktivierenSchaltflächen()
         ' Deklaration
         Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
@@ -29,6 +31,14 @@
         aktivierenSchaltflächen()
     End Sub
 
+    ''' <summary>
+    ''' Wird aufgerufen, um die Daten einer Buchung in der Liste der buchung als Zeile anzuzeigen
+    ''' </summary>
+    ''' <param name="plngIndex"></param>
+    ''' <param name="pstrBuchungID"></param>
+    ''' <param name="pdatKurs"></param>
+    ''' <param name="pstrWeiterbilName"></param>
+    ''' <param name="pdecPreis"></param>
     Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal)
 
         'Neue Zeile in der Liste deklarieren
@@ -47,6 +57,10 @@
         End With
     End Sub
 
+    ''' <summary>
+    ''' Zeigt die Buchung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' dann mit allen Einträgen aus der Liste der Buchung neu gefüllt wird.
+    ''' </summary>
     Private Sub anzeigen()
         'Deklaration
         Dim buchungen As Buchung
@@ -75,6 +89,11 @@
         aktivierenSchaltflächen()
     End Sub
 
+    ''' <summary>
+    ''' Abbrechen Schaltfläche
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         Dim msgErgebnis As MsgBoxResult
 
@@ -85,24 +104,11 @@
             Exit Sub
         End If
     End Sub
-
-    Private Sub hinzufuegen(pintBuchungsID As Integer, pstrKurs As Kurs, pstrWeiterbildung As Weiterbildung)
-
-        Dim zeile As Windows.Forms.ListViewItem
-        zeile = Me.ListViewAktBuchungen.Items.Add(1)
-        zeile.SubItems.Add(2)
-        zeile.SubItems.Add(3)
-    End Sub
-
-
-    Private Sub ListViewAktBuchungen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewAktBuchungen.SelectedIndexChanged
-        If ListViewAktBuchungen.SelectedItems.Count > 0 Then
-            btnLaden.Enabled = True
-        Else
-            btnLaden.Enabled = False
-        End If
-    End Sub
-
+    ''' <summary>
+    ''' Laden Schaltfläche
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
         'Deklaration
         'Zu bearbeitener Weiterbildung
@@ -150,7 +156,7 @@
 
     Private Sub BuchungenKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Alle Buchungen laden
-        mlstBuchung = Logic.mlstBuchung
+        ListeBuchung = Logic.ListeBuchung
         'Anzeigen der Buchungen in der Tabelle
         anzeigen()
     End Sub

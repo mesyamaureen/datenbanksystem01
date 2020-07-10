@@ -1,24 +1,21 @@
 ﻿Public Class BuchungenMitarbeiter
-    Private Sub BuchungenMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Dim strBuchungsID As String
-        Dim strKurs As String
-        Dim strWeiterbildung As String
-        Dim strKundenID As String
-
-
-        Dim lviZeile As ListViewItem
-        lviZeile = LstViewAlleBuchungen.SelectedItems(0)
-
-        strBuchungsID = lviZeile.SubItems(0).Text
-        strKurs = lviZeile.SubItems(1).Text
-        strWeiterbildung = lviZeile.SubItems(2).Text
-        strKundenID = lviZeile.SubItems(3).Text
-
+    ''' <summary>
+    ''' Tabelle leeren
+    ''' </summary>
+    Sub leeren()
+        'Liste leeren
+        Me.LstViewAlleBuchungen.Items.Clear()
     End Sub
 
-    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
-    Sub anzeigenZeile(plngIndex As Long, pstrBuchgungsID As String, pstrKurs As String, pstrWeiterbildung As String, pstrKundenID As String)
+    ''' <summary>
+    ''' Wird aufgerufen, um die Daten aller Buchungen in der Liste der Buchungen als Zeile anzuzeigen
+    ''' </summary>
+    ''' <param name="plngIndex"></param>
+    ''' <param name="pstrBuchungIDM"></param>
+    ''' <param name="pdatBuchungM"></param>
+    ''' <param name="pstrWeiterbilNameM"></param>
+    ''' <param name="pstrKundenIDM"></param>
+    Sub anzeigenZeile(plngIndex As Long, pstrBuchungIDM As String, pdatBuchungM As Date, pstrWeiterbilNameM As String, pstrKundenIDM As String, pdecPreisM As Decimal)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -29,13 +26,17 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(pstrBuchgungsID)
-            .Add(pstrKurs)
-            .Add(pstrWeiterbildung)
-            .Add(pstrKundenID)
+            .Add(pstrBuchungIDM)
+            .Add(pdatBuchungM)
+            .Add(pstrWeiterbilNameM)
+            .Add(pstrKundenIDM)
+            .Add(pdecPreisM)
         End With
 
     End Sub
+
+    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
+
 
 
     ''' <summary>
@@ -43,61 +44,50 @@
     ''' dann mit allen Einträgen aus der Liste der Kunden neu gefüllt wird.
     ''' </summary>
     ''' <remarks></remarks>
-
     Private Sub anzeigen()
         'Deklaration
         Dim lviBuchung As Buchung 'Buchung
 
         'Anzuzeigende Attribute
         Dim strBuchungsID As String
-        Dim strKurs As String
+        Dim datBuchung As Date
         Dim strWeiterbildung As String
         Dim strKundenID As String
+        Dim decPreis As Decimal
 
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To mlstBuchung.Count - 1
-            lviBuchung = mlstBuchung.Item(i)
+        For i = 0 To ListeBuchung.Count - 1
+            lviBuchung = ListeBuchung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
             strBuchungsID = lviBuchung.BuchungsID
-            strKurs = lviBuchung.mstrKursID
-            strWeiterbildung = lviBuchung.mstrKursID
+            datBuchung = lviBuchung.BuchungsDatum
+            strWeiterbildung = lviBuchung.Weiterbildung
             strKundenID = lviBuchung.KundenID
+            decPreis = lviBuchung.Preis
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, strBuchungsID, strKurs, strWeiterbildung, strKundenID)
-
+            anzeigenZeile(i, strBuchungsID, datBuchung, strWeiterbildung, strKundenID, decPreis)
         Next
-        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
-
-
     End Sub
-
-    Sub leeren()
-        'Liste leeren
-        Me.LstViewAlleBuchungen.Items.Clear()
-
-    End Sub
-
-    Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstViewAlleBuchungen.SelectedIndexChanged
-
-        'Muss Kunden aus mlstKunden laden
-        anzeigen()
-
-
-    End Sub
-
 
     Private Sub btnSchließen_Click(sender As Object, e As EventArgs) Handles btnSchließen.Click
-        Me.Close() 'Dieses Dialogfenster schließen
-        Exit Sub 'Prozedur verlassen damit die Anwendung hier endet
-        frmHauptfensterMitarbeiter.Show() 'Zurück zum Hauptfenster des Mitarbeiters
+        'Nichts zu tun, Standardverhalten
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LstViewAlleBuchungen.SelectedIndexChanged
-
+    ''' <summary>
+    ''' Beim Laden des Dialogfensters
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub BuchungenMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Alle Buchungen laden
+        ListeBuchung = Logic.ListeBuchung
+        'anzeigen der Buchungen in der Tabelle
+        anzeigen()
     End Sub
+
 End Class
