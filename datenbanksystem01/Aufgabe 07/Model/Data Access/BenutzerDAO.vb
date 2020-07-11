@@ -5,25 +5,21 @@ Public Class BenutzerDAO
     Inherits DAO
 
     Private Const DateinameMitarbeiter As String = "Mitarbeiter.xml"
+    Private Shared strPfadXMLMitarbeiter As String = strDBDir & DateinameMitarbeiter
     Private Const DateinameKunde As String = "Kunden.xml"
+    Private Shared strPfadXMLKunde As String = strDBDir & DateinameKunde
 
     Public Shared Function ladenMitarbeiter() As List(Of Mitarbeiter) 'Benutzer
 
         'Liste aller Mitarbeiter
         Dim lstMitarbeiter As List(Of Mitarbeiter)
 
-        'Dateipfad 
-        Dim strDateipfad As String = My.Settings.Datenspeicherort
-
-        'Dateipfad um Konstante ergänzen
-        strDateipfad = strDateipfad & DateinameMitarbeiter
-
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
-        If Not existiertXml(strDateipfad) Then
+        If Not existiertXml(strPfadXMLMitarbeiter) Then
             lstMitarbeiter = Aufgabe_07.Logic.ListeMitarbeiter
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
-            lstMitarbeiter = ladenXml(strDateipfad, GetType(List(Of Mitarbeiter)))
+            lstMitarbeiter = ladenXml(strPfadXMLMitarbeiter, GetType(List(Of Mitarbeiter)))
 
         End If
 
@@ -33,11 +29,7 @@ Public Class BenutzerDAO
 
     Public Shared Sub speichernMitarbeiter(plstMitarbeiter As List(Of Mitarbeiter))
 
-        'Dateipfad
-        Dim strDateipfad As String = My.Settings.Datenspeicherort
-        strDateipfad = strDateipfad & DateinameMitarbeiter
-
-        speichernXml(strDateipfad, plstMitarbeiter, GetType(List(Of Mitarbeiter)))
+        speichernXml(strPfadXMLMitarbeiter, plstMitarbeiter, GetType(List(Of Mitarbeiter)))
 
 
     End Sub
@@ -49,18 +41,12 @@ Public Class BenutzerDAO
         'Liste aller Mitarbeiter
         Dim lstKunde As List(Of Kunde)
 
-        'Dateipfad 
-        Dim strDateipfad As String = My.Settings.Datenspeicherort
-
-        'Dateipfad um Konstante ergänzen
-        strDateipfad = strDateipfad & DateinameKunde
-
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
-        If Not existiertXml(strDateipfad) Then
+        If Not existiertXml(strPfadXMLKunde) Then
             lstKunde = Aufgabe_07.Logic.ListeKunden
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
-            lstKunde = ladenXml(strDateipfad, GetType(List(Of Mitarbeiter)))
+            lstKunde = ladenXml(strPfadXMLKunde, GetType(List(Of Mitarbeiter)))
 
         End If
 
@@ -70,12 +56,7 @@ Public Class BenutzerDAO
 
     Public Shared Sub speichernKunde(plstKunde As List(Of Kunde))
 
-        'Dateipfad
-        Dim strDateipfad As String = My.Settings.Datenspeicherort
-        strDateipfad = strDateipfad & DateinameKunde
-
-        speichernXml(strDateipfad, plstKunde, GetType(List(Of Kunde)))
-
+        speichernXml(strPfadXMLKunde, plstKunde, GetType(List(Of Kunde)))
 
     End Sub
 

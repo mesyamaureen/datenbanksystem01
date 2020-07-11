@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Datenspeicherort" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\Mesya\Documents\SpeicherOrtDatenbank</Value>
+      <Value Profile="(Default)">\Documents\SpeicherOrtDatenbank\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
