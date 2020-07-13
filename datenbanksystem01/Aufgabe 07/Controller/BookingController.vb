@@ -3,6 +3,7 @@
     'Properties
     Public mlstBooking As List(Of Buchung)
     Public mstrBuchungsID As String
+    Dim ListViewAktBuchungen As ListView
 
     'Konstruktor
 
@@ -76,6 +77,7 @@
     End Function
 
     Public Function deleteBooking(intKundenID As Integer) As Boolean
+
 
     End Function
 

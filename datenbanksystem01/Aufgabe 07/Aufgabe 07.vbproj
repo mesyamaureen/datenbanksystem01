@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BookingController.vb" />
-    <Compile Include="Controller\DAO.vb" />
+    <Compile Include="Model\Data Access\DAO.vb" />
     <Compile Include="Controller\UserController.vb" />
     <Compile Include="Controller\WeiterbildungsController.vb" />
     <Compile Include="Form\BuchungenKunde.Designer.vb">

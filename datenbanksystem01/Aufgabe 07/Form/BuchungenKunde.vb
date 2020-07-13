@@ -22,6 +22,7 @@
             Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
             Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
+
     End Sub
 
     Sub leeren()
@@ -132,26 +133,35 @@
         ' Deklaration
         ' Index des ausgewählten Eintrags der Tabelle   
         Dim intIndex As Integer
+        Dim buch As Buchung
+        Dim msgErgebnis As MsgBoxResult
+
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
         ' Ausbaustufe2: Zu löschender Benutzer
 
-        ' aus der ausgwählten Zeile im Dialog die ID des Urlaubsantrags auslesen
+        ' aus der ausgwählten Zeile im Dialog die ID der Buchung auslesen
         intIndex = Me.ListViewAktBuchungen.SelectedItems(0).Text
 
         ' Ausbaustufe 2: Element an der Position der Liste, die der ID entspricht ermitteln
+        buch = mlstBuchung.Item(intIndex)
 
+        ' Rückfrage mit Warnmeldung
+        msgErgebnis = MsgBox("Möchten Sie Ihre Buchung wirklich löschen?", vbQuestion + vbYesNo, "Abbrechen")
 
-        ' Ausbaustufe 1: Rückfrage mit Warnmeldung und in Ausbaustufe 2 mit Angaben des Benutzers
+        If msgErgebnis = vbNo Then
+            DialogResult = Windows.Forms.DialogResult.None
+            Exit Sub
+        Else
+            Me.Close()
+        End If
 
         ' Benzter löschen
-        Aufgabe_07.ListeMitarbeiter.RemoveAt(intIndex)
-        ' aus Liste aller Benutzer entfernen
-
-        ' Referenz auf Benutzer auf Nichts setzen, um Müllabfuhr anzufordern
+        mlstBuchung.RemoveAt(intIndex) ' aus Liste aller Benutzer entfernen
+        buch = Nothing ' Referenz auf Benutzer auf Nichts setzen, um Müllabfuhr anzuforder
 
         ' Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Benutzer nicht mehr zeigt
+        anzeigen()
 
-        'anzeigen()
     End Sub
 
     Private Sub BuchungenKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -161,5 +171,19 @@
         anzeigen()
     End Sub
 
+    Private Sub ListViewAktBuchungen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewAktBuchungen.SelectedIndexChanged
+        ' Deklaration
+        ' Initialisierung
+        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
+        ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
+        If intAnzahlAusgewaehlterZeilen = 1 Then
+            ' Wenn genau eine Zeile ausgewählt ist
+            Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
+            Me.btnLaden.Enabled = True
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
+            Me.btnLaden.Enabled = False ' und nicht bearbeiten
+        End If
+    End Sub
 End Class

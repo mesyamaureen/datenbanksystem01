@@ -77,6 +77,7 @@
     '''<remarks>funktion initialise
     '''</remarks>
     Public Function initialise()
+
         'TODO initialise lists from database
         mlstMitarbeiter = New List(Of Mitarbeiter) From
           {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#), New Mitarbeiter("off", "pw", "Off", "Thomas", #10/23/1969#)}
@@ -195,6 +196,15 @@
         BuchungsDAO.speichernBuchung(mlstBuchung)
         Kurs__und_WeiterbildungsDAO.speichernKurs(mlstKurs)
         Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
+
+        ' BenutzerDAO.ladenMitarbeiter()
+        ' BenutzerDAO.ladenKunden()
+        'BuchungsDAO.ladenBuchung()
+        'Kurs__und_WeiterbildungsDAO.ladenKurse()
+        'Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
+
+
+
 
 
     End Function

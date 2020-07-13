@@ -27,7 +27,6 @@ Partial Class frmMeinKontoMitarbeiter
         Me.txtboxNeuesPasswort = New System.Windows.Forms.TextBox()
         Me.txtboxVorname = New System.Windows.Forms.TextBox()
         Me.txtboxName = New System.Windows.Forms.TextBox()
-        Me.txtboxGebDat = New System.Windows.Forms.TextBox()
         Me.txtboxMitarbeiterID = New System.Windows.Forms.TextBox()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnSpeichern = New System.Windows.Forms.Button()
@@ -40,12 +39,13 @@ Partial Class frmMeinKontoMitarbeiter
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblGebDat = New System.Windows.Forms.Label()
         Me.lblMitarbeiterID = New System.Windows.Forms.Label()
+        Me.dtpGebDatMitarbeiter = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'txtBenutzername
         '
         Me.txtBenutzername.Location = New System.Drawing.Point(153, 15)
-        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
         Me.txtBenutzername.Size = New System.Drawing.Size(676, 33)
@@ -54,7 +54,7 @@ Partial Class frmMeinKontoMitarbeiter
         'txtboxAltesPasswort
         '
         Me.txtboxAltesPasswort.Location = New System.Drawing.Point(153, 63)
-        Me.txtboxAltesPasswort.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxAltesPasswort.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxAltesPasswort.Multiline = True
         Me.txtboxAltesPasswort.Name = "txtboxAltesPasswort"
         Me.txtboxAltesPasswort.Size = New System.Drawing.Size(676, 33)
@@ -63,7 +63,7 @@ Partial Class frmMeinKontoMitarbeiter
         'txtboxNeuesPasswort
         '
         Me.txtboxNeuesPasswort.Location = New System.Drawing.Point(153, 112)
-        Me.txtboxNeuesPasswort.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxNeuesPasswort.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxNeuesPasswort.Multiline = True
         Me.txtboxNeuesPasswort.Name = "txtboxNeuesPasswort"
         Me.txtboxNeuesPasswort.Size = New System.Drawing.Size(676, 32)
@@ -72,7 +72,7 @@ Partial Class frmMeinKontoMitarbeiter
         'txtboxVorname
         '
         Me.txtboxVorname.Location = New System.Drawing.Point(153, 160)
-        Me.txtboxVorname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxVorname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxVorname.Multiline = True
         Me.txtboxVorname.Name = "txtboxVorname"
         Me.txtboxVorname.Size = New System.Drawing.Size(676, 32)
@@ -81,25 +81,16 @@ Partial Class frmMeinKontoMitarbeiter
         'txtboxName
         '
         Me.txtboxName.Location = New System.Drawing.Point(153, 209)
-        Me.txtboxName.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxName.Multiline = True
         Me.txtboxName.Name = "txtboxName"
         Me.txtboxName.Size = New System.Drawing.Size(676, 32)
         Me.txtboxName.TabIndex = 4
         '
-        'txtboxGebDat
-        '
-        Me.txtboxGebDat.Location = New System.Drawing.Point(153, 259)
-        Me.txtboxGebDat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.txtboxGebDat.Multiline = True
-        Me.txtboxGebDat.Name = "txtboxGebDat"
-        Me.txtboxGebDat.Size = New System.Drawing.Size(676, 32)
-        Me.txtboxGebDat.TabIndex = 5
-        '
         'txtboxMitarbeiterID
         '
         Me.txtboxMitarbeiterID.Location = New System.Drawing.Point(153, 308)
-        Me.txtboxMitarbeiterID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxMitarbeiterID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxMitarbeiterID.Multiline = True
         Me.txtboxMitarbeiterID.Name = "txtboxMitarbeiterID"
         Me.txtboxMitarbeiterID.Size = New System.Drawing.Size(676, 32)
@@ -109,7 +100,7 @@ Partial Class frmMeinKontoMitarbeiter
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAbbrechen.Location = New System.Drawing.Point(737, 430)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
         Me.btnAbbrechen.Size = New System.Drawing.Size(91, 29)
         Me.btnAbbrechen.TabIndex = 7
@@ -119,7 +110,7 @@ Partial Class frmMeinKontoMitarbeiter
         'btnSpeichern
         '
         Me.btnSpeichern.Location = New System.Drawing.Point(633, 430)
-        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSpeichern.Name = "btnSpeichern"
         Me.btnSpeichern.Size = New System.Drawing.Size(91, 29)
         Me.btnSpeichern.TabIndex = 8
@@ -129,7 +120,7 @@ Partial Class frmMeinKontoMitarbeiter
         'btnLoeschen
         '
         Me.btnLoeschen.Location = New System.Drawing.Point(525, 430)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoeschen.Name = "btnLoeschen"
         Me.btnLoeschen.Size = New System.Drawing.Size(91, 29)
         Me.btnLoeschen.TabIndex = 9
@@ -139,7 +130,7 @@ Partial Class frmMeinKontoMitarbeiter
         'btnErstellen
         '
         Me.btnErstellen.Location = New System.Drawing.Point(357, 430)
-        Me.btnErstellen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnErstellen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnErstellen.Name = "btnErstellen"
         Me.btnErstellen.Size = New System.Drawing.Size(156, 29)
         Me.btnErstellen.TabIndex = 10
@@ -216,6 +207,13 @@ Partial Class frmMeinKontoMitarbeiter
         Me.lblMitarbeiterID.TabIndex = 17
         Me.lblMitarbeiterID.Text = "Mitarbeiter ID"
         '
+        'dtpGebDatMitarbeiter
+        '
+        Me.dtpGebDatMitarbeiter.Location = New System.Drawing.Point(153, 261)
+        Me.dtpGebDatMitarbeiter.Name = "dtpGebDatMitarbeiter"
+        Me.dtpGebDatMitarbeiter.Size = New System.Drawing.Size(272, 22)
+        Me.dtpGebDatMitarbeiter.TabIndex = 18
+        '
         'frmMeinKontoMitarbeiter
         '
         Me.AcceptButton = Me.btnSpeichern
@@ -223,6 +221,7 @@ Partial Class frmMeinKontoMitarbeiter
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(836, 467)
+        Me.Controls.Add(Me.dtpGebDatMitarbeiter)
         Me.Controls.Add(Me.lblMitarbeiterID)
         Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
@@ -235,13 +234,12 @@ Partial Class frmMeinKontoMitarbeiter
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.txtboxMitarbeiterID)
-        Me.Controls.Add(Me.txtboxGebDat)
         Me.Controls.Add(Me.txtboxName)
         Me.Controls.Add(Me.txtboxVorname)
         Me.Controls.Add(Me.txtboxNeuesPasswort)
         Me.Controls.Add(Me.txtboxAltesPasswort)
         Me.Controls.Add(Me.txtBenutzername)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmMeinKontoMitarbeiter"
         Me.Text = "frmMeinKontoMitarbeiter"
         Me.ResumeLayout(False)
@@ -254,7 +252,6 @@ Partial Class frmMeinKontoMitarbeiter
     Friend WithEvents txtboxNeuesPasswort As TextBox
     Friend WithEvents txtboxVorname As TextBox
     Friend WithEvents txtboxName As TextBox
-    Friend WithEvents txtboxGebDat As TextBox
     Friend WithEvents txtboxMitarbeiterID As TextBox
     Friend WithEvents btnAbbrechen As Button
     Friend WithEvents btnSpeichern As Button
@@ -267,4 +264,5 @@ Partial Class frmMeinKontoMitarbeiter
     Friend WithEvents lblName As Label
     Friend WithEvents lblGebDat As Label
     Friend WithEvents lblMitarbeiterID As Label
+    Friend WithEvents dtpGebDatMitarbeiter As DateTimePicker
 End Class

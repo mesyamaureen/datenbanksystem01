@@ -227,7 +227,7 @@ Partial Class frmKundeKonto
         Me.btnKontoLoeschen.Name = "btnKontoLoeschen"
         Me.btnKontoLoeschen.Size = New System.Drawing.Size(110, 29)
         Me.btnKontoLoeschen.TabIndex = 18
-        Me.btnKontoLoeschen.Text = "Konto löschen"
+        Me.btnKontoLoeschen.Text = "Löschen"
         Me.btnKontoLoeschen.UseVisualStyleBackColor = True
         '
         'frmKundeKonto
