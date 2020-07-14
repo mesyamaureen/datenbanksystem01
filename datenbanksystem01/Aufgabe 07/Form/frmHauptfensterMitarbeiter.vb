@@ -201,7 +201,7 @@
     ''' <remarks></remarks>
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         Dim weiterbil As Weiterbildung 'Deklaration der zu löschene Weiterbildung und Index, die außer der Funktion deklariert wird.
-        Dim weiterbilController As WeiterbildungsController
+
 
         ' aus der ausgeählten Zeile im Dialog die ID der Weiterbildung auslesen
         intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text

@@ -51,6 +51,10 @@
         'Zuweisen Oberflächenelemente in Parameter von createWeiterbildung
         'Zuweisen mneueWeiterbildung in Rückgabewert createWeiterbildung
         mneueWeiterbildung = mWeiterbControl.createWeiterbildung(titel, curri, teilkreis, theme)
+        ' mlstWeiterbildungen = mlstWeiterbildungen.Add(item)
+
+        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
+
 
     End Sub
 

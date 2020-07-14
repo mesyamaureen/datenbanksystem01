@@ -1,30 +1,24 @@
 ﻿Public Class BuchungenKunde
+
     ''' <summary>
     ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
     ''' </summary>
     Protected Sub aktivierenSchaltflächen()
         ' Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
-
         ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
-
-        ' Schatlfächen zurücksetzen
-        Me.btnLoeschen.Enabled = False
-        Me.btnLaden.Enabled = False
+        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
             Me.btnLaden.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
             Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
             Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
 
     End Sub
-
     Sub leeren()
         'Liste leeren
         Me.ListViewAktBuchungen.Items.Clear()
@@ -112,14 +106,22 @@
     ''' <param name="e"></param>
     Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
         'Deklaration
-        'Zu bearbeitener Weiterbildung
-        'Detaildialog zum Anzeigen der Weiterbildung
+        Dim betroffeneBuch As Buchung
+        Dim intindex As Integer
+
+        ' aus der ausgwählten Zeile im Dialog die ID der Buchung auslesen
+        intindex = Me.ListViewAktBuchungen.SelectedItems(0).Text
+
+        'Detaildialog zum Anzeigen der Buchung
+
         'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
         'Element an der Position der Liste, die der ID entspricht ermitteln
+        betroffeneBuch = mlstBuchung.Item(intindex)
         'Fenster vorbereiten
         'Auswertung des Dialogergebnisses
         'Dialog mit positivem Ergebnis geschlossen
         'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+        anzeigen()
     End Sub
 
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged

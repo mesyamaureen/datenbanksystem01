@@ -36,7 +36,7 @@
     'Funktionen
     Private buchungID As UInteger
     Public Function createBooking(Kurs As Kurs, datDatum As Date, decPreis As Decimal) As Buchung
-        'Deklaration neue Variabel
+        'Deklaration neue Variable
         Dim neueBuchung As New Buchung
         'Initialisierung der Parameter
         neueBuchung.Kurse = Kurs

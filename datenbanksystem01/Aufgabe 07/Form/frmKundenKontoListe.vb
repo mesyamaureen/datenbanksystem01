@@ -41,7 +41,7 @@
 
     End Sub
 
-    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
+    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Buchung übergeben </remark>
     Sub anzeigenZeile(plngIndex As Long, pstrKundenID As String, pstrBenutzername As String, pstrVorname As String, pstrName As String)
 
         'Neue Zeile in der Liste deklarieren
@@ -111,6 +111,18 @@
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
 
         'Muss Kunden aus mlstKunden laden
+        ' Deklaration
+        ' Initialisierung
+        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.lstviewKundenKonten.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+
+        ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
+        If intAnzahlAusgewaehlterZeilen = 1 Then
+            ' Wenn genau eine Zeile ausgewählt ist
+            Me.btnLaden.Enabled = True ' kann man diesen einsehen
+
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
+            Me.btnLaden.Enabled = False 'nicht bearbeiten
+        End If
         anzeigen()
 
 
@@ -118,5 +130,11 @@
 
     Private Sub btnSchliessen_Click(sender As Object, e As EventArgs) Handles btnSchliessen.Click
         'Nichts zu tun, Standardverhalten
+    End Sub
+
+    Private Sub frmKundenKontoListe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mlstKunde = Logic.mlstKunde
+        anzeigen()
+        aktivierenSchaltflächen()
     End Sub
 End Class
