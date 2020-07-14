@@ -11,16 +11,13 @@
 
         ' Schatlfächen zurücksetzen
         Me.btnLoeschen.Enabled = False
-        Me.btnLaden.Enabled = False
 
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
-            Me.btnLaden.Enabled = True
         ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
             Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
-            Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
 
     End Sub
@@ -40,7 +37,7 @@
     ''' <param name="pdatKurs"></param>
     ''' <param name="pstrWeiterbilName"></param>
     ''' <param name="pdecPreis"></param>
-    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal)
+    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal) ', pstrOrt As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -55,6 +52,7 @@
             .Add(pdatKurs)
             .Add(pstrWeiterbilName)
             .Add(pdecPreis)
+            '.Add(pstrOrt)
         End With
     End Sub
 
@@ -64,13 +62,14 @@
     ''' </summary>
     Private Sub anzeigen()
         'Deklaration
-        Dim buchungen As Buchung
+        Dim buchungen As dlgBuchung
 
         'Anzuzeigende Attribute
         Dim strBuchungId As String
         Dim datKurs As Date
         Dim strWeiterbilName As String
         Dim decPreis As Decimal
+        'Dim strOrt As String
 
         'leeren der Tabelle
         leeren()
@@ -83,6 +82,7 @@
             datKurs = buchungen.BuchungsDatum 'Buchungsdatum als Kursdatum und Kursdatum von Attribute des Kurses, which has to be connected in Klasse Kurs
             strWeiterbilName = buchungen.Weiterbildung 'needs to be proved; is it possible to just connect the Weiterbildung with this Windows form?
             decPreis = buchungen.Preis
+            'strOrt = buchungen.Ort
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(i, strBuchungId, datKurs, strWeiterbilName, decPreis)
         Next
@@ -105,22 +105,6 @@
             Exit Sub
         End If
     End Sub
-    ''' <summary>
-    ''' Laden Schaltfläche
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
-        'Deklaration
-        'Zu bearbeitener Weiterbildung
-        'Detaildialog zum Anzeigen der Weiterbildung
-        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-        'Element an der Position der Liste, die der ID entspricht ermitteln
-        'Fenster vorbereiten
-        'Auswertung des Dialogergebnisses
-        'Dialog mit positivem Ergebnis geschlossen
-        'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
-    End Sub
 
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
 
@@ -133,7 +117,7 @@
         ' Deklaration
         ' Index des ausgewählten Eintrags der Tabelle   
         Dim intIndex As Integer
-        Dim buch As Buchung
+        Dim buch As dlgBuchung
         Dim msgErgebnis As MsgBoxResult
 
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
@@ -180,10 +164,8 @@
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
-            Me.btnLaden.Enabled = True
         ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
             Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
-            Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
     End Sub
 End Class

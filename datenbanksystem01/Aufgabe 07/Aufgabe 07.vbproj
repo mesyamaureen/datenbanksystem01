@@ -101,12 +101,6 @@
     <Compile Include="Form\dlgNeuerKurs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\frmBenutzerAlle.Designer.vb">
-      <DependentUpon>frmBenutzerAlle.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\frmBenutzerAlle.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form\frmHauptfensterKunde.designer.vb">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>
     </Compile>
@@ -217,9 +211,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\dlgNeuerKurs.resx">
       <DependentUpon>dlgNeuerKurs.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\frmBenutzerAlle.resx">
-      <DependentUpon>frmBenutzerAlle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHauptfensterKunde.resx">
       <DependentUpon>frmHauptfensterKunde.vb</DependentUpon>

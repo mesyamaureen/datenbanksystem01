@@ -1,7 +1,7 @@
 ﻿Public Class BookingController
 
     'Properties
-    Public mlstBooking As List(Of Buchung)
+    Public mlstBooking As List(Of dlgBuchung)
     Public mstrBuchungsID As String
     Dim ListViewAktBuchungen As ListView
 
@@ -9,18 +9,18 @@
 
 
 
-    Sub New(plstBooking As List(Of Buchung))
+    Sub New(plstBooking As List(Of dlgBuchung))
 
         mlstBooking = plstBooking
 
     End Sub
 
     'get&set
-    Public Property ListeBuchungen As List(Of Buchung)
+    Public Property ListeBuchungen As List(Of dlgBuchung)
         Get
             Return mlstBooking
         End Get
-        Set(value As List(Of Buchung))
+        Set(value As List(Of dlgBuchung))
             mlstBooking = value
         End Set
     End Property
@@ -35,9 +35,9 @@
 
     'Funktionen
     Private buchungID As UInteger
-    Public Function createBooking(Kurs As Kurs, datDatum As Date, decPreis As Decimal) As Buchung
+    Public Function createBooking(Kurs As Kurs, datDatum As Date, decPreis As Decimal) As dlgBuchung
         'Deklaration neue Variabel
-        Dim neueBuchung As New Buchung
+        Dim neueBuchung As New dlgBuchung
         'Initialisierung der Parameter
         neueBuchung.Kurse = Kurs
         neueBuchung.Preis = decPreis
@@ -59,7 +59,7 @@
 
     Public Function viewBooking(intBuchungsID) As Array
         Dim aryBuchung(2) As String
-        For Each buchung As Buchung In ListeBuchungen
+        For Each buchung As dlgBuchung In ListeBuchungen
             If buchung.BuchungsID Then
                 aryBuchung(0) = buchung.Preis
                 aryBuchung(1) = buchung.BuchungsDatum
@@ -68,7 +68,7 @@
         Return aryBuchung
     End Function
 
-    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date, bearbBuchung As Buchung) As Boolean
+    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date, bearbBuchung As dlgBuchung) As Boolean
         'Initialisierung der Parameter
         bearbBuchung.Preis = decPreis
         bearbBuchung.BuchungsDatum = datDatum
