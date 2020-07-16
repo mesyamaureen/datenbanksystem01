@@ -1,7 +1,7 @@
 ﻿Public Class BookingController
 
     'Properties
-    Public mlstBooking As List(Of dlgBuchung)
+    Public mlstBooking As List(Of Buchung)
     Public mstrBuchungsID As String
     Dim ListViewAktBuchungen As ListView
 
@@ -9,18 +9,18 @@
 
 
 
-    Sub New(plstBooking As List(Of dlgBuchung))
+    Sub New(plstBooking As List(Of Buchung))
 
         mlstBooking = plstBooking
 
     End Sub
 
     'get&set
-    Public Property ListeBuchungen As List(Of dlgBuchung)
+    Public Property ListeBuchungen As List(Of Buchung)
         Get
             Return mlstBooking
         End Get
-        Set(value As List(Of dlgBuchung))
+        Set(value As List(Of Buchung))
             mlstBooking = value
         End Set
     End Property
@@ -59,7 +59,7 @@
 
     Public Function viewBooking(intBuchungsID) As Array
         Dim aryBuchung(2) As String
-        For Each buchung As dlgBuchung In ListeBuchungen
+        For Each buchung As Buchung In ListeBuchungen
             If buchung.BuchungsID Then
                 aryBuchung(0) = buchung.Preis
                 aryBuchung(1) = buchung.BuchungsDatum
@@ -68,7 +68,7 @@
         Return aryBuchung
     End Function
 
-    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date, bearbBuchung As dlgBuchung) As Boolean
+    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date, bearbBuchung As Buchung) As Boolean
         'Initialisierung der Parameter
         bearbBuchung.Preis = decPreis
         bearbBuchung.BuchungsDatum = datDatum

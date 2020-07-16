@@ -6,7 +6,7 @@
     Public mlstBenutzer As List(Of Benutzer)
     Public mlstKunde As List(Of Kunde)
     Public mlstMitarbeiter As List(Of Mitarbeiter)
-    Public mlstBuchung As List(Of dlgBuchung)
+    Public mlstBuchung As List(Of Buchung)
     Public mlstKurs As List(Of Kurs)
     Public mlstWeiterbildungen As List(Of Weiterbildung)
     Public userController As UserController
@@ -44,11 +44,11 @@
         End Set
     End Property
 
-    Public Property ListeBuchung As List(Of dlgBuchung)
+    Public Property ListeBuchung As List(Of Buchung)
         Get
             Return mlstBuchung
         End Get
-        Set(value As List(Of dlgBuchung))
+        Set(value As List(Of Buchung))
             mlstBuchung = value
         End Set
     End Property
@@ -181,8 +181,8 @@
         bmc = mlstWeiterbildungen.Item(3)
 
         'Buchung Datenbank
-        mlstBuchung = New List(Of dlgBuchung) From {
-        New dlgBuchung(1200, #07/21/2020#, mlstKurs)}
+        mlstBuchung = New List(Of Buchung) From {
+        New Buchung(1200, #07/21/2020#, mlstKurs)}
 
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
@@ -331,7 +331,7 @@
     End Function
 
     'BookingController
-    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal) As dlgBuchung
+    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal) As Buchung
 
         Return bookingController.createBooking(pKurs, pdatDatum, pdecPreis)
 
@@ -343,7 +343,7 @@
 
     End Function
 
-    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date, pbearbBuchung As dlgBuchung) As Boolean
+    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date, pbearbBuchung As Buchung) As Boolean
 
         Return bookingController.changeBooking(pstrBuchungsID, pdecPreis, pdatDatum, pbearbBuchung)
 

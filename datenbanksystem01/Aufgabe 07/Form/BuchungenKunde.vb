@@ -58,7 +58,7 @@
     ''' </summary>
     Private Sub anzeigen()
         'Deklaration
-        Dim buchungen As dlgBuchung
+        Dim buchungen As Buchung
 
         'Anzuzeigende Attribute
         Dim strBuchungId As String
@@ -120,7 +120,7 @@
         ' Deklaration
         ' Index des ausgewählten Eintrags der Tabelle
         Dim intIndex As Integer
-        Dim buch As dlgBuchung
+        Dim buch As Buchung
         Dim msgErgebnis As MsgBoxResult
 
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll

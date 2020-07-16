@@ -10,7 +10,7 @@ Public Class Kurs
     Public mbolVerfuegbar As Boolean
     Public mdecPreis As Decimal
     Public mbolAbgesagt As Boolean
-    Public mBuchungen As dlgBuchung
+    Public mBuchungen As Buchung
 
     'Konstruktoren
     'Parameterloser Konstruktor
@@ -92,11 +92,11 @@ Public Class Kurs
         End Set
     End Property
 
-    Public Property Buchungen As dlgBuchung
+    Public Property Buchungen As Buchung
         Get
             Return mBuchungen
         End Get
-        Set(value As dlgBuchung)
+        Set(value As Buchung)
             mBuchungen = value
         End Set
     End Property

@@ -46,7 +46,7 @@
     ''' <remarks></remarks>
     Private Sub anzeigen()
         'Deklaration
-        Dim lviBuchung As dlgBuchung 'Buchung
+        Dim lviBuchung As Buchung 'Buchung
 
         'Anzuzeigende Attribute
         Dim strBuchungsID As String
