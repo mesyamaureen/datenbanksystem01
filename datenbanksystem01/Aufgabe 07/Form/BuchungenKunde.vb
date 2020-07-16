@@ -11,8 +11,8 @@
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
-            Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
-            Me.btnLaden.Enabled = True
+            Me.btnLoeschen.Enabled = True ' kann man diese löschen
+
         ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
             Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen
         End If
@@ -101,33 +101,13 @@
             Exit Sub
         End If
     End Sub
-<<<<<<< HEAD
+
     ''' <summary>
     ''' Laden Schaltfläche
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
-        'Deklaration
-        Dim betroffeneBuch As Buchung
-        Dim intindex As Integer
 
-        ' aus der ausgwählten Zeile im Dialog die ID der Buchung auslesen
-        intindex = Me.ListViewAktBuchungen.SelectedItems(0).Text
-
-        'Detaildialog zum Anzeigen der Buchung
-
-        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-        'Element an der Position der Liste, die der ID entspricht ermitteln
-        betroffeneBuch = mlstBuchung.Item(intindex)
-        'Fenster vorbereiten
-        'Auswertung des Dialogergebnisses
-        'Dialog mit positivem Ergebnis geschlossen
-        'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
-        anzeigen()
-    End Sub
-=======
->>>>>>> e9f68e6edef5560af519363d7ffc0da96ab220c9
 
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
 
