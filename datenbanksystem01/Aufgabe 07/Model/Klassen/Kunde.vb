@@ -8,14 +8,14 @@ Public Class Kunde
     'Attribute
     Public mstrKundenID As String
     Public mstrFirma As String
-    Public mlstListeEigeneBuchungen As List(Of Buchung)
+    Public mlstListeEigeneBuchungen As List(Of dlgBuchung)
 
     'Konstruktoren
 
     Sub New()
         MyBase.New
         mstrFirma = String.Empty
-        mlstListeEigeneBuchungen = New List(Of Buchung)
+        mlstListeEigeneBuchungen = New List(Of dlgBuchung)
     End Sub
 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
@@ -42,11 +42,11 @@ Public Class Kunde
         End Get
     End Property
 
-    Public Property EigeneBuchungen As List(Of Buchung)
+    Public Property EigeneBuchungen As List(Of dlgBuchung)
         Get
             Return mlstListeEigeneBuchungen
         End Get
-        Set(value As List(Of Buchung))
+        Set(value As List(Of dlgBuchung))
             mlstListeEigeneBuchungen = value
         End Set
     End Property

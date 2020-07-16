@@ -14,8 +14,7 @@
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
             Me.btnLaden.Enabled = True
         ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
-            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
-            Me.btnLaden.Enabled = False ' und nicht bearbeiten
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen
         End If
 
     End Sub
@@ -34,7 +33,7 @@
     ''' <param name="pdatKurs"></param>
     ''' <param name="pstrWeiterbilName"></param>
     ''' <param name="pdecPreis"></param>
-    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal)
+    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal) ', pstrOrt As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -49,22 +48,24 @@
             .Add(pdatKurs)
             .Add(pstrWeiterbilName)
             .Add(pdecPreis)
+            '.Add(pstrOrt)
         End With
     End Sub
 
     ''' <summary>
-    ''' Zeigt die Buchung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' Zeigt die Buchung als Liste an, indem zunächst die Tabelle geleert und
     ''' dann mit allen Einträgen aus der Liste der Buchung neu gefüllt wird.
     ''' </summary>
     Private Sub anzeigen()
         'Deklaration
-        Dim buchungen As Buchung
+        Dim buchungen As dlgBuchung
 
         'Anzuzeigende Attribute
         Dim strBuchungId As String
         Dim datKurs As Date
         Dim strWeiterbilName As String
         Dim decPreis As Decimal
+        'Dim strOrt As String
 
         'leeren der Tabelle
         leeren()
@@ -77,6 +78,7 @@
             datKurs = buchungen.BuchungsDatum 'Buchungsdatum als Kursdatum und Kursdatum von Attribute des Kurses, which has to be connected in Klasse Kurs
             strWeiterbilName = buchungen.Weiterbildung 'needs to be proved; is it possible to just connect the Weiterbildung with this Windows form?
             decPreis = buchungen.Preis
+            'strOrt = buchungen.Ort
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(i, strBuchungId, datKurs, strWeiterbilName, decPreis)
         Next
@@ -99,6 +101,7 @@
             Exit Sub
         End If
     End Sub
+<<<<<<< HEAD
     ''' <summary>
     ''' Laden Schaltfläche
     ''' </summary>
@@ -123,6 +126,8 @@
         'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
         anzeigen()
     End Sub
+=======
+>>>>>>> e9f68e6edef5560af519363d7ffc0da96ab220c9
 
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
 
@@ -133,9 +138,9 @@
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         ' Deklaration
-        ' Index des ausgewählten Eintrags der Tabelle   
+        ' Index des ausgewählten Eintrags der Tabelle
         Dim intIndex As Integer
-        Dim buch As Buchung
+        Dim buch As dlgBuchung
         Dim msgErgebnis As MsgBoxResult
 
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
@@ -182,10 +187,8 @@
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
-            Me.btnLaden.Enabled = True
         ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
-            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
-            Me.btnLaden.Enabled = False ' und nicht bearbeiten
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen
         End If
     End Sub
 End Class

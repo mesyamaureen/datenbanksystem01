@@ -1,7 +1,7 @@
 ﻿Imports System.Xml.Serialization
 
 <System.Serializable()>
-Public Class Buchung
+Public Class dlgBuchung
 
     Public mstrBuchungsID As String
     Public mdecPreis As Decimal
@@ -91,9 +91,9 @@ Public Class Buchung
         End Set
     End Property
 
-    Public Shared Function zeigenAlle() As List(Of Buchung)
+    Public Shared Function zeigenAlle() As List(Of dlgBuchung)
 
-        Dim lstBuchung As List(Of Buchung)
+        Dim lstBuchung As List(Of dlgBuchung)
 
         lstBuchung = BuchungsDAO.ladenBuchung
 
@@ -101,7 +101,7 @@ Public Class Buchung
 
     End Function
 
-    Public Shared Sub speichernAlle(pstrBuchung As List(Of Buchung))
+    Public Shared Sub speichernAlle(pstrBuchung As List(Of dlgBuchung))
 
         BuchungsDAO.speichernBuchung(pstrBuchung)
 
