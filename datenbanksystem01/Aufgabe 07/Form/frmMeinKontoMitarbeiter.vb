@@ -1,11 +1,22 @@
 ﻿Public Class frmMeinKontoMitarbeiter
-    Dim strBenutzername As String
-    Dim strPasswort As String
-    Dim strNeuesPasswort As String
-    Dim strName As String
-    Dim strVorname As String
-    Dim datGebDat As Date
 
+
+    Dim anzumeldenderMitarbeiter As Mitarbeiter
+
+    Sub New(pstranzumeldenderMitarbeiter As Mitarbeiter)
+
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+        anzumeldenderMitarbeiter = pstranzumeldenderMitarbeiter
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+        txtBenutzername.Text = anzumeldenderMitarbeiter.Benutzername
+        txtboxAltesPasswort.Text = anzumeldenderMitarbeiter.Passwort
+        txtboxName.Text = anzumeldenderMitarbeiter.Name
+        txtboxVorname.Text = anzumeldenderMitarbeiter.Vorname
+        '  dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
+
+    End Sub
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         Dim msgErgebnis As MsgBoxResult
 
@@ -29,11 +40,10 @@
     Private Sub textBoxNeuenWertSpeichern()
 
 
-        strBenutzername = Me.txtBenutzername.Text
-        strNeuesPasswort = Me.txtboxNeuesPasswort.Text
-        strName = Me.txtboxName.Text
-        strVorname = Me.txtboxVorname.Text
-        datGebDat = Me.dtpGebDatMitarbeiter.Value
+
+        anzumeldenderMitarbeiter.Passwort = Me.txtboxNeuesPasswort.Text
+        anzumeldenderMitarbeiter.Name = Me.txtboxName.Text
+        anzumeldenderMitarbeiter.Geburtsdatum = Me.dtpGebDatMitarbeiter.Value
 
 
 

@@ -5,10 +5,10 @@ Imports System.Xml.Serialization
 Public Class DAO
 
     ' Get the current user dir
-    Protected Shared Property strDBDir As String = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & My.Settings.Datenspeicherort
-
+    Protected Shared Property strDBDir As String = My.Settings.Datenspeicherort
+    ' Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & ' 
     Protected Shared Function ladenXml(pstrDateipfad As String, pType As Type) As Object
-        ' Dekalration der notwendigen Objekte Variablen für den Dateizugriff
+        ' Deklaration der notwendigen Objekte Variablen für den Dateizugriff
         Dim obj As Object
         Dim objStreamReader As StreamReader ' Wird zum Lesen aus einer Datei benötigt
         Dim objXmlSerializer As XmlSerializer ' Wird zur Umwandlung von XML-Daten in Objekte benötigt

@@ -1,5 +1,26 @@
 ﻿Public Class frmHauptfensterMitarbeiter
 
+    Dim anzumeldenderMitarbeiter As Mitarbeiter
+
+    Sub New(pstranzumeldenderMitarbeiter As Mitarbeiter)
+
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+        anzumeldenderMitarbeiter = pstranzumeldenderMitarbeiter
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+
+    End Sub
+
+    Sub New()
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+
+    End Sub
+
     Private Sub frmHauptfensterMitarbeiter_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         'Deklaration
         Dim strBegruessungMitarbeiter As String
@@ -241,7 +262,9 @@
 
     Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
         Dim dlg As frmMeinKontoMitarbeiter
-        dlg = New frmMeinKontoMitarbeiter()
+        dlg = New frmMeinKontoMitarbeiter(anzumeldenderMitarbeiter)
         dlg.ShowDialog()
     End Sub
+
+
 End Class
