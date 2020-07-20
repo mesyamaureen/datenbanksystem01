@@ -79,10 +79,10 @@
     Public Function initialise()
 
         'TODO initialise lists from database
-        mlstMitarbeiter = New List(Of Mitarbeiter) From
-          {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#), New Mitarbeiter("off", "pw", "Off", "Thomas", #10/23/1969#)}
-        mlstKunde = New List(Of Kunde) From
-          {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "BlalBla AG"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "ShareNow")}
+        'mlstMitarbeiter = New List(Of Mitarbeiter) From
+        '  {New Mitarbeiter("jeynie", "pw", "Jeynie", "Mesya Maureen", #09/24/1997#), New Mitarbeiter("hochtritt", "pw", "Hochtritt", "Nina", #10/21/1999#), New Mitarbeiter("off", "pw", "Off", "Thomas", #10/23/1969#)}
+        'mlstKunde = New List(Of Kunde) From
+        '  {New Kunde("mueller", "pw", "Mueller", "Micha", #03/22/1966#, "BlalBla AG"), New Kunde("meier", "pw", "Meier", "Jens", #05/15/1978#, "ShareNow")}
 
         mlstKurs = New List(Of Kurs) 'From
         '{New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
@@ -175,10 +175,10 @@
         mlstWeiterbildungen.Add(bmc)
 
         'intIndexAnzahl
-        agiles = mlstWeiterbildungen.Item(0)
-        scrum = mlstWeiterbildungen.Item(1)
-        controlling = mlstWeiterbildungen.Item(2)
-        bmc = mlstWeiterbildungen.Item(3)
+        'agiles = mlstWeiterbildungen.Item(0)
+        'scrum = mlstWeiterbildungen.Item(1)
+        'controlling = mlstWeiterbildungen.Item(2)
+        'bmc = mlstWeiterbildungen.Item(3)
 
         'Buchung Datenbank
         mlstBuchung = New List(Of Buchung) From {
@@ -186,27 +186,21 @@
 
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
+        'BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
+        'BenutzerDAO.speichernKunde(mlstKunde)
+        'BuchungsDAO.speichernBuchung(mlstBuchung)
+        'Kurs__und_WeiterbildungsDAO.speichernKurs(mlstKurs)
+        'Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
+
+        mlstMitarbeiter = BenutzerDAO.ladenMitarbeiter()
+        mlstKunde = BenutzerDAO.ladenKunden()
+        mlstBuchung = BuchungsDAO.ladenBuchung()
+        mlstKurs = Kurs__und_WeiterbildungsDAO.ladenKurse()
+        mlstWeiterbildungen = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
 
         userController = New UserController(mlstMitarbeiter, mlstKunde)
         weiterbildungscontroller = New WeiterbildungsController(mlstKurs, mlstWeiterbildungen)
         bookingController = New BookingController(mlstBuchung)
-
-        BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
-        BenutzerDAO.speichernKunde(mlstKunde)
-        BuchungsDAO.speichernBuchung(mlstBuchung)
-        Kurs__und_WeiterbildungsDAO.speichernKurs(mlstKurs)
-        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
-
-        ' BenutzerDAO.ladenMitarbeiter()
-        ' BenutzerDAO.ladenKunden()
-        'BuchungsDAO.ladenBuchung()
-        'Kurs__und_WeiterbildungsDAO.ladenKurse()
-        'Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
-
-
-
-
-
     End Function
 
 

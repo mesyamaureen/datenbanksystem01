@@ -5,9 +5,9 @@ Public Class BenutzerDAO
     Inherits DAO
 
     Private Const DateinameMitarbeiter As String = "Mitarbeiter.xml"
-    Private Shared strPfadXMLMitarbeiter As String = strDBDir & DateinameMitarbeiter
+    Private Shared strPfadXMLMitarbeiter As String = Path.Combine(strDBDir, DateinameMitarbeiter)
     Private Const DateinameKunde As String = "Kunden.xml"
-    Private Shared strPfadXMLKunde As String = strDBDir & DateinameKunde
+    Private Shared strPfadXMLKunde As String = Path.Combine(strDBDir, DateinameKunde)
 
     Public Shared Function ladenMitarbeiter() As List(Of Mitarbeiter) 'Benutzer
 
@@ -38,7 +38,7 @@ Public Class BenutzerDAO
 
     Public Shared Function ladenKunden() As List(Of Kunde)
 
-        'Liste aller Mitarbeiter
+        'Liste aller Kunden
         Dim lstKunde As List(Of Kunde)
 
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
@@ -46,7 +46,7 @@ Public Class BenutzerDAO
         If Not existiertXml(strPfadXMLKunde) Then
             lstKunde = Aufgabe_07.Logic.ListeKunden
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
-            lstKunde = ladenXml(strPfadXMLKunde, GetType(List(Of Mitarbeiter)))
+            lstKunde = ladenXml(strPfadXMLKunde, GetType(List(Of Kunde)))
 
         End If
 

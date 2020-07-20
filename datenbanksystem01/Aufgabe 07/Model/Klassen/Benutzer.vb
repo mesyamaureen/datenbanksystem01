@@ -43,16 +43,22 @@ Public Class Benutzer
         End Set
     End Property
 
-    Public ReadOnly Property Vorname As String
+    Public Property Vorname As String
         Get
             Return mstrVorname
         End Get
+        Set(value As String)
+            mstrVorname = value
+        End Set
     End Property
 
-    Public ReadOnly Property Benutzername As String
+    Public Property Benutzername As String
         Get
             Return mstrBenutzername
         End Get
+        Set(value As String)
+            mstrBenutzername = value
+        End Set
     End Property
 
     Public Property Passwort As String

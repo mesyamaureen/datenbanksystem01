@@ -17,7 +17,7 @@
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnSchliessen.Enabled = True ' kann man die Anwendung schließen
             Me.btnLaden.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
             Me.btnSchliessen.Enabled = True ' kann man sie schliessen
             Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
@@ -70,7 +70,7 @@
 
     Private Sub anzeigen()
         'Deklaration
-        Dim kund As Kunde 'Kunden
+        Dim anzuzeigenderKunde As Kunde 'Kunden
 
         'Anzuzeigende Attribute
         Dim strKundenID As String
@@ -83,13 +83,13 @@
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To mlstKunde.Count - 1
-            kund = mlstKunde.Item(i)
+            anzuzeigenderKunde = mlstKunde.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            strKundenID = kund.KundenID
-            strBenutzername = kund.Benutzername
-            strVorname = kund.Vorname
-            strName = kund.Name
+            strKundenID = anzuzeigenderKunde.KundenID
+            strBenutzername = anzuzeigenderKunde.Benutzername
+            strVorname = anzuzeigenderKunde.Vorname
+            strName = anzuzeigenderKunde.Name
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(i, strKundenID, strBenutzername, strName, strVorname)

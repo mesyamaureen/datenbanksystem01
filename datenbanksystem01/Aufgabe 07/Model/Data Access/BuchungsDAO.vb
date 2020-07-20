@@ -4,7 +4,7 @@ Public Class BuchungsDAO
     Inherits DAO
 
     Private Const DateinameBuchung As String = "Buchungen.xml"
-    Private Shared strPfadXMLBuchung As String = strDBDir & DateinameBuchung
+    Private Shared strPfadXMLBuchung As String = Path.Combine(strDBDir, DateinameBuchung)
 
     Public Shared Function ladenBuchung() As List(Of Buchung)
 

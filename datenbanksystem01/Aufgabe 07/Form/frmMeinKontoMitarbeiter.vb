@@ -1,4 +1,6 @@
 ﻿Public Class frmMeinKontoMitarbeiter
+    'ToDo:
+    '
 
 
     Dim anzumeldenderMitarbeiter As Mitarbeiter
@@ -14,7 +16,7 @@
         txtboxAltesPasswort.Text = anzumeldenderMitarbeiter.Passwort
         txtboxName.Text = anzumeldenderMitarbeiter.Name
         txtboxVorname.Text = anzumeldenderMitarbeiter.Vorname
-        '  dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
+        'dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
 
     End Sub
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
