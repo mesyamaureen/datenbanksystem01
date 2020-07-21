@@ -96,6 +96,18 @@
         'mlstKunde.Add(Me)
 
         'End If
+        ' Dim neuerKunde As Kunde = New Kunde(frmKundenkontoerstellung.txtBenutzername.Text,
+        'frmKundenkontoerstellung.txtPasswort.Text,
+        'frmKundenkontoerstellung.txtNachname.Text,
+        'frmKundenkontoerstellung.txtVorname.Text,
+        'frmKundenkontoerstellung.datboxGebDat.Value,
+        'frmKundenkontoerstellung.txtFirma.Text)
+
+        'mlstKunde.Add(neuerKunde)
+
+        'BenutzerDAO.speichernKunde(mlstKunde)
+
+        'frmKundenkontoerstellung.Close()
     End Function
 
 

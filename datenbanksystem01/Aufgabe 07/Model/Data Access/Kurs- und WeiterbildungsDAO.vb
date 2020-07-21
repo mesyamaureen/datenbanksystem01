@@ -5,9 +5,9 @@ Public Class Kurs__und_WeiterbildungsDAO
     Inherits DAO
 
     Private Const DateinameKurs As String = "Kurs.xml"
-    Private Shared strPfadXMLKurs As String = strDBDir & DateinameKurs
+    Private Shared strPfadXMLKurs As String = Path.Combine(strDBDir, DateinameKurs)
     Private Const DateinameWeiterbildung As String = "Weiterbildung.xml"
-    Private Shared strPfadXMLWeiterbildung As String = strDBDir & DateinameWeiterbildung
+    Private Shared strPfadXMLWeiterbildung As String = Path.Combine(strDBDir, DateinameWeiterbildung)
 
     Public Shared Function ladenKurse() As List(Of Kurs)
 

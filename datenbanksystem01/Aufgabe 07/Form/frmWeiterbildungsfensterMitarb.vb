@@ -7,7 +7,8 @@ Public Class frmWeiterbildungsfensterMitarb
     'Attribute
     Public mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    Public mWeiterbControlle As WeiterbildungsController 'Weiterbildungscontrolle aufrufen
+    Public mWeiterbControlle As WeiterbildungsController 'Weiterbildungscontroller aufrufen
+    Public frmHFM As frmHauptfensterMitarbeiter
 
     Public Sub New()
 
@@ -17,6 +18,7 @@ Public Class frmWeiterbildungsfensterMitarb
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = New Weiterbildung
         mWeiterbControlle = New WeiterbildungsController
+
     End Sub
 
     Public Sub New(pWeiterbil As Weiterbildung)

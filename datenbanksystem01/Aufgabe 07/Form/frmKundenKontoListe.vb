@@ -17,7 +17,7 @@
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnSchliessen.Enabled = True ' kann man die Anwendung schließen
             Me.btnLaden.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
             Me.btnSchliessen.Enabled = True ' kann man sie schliessen
             Me.btnLaden.Enabled = False ' und nicht bearbeiten
         End If
@@ -41,7 +41,7 @@
 
     End Sub
 
-    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
+    ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Buchung übergeben </remark>
     Sub anzeigenZeile(plngIndex As Long, pstrKundenID As String, pstrBenutzername As String, pstrVorname As String, pstrName As String)
 
         'Neue Zeile in der Liste deklarieren
@@ -70,7 +70,7 @@
 
     Private Sub anzeigen()
         'Deklaration
-        Dim kund As Kunde 'Kunden
+        Dim anzuzeigenderKunde As Kunde 'Kunden
 
         'Anzuzeigende Attribute
         Dim strKundenID As String
@@ -83,13 +83,13 @@
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To mlstKunde.Count - 1
-            kund = mlstKunde.Item(i)
+            anzuzeigenderKunde = mlstKunde.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            strKundenID = kund.KundenID
-            strBenutzername = kund.Benutzername
-            strVorname = kund.Vorname
-            strName = kund.Name
+            strKundenID = anzuzeigenderKunde.KundenID
+            strBenutzername = anzuzeigenderKunde.Benutzername
+            strVorname = anzuzeigenderKunde.Vorname
+            strName = anzuzeigenderKunde.Name
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(i, strKundenID, strBenutzername, strName, strVorname)
@@ -111,6 +111,18 @@
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
 
         'Muss Kunden aus mlstKunden laden
+        ' Deklaration
+        ' Initialisierung
+        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.lstviewKundenKonten.SelectedItems.Count ' Anzahl der Zeilen ermitteln
+
+        ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
+        If intAnzahlAusgewaehlterZeilen = 1 Then
+            ' Wenn genau eine Zeile ausgewählt ist
+            Me.btnLaden.Enabled = True ' kann man diesen einsehen
+
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
+            Me.btnLaden.Enabled = False 'nicht bearbeiten
+        End If
         anzeigen()
 
 
@@ -118,5 +130,11 @@
 
     Private Sub btnSchliessen_Click(sender As Object, e As EventArgs) Handles btnSchliessen.Click
         'Nichts zu tun, Standardverhalten
+    End Sub
+
+    Private Sub frmKundenKontoListe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mlstKunde = Logic.mlstKunde
+        anzeigen()
+        aktivierenSchaltflächen()
     End Sub
 End Class

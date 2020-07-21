@@ -16,7 +16,6 @@
         'Aufrufen anderer Funktion
         Logic.initialise()
 
-
         'Nachprüfende Schleife 
         Do
             dlgAnmeldung.ShowDialog() 'Anmeldedialog anzeigen 
@@ -33,9 +32,11 @@
             strPasswort = dlgAnmeldung.txtPasswort.Text
 
             'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
+
             Dim anmeldenResult As Dictionary(Of String, String) = Logic.logIn(strBenutzername, strPasswort)
             If anmeldenResult("role") = "mitarbeiter" Then
-                frmHauptfensterMitarbeiter.Show()
+                Dim frm = New frmHauptfensterMitarbeiter(New Mitarbeiter(strBenutzername, strPasswort, Nothing, Nothing, Nothing))
+                frm.Show()
             ElseIf anmeldenResult("role") = "kunde" Then
                 frmHauptfensterKunde.Show()
             Else

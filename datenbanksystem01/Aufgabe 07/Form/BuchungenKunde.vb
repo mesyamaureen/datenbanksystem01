@@ -1,27 +1,23 @@
 ﻿Public Class BuchungenKunde
+
     ''' <summary>
     ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
     ''' </summary>
     Protected Sub aktivierenSchaltflächen()
         ' Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
-
         ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
-
-        ' Schatlfächen zurücksetzen
-        Me.btnLoeschen.Enabled = False
+        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.ListViewAktBuchungen.SelectedItems.Count ' Anzahl der Zeilen ermitteln
 
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
-            Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
-            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
+            Me.btnLoeschen.Enabled = True ' kann man diese löschen
+
+        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen
         End If
 
     End Sub
-
     Sub leeren()
         'Liste leeren
         Me.ListViewAktBuchungen.Items.Clear()
@@ -57,12 +53,12 @@
     End Sub
 
     ''' <summary>
-    ''' Zeigt die Buchung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' Zeigt die Buchung als Liste an, indem zunächst die Tabelle geleert und
     ''' dann mit allen Einträgen aus der Liste der Buchung neu gefüllt wird.
     ''' </summary>
     Private Sub anzeigen()
         'Deklaration
-        Dim buchungen As dlgBuchung
+        Dim buchungen As Buchung
 
         'Anzuzeigende Attribute
         Dim strBuchungId As String
@@ -106,6 +102,13 @@
         End If
     End Sub
 
+    ''' <summary>
+    ''' Laden Schaltfläche
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+
+
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
 
         txtKundenID = Me.txtKundenID
@@ -115,9 +118,9 @@
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         ' Deklaration
-        ' Index des ausgewählten Eintrags der Tabelle   
+        ' Index des ausgewählten Eintrags der Tabelle
         Dim intIndex As Integer
-        Dim buch As dlgBuchung
+        Dim buch As Buchung
         Dim msgErgebnis As MsgBoxResult
 
         ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
@@ -165,7 +168,7 @@
             ' Wenn genau eine Zeile ausgewählt ist
             Me.btnLoeschen.Enabled = True ' kann man diese löschen oder bearbeiten
         ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
-            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen 
+            Me.btnLoeschen.Enabled = False ' kann man sie nicht löschen
         End If
     End Sub
 End Class
