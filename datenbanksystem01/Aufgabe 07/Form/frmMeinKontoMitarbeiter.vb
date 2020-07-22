@@ -59,4 +59,8 @@
     Private Sub txtBenutzername_TextChanged(sender As Object, e As EventArgs) Handles txtBenutzername.TextChanged
 
     End Sub
+
+    Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
+
+    End Sub
 End Class

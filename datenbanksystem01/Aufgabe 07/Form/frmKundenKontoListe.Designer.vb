@@ -37,10 +37,10 @@ Partial Class frmKundenKontoListe
         'btnSchliessen
         '
         Me.btnSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSchliessen.Location = New System.Drawing.Point(708, 428)
-        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSchliessen.Location = New System.Drawing.Point(531, 348)
+        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchliessen.Name = "btnSchliessen"
-        Me.btnSchliessen.Size = New System.Drawing.Size(121, 36)
+        Me.btnSchliessen.Size = New System.Drawing.Size(91, 29)
         Me.btnSchliessen.TabIndex = 0
         Me.btnSchliessen.Text = "Schließen"
         Me.btnSchliessen.UseVisualStyleBackColor = True
@@ -48,15 +48,14 @@ Partial Class frmKundenKontoListe
         'lstviewKundenKonten
         '
         Me.lstviewKundenKonten.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKundenID, Me.colBenutzername, Me.colVorname, Me.colName, Me.colGebDat, Me.colFirma})
-        Me.lstviewKundenKonten.Enabled = False
         Me.lstviewKundenKonten.FullRowSelect = True
         Me.lstviewKundenKonten.GridLines = True
         Me.lstviewKundenKonten.HideSelection = False
-        Me.lstviewKundenKonten.Location = New System.Drawing.Point(8, 8)
-        Me.lstviewKundenKonten.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstviewKundenKonten.Location = New System.Drawing.Point(6, 6)
+        Me.lstviewKundenKonten.Margin = New System.Windows.Forms.Padding(2)
         Me.lstviewKundenKonten.MultiSelect = False
         Me.lstviewKundenKonten.Name = "lstviewKundenKonten"
-        Me.lstviewKundenKonten.Size = New System.Drawing.Size(821, 403)
+        Me.lstviewKundenKonten.Size = New System.Drawing.Size(617, 328)
         Me.lstviewKundenKonten.TabIndex = 1
         Me.lstviewKundenKonten.UseCompatibleStateImageBehavior = False
         Me.lstviewKundenKonten.View = System.Windows.Forms.View.Details
@@ -98,9 +97,10 @@ Partial Class frmKundenKontoListe
         '
         'btnLaden
         '
-        Me.btnLaden.Location = New System.Drawing.Point(552, 428)
+        Me.btnLaden.Location = New System.Drawing.Point(414, 348)
+        Me.btnLaden.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLaden.Name = "btnLaden"
-        Me.btnLaden.Size = New System.Drawing.Size(121, 36)
+        Me.btnLaden.Size = New System.Drawing.Size(91, 29)
         Me.btnLaden.TabIndex = 2
         Me.btnLaden.Text = "Details"
         Me.btnLaden.UseVisualStyleBackColor = True
@@ -108,15 +108,15 @@ Partial Class frmKundenKontoListe
         'frmKundenKontoListe
         '
         Me.AcceptButton = Me.btnLaden
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSchliessen
-        Me.ClientSize = New System.Drawing.Size(841, 477)
+        Me.ClientSize = New System.Drawing.Size(631, 388)
         Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.lstviewKundenKonten)
         Me.Controls.Add(Me.btnSchliessen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmKundenKontoListe"
         Me.Text = "Liste von Kundenkonten"
         Me.ResumeLayout(False)

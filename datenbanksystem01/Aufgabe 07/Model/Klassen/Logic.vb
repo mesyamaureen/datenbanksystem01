@@ -299,30 +299,30 @@
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As Weiterbildung
+    'Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As Weiterbildung
 
-        Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum, pstrTeilnehmerkreis)
+    '    Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum, pstrTeilnehmerkreis)
 
-    End Function
+    'End Function
 
-    Public Function viewWeiterbildung(pstrWeiterbildungsID As String) As Array
+    'Public Function viewWeiterbildung(pstrWeiterbildungsID As String) As Array
 
-        Return weiterbildungscontroller.viewWeiterbildung(pstrWeiterbildungsID)
+    '    Return weiterbildungscontroller.viewWeiterbildung(pstrWeiterbildungsID)
 
-    End Function
+    'End Function
 
-    Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
-                                        bearbWeiterbildung As Weiterbildung) As Boolean
+    'Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
+    '                                    bearbWeiterbildung As Weiterbildung) As Boolean
 
-        Return weiterbildungscontroller.changeWeiterbildung(strBezeichnung, strThema, strCurriculum, strTeilnehmerkreis, bearbWeiterbildung)
+    '    Return weiterbildungscontroller.changeWeiterbildung(strBezeichnung, strThema, strCurriculum, strTeilnehmerkreis, bearbWeiterbildung)
 
-    End Function
+    'End Function
 
-    Public Function deleteWeiterbildung(strWeiterbildungID As String) As Boolean
+    'Public Function deleteWeiterbildung(strWeiterbildungID As String) As Boolean
 
-        Return weiterbildungscontroller.deleteWeiterbildung(strWeiterbildungID)
+    '    Return weiterbildungscontroller.deleteWeiterbildung(strWeiterbildungID)
 
-    End Function
+    'End Function
 
     'BookingController
     Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal) As Buchung

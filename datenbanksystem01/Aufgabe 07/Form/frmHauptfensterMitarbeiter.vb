@@ -51,9 +51,9 @@
         intAnzahlAusgewaehlterZeilen = Me.lstviewWeiterbildungenM.SelectedItems.Count
 
         'Schaltfläche zurücksetzen
-        Me.btnOeffnenM.Enabled = True
+        Me.btnOeffnenM.Enabled = False
         Me.btnHinzufuegen.Enabled = True
-        Me.btnLoeschen.Enabled = True
+        Me.btnLoeschen.Enabled = False
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If intAnzahlAusgewaehlterZeilen = 1 Then
@@ -266,5 +266,14 @@
         dlg.ShowDialog()
     End Sub
 
+    Private Sub lstviewWeiterbildungenM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungenM.SelectedIndexChanged
+        If lstviewWeiterbildungenM.SelectedItems.Count = 0 Then
+            btnLoeschen.Enabled = False
+            btnOeffnenM.Enabled = False
 
+        Else
+            btnLoeschen.Enabled = True
+            btnOeffnenM.Enabled = True
+        End If
+    End Sub
 End Class

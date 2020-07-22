@@ -94,6 +94,6 @@ Public Class DAO
 
     Protected Shared Function existiertXml(pstrDateipfad As String) As Boolean
         ' Prüfen, ob es die Datei mit Beispielbenutzern nicht existiert
-        Return My.Computer.FileSystem.FileExists(pstrDateipfad) AndAlso My.Computer.FileSystem.GetFileInfo(pstrDateipfad).Length > 0
+        Return My.Computer.FileSystem.FileExists(pstrDateipfad) 'AndAlso My.Computer.FileSystem.GetFileInfo(pstrDateipfad).Length > 0
     End Function
 End Class

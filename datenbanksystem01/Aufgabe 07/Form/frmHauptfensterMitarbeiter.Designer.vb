@@ -53,9 +53,9 @@ Partial Class frmHauptfensterMitarbeiter
         Me.grpboxThemen.Controls.Add(Me.btnBuchungenM)
         Me.grpboxThemen.Controls.Add(Me.btnWeiterbildungenM)
         Me.grpboxThemen.Location = New System.Drawing.Point(8, 6)
-        Me.grpboxThemen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxThemen.Margin = New System.Windows.Forms.Padding(2)
         Me.grpboxThemen.Name = "grpboxThemen"
-        Me.grpboxThemen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxThemen.Padding = New System.Windows.Forms.Padding(2)
         Me.grpboxThemen.Size = New System.Drawing.Size(218, 478)
         Me.grpboxThemen.TabIndex = 1
         Me.grpboxThemen.TabStop = False
@@ -121,9 +121,9 @@ Partial Class frmHauptfensterMitarbeiter
         Me.grpboxWeiterbildung.Controls.Add(Me.lblSucheM)
         Me.grpboxWeiterbildung.Controls.Add(Me.txtboxSucheM)
         Me.grpboxWeiterbildung.Location = New System.Drawing.Point(230, 6)
-        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(2)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
-        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(2)
         Me.grpboxWeiterbildung.Size = New System.Drawing.Size(602, 478)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
@@ -131,6 +131,7 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'btnLoeschen
         '
+        Me.btnLoeschen.Enabled = False
         Me.btnLoeschen.Location = New System.Drawing.Point(276, 433)
         Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoeschen.Name = "btnLoeschen"
@@ -151,6 +152,7 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'btnOeffnenM
         '
+        Me.btnOeffnenM.Enabled = False
         Me.btnOeffnenM.Location = New System.Drawing.Point(503, 433)
         Me.btnOeffnenM.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOeffnenM.Name = "btnOeffnenM"
@@ -234,7 +236,7 @@ Partial Class frmHauptfensterMitarbeiter
         Me.Controls.Add(Me.grpboxWeiterbildung)
         Me.Controls.Add(Me.grpboxThemen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(854, 594)
         Me.Name = "frmHauptfensterMitarbeiter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

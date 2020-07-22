@@ -7,7 +7,7 @@ Public Class frmWeiterbildungsfensterMitarb
     'Attribute
     Public mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    Public mWeiterbControlle As WeiterbildungsController 'Weiterbildungscontroller aufrufen
+    Public mWeiterbController As WeiterbildungsController 'Weiterbildungscontroller aufrufen
     Public frmHFM As frmHauptfensterMitarbeiter
 
     Public Sub New()
@@ -17,7 +17,7 @@ Public Class frmWeiterbildungsfensterMitarb
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = New Weiterbildung
-        mWeiterbControlle = New WeiterbildungsController
+        mWeiterbController = New WeiterbildungsController
 
     End Sub
 
@@ -28,7 +28,7 @@ Public Class frmWeiterbildungsfensterMitarb
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = pWeiterbil
-        mWeiterbControlle = New WeiterbildungsController
+        mWeiterbController = New WeiterbildungsController
     End Sub
 
     ''' <summary>
@@ -84,10 +84,12 @@ Public Class frmWeiterbildungsfensterMitarb
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
         Dim titel As String = Me.txtboxSeminartitel.Text
         Dim curri As String = Me.rtxtboxSeminarbeschreibungM.Text
-        Dim theme As String = Me.rtxtboxSeminarinfoM.Text
+        Dim thema As String = Me.rtxtboxSeminarinfoM.Text
         Dim teilkreis As String = Me.rtxtboxTeilnkreisM.Text
+
         'Aufrufen changeWeiterbildung() in Weiterbildungscontroller
-        mWeiterbControlle.changeWeiterbildung(titel, theme, curri, teilkreis, mBearbWeiterbildung)
+        mBearbWeiterbildung = mWeiterbController.changeWeiterbildung(titel, thema, curri, teilkreis, mBearbWeiterbildung)
+
         'Passende bearbeitende Weiterbildung in Datenbank
         Logic.mlstWeiterbildungen.Item(frmHauptfensterMitarbeiter.intIndex) = mBearbWeiterbildung
     End Sub

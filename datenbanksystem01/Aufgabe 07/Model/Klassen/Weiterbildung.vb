@@ -61,11 +61,11 @@ Public Class Weiterbildung
         End Set
     End Property
 
-    Public Property Curriculum
+    Public Property Curriculum As String
         Get
             Return mstrCurriculum
         End Get
-        Set(value)
+        Set(value As String)
             mstrCurriculum = value
         End Set
     End Property

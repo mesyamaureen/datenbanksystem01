@@ -159,14 +159,16 @@
     End Function
 
     Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
-                                        bearbWeiterbildung As Weiterbildung) As Boolean
+                                        bearbWeiterbildung As Weiterbildung) As Weiterbildung
         'Initialisierung der Parameter
         bearbWeiterbildung.Bezeichnung = strBezeichnung
         bearbWeiterbildung.Thema = strThema
         bearbWeiterbildung.Curriculum = strCurriculum
         bearbWeiterbildung.Teilnehmerkreis = strTeilnehmerkreis
         'Rückgabewert
-        Return True
+
+        MessageBox.Show(strCurriculum + System.Environment.NewLine + bearbWeiterbildung.Curriculum)
+        Return bearbWeiterbildung
     End Function
 
     Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean
