@@ -35,7 +35,7 @@
 
             Dim anmeldenResult As Dictionary(Of String, String) = Logic.logIn(strBenutzername, strPasswort)
             If anmeldenResult("role") = "mitarbeiter" Then
-                Dim frm = New frmHauptfensterMitarbeiter(New Mitarbeiter(strBenutzername, strPasswort, Nothing, Nothing, Nothing))
+                Dim frm = New frmHauptfensterMitarbeiter(strBenutzername)
                 frm.Show()
             ElseIf anmeldenResult("role") = "kunde" Then
                 frmHauptfensterKunde.Show()

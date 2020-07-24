@@ -91,7 +91,7 @@ Public Class frmWeiterbildungsfensterMitarb
         mBearbWeiterbildung = mWeiterbController.changeWeiterbildung(titel, thema, curri, teilkreis, mBearbWeiterbildung)
 
         'Passende bearbeitende Weiterbildung in Datenbank
-        Logic.mlstWeiterbildungen.Item(frmHauptfensterMitarbeiter.intIndex) = mBearbWeiterbildung
+        Logic.mlstWeiterbildungen.Item(frmHauptfensterMitarbeiter.GetListViewIndex()) = mBearbWeiterbildung
     End Sub
 
 

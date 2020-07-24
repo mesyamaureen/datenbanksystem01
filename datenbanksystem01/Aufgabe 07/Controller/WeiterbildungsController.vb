@@ -52,11 +52,11 @@
         End Set
     End Property
 
-    Public Property WeiterbildungsID As String
+    Public Property WeiterbildungsID As UInteger
         Get
             Return mstrWeiterbildungsID
         End Get
-        Set(value As String)
+        Set(value As UInteger)
             mstrWeiterbildungsID = value
         End Set
     End Property
@@ -119,7 +119,6 @@
     End Function
 
     'Weiterbildung
-    Private weiterId As UInteger
     Public Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
         'Deklaration neue Variabel als Zuweisung von Weiterbildung
         Dim neueWeiterbildung As New Weiterbildung
@@ -130,15 +129,13 @@
         neueWeiterbildung.Thema = pstrThema
 
         'WeiterbildungsID generieren
-        weiterId += 1
-        'Verzweigung für Ausgabe
-        If weiterId < 10 Then
-            neueWeiterbildung.WeiterbildungsID = "00" & weiterId
-        ElseIf 10 <= weiterId < 100 Then
-            neueWeiterbildung.WeiterbildungsID = "0" & weiterId
-        Else
-            neueWeiterbildung.WeiterbildungsID = weiterId
-        End If
+        Dim weiterId As UInteger = 0
+        For Each weiterbildung In mlstWeiterbildungen
+            If weiterbildung.WeiterbildungsID > weiterId Then
+                weiterId = weiterbildung.WeiterbildungsID
+            End If
+        Next
+        neueWeiterbildung.WeiterbildungsID = weiterId + 1
 
         'Return als Weiterbildung
         Return neueWeiterbildung
@@ -165,9 +162,8 @@
         bearbWeiterbildung.Thema = strThema
         bearbWeiterbildung.Curriculum = strCurriculum
         bearbWeiterbildung.Teilnehmerkreis = strTeilnehmerkreis
-        'Rückgabewert
 
-        MessageBox.Show(strCurriculum + System.Environment.NewLine + bearbWeiterbildung.Curriculum)
+        'Rückgabewert
         Return bearbWeiterbildung
     End Function
 

@@ -2,12 +2,12 @@
 
     Dim anzumeldenderMitarbeiter As Mitarbeiter
 
-    Sub New(pstranzumeldenderMitarbeiter As Mitarbeiter)
+    Sub New(pstranzumeldenderMitarbeiter As String)
 
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
-        anzumeldenderMitarbeiter = pstranzumeldenderMitarbeiter
+        setUserContext(pstranzumeldenderMitarbeiter)
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
 
     End Sub
@@ -37,6 +37,14 @@
 
         'Anzeige der Begrüßung in einem Meldungsfenster
         MsgBox(strBegruessungMitarbeiter, MsgBoxStyle.OkOnly, "Willkommen")
+    End Sub
+
+    Public Sub setUserContext(strBenutzername As String)
+        For Each mitarbeiter As Mitarbeiter In Logic.ListeMitarbeiter
+            If strBenutzername.Equals(mitarbeiter.Benutzername) Then
+                anzumeldenderMitarbeiter = mitarbeiter
+            End If
+        Next
     End Sub
 
     ''' <summary>
@@ -154,8 +162,14 @@
         Me.Close()
     End Sub
 
-    'Integer Index deklarieren
-    Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
+    Private lastIndex As Integer
+    Public Function GetListViewIndex() As Integer
+        If lstviewWeiterbildungenM.SelectedIndices.Count <> 0 Then
+            lastIndex = lstviewWeiterbildungenM.SelectedItems(0).Text
+        End If
+        MessageBox.Show(lastIndex)
+        Return lastIndex
+    End Function
 
     ''' <summary>
     ''' Klick auf Öffnen bzw. Bearbeiten öffnet den aktuell in der Tabelle ausgewählten Benutzer in einem Detaildialog.
@@ -167,11 +181,8 @@
         Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
         Dim dlg As frmWeiterbildungsfensterMitarb  ' Detaildialog zum Anzeigen der Weiterbildung
 
-        'aus der ausgewählten Zeile im Dialog die ID der Weiterbildung auslesen
-        intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
-
         'Element an der Position der Liste, die der ID entspricht ermitteln
-        weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
+        weiterbil = Logic.mlstWeiterbildungen.Item(GetListViewIndex())
 
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
@@ -223,10 +234,6 @@
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         Dim weiterbil As Weiterbildung 'Deklaration der zu löschene Weiterbildung und Index, die außer der Funktion deklariert wird.
 
-
-        ' aus der ausgeählten Zeile im Dialog die ID der Weiterbildung auslesen
-        intIndex = Me.lstviewWeiterbildungenM.SelectedItems(0).Text
-
         'Messagebox beim Löschen
         Dim mbrResult As MsgBoxResult
         'Verzweigung des Msgbox
@@ -240,7 +247,7 @@
 
         'Weiterbildung löschen
         'aus Liste aller Weiterbildungen entfernen
-        Logic.mlstWeiterbildungen.RemoveAt(intIndex)
+        Logic.mlstWeiterbildungen.RemoveAt(GetListViewIndex())
 
         'Fensterinhalt aktualisieren, so dass Tabelle die gelöschte Weiterbildung nicht mehr zeigt
         anzeigen()

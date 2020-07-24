@@ -4,11 +4,11 @@
 Public Class Weiterbildung
 
     'Attribiute
-    Public mstrWeiterbildungsID As String
-    Public mstrBezeichnung As String
-    Public mstrThema As String
-    Public mstrCurriculum As String
-    Public mstrTeilnehmerkreis As String
+    Private mstrWeiterbildungsID As UInteger
+    Private mstrBezeichnung As String
+    Private mstrThema As String
+    Private mstrCurriculum As String
+    Private mstrTeilnehmerkreis As String
     'Public mlstKurs As List(Of Kurs)
 
     'Konstruktor
@@ -33,11 +33,11 @@ Public Class Weiterbildung
     End Sub
 
 
-    Public Property WeiterbildungsID As String
+    Public Property WeiterbildungsID As UInteger
         Get
             Return mstrWeiterbildungsID
         End Get
-        Set(value As String)
+        Set(value As UInteger)
             mstrWeiterbildungsID = value
         End Set
     End Property
@@ -75,7 +75,7 @@ Public Class Weiterbildung
             Return mstrTeilnehmerkreis
         End Get
         Set(value As String)
-            mstrCurriculum = value
+            mstrTeilnehmerkreis = value
         End Set
     End Property
 
