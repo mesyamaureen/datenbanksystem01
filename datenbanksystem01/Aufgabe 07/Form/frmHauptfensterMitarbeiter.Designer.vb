@@ -88,7 +88,7 @@ Partial Class frmHauptfensterMitarbeiter
         Me.btnKundenkonto.Name = "btnKundenkonto"
         Me.btnKundenkonto.Size = New System.Drawing.Size(95, 29)
         Me.btnKundenkonto.TabIndex = 2
-        Me.btnKundenkonto.Text = "Kundenkonto"
+        Me.btnKundenkonto.Text = "Kundenkonten"
         Me.btnKundenkonto.UseVisualStyleBackColor = True
         '
         'btnBuchungenM
