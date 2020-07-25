@@ -105,6 +105,14 @@
         Return aryKurse
     End Function
 
+    Public Function addKurs(pstrWeiterbildungsID As UInteger, pKurs As Kurs)
+        For Each weiterbil As Weiterbildung In ListeWeiterbildungen
+            If weiterbil.WeiterbildungsID = pstrWeiterbildungsID Then
+                weiterbil.lstKurs.Add(pKurs)
+            End If
+        Next
+    End Function
+
     Public Function changeKurs(strKundenID As String, strOrt As String, datZeitpunkt As Date, decPreis As Decimal, bearbKurs As Kurs) As Boolean 'strKundenId ????
         'Initialisierung der Parameter
         bearbKurs.Ort = strOrt

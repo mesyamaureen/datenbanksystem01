@@ -86,7 +86,7 @@
 
         mlstKurs = New List(Of Kurs) 'From
         '{New Kurs(#07/30/2020 01:30:00 PM#, "Raum20", True, 4000, False), New Kurs(#08/21/2020 08:00:00 AM #, "Raum12", True, 1500, False)}
-        Dim kurs01, kurs02, kurs03, kurs04, kurs05, kurs06 As Kurs
+        Dim kurs01, kurs02, kurs03, kurs04, kurs05, kurs06, kurs07, kurs08 As Kurs
 
         'Kurse initialisieren ohne Parameter
         kurs01 = New Kurs()
@@ -102,6 +102,8 @@
         kurs04 = New Kurs(#12/12/2020#, "Hamburg", True, 1200, False)
         kurs05 = New Kurs(#11/14/2020#, "Stuttgart", True, 800, False)
         kurs06 = New Kurs(#10/21/2020#, "Berlin", True, 1800, False)
+        kurs07 = New Kurs(#10/24/2020#, "Berlin", True, 1200, False)
+        kurs08 = New Kurs(#11/05/2020#, "Stuttgart", True, 800, False)
 
         'KursID
         kurs01.KursID = "1"
@@ -110,6 +112,8 @@
         kurs04.KursID = "4"
         kurs05.KursID = "5"
         kurs06.KursID = "6"
+        kurs07.KursID = "7"
+        kurs08.KursID = "8"
 
         'Kurse zur Liste hinzufügen
         mlstKurs.Add(kurs01)
@@ -118,19 +122,12 @@
         mlstKurs.Add(kurs04)
         mlstKurs.Add(kurs05)
         mlstKurs.Add(kurs06)
-
-        'intIndex Anzahl
-        kurs01 = mlstKurs.Item(0)
-        kurs02 = mlstKurs.Item(1)
-        kurs03 = mlstKurs.Item(2)
-        kurs04 = mlstKurs.Item(3)
-        kurs05 = mlstKurs.Item(4)
-        kurs06 = mlstKurs.Item(5)
+        mlstKurs.Add(kurs07)
+        mlstKurs.Add(kurs08)
 
 
-        'Für Nina: Wäre es okay, nur die Beispieldaten für Weiterbildungen & Kurse wie unten benutzen?
-        mlstWeiterbildungen = New List(Of Weiterbildung) ' From {
-        'New Weiterbildung("Agil im Arbeitsalltag", "Agiles Projektmanagement", "1. X, 2. Y, 3. Z ", "Führungskräfte von agilen Teams")}
+        'Deklaration der Liste von Weiterbildung
+        mlstWeiterbildungen = New List(Of Weiterbildung)
 
 
         'Weiterbildungen deklarieren
@@ -147,38 +144,39 @@
         agiles.Thema = "Projekt-, Prozess- und Changemanagement"
         agiles.Teilnehmerkreis = "Projektmanager und Projektleiter sowie Projektcontroller, -assistenten,
                                  -mitarbeiter und jeder, der seine Fähigkeiten während der Projektarbeit effizienter gestalten möchte."
+        agiles.lstKurs.Add(kurs01)
+        agiles.lstKurs.Add(kurs04)
 
         ' Weiterbildungen initialisieren mit Parameter
         scrum = New Weiterbildung("SCRUM", "Projekt-, Prozess- und Changemanagement", "1) Scrum - Herkunft und Entwicklung
                                                                                        2) Die Scrum Philosophie
                                                                                        3) Die Agile Phase", "Dieser Workshop richtet sich an alle, die in ihrem Unternehmen
-                                  die mögliche Umstellung auf agiles Produkt- und Projektmanagement übernehmen sollen und dafür z.B. die Anforderungen liefern mussen")
+                                  die mögliche Umstellung auf agiles Produkt- und Projektmanagement übernehmen sollen und dafür z.B. die Anforderungen liefern mussen", kurs02)
         controlling = New Weiterbildung("Controlling Kompaktseminar", "Controlling", "1) Grundlagen des Controllings,
                                                                                       2) Controlling - Übersicht,
                                                                                       3) Kosten- und Erfolgsrechnung", "Fach- und Führungskräfte, Mitarbeiter der entsprechnenden
-                                    Fachabteilung, Finanz- und Budgetverantwortliche, Mitarbeiter des Rechnungswesens sowie der Buchhaltung")
+                                    Fachabteilung, Finanz- und Budgetverantwortliche, Mitarbeiter des Rechnungswesens sowie der Buchhaltung", kurs05)
         bmc = New Weiterbildung("Business Model Canvas", "Digital Business", "1) Wer sind meine Kunden und welche Bedürfnisse und Interessen haben Sie?
                                                                               2) Was biete ich an und welchen Mehrwert schaffe ich für meine Kunden?
                                                                               3) Wie sieht meine Einnahme- und Kostenstruktur aus?", "Unternehmer, Projektmanager oder Marketingmitarbeiter,
                                 die kreative Methoden ausprobieren wollen, um Ihre Projekte schneller und effizientre zu planen. Start-Ups, die Ihr Geschäftsmodell gestalten
-                                möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.")
+                                möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.", kurs07)
         'WeiterbildungsID
         agiles.WeiterbildungsID = "1"
         scrum.WeiterbildungsID = "2"
         controlling.WeiterbildungsID = "3"
         bmc.WeiterbildungsID = "4"
 
+        'Weitere Kurse zur Weiterbildung hinzufügen
+        weiterbildungscontroller.addKurs(2, kurs03)  'Kurs03 wird zur Witerbildung "Scrum" hinzugefügt
+        weiterbildungscontroller.addKurs(3, kurs06)
+        weiterbildungscontroller.addKurs(4, kurs08)
+
         'Weiterbildungen zur Liste hinzufügen
         mlstWeiterbildungen.Add(agiles)
         mlstWeiterbildungen.Add(scrum)
         mlstWeiterbildungen.Add(controlling)
         mlstWeiterbildungen.Add(bmc)
-
-        'intIndexAnzahl
-        'agiles = mlstWeiterbildungen.Item(0)
-        'scrum = mlstWeiterbildungen.Item(1)
-        'controlling = mlstWeiterbildungen.Item(2)
-        'bmc = mlstWeiterbildungen.Item(3)
 
         'Buchung Datenbank
         mlstBuchung = New List(Of Buchung) From {

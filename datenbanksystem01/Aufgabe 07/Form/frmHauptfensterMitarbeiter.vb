@@ -232,8 +232,6 @@
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
-        Dim weiterbil As Weiterbildung 'Deklaration der zu löschene Weiterbildung und Index, die außer der Funktion deklariert wird.
-
         'Messagebox beim Löschen
         Dim mbrResult As MsgBoxResult
         'Verzweigung des Msgbox

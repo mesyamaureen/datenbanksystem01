@@ -63,7 +63,7 @@ Partial Class dlgNeuerKurs
         'lblDatum
         '
         Me.lblDatum.AutoSize = True
-        Me.lblDatum.Location = New System.Drawing.Point(28, 86)
+        Me.lblDatum.Location = New System.Drawing.Point(12, 86)
         Me.lblDatum.Name = "lblDatum"
         Me.lblDatum.Size = New System.Drawing.Size(74, 25)
         Me.lblDatum.TabIndex = 2
@@ -72,7 +72,7 @@ Partial Class dlgNeuerKurs
         'lblOrt
         '
         Me.lblOrt.AutoSize = True
-        Me.lblOrt.Location = New System.Drawing.Point(28, 148)
+        Me.lblOrt.Location = New System.Drawing.Point(13, 151)
         Me.lblOrt.Name = "lblOrt"
         Me.lblOrt.Size = New System.Drawing.Size(41, 25)
         Me.lblOrt.TabIndex = 3
@@ -81,7 +81,7 @@ Partial Class dlgNeuerKurs
         'bolVerfuegbarkeit
         '
         Me.bolVerfuegbarkeit.AutoSize = True
-        Me.bolVerfuegbarkeit.Location = New System.Drawing.Point(28, 211)
+        Me.bolVerfuegbarkeit.Location = New System.Drawing.Point(12, 215)
         Me.bolVerfuegbarkeit.Name = "bolVerfuegbarkeit"
         Me.bolVerfuegbarkeit.Size = New System.Drawing.Size(140, 25)
         Me.bolVerfuegbarkeit.TabIndex = 4
@@ -90,7 +90,7 @@ Partial Class dlgNeuerKurs
         'lblPreis
         '
         Me.lblPreis.AutoSize = True
-        Me.lblPreis.Location = New System.Drawing.Point(28, 277)
+        Me.lblPreis.Location = New System.Drawing.Point(13, 286)
         Me.lblPreis.Name = "lblPreis"
         Me.lblPreis.Size = New System.Drawing.Size(61, 25)
         Me.lblPreis.TabIndex = 5
@@ -98,30 +98,32 @@ Partial Class dlgNeuerKurs
         '
         'txtOrt
         '
-        Me.txtOrt.Location = New System.Drawing.Point(204, 148)
+        Me.txtOrt.Location = New System.Drawing.Point(195, 12)
+        Me.txtOrt.Multiline = True
         Me.txtOrt.Name = "txtOrt"
-        Me.txtOrt.Size = New System.Drawing.Size(379, 31)
+        Me.txtOrt.Size = New System.Drawing.Size(566, 36)
         Me.txtOrt.TabIndex = 7
         '
         'txtPreis
         '
-        Me.txtPreis.Location = New System.Drawing.Point(204, 269)
+        Me.txtPreis.Location = New System.Drawing.Point(194, 148)
+        Me.txtPreis.Multiline = True
         Me.txtPreis.Name = "txtPreis"
-        Me.txtPreis.Size = New System.Drawing.Size(154, 31)
+        Me.txtPreis.Size = New System.Drawing.Size(568, 39)
         Me.txtPreis.TabIndex = 9
         '
         'dtpKursDatum
         '
-        Me.dtpKursDatum.Location = New System.Drawing.Point(204, 86)
+        Me.dtpKursDatum.Location = New System.Drawing.Point(195, 86)
         Me.dtpKursDatum.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpKursDatum.Name = "dtpKursDatum"
-        Me.dtpKursDatum.Size = New System.Drawing.Size(379, 31)
+        Me.dtpKursDatum.Size = New System.Drawing.Size(566, 31)
         Me.dtpKursDatum.TabIndex = 10
         '
         'chkVerfuegbarYes
         '
         Me.chkVerfuegbarYes.AutoSize = True
-        Me.chkVerfuegbarYes.Location = New System.Drawing.Point(204, 211)
+        Me.chkVerfuegbarYes.Location = New System.Drawing.Point(194, 214)
         Me.chkVerfuegbarYes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.chkVerfuegbarYes.Name = "chkVerfuegbarYes"
         Me.chkVerfuegbarYes.Size = New System.Drawing.Size(73, 29)
@@ -132,7 +134,7 @@ Partial Class dlgNeuerKurs
         'chkVerfuegbarNein
         '
         Me.chkVerfuegbarNein.AutoSize = True
-        Me.chkVerfuegbarNein.Location = New System.Drawing.Point(345, 211)
+        Me.chkVerfuegbarNein.Location = New System.Drawing.Point(335, 214)
         Me.chkVerfuegbarNein.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.chkVerfuegbarNein.Name = "chkVerfuegbarNein"
         Me.chkVerfuegbarNein.Size = New System.Drawing.Size(88, 29)
@@ -143,7 +145,7 @@ Partial Class dlgNeuerKurs
         'lblAbgesagt
         '
         Me.lblAbgesagt.AutoSize = True
-        Me.lblAbgesagt.Location = New System.Drawing.Point(28, 348)
+        Me.lblAbgesagt.Location = New System.Drawing.Point(13, 352)
         Me.lblAbgesagt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAbgesagt.Name = "lblAbgesagt"
         Me.lblAbgesagt.Size = New System.Drawing.Size(103, 25)
@@ -153,7 +155,7 @@ Partial Class dlgNeuerKurs
         'chkAbgesagtNein
         '
         Me.chkAbgesagtNein.AutoSize = True
-        Me.chkAbgesagtNein.Location = New System.Drawing.Point(345, 348)
+        Me.chkAbgesagtNein.Location = New System.Drawing.Point(335, 352)
         Me.chkAbgesagtNein.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.chkAbgesagtNein.Name = "chkAbgesagtNein"
         Me.chkAbgesagtNein.Size = New System.Drawing.Size(88, 29)
@@ -164,7 +166,7 @@ Partial Class dlgNeuerKurs
         'chkAbgesagtJa
         '
         Me.chkAbgesagtJa.AutoSize = True
-        Me.chkAbgesagtJa.Location = New System.Drawing.Point(204, 348)
+        Me.chkAbgesagtJa.Location = New System.Drawing.Point(195, 351)
         Me.chkAbgesagtJa.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.chkAbgesagtJa.Name = "chkAbgesagtJa"
         Me.chkAbgesagtJa.Size = New System.Drawing.Size(73, 29)
@@ -174,15 +176,16 @@ Partial Class dlgNeuerKurs
         '
         'txtKursID
         '
-        Me.txtKursID.Location = New System.Drawing.Point(204, 17)
+        Me.txtKursID.Location = New System.Drawing.Point(194, 283)
+        Me.txtKursID.Multiline = True
         Me.txtKursID.Name = "txtKursID"
-        Me.txtKursID.Size = New System.Drawing.Size(379, 31)
+        Me.txtKursID.Size = New System.Drawing.Size(567, 39)
         Me.txtKursID.TabIndex = 17
         '
         'lblKursID
         '
         Me.lblKursID.AutoSize = True
-        Me.lblKursID.Location = New System.Drawing.Point(28, 17)
+        Me.lblKursID.Location = New System.Drawing.Point(13, 23)
         Me.lblKursID.Name = "lblKursID"
         Me.lblKursID.Size = New System.Drawing.Size(76, 25)
         Me.lblKursID.TabIndex = 16

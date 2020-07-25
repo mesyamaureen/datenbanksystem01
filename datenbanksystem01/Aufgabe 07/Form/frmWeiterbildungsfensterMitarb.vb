@@ -196,8 +196,10 @@ Public Class frmWeiterbildungsfensterMitarb
         If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
             ' Dialog mit positivem Ergebnis geschlossen
             neuerKurs = dlg.mneuerKurs
-            'Neue Weiterbildung zur Liste der Weiterbildung hinzufügen
+            'Neuer Kurs zur Liste des Kurses hinzufügen
             Logic.mlstKurs.Add(neuerKurs)
+            'Neuer Kurs zur Weiterbildung hinzufügen
+            mWeiterbController.addKurs(mBearbWeiterbildung.WeiterbildungsID, neuerKurs)
             ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigenKurs()
         End If
@@ -213,9 +215,6 @@ Public Class frmWeiterbildungsfensterMitarb
     Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
-        Dim kurs As Kurs 'Deklaration der zu löschenem Kurs und Index, die außer der Funktion deklariert wird.
-        Dim weiterbilController As WeiterbildungsController
-
         ' aus der ausgewählten Zeile im Dialog die ID der Weiterbildung auslesen
         intIndex = Me.lstviewKurseM.SelectedItems(0).Text
 
@@ -231,8 +230,17 @@ Public Class frmWeiterbildungsfensterMitarb
         End If
 
         'Kurs löschen
-        'aus Liste aller Kurse entfernen
-        Logic.mlstKurs.RemoveAt(intIndex)
+        'aus Liste aller Kurse der Weiterbildung entfernen
+        'Logic.mlstKurs.RemoveAt(intIndex)
+        mBearbWeiterbildung.lstKurs.RemoveAt(intIndex)
+
+        'Überprüfen, ob noch Kurse von der Weiterbildung vorhanden ist
+        If mBearbWeiterbildung.lstKurs.Count = 0 Then
+            'Wenn nichts vorhanden, wird die ganze Weiterbildung gelöscht
+            Logic.mlstWeiterbildungen.Remove(mBearbWeiterbildung)
+        Else
+            'Wenn es noch Kurse gibt, nichts passiert
+        End If
 
         'Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Kurs nicht mehr zeigt
         anzeigenKurs()
