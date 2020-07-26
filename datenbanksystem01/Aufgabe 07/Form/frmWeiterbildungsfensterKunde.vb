@@ -69,7 +69,6 @@
     Private Sub btnBuchen_Click(sender As Object, e As EventArgs) Handles btnBuchen.Click
         'Deklaration
         Dim buchenderKurs As Kurs
-        Dim frm As BuchungenKunde
 
         'aus der ausgewählten Zeile im Dialog die ID des Kurses auslesen
         lngIndex = Me.lstviewKurse.SelectedItems(0).Text
@@ -79,12 +78,11 @@
 
         'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
         'und zur Liste aller Buchungen hinzufügen
-        mBookingControl.ListeBuchungen.Add(mBookingControl.createBooking(buchenderKurs, buchenderKurs.Zeitpunkt, buchenderKurs.Preis, mWeiterbil))
+        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, buchenderKurs.Zeitpunkt, buchenderKurs.Preis, mWeiterbil)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
 
-        'Fenster vorbereiten
-        'frm = New BuchungenKunde(buchenderKurs)
-        'frm.Show()
-        'Rückgabewert Als Neue Buchung von Weiterbildungscontroller
+        'Meldungsfenster vorbereiten
+        MsgBox("Sie haben einen neuen Kurs zu Ihrer Buchungen hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
+
     End Sub
 
     Protected Sub aktivierenSchaltflächenKurs()

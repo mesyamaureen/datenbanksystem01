@@ -299,32 +299,6 @@
 
     End Function
 
-    'Weiterbildung
-    'Public Function createWeiterbildung(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String) As Weiterbildung
-
-    '    Return weiterbildungscontroller.createWeiterbildung(pstrBezeichnung, pstrThema, pstrCurriculum, pstrTeilnehmerkreis)
-
-    'End Function
-
-    'Public Function viewWeiterbildung(pstrWeiterbildungsID As String) As Array
-
-    '    Return weiterbildungscontroller.viewWeiterbildung(pstrWeiterbildungsID)
-
-    'End Function
-
-    'Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
-    '                                    bearbWeiterbildung As Weiterbildung) As Boolean
-
-    '    Return weiterbildungscontroller.changeWeiterbildung(strBezeichnung, strThema, strCurriculum, strTeilnehmerkreis, bearbWeiterbildung)
-
-    'End Function
-
-    'Public Function deleteWeiterbildung(strWeiterbildungID As String) As Boolean
-
-    '    Return weiterbildungscontroller.deleteWeiterbildung(strWeiterbildungID)
-
-    'End Function
-
     'BookingController
     Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal, pweiterbil As Weiterbildung) As Buchung
 
