@@ -2,6 +2,7 @@
     'Attribute
     Public mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
+    Public mBookingControl As BookingController
 
     Public Sub New()
 
@@ -51,6 +52,7 @@
         mWeiterbil.Curriculum = Me.rtxtboxSeminarbeschreibung.Text
         mWeiterbil.Teilnehmerkreis = Me.rtxtboxTeilnkreis.Text
         mWeiterbil.Thema = Me.rtxtboxSeminarinfo.Text
+        'mWeiterbil.LstKurs.Add(Me.lstviewKurse.Items)
         ' TODO: m... = Me.listview.Kurs ????
 
         'Bearbeitete Weiterbildung als Ergebnis zurückgeben
@@ -74,6 +76,10 @@
 
         'Element an der Position der Liste, die der ID entspricht ermitteln
         buchenderKurs = Logic.mlstKurs.Item(lngIndex)
+
+        'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
+        'und zur Liste aller Buchungen hinzufügen
+        mBookingControl.ListeBuchungen.Add(mBookingControl.createBooking(buchenderKurs, buchenderKurs.Zeitpunkt, buchenderKurs.Preis, mWeiterbil))
 
         'Fenster vorbereiten
         'frm = New BuchungenKunde(buchenderKurs)

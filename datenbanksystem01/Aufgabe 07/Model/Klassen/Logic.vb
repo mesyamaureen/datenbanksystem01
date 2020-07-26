@@ -326,9 +326,9 @@
     'End Function
 
     'BookingController
-    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal) As Buchung
+    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal, pweiterbil As Weiterbildung) As Buchung
 
-        Return bookingController.createBooking(pKurs, pdatDatum, pdecPreis)
+        Return bookingController.createBooking(pKurs, pdatDatum, pdecPreis, pweiterbil)
 
     End Function
 
