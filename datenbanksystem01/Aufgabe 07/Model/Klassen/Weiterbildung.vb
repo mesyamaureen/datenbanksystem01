@@ -28,6 +28,7 @@ Public Class Weiterbildung
         mstrThema = pstrThema
         mstrCurriculum = pstrCurriculum
         mstrTeilnehmerkreis = pstrTeilnehmerkreis
+        mlstKurs = New List(Of Kurs)
         mlstKurs.Add(pKurs)
     End Sub
 

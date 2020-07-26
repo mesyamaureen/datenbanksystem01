@@ -168,9 +168,12 @@
         bmc.WeiterbildungsID = "4"
 
         'Weitere Kurse zur Weiterbildung hinzufügen
-        weiterbildungscontroller.addKurs(2, kurs03)  'Kurs03 wird zur Witerbildung "Scrum" hinzugefügt
-        weiterbildungscontroller.addKurs(3, kurs06)
-        weiterbildungscontroller.addKurs(4, kurs08)
+        scrum.LstKurs.Add(kurs03)  'Kurs03 wird zur Witerbildung "Scrum" hinzugefügt
+        controlling.LstKurs.Add(kurs06)
+        bmc.LstKurs.Add(kurs08)
+        'weiterbildungscontroller.addKurs(2, kurs03)
+        'weiterbildungscontroller.addKurs(3, kurs06)
+        'weiterbildungscontroller.addKurs(4, kurs08)
 
         'Weiterbildungen zur Liste hinzufügen
         mlstWeiterbildungen.Add(agiles)
