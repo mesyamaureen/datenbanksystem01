@@ -10,6 +10,7 @@ Public Class Buchung
     Public mstrKundenID As String
     Public mstrKursID As String
     Public mstrWeiterbildungsBezeichnung As String
+    Private mstrOrtKurs As String
 
 
     'Konstruktor
@@ -18,16 +19,18 @@ Public Class Buchung
         mdecPreis = Nothing
         mdatDatum = Nothing
         mKurs = New Kurs
-
+        mstrWeiterbildungsBezeichnung = Nothing
+        mstrOrtKurs = Nothing
     End Sub
 
 
-    Sub New(pdecPreis As Decimal, pdatDatum As Date, plstKurse As List(Of Kurs))
+    Sub New(pKurs As Kurs, pdatDatum As Date, pWeiterbildungsbezeichnung As String, pdecPreis As Decimal, pstrOrtKurs As String) '
 
         mdecPreis = pdecPreis
         mdatDatum = pdatDatum
-        mKurs = New Kurs
-
+        mKurs = pKurs
+        mstrWeiterbildungsBezeichnung = pWeiterbildungsbezeichnung
+        mstrOrtKurs = pstrOrtKurs
     End Sub
 
 
@@ -88,6 +91,15 @@ Public Class Buchung
         End Get
         Set(value As String)
             mstrWeiterbildungsBezeichnung = value
+        End Set
+    End Property
+
+    Public Property OrtKurs As String
+        Get
+            Return mstrOrtKurs
+        End Get
+        Set(value As String)
+            mstrOrtKurs = value
         End Set
     End Property
 

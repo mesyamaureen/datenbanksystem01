@@ -171,9 +171,6 @@
         scrum.LstKurs.Add(kurs03)  'Kurs03 wird zur Witerbildung "Scrum" hinzugefügt
         controlling.LstKurs.Add(kurs06)
         bmc.LstKurs.Add(kurs08)
-        'weiterbildungscontroller.addKurs(2, kurs03)
-        'weiterbildungscontroller.addKurs(3, kurs06)
-        'weiterbildungscontroller.addKurs(4, kurs08)
 
         'Weiterbildungen zur Liste hinzufügen
         mlstWeiterbildungen.Add(agiles)
@@ -182,9 +179,27 @@
         mlstWeiterbildungen.Add(bmc)
 
         'Buchung Datenbank
-        mlstBuchung = New List(Of Buchung) From {
-        New Buchung(1200, #07/21/2020#, mlstKurs)}
+        mlstBuchung = New List(Of Buchung) 'From {
+        'New Buchung(1200, #07/21/2020#, mlstKurs)}
+        'Buchungen deklarieren
+        Dim buchung01, buchung02 As Buchung
+        'Buchung initialisieren ohne Parameter
+        buchung01 = New Buchung()
+        buchung01.Kurse = kurs01
+        buchung01.Weiterbildung = agiles.Bezeichnung
+        buchung01.Preis = kurs01.Preis
+        buchung01.OrtKurs = kurs01.Ort
+        'Buchung initialisieren mit Parameter
+        buchung02 = New Buchung(kurs03, kurs03.Zeitpunkt, scrum.Bezeichnung, kurs03.Preis, kurs03.Ort)
+        'Buchung ID
+        buchung01.BuchungsID = "1"
+        buchung02.BuchungsID = "2"
+        'Buchung zur Liste hinzufügen
+        mlstBuchung.Add(buchung01)
+        mlstBuchung.Add(buchung02)
 
+
+        'Benutzer
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
         'BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
