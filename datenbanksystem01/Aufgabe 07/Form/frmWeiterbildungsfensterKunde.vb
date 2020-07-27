@@ -68,17 +68,19 @@
     ''' <param name="e"></param>
     Private Sub btnBuchen_Click(sender As Object, e As EventArgs) Handles btnBuchen.Click
         'Deklaration
-        Dim buchenderKurs As Kurs
+        Dim buchenderKurs = New Kurs()
 
-        'aus der ausgewählten Zeile im Dialog die ID des Kurses auslesen
-        lngIndex = Me.lstviewKurse.SelectedItems(0).Text
-
-        'Element an der Position der Liste, die der ID entspricht ermitteln
-        buchenderKurs = Logic.mlstKurs.Item(lngIndex)
+        'Kurs Objekt aus Liste suchen
+        For Each kurs As Kurs In Logic.ListeKurse
+            If kurs.KursID = Convert.ToUInt32(Me.lstviewKurse.SelectedItems(0).SubItems(1).Text) Then
+                buchenderKurs = kurs
+                Exit For
+            End If
+        Next
 
         'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
         'und zur Liste aller Buchungen hinzufügen
-        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, buchenderKurs.Zeitpunkt, buchenderKurs.Preis, mWeiterbil)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
+        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, mWeiterbil)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
 
         'Meldungsfenster vorbereiten
         MsgBox("Sie haben einen neuen Kurs zu Ihrer Buchungen hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
@@ -86,17 +88,12 @@
     End Sub
 
     Protected Sub aktivierenSchaltflächenKurs()
-        'Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer
-
-        'Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lstviewKurse.SelectedItems.Count
-
         'Schaltfläche zurücksetzen
-        Me.btnBuchen.Enabled = False
+        'Me.btnBuchen.Enabled = False
+        'braucht nicht zurückgesetzt werden, da default
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
+        If Me.lstviewKurse.SelectedItems.Count = 1 Then
             Me.btnBuchen.Enabled = True
         Else
             Me.btnBuchen.Enabled = False
@@ -181,6 +178,10 @@
         'alle anzeigen Funktion aufrufen
         anzeigen()
         anzeigenKurs()
+        aktivierenSchaltflächenKurs()
+    End Sub
+
+    Private Sub lstviewKurse_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKurse.SelectedIndexChanged
         aktivierenSchaltflächenKurs()
     End Sub
 

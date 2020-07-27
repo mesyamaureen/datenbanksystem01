@@ -164,7 +164,7 @@
         If lstviewWeiterbildungenM.SelectedIndices.Count <> 0 Then
             lastIndex = lstviewWeiterbildungenM.SelectedItems(0).Text
         End If
-        MessageBox.Show(lastIndex)
+
         Return lastIndex
     End Function
 
@@ -182,7 +182,7 @@
         weiterbil = Logic.mlstWeiterbildungen.Item(GetListViewIndex())
 
         'Fenster vorbereiten
-        dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
+        dlg = New frmWeiterbildungsfensterMitarb(weiterbil, GetListViewIndex())
         dlg.ShowDialog()
 
         'Auswertung des Dialogergebnisses
@@ -242,7 +242,14 @@
 
         'Weiterbildung löschen
         'aus Liste aller Weiterbildungen entfernen
-        Logic.mlstWeiterbildungen.RemoveAt(GetListViewIndex())
+        For Each weiterbildung As Weiterbildung In mlstWeiterbildungen
+            If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungenM.SelectedItems(0).SubItems(1).Text) Then
+                Logic.mlstWeiterbildungen.Remove(weiterbildung)
+                Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
+                Exit For
+            End If
+        Next
+
 
         'Fensterinhalt aktualisieren, so dass Tabelle die gelöschte Weiterbildung nicht mehr zeigt
         anzeigen()

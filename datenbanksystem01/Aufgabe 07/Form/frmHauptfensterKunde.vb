@@ -143,14 +143,17 @@
     ''' <param name="e"></param>
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
         'Deklaration
-        Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
+        Dim weiterbil = New Weiterbildung()  ' Zu bearbeitener Weiterbildung
         Dim dlg As frmWeiterbildungsfensterKunde  ' Detaildialog zum Anzeigen der Weiterbildung
 
-        'aus der ausgewählten Zeile im Dialog die ID des Urlaubsantrags auslesen
-        intIndex = Me.lstviewWeiterbildungKunde.SelectedItems(0).Text
-
-        'Element an der Position der Liste, die der ID entspricht ermitteln
+        'Weiterbildung aus Liste suchen
         weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
+        For Each weiterbildung In Logic.ListeWeiterbildung
+            If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungKunde.SelectedItems(0).SubItems(1).Text) Then
+                weiterbil = weiterbildung
+                Exit For
+            End If
+        Next
 
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterKunde(weiterbil)
@@ -189,9 +192,15 @@
 
     Private Sub btnKonto_Click(sender As Object, e As EventArgs) Handles btnKonto.Click
         Dim dlg As frmKundeKonto
-        dlg = New frmKundeKonto()
+        dlg = New frmKundeKonto(angemeldeterKunde)
         dlg.ShowDialog()
     End Sub
 
-
+    Private Sub lstviewWeiterbildungKunde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungKunde.SelectedIndexChanged
+        If lstviewWeiterbildungKunde.SelectedItems.Count = 1 Then
+            btnOeffnen.Enabled = True
+        Else
+            btnOeffnen.Enabled = False
+        End If
+    End Sub
 End Class

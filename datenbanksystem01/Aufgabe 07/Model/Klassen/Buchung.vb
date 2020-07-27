@@ -3,68 +3,37 @@
 <System.Serializable()>
 Public Class Buchung
 
-    Private mstrBuchungsID As String
-    Private mdecPreis As Decimal
-    Private mdatDatum As Date
+    Private muintBuchungsID As UInteger
     Private mKurs As Kurs
-    Private mstrKundenID As String
-    Private mstrKursID As String
-    Public mstrWeiterbildungsBezeichnung As String
-    Private mstrOrtKurs As String
+    Private mbenTeilnehmer As Benutzer
 
 
     'Konstruktor
 
     Sub New()
-        mdecPreis = Nothing
-        mdatDatum = Nothing
         mKurs = New Kurs
-        mstrWeiterbildungsBezeichnung = Nothing
-        mstrOrtKurs = Nothing
+        mbenTeilnehmer = New Benutzer
     End Sub
 
 
-    Sub New(pKurs As Kurs, pdatDatum As Date, pWeiterbildungsbezeichnung As String, pdecPreis As Decimal, pstrOrtKurs As String) '
-
-        mdecPreis = pdecPreis
-        mdatDatum = pdatDatum
+    Sub New(pKurs As Kurs, pintBuchungsID As UInteger, pbenTeilnehmer As Benutzer) '
+        muintBuchungsID = pintBuchungsID
         mKurs = pKurs
-        mstrWeiterbildungsBezeichnung = pWeiterbildungsbezeichnung
-        mstrOrtKurs = pstrOrtKurs
+        mbenTeilnehmer = pbenTeilnehmer
     End Sub
 
 
     'Properties
-    Public Property BuchungsID As String
+    Public Property BuchungsID As UInteger
         Get
-            Return mstrBuchungsID
+            Return muintBuchungsID
         End Get
-        Set(value As String)
-            mstrBuchungsID = value
+        Set(value As UInteger)
+            muintBuchungsID = value
         End Set
     End Property
 
-    Public Property Preis As Decimal
-        Get
-            Return mdecPreis
-        End Get
-        Set(value As Decimal)
-            If mdecPreis > 0 Then
-                mdecPreis = value
-            End If
-        End Set
-    End Property
-
-    Public Property BuchungsDatum As Date
-        Get
-            Return mdatDatum
-        End Get
-        Set(value As Date)
-            mdatDatum = value
-        End Set
-    End Property
-
-    Public Property Kurse As Kurs
+    Public Property gebuchterKurs As Kurs
         Get
             Return mKurs
         End Get
@@ -73,33 +42,12 @@ Public Class Buchung
         End Set
     End Property
 
-    Public ReadOnly Property KundenID As String
+    Public Property Teilnehmer As Benutzer
         Get
-            Return mstrKundenID
+            Return mbenTeilnehmer
         End Get
-    End Property
-
-    Public ReadOnly Property KursID As String
-        Get
-            Return mstrKursID
-        End Get
-    End Property
-
-    Public Property Weiterbildung As String
-        Get
-            Return mstrWeiterbildungsBezeichnung
-        End Get
-        Set(value As String)
-            mstrWeiterbildungsBezeichnung = value
-        End Set
-    End Property
-
-    Public Property OrtKurs As String
-        Get
-            Return mstrOrtKurs
-        End Get
-        Set(value As String)
-            mstrOrtKurs = value
+        Set(value As Benutzer)
+            mbenTeilnehmer = value
         End Set
     End Property
 
@@ -112,11 +60,5 @@ Public Class Buchung
         Return lstBuchung
 
     End Function
-
-    Public Shared Sub speichernAlle(pstrBuchung As List(Of Buchung))
-
-        BuchungsDAO.speichernBuchung(pstrBuchung)
-
-    End Sub
 
 End Class

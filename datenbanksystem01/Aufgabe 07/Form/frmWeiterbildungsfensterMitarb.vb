@@ -9,6 +9,7 @@ Public Class frmWeiterbildungsfensterMitarb
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
     Public mWeiterbController As WeiterbildungsController 'Weiterbildungscontroller aufrufen
     Public frmHFM As frmHauptfensterMitarbeiter
+    Private index As UInteger
 
     Public Sub New()
 
@@ -21,13 +22,14 @@ Public Class frmWeiterbildungsfensterMitarb
 
     End Sub
 
-    Public Sub New(pWeiterbil As Weiterbildung)
+    Public Sub New(pWeiterbil As Weiterbildung, tableIndex As UInteger)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = pWeiterbil
+        index = tableIndex
         mWeiterbController = New WeiterbildungsController
     End Sub
 
@@ -91,7 +93,7 @@ Public Class frmWeiterbildungsfensterMitarb
         mBearbWeiterbildung = mWeiterbController.changeWeiterbildung(titel, thema, curri, teilkreis, mBearbWeiterbildung)
 
         'Passende bearbeitende Weiterbildung in Datenbank
-        Logic.mlstWeiterbildungen.Item(frmHauptfensterMitarbeiter.GetListViewIndex()) = mBearbWeiterbildung
+        Logic.mlstWeiterbildungen.Item(index) = mBearbWeiterbildung
     End Sub
 
 

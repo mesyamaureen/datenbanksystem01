@@ -60,7 +60,7 @@ Partial Class frmHauptfensterKunde
         'btnHilfe
         '
         Me.btnHilfe.Location = New System.Drawing.Point(49, 318)
-        Me.btnHilfe.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnHilfe.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHilfe.Name = "btnHilfe"
         Me.btnHilfe.Size = New System.Drawing.Size(95, 29)
         Me.btnHilfe.TabIndex = 3
@@ -70,7 +70,7 @@ Partial Class frmHauptfensterKunde
         'btnKonto
         '
         Me.btnKonto.Location = New System.Drawing.Point(49, 232)
-        Me.btnKonto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnKonto.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKonto.Name = "btnKonto"
         Me.btnKonto.Size = New System.Drawing.Size(95, 29)
         Me.btnKonto.TabIndex = 2
@@ -80,7 +80,7 @@ Partial Class frmHauptfensterKunde
         'btnBuchungen
         '
         Me.btnBuchungen.Location = New System.Drawing.Point(49, 140)
-        Me.btnBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuchungen.Name = "btnBuchungen"
         Me.btnBuchungen.Size = New System.Drawing.Size(95, 29)
         Me.btnBuchungen.TabIndex = 1
@@ -90,7 +90,7 @@ Partial Class frmHauptfensterKunde
         'btnWeiterbildungen
         '
         Me.btnWeiterbildungen.Location = New System.Drawing.Point(49, 55)
-        Me.btnWeiterbildungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnWeiterbildungen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnWeiterbildungen.Name = "btnWeiterbildungen"
         Me.btnWeiterbildungen.Size = New System.Drawing.Size(95, 29)
         Me.btnWeiterbildungen.TabIndex = 0
@@ -104,9 +104,9 @@ Partial Class frmHauptfensterKunde
         Me.grpboxWeiterbildung.Controls.Add(Me.lblSuchen)
         Me.grpboxWeiterbildung.Controls.Add(Me.txtboxSuche)
         Me.grpboxWeiterbildung.Location = New System.Drawing.Point(230, 6)
-        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxWeiterbildung.Margin = New System.Windows.Forms.Padding(2)
         Me.grpboxWeiterbildung.Name = "grpboxWeiterbildung"
-        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxWeiterbildung.Padding = New System.Windows.Forms.Padding(2)
         Me.grpboxWeiterbildung.Size = New System.Drawing.Size(602, 478)
         Me.grpboxWeiterbildung.TabIndex = 2
         Me.grpboxWeiterbildung.TabStop = False
@@ -114,8 +114,9 @@ Partial Class frmHauptfensterKunde
         '
         'btnOeffnen
         '
+        Me.btnOeffnen.Enabled = False
         Me.btnOeffnen.Location = New System.Drawing.Point(503, 433)
-        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOeffnen.Name = "btnOeffnen"
         Me.btnOeffnen.Size = New System.Drawing.Size(95, 29)
         Me.btnOeffnen.TabIndex = 3
@@ -129,7 +130,7 @@ Partial Class frmHauptfensterKunde
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
         Me.lstviewWeiterbildungKunde.Location = New System.Drawing.Point(5, 42)
-        Me.lstviewWeiterbildungKunde.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstviewWeiterbildungKunde.Margin = New System.Windows.Forms.Padding(2)
         Me.lstviewWeiterbildungKunde.MultiSelect = False
         Me.lstviewWeiterbildungKunde.Name = "lstviewWeiterbildungKunde"
         Me.lstviewWeiterbildungKunde.Size = New System.Drawing.Size(594, 376)
@@ -171,7 +172,7 @@ Partial Class frmHauptfensterKunde
         'txtboxSuche
         '
         Me.txtboxSuche.Location = New System.Drawing.Point(400, 12)
-        Me.txtboxSuche.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtboxSuche.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxSuche.Multiline = True
         Me.txtboxSuche.Name = "txtboxSuche"
         Me.txtboxSuche.Size = New System.Drawing.Size(200, 21)
@@ -191,7 +192,7 @@ Partial Class frmHauptfensterKunde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(770, 439)
+        Me.ClientSize = New System.Drawing.Size(844, 537)
         Me.Controls.Add(Me.btnBeenden)
         Me.Controls.Add(Me.grpboxWeiterbildung)
         Me.Controls.Add(Me.grpboxMenü)

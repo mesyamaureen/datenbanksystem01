@@ -77,15 +77,14 @@
         neuerKurs.Preis = pdecPreis
 
         'KursID generieren
-        kurseId += 1
-        'Verzweigung für Ausgabe
-        If kurseId < 10 Then
-            neuerKurs.KursID = "K00" & kurseId
-        ElseIf 10 <= kurseId < 100 Then
-            neuerKurs.KursID = "K0" & kurseId
-        Else
-            neuerKurs.KursID = kurseId
-        End If
+        Dim weiterId As UInteger = 0
+        For Each kurs In Logic.ListeKurse
+            If kurs.KursID > weiterId Then
+                weiterId = kurs.KursID
+            End If
+        Next
+        neuerKurs.KursID = weiterId + 1
+
         'Return als Neuer Kurs
         Return neuerKurs
     End Function
@@ -138,7 +137,7 @@
 
         'WeiterbildungsID generieren
         Dim weiterId As UInteger = 0
-        For Each weiterbildung In mlstWeiterbildungen
+        For Each weiterbildung In Logic.ListeWeiterbildung
             If weiterbildung.WeiterbildungsID > weiterId Then
                 weiterId = weiterbildung.WeiterbildungsID
             End If

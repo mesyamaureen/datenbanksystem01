@@ -51,10 +51,10 @@ Partial Class frmWeiterbildungsfensterKunde
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1050, 659)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(525, 343)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(190, 56)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(95, 29)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
@@ -65,19 +65,21 @@ Partial Class frmWeiterbildungsfensterKunde
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage2)
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage3)
         Me.tabctrlWeiterb.Controls.Add(Me.TabPage4)
-        Me.tabctrlWeiterb.Location = New System.Drawing.Point(12, 114)
+        Me.tabctrlWeiterb.Location = New System.Drawing.Point(6, 59)
+        Me.tabctrlWeiterb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabctrlWeiterb.Name = "tabctrlWeiterb"
         Me.tabctrlWeiterb.SelectedIndex = 0
-        Me.tabctrlWeiterb.Size = New System.Drawing.Size(1228, 528)
+        Me.tabctrlWeiterb.Size = New System.Drawing.Size(614, 275)
         Me.tabctrlWeiterb.TabIndex = 1
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.rtxtboxSeminarbeschreibung)
-        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1212, 481)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Size = New System.Drawing.Size(606, 249)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Seminarbeschreibung"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -86,19 +88,21 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         Me.rtxtboxSeminarbeschreibung.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtxtboxSeminarbeschreibung.Enabled = False
-        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarbeschreibung.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxSeminarbeschreibung.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxSeminarbeschreibung.Name = "rtxtboxSeminarbeschreibung"
-        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(1206, 475)
+        Me.rtxtboxSeminarbeschreibung.Size = New System.Drawing.Size(602, 245)
         Me.rtxtboxSeminarbeschreibung.TabIndex = 0
         Me.rtxtboxSeminarbeschreibung.Text = ""
         '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.rtxtboxTeilnkreis)
-        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1212, 481)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(606, 249)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Teilnehmerkreis"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -107,19 +111,21 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         Me.rtxtboxTeilnkreis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtxtboxTeilnkreis.Enabled = False
-        Me.rtxtboxTeilnkreis.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxTeilnkreis.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxTeilnkreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxTeilnkreis.Name = "rtxtboxTeilnkreis"
-        Me.rtxtboxTeilnkreis.Size = New System.Drawing.Size(1206, 475)
+        Me.rtxtboxTeilnkreis.Size = New System.Drawing.Size(602, 245)
         Me.rtxtboxTeilnkreis.TabIndex = 0
         Me.rtxtboxTeilnkreis.Text = ""
         '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.rtxtboxSeminarinfo)
-        Me.TabPage3.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1212, 481)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Size = New System.Drawing.Size(606, 249)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Seminarinformationen"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -128,9 +134,10 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         Me.rtxtboxSeminarinfo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtxtboxSeminarinfo.Enabled = False
-        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(3, 3)
+        Me.rtxtboxSeminarinfo.Location = New System.Drawing.Point(2, 2)
+        Me.rtxtboxSeminarinfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxtboxSeminarinfo.Name = "rtxtboxSeminarinfo"
-        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(1206, 475)
+        Me.rtxtboxSeminarinfo.Size = New System.Drawing.Size(602, 245)
         Me.rtxtboxSeminarinfo.TabIndex = 0
         Me.rtxtboxSeminarinfo.Text = ""
         '
@@ -138,19 +145,21 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         Me.TabPage4.Controls.Add(Me.btnBuchen)
         Me.TabPage4.Controls.Add(Me.lstviewKurse)
-        Me.TabPage4.Location = New System.Drawing.Point(8, 39)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1212, 481)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Size = New System.Drawing.Size(606, 249)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Kurse"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'btnBuchen
         '
-        Me.btnBuchen.Location = New System.Drawing.Point(1030, 438)
+        Me.btnBuchen.Location = New System.Drawing.Point(515, 228)
+        Me.btnBuchen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBuchen.Name = "btnBuchen"
-        Me.btnBuchen.Size = New System.Drawing.Size(178, 36)
+        Me.btnBuchen.Size = New System.Drawing.Size(89, 19)
         Me.btnBuchen.TabIndex = 1
         Me.btnBuchen.Text = "Buchen"
         Me.btnBuchen.UseVisualStyleBackColor = True
@@ -162,10 +171,11 @@ Partial Class frmWeiterbildungsfensterKunde
         Me.lstviewKurse.FullRowSelect = True
         Me.lstviewKurse.GridLines = True
         Me.lstviewKurse.HideSelection = False
-        Me.lstviewKurse.Location = New System.Drawing.Point(3, 3)
+        Me.lstviewKurse.Location = New System.Drawing.Point(2, 2)
+        Me.lstviewKurse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.lstviewKurse.MultiSelect = False
         Me.lstviewKurse.Name = "lstviewKurse"
-        Me.lstviewKurse.Size = New System.Drawing.Size(1207, 418)
+        Me.lstviewKurse.Size = New System.Drawing.Size(606, 219)
         Me.lstviewKurse.TabIndex = 0
         Me.lstviewKurse.UseCompatibleStateImageBehavior = False
         Me.lstviewKurse.View = System.Windows.Forms.View.Details
@@ -200,34 +210,36 @@ Partial Class frmWeiterbildungsfensterKunde
         'lblSeminartitelWeiterb
         '
         Me.lblSeminartitelWeiterb.AutoSize = True
-        Me.lblSeminartitelWeiterb.Location = New System.Drawing.Point(15, 34)
+        Me.lblSeminartitelWeiterb.Location = New System.Drawing.Point(8, 18)
+        Me.lblSeminartitelWeiterb.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSeminartitelWeiterb.Name = "lblSeminartitelWeiterb"
-        Me.lblSeminartitelWeiterb.Size = New System.Drawing.Size(125, 25)
+        Me.lblSeminartitelWeiterb.Size = New System.Drawing.Size(61, 13)
         Me.lblSeminartitelWeiterb.TabIndex = 2
         Me.lblSeminartitelWeiterb.Text = "Seminartitel"
         '
         'txtboxSeminartitel
         '
         Me.txtboxSeminartitel.Enabled = False
-        Me.txtboxSeminartitel.Location = New System.Drawing.Point(158, 22)
+        Me.txtboxSeminartitel.Location = New System.Drawing.Point(79, 11)
+        Me.txtboxSeminartitel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtboxSeminartitel.Multiline = True
         Me.txtboxSeminartitel.Name = "txtboxSeminartitel"
         Me.txtboxSeminartitel.ReadOnly = True
-        Me.txtboxSeminartitel.Size = New System.Drawing.Size(538, 48)
+        Me.txtboxSeminartitel.Size = New System.Drawing.Size(271, 27)
         Me.txtboxSeminartitel.TabIndex = 3
         '
         'frmWeiterbildungsfensterKunde
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(1254, 730)
+        Me.ClientSize = New System.Drawing.Size(627, 380)
         Me.Controls.Add(Me.txtboxSeminartitel)
         Me.Controls.Add(Me.lblSeminartitelWeiterb)
         Me.Controls.Add(Me.tabctrlWeiterb)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "frmWeiterbildungsfensterKunde"
         Me.Text = "Weiterbildung time2-Akademie"
         Me.tabctrlWeiterb.ResumeLayout(False)

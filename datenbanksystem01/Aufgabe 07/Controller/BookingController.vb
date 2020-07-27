@@ -38,14 +38,13 @@
 
     'Funktionen
     Private buchungID As UInteger
-    Public Function createBooking(Kurs As Kurs, datDatum As Date, decPreis As Decimal, weiterbil As Weiterbildung) As Buchung
+    Public Function createBooking(mKurs As Kurs, pbenTeilnehmer As Benutzer) As Buchung
         'Deklaration neue Variable
         Dim neueBuchung As New Buchung
         'Initialisierung der Parameter
-        neueBuchung.Kurse = Kurs
-        neueBuchung.Preis = decPreis
-        neueBuchung.BuchungsDatum = datDatum
-        neueBuchung.mstrWeiterbildungsBezeichnung = weiterbil.Bezeichnung
+        neueBuchung.gebuchterKurs = mKurs
+        neueBuchung.BuchungsID =
+        neueBuchung.Teilnehmer = pbenTeilnehmer
         'BuchungID generieren
         buchungID += 1
         'Verzweigung für Ausgabe

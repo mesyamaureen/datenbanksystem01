@@ -13,6 +13,7 @@
         txtboxName.Text = aktuellerKunde.Name
         txtboxVorname.Text = aktuellerKunde.Vorname
         dtpGebDatKunde.Value = aktuellerKunde.Geburtsdatum
+        txtboxFirma.Text = aktuellerKunde.Firma
 
     End Sub
 
@@ -49,5 +50,9 @@
         aktuellerKunde.Passwort = Me.txtboxNeuesPasswort.Text
         aktuellerKunde.Name = Me.txtboxName.Text
         aktuellerKunde.Geburtsdatum = Me.dtpGebDatKunde.Value
+    End Sub
+
+    Private Sub frmKundeKonto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
