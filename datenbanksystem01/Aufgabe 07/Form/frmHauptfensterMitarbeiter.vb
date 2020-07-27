@@ -17,8 +17,6 @@
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
 
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-
     End Sub
 
     Private Sub frmHauptfensterMitarbeiter_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -111,7 +109,6 @@
     ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
     ''' </summary>
     ''' <remarks></remarks>
-
     Private Sub anzeigen()
         'Deklaration
         Dim weiterbil As Weiterbildung 'Weiterbildung

@@ -9,9 +9,9 @@
     Public mlstBuchung As List(Of Buchung)
     Public mlstKurs As List(Of Kurs)
     Public mlstWeiterbildungen As List(Of Weiterbildung)
-    Public userController As UserController
-    Public weiterbildungscontroller As WeiterbildungsController
-    Public bookingController As BookingController
+    Private userController As UserController
+    Private weiterbildungscontroller As WeiterbildungsController
+    Private bookingController As BookingController
 
     'init funktion
 

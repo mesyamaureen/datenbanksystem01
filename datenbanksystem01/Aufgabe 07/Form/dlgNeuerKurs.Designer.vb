@@ -44,18 +44,20 @@ Partial Class dlgNeuerKurs
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(633, 473)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(316, 246)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(129, 44)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(64, 23)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(482, 473)
+        Me.btnSpeichern.Location = New System.Drawing.Point(241, 246)
+        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(141, 44)
+        Me.btnSpeichern.Size = New System.Drawing.Size(70, 23)
         Me.btnSpeichern.TabIndex = 1
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -63,70 +65,77 @@ Partial Class dlgNeuerKurs
         'lblDatum
         '
         Me.lblDatum.AutoSize = True
-        Me.lblDatum.Location = New System.Drawing.Point(12, 86)
+        Me.lblDatum.Location = New System.Drawing.Point(6, 45)
+        Me.lblDatum.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDatum.Name = "lblDatum"
-        Me.lblDatum.Size = New System.Drawing.Size(74, 25)
+        Me.lblDatum.Size = New System.Drawing.Size(38, 13)
         Me.lblDatum.TabIndex = 2
         Me.lblDatum.Text = "Datum"
         '
         'lblOrt
         '
         Me.lblOrt.AutoSize = True
-        Me.lblOrt.Location = New System.Drawing.Point(13, 151)
+        Me.lblOrt.Location = New System.Drawing.Point(6, 79)
+        Me.lblOrt.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOrt.Name = "lblOrt"
-        Me.lblOrt.Size = New System.Drawing.Size(41, 25)
+        Me.lblOrt.Size = New System.Drawing.Size(21, 13)
         Me.lblOrt.TabIndex = 3
         Me.lblOrt.Text = "Ort"
         '
         'bolVerfuegbarkeit
         '
         Me.bolVerfuegbarkeit.AutoSize = True
-        Me.bolVerfuegbarkeit.Location = New System.Drawing.Point(12, 215)
+        Me.bolVerfuegbarkeit.Location = New System.Drawing.Point(6, 112)
+        Me.bolVerfuegbarkeit.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.bolVerfuegbarkeit.Name = "bolVerfuegbarkeit"
-        Me.bolVerfuegbarkeit.Size = New System.Drawing.Size(140, 25)
+        Me.bolVerfuegbarkeit.Size = New System.Drawing.Size(70, 13)
         Me.bolVerfuegbarkeit.TabIndex = 4
         Me.bolVerfuegbarkeit.Text = "Verfügbarkeit"
         '
         'lblPreis
         '
         Me.lblPreis.AutoSize = True
-        Me.lblPreis.Location = New System.Drawing.Point(13, 286)
+        Me.lblPreis.Location = New System.Drawing.Point(6, 149)
+        Me.lblPreis.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPreis.Name = "lblPreis"
-        Me.lblPreis.Size = New System.Drawing.Size(61, 25)
+        Me.lblPreis.Size = New System.Drawing.Size(30, 13)
         Me.lblPreis.TabIndex = 5
         Me.lblPreis.Text = "Preis"
         '
         'txtOrt
         '
-        Me.txtOrt.Location = New System.Drawing.Point(195, 12)
+        Me.txtOrt.Location = New System.Drawing.Point(98, 6)
+        Me.txtOrt.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtOrt.Multiline = True
         Me.txtOrt.Name = "txtOrt"
-        Me.txtOrt.Size = New System.Drawing.Size(566, 36)
+        Me.txtOrt.ReadOnly = True
+        Me.txtOrt.Size = New System.Drawing.Size(285, 21)
         Me.txtOrt.TabIndex = 7
         '
         'txtPreis
         '
-        Me.txtPreis.Location = New System.Drawing.Point(194, 148)
+        Me.txtPreis.Location = New System.Drawing.Point(97, 77)
+        Me.txtPreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPreis.Multiline = True
         Me.txtPreis.Name = "txtPreis"
-        Me.txtPreis.Size = New System.Drawing.Size(568, 39)
+        Me.txtPreis.Size = New System.Drawing.Size(286, 22)
         Me.txtPreis.TabIndex = 9
         '
         'dtpKursDatum
         '
-        Me.dtpKursDatum.Location = New System.Drawing.Point(195, 86)
-        Me.dtpKursDatum.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpKursDatum.Location = New System.Drawing.Point(98, 45)
+        Me.dtpKursDatum.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.dtpKursDatum.Name = "dtpKursDatum"
-        Me.dtpKursDatum.Size = New System.Drawing.Size(566, 31)
+        Me.dtpKursDatum.Size = New System.Drawing.Size(285, 20)
         Me.dtpKursDatum.TabIndex = 10
         '
         'chkVerfuegbarYes
         '
         Me.chkVerfuegbarYes.AutoSize = True
-        Me.chkVerfuegbarYes.Location = New System.Drawing.Point(194, 214)
-        Me.chkVerfuegbarYes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.chkVerfuegbarYes.Location = New System.Drawing.Point(97, 111)
+        Me.chkVerfuegbarYes.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.chkVerfuegbarYes.Name = "chkVerfuegbarYes"
-        Me.chkVerfuegbarYes.Size = New System.Drawing.Size(73, 29)
+        Me.chkVerfuegbarYes.Size = New System.Drawing.Size(40, 17)
         Me.chkVerfuegbarYes.TabIndex = 11
         Me.chkVerfuegbarYes.Text = "Ja "
         Me.chkVerfuegbarYes.UseVisualStyleBackColor = True
@@ -134,10 +143,10 @@ Partial Class dlgNeuerKurs
         'chkVerfuegbarNein
         '
         Me.chkVerfuegbarNein.AutoSize = True
-        Me.chkVerfuegbarNein.Location = New System.Drawing.Point(335, 214)
-        Me.chkVerfuegbarNein.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.chkVerfuegbarNein.Location = New System.Drawing.Point(168, 111)
+        Me.chkVerfuegbarNein.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.chkVerfuegbarNein.Name = "chkVerfuegbarNein"
-        Me.chkVerfuegbarNein.Size = New System.Drawing.Size(88, 29)
+        Me.chkVerfuegbarNein.Size = New System.Drawing.Size(48, 17)
         Me.chkVerfuegbarNein.TabIndex = 12
         Me.chkVerfuegbarNein.Text = "Nein"
         Me.chkVerfuegbarNein.UseVisualStyleBackColor = True
@@ -145,20 +154,20 @@ Partial Class dlgNeuerKurs
         'lblAbgesagt
         '
         Me.lblAbgesagt.AutoSize = True
-        Me.lblAbgesagt.Location = New System.Drawing.Point(13, 352)
-        Me.lblAbgesagt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAbgesagt.Location = New System.Drawing.Point(6, 183)
+        Me.lblAbgesagt.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAbgesagt.Name = "lblAbgesagt"
-        Me.lblAbgesagt.Size = New System.Drawing.Size(103, 25)
+        Me.lblAbgesagt.Size = New System.Drawing.Size(52, 13)
         Me.lblAbgesagt.TabIndex = 13
         Me.lblAbgesagt.Text = "Abgesagt"
         '
         'chkAbgesagtNein
         '
         Me.chkAbgesagtNein.AutoSize = True
-        Me.chkAbgesagtNein.Location = New System.Drawing.Point(335, 352)
-        Me.chkAbgesagtNein.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.chkAbgesagtNein.Location = New System.Drawing.Point(168, 183)
+        Me.chkAbgesagtNein.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.chkAbgesagtNein.Name = "chkAbgesagtNein"
-        Me.chkAbgesagtNein.Size = New System.Drawing.Size(88, 29)
+        Me.chkAbgesagtNein.Size = New System.Drawing.Size(48, 17)
         Me.chkAbgesagtNein.TabIndex = 15
         Me.chkAbgesagtNein.Text = "Nein"
         Me.chkAbgesagtNein.UseVisualStyleBackColor = True
@@ -166,38 +175,40 @@ Partial Class dlgNeuerKurs
         'chkAbgesagtJa
         '
         Me.chkAbgesagtJa.AutoSize = True
-        Me.chkAbgesagtJa.Location = New System.Drawing.Point(195, 351)
-        Me.chkAbgesagtJa.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.chkAbgesagtJa.Location = New System.Drawing.Point(98, 183)
+        Me.chkAbgesagtJa.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.chkAbgesagtJa.Name = "chkAbgesagtJa"
-        Me.chkAbgesagtJa.Size = New System.Drawing.Size(73, 29)
+        Me.chkAbgesagtJa.Size = New System.Drawing.Size(40, 17)
         Me.chkAbgesagtJa.TabIndex = 14
         Me.chkAbgesagtJa.Text = "Ja "
         Me.chkAbgesagtJa.UseVisualStyleBackColor = True
         '
         'txtKursID
         '
-        Me.txtKursID.Location = New System.Drawing.Point(194, 283)
+        Me.txtKursID.Location = New System.Drawing.Point(97, 147)
+        Me.txtKursID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtKursID.Multiline = True
         Me.txtKursID.Name = "txtKursID"
-        Me.txtKursID.Size = New System.Drawing.Size(567, 39)
+        Me.txtKursID.Size = New System.Drawing.Size(286, 22)
         Me.txtKursID.TabIndex = 17
         '
         'lblKursID
         '
         Me.lblKursID.AutoSize = True
-        Me.lblKursID.Location = New System.Drawing.Point(13, 23)
+        Me.lblKursID.Location = New System.Drawing.Point(6, 12)
+        Me.lblKursID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblKursID.Name = "lblKursID"
-        Me.lblKursID.Size = New System.Drawing.Size(76, 25)
+        Me.lblKursID.Size = New System.Drawing.Size(39, 13)
         Me.lblKursID.TabIndex = 16
         Me.lblKursID.Text = "KursID"
         '
         'dlgNeuerKurs
         '
         Me.AcceptButton = Me.btnSpeichern
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(774, 530)
+        Me.ClientSize = New System.Drawing.Size(387, 276)
         Me.Controls.Add(Me.txtKursID)
         Me.Controls.Add(Me.lblKursID)
         Me.Controls.Add(Me.chkAbgesagtNein)
@@ -215,6 +226,7 @@ Partial Class dlgNeuerKurs
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "dlgNeuerKurs"
         Me.Text = "Neuer Kurs"
         Me.ResumeLayout(False)

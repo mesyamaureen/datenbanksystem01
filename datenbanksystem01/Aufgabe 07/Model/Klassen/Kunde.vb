@@ -6,9 +6,9 @@ Public Class Kunde
 
 
     'Attribute
-    Public mstrKundenID As String
-    Public mstrFirma As String
-    Public mlstListeEigeneBuchungen As List(Of Buchung)
+    Private mstrKundenID As String
+    Private mstrFirma As String
+    Private mlstListeEigeneBuchungen As List(Of Buchung)
 
     'Konstruktoren
 
@@ -36,10 +36,13 @@ Public Class Kunde
         End Set
     End Property
 
-    Public ReadOnly Property KundenID
+    Public Property KundenID
         Get
             Return mstrKundenID
         End Get
+        Set(value)
+            mstrKundenID = value
+        End Set
     End Property
 
     Public Property EigeneBuchungen As List(Of Buchung)

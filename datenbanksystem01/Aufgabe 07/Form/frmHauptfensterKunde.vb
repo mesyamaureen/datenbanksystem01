@@ -1,5 +1,23 @@
 ﻿Public Class frmHauptfensterKunde
 
+    Dim angemeldeterKunde As Kunde
+
+    Sub New(pstrangemeldeterKunde As String)
+
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+        setKundenContext(pstrangemeldeterKunde)
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+
+    End Sub
+
+    Sub New()
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+    End Sub
+
     Private Sub frmHauptfensterKunde_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         'Deklaration
         Dim strBegruessungKunde As String
@@ -18,6 +36,17 @@
         MsgBox(strBegruessungKunde, MsgBoxStyle.OkOnly, "Willkommen")
     End Sub
 
+    ''' <summary>
+    ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
+    ''' </summary>
+    ''' <remarks> Tabelle = momentan nur Einfachauswahl </remarks>
+    Public Sub setKundenContext(strBenutzername As String)
+        For Each kndKunde As Kunde In Logic.ListeKunden
+            If strBenutzername.Equals(kndKunde.Benutzername) Then
+                angemeldeterKunde = kndKunde
+            End If
+        Next
+    End Sub
 
     ''' <summary>
     ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
@@ -76,7 +105,6 @@
     ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
     ''' </summary>
     ''' <remarks></remarks>
-
     Private Sub anzeigen()
         'Deklaration
         Dim weiterbil As Weiterbildung 'Weiterbildung
@@ -100,11 +128,9 @@
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(i, strWeiterbilID, strWeiterbilName, strWeiterbilThema)
-
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()
-
     End Sub
 
     'Index deklarieren
@@ -166,4 +192,6 @@
         dlg = New frmKundeKonto()
         dlg.ShowDialog()
     End Sub
+
+
 End Class

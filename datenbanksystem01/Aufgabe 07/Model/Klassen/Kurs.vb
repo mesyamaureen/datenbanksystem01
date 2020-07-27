@@ -4,13 +4,13 @@
 Public Class Kurs
 
     'Properties
-    Public mstrKursID As String
-    Public mdatZeitpunkt As Date
-    Public mstrOrt As String
-    Public mbolVerfuegbar As Boolean
-    Public mdecPreis As Decimal
-    Public mbolAbgesagt As Boolean
-    Public mBuchungen As Buchung
+    Private mstrKursID As String
+    Private mdatZeitpunkt As Date
+    Private mstrOrt As String
+    Private mbolVerfuegbar As Boolean
+    Private mdecPreis As Decimal
+    Private mbolAbgesagt As Boolean
+    Private mBuchungen As Buchung
 
     'Konstruktoren
     'Parameterloser Konstruktor

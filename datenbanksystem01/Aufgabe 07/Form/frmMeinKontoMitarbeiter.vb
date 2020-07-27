@@ -1,8 +1,6 @@
 ﻿Public Class frmMeinKontoMitarbeiter
     'ToDo:
     '
-
-
     Dim anzumeldenderMitarbeiter As Mitarbeiter
 
     Sub New(pstranzumeldenderMitarbeiter As Mitarbeiter)
@@ -16,7 +14,7 @@
         txtboxAltesPasswort.Text = anzumeldenderMitarbeiter.Passwort
         txtboxName.Text = anzumeldenderMitarbeiter.Name
         txtboxVorname.Text = anzumeldenderMitarbeiter.Vorname
-        'dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
+        dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
 
     End Sub
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
@@ -30,37 +28,13 @@
         End If
     End Sub
 
-    Private Sub txtBoxAuslesen()
-
-
-
-
-    End Sub
-
-
-
-    Private Sub textBoxNeuenWertSpeichern()
-
-
-
-        anzumeldenderMitarbeiter.Passwort = Me.txtboxNeuesPasswort.Text
-        anzumeldenderMitarbeiter.Name = Me.txtboxName.Text
-        anzumeldenderMitarbeiter.Geburtsdatum = Me.dtpGebDatMitarbeiter.Value
-
-
-
-
-    End Sub
-
-
-
-
-
     Private Sub txtBenutzername_TextChanged(sender As Object, e As EventArgs) Handles txtBenutzername.TextChanged
 
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-
+        anzumeldenderMitarbeiter.Passwort = Me.txtboxNeuesPasswort.Text
+        anzumeldenderMitarbeiter.Name = Me.txtboxName.Text
+        anzumeldenderMitarbeiter.Geburtsdatum = Me.dtpGebDatMitarbeiter.Value
     End Sub
 End Class

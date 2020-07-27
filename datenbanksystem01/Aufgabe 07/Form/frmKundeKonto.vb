@@ -1,6 +1,30 @@
 ﻿Public Class frmKundeKonto
     Dim aktuellerKunde As Kunde
 
+    Sub New(pstrangemeldeterKunde As Kunde)
+
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+        aktuellerKunde = pstrangemeldeterKunde
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+        tbBenutzername.Text = aktuellerKunde.Benutzername
+        txtboxAltesPasswort.Text = aktuellerKunde.Passwort
+        txtboxName.Text = aktuellerKunde.Name
+        txtboxVorname.Text = aktuellerKunde.Vorname
+        dtpGebDatKunde.Value = aktuellerKunde.Geburtsdatum
+
+    End Sub
+
+    Sub New()
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+    End Sub
+
+
     Private Sub btnKontoLoeschen_Click(sender As Object, e As EventArgs) Handles btnKontoLoeschen.Click
 
         aktuellerKunde = Me.aktuellerKunde
@@ -18,5 +42,12 @@
 
         End If
         End
+    End Sub
+
+    Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
+
+        aktuellerKunde.Passwort = Me.txtboxNeuesPasswort.Text
+        aktuellerKunde.Name = Me.txtboxName.Text
+        aktuellerKunde.Geburtsdatum = Me.dtpGebDatKunde.Value
     End Sub
 End Class

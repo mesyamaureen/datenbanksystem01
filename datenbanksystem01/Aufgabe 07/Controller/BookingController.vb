@@ -25,10 +25,13 @@
         End Set
     End Property
 
-    Public ReadOnly Property BuchungsID As String
+    Public Property BuchungsID As String
         Get
             Return mstrBuchungsID
         End Get
+        Set(value As String)
+            mstrBuchungsID = value
+        End Set
     End Property
 
 

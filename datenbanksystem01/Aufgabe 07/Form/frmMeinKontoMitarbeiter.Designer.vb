@@ -60,6 +60,7 @@ Partial Class frmMeinKontoMitarbeiter
         Me.txtboxAltesPasswort.Name = "txtboxAltesPasswort"
         Me.txtboxAltesPasswort.Size = New System.Drawing.Size(508, 28)
         Me.txtboxAltesPasswort.TabIndex = 1
+        Me.txtboxAltesPasswort.UseSystemPasswordChar = True
         '
         'txtboxNeuesPasswort
         '
@@ -69,6 +70,7 @@ Partial Class frmMeinKontoMitarbeiter
         Me.txtboxNeuesPasswort.Name = "txtboxNeuesPasswort"
         Me.txtboxNeuesPasswort.Size = New System.Drawing.Size(508, 27)
         Me.txtboxNeuesPasswort.TabIndex = 2
+        Me.txtboxNeuesPasswort.UseSystemPasswordChar = True
         '
         'txtboxVorname
         '

@@ -3,12 +3,12 @@
 <System.Serializable()>
 Public Class Buchung
 
-    Public mstrBuchungsID As String
-    Public mdecPreis As Decimal
-    Public mdatDatum As Date
-    Public mKurs As Kurs
-    Public mstrKundenID As String
-    Public mstrKursID As String
+    Private mstrBuchungsID As String
+    Private mdecPreis As Decimal
+    Private mdatDatum As Date
+    Private mKurs As Kurs
+    Private mstrKundenID As String
+    Private mstrKursID As String
     Public mstrWeiterbildungsBezeichnung As String
     Private mstrOrtKurs As String
 

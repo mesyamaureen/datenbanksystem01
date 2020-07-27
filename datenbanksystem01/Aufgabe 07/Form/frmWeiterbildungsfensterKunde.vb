@@ -181,6 +181,7 @@
         'alle anzeigen Funktion aufrufen
         anzeigen()
         anzeigenKurs()
+        aktivierenSchaltflächenKurs()
     End Sub
 
     'Function gibBuchung() As Buchung

@@ -38,7 +38,8 @@
                 Dim frm = New frmHauptfensterMitarbeiter(strBenutzername)
                 frm.Show()
             ElseIf anmeldenResult("role") = "kunde" Then
-                frmHauptfensterKunde.Show()
+                Dim frm = New frmHauptfensterKunde(strBenutzername)
+                frm.Show()
             Else
                 MsgBox("Anmeldung fehlgeschlagen!", MsgBoxStyle.OkOnly, "Fehler")
             End If
