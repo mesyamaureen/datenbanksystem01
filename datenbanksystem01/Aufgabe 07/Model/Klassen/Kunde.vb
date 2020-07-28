@@ -6,7 +6,7 @@ Public Class Kunde
 
 
     'Attribute
-    Private mstrKundenID As String
+    Private muintKundenID As UInteger
     Private mstrFirma As String
     Private mlstListeEigeneBuchungen As List(Of Buchung)
 
@@ -36,12 +36,12 @@ Public Class Kunde
         End Set
     End Property
 
-    Public Property KundenID
+    Public Property KundenID As UInteger
         Get
-            Return mstrKundenID
+            Return muintKundenID
         End Get
-        Set(value)
-            mstrKundenID = value
+        Set(value As UInteger)
+            muintKundenID = value
         End Set
     End Property
 
@@ -58,9 +58,7 @@ Public Class Kunde
     Public Shared Function zeigenAlle() As List(Of Kunde)
 
         Dim lstKunde As List(Of Kunde)
-
         lstKunde = BenutzerDAO.ladenKunden()
-
         Return lstKunde
 
     End Function

@@ -167,12 +167,6 @@
     <Compile Include="Form\frmWeiterbildungsfensterMitarb.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\testLogic.Designer.vb">
-      <DependentUpon>testLogic.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\testLogic.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Model\Data Access\BenutzerDAO.vb" />
     <Compile Include="Model\Data Access\BuchungsDAO.vb" />
     <Compile Include="Model\Data Access\Kurs- und WeiterbildungsDAO.vb" />
@@ -244,9 +238,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\frmWeiterbildungsfensterMitarb.resx">
       <DependentUpon>frmWeiterbildungsfensterMitarb.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\testLogic.resx">
-      <DependentUpon>testLogic.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

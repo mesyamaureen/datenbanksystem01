@@ -2,15 +2,15 @@
 
     Private mlstKunde As List(Of Kunde)
     Private mlstMitarbeiter As List(Of Mitarbeiter)
-    Private mstrMitarbeiterID As String
-    Private mstrKundenID As String
+    Private muintMitarbeiterID As UInteger
+    Private muintKundenID As UInteger
 
 
     Sub New()
         mlstKunde = New List(Of Kunde)
         mlstMitarbeiter = New List(Of Mitarbeiter)
-        mstrKundenID = String.Empty
-        mstrMitarbeiterID = String.Empty
+        muintKundenID = String.Empty
+        muintMitarbeiterID = String.Empty
     End Sub
 
 
@@ -42,19 +42,19 @@
 
     Public Property MitarbeiterID As String
         Get
-            Return mstrMitarbeiterID
+            Return muintMitarbeiterID
         End Get
         Set(value As String)
-            mstrMitarbeiterID = value
+            muintMitarbeiterID = value
         End Set
     End Property
 
     Public Property KundenID As String
         Get
-            Return mstrKundenID
+            Return muintKundenID
         End Get
         Set(value As String)
-            mstrKundenID = value
+            muintKundenID = value
         End Set
     End Property
 

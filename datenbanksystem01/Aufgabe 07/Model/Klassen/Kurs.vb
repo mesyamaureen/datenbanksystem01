@@ -4,7 +4,7 @@
 Public Class Kurs
 
     'Properties
-    Private mstrKursID As UInteger
+    Private muintKursID As UInteger
     Private mdatZeitpunkt As Date
     Private mstrOrt As String
     Private mbolVerfuegbar As Boolean
@@ -38,10 +38,10 @@ Public Class Kurs
 
     Public Property KursID As UInteger
         Get
-            Return mstrKursID
+            Return muintKursID
         End Get
         Set(value As UInteger)
-            mstrKursID = value
+            muintKursID = value
         End Set
     End Property
 

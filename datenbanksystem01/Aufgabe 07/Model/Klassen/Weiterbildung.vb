@@ -4,7 +4,7 @@
 Public Class Weiterbildung
 
     'Attribiute
-    Private mstrWeiterbildungsID As UInteger
+    Private muintWeiterbildungsID As UInteger
     Private mstrBezeichnung As String
     Private mstrThema As String
     Private mstrCurriculum As String
@@ -34,10 +34,10 @@ Public Class Weiterbildung
 
     Public Property WeiterbildungsID As UInteger
         Get
-            Return mstrWeiterbildungsID
+            Return muintWeiterbildungsID
         End Get
         Set(value As UInteger)
-            mstrWeiterbildungsID = value
+            muintWeiterbildungsID = value
         End Set
     End Property
 

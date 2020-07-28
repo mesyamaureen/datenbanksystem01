@@ -15,6 +15,7 @@
         txtboxName.Text = anzumeldenderMitarbeiter.Name
         txtboxVorname.Text = anzumeldenderMitarbeiter.Vorname
         dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
+        txtboxMitarbeiterID.Text = anzumeldenderMitarbeiter.MitarbeiterID
 
     End Sub
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
@@ -26,10 +27,6 @@
             DialogResult = Windows.Forms.DialogResult.None
             Exit Sub
         End If
-    End Sub
-
-    Private Sub txtBenutzername_TextChanged(sender As Object, e As EventArgs) Handles txtBenutzername.TextChanged
-
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click

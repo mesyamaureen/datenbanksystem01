@@ -86,7 +86,7 @@
     ''' Wird aufgerufen, um die Daten einer Weiterbldung in der Liste der Weiterbildung als Zeile anzuzeigen
     ''' </summary>
     ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
-    Sub anzeigenZeile(plngIndex As Long, pstrWeiterbilID As String, pstrWeiterbilName As String, pstrWeiterbilThema As String)
+    Sub anzeigenZeile(plngIndex As Long, puintWeiterbilID As UInteger, pstrWeiterbilName As String, pstrWeiterbilThema As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -97,7 +97,7 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(pstrWeiterbilID)
+            .Add(puintWeiterbilID)
             .Add(pstrWeiterbilName)
             .Add(pstrWeiterbilThema)
         End With
@@ -114,7 +114,7 @@
         Dim weiterbil As Weiterbildung 'Weiterbildung
 
         'Anzuzeigende Attribute
-        Dim strWeiterbilID As String
+        Dim uintWeiterbilID As UInteger
         Dim strWeiterbilName As String
         Dim strWeiterbilThema As String
 
@@ -126,12 +126,12 @@
             weiterbil = ListeWeiterbildung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            strWeiterbilID = weiterbil.WeiterbildungsID
+            uintWeiterbilID = weiterbil.WeiterbildungsID
             strWeiterbilName = weiterbil.Bezeichnung
             strWeiterbilThema = weiterbil.Thema
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, strWeiterbilID, strWeiterbilName, strWeiterbilThema)
+            anzeigenZeile(i, uintWeiterbilID, strWeiterbilName, strWeiterbilThema)
 
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern

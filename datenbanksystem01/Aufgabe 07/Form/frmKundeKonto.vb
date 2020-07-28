@@ -14,6 +14,7 @@
         txtboxVorname.Text = aktuellerKunde.Vorname
         dtpGebDatKunde.Value = aktuellerKunde.Geburtsdatum
         txtboxFirma.Text = aktuellerKunde.Firma
+        txtboxKundenID.Text = aktuellerKunde.KundenID
 
     End Sub
 

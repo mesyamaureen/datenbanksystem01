@@ -5,7 +5,7 @@ Public Class Mitarbeiter
     Inherits Benutzer
 
     'Properties
-    Private mstrMitarbeiterID As String
+    Private muintMitarbeiterID As UInteger
 
     'Konstruktor
     'Parameterloser Konstruktor 
@@ -30,12 +30,12 @@ Public Class Mitarbeiter
     'ruft nur fks auf
 
     'Get & Set
-    Public Property MitarbeiterID As String
+    Public Property MitarbeiterID As UInteger
         Get
-            Return mstrMitarbeiterID
+            Return muintMitarbeiterID
         End Get
-        Set(value As String)
-            mstrMitarbeiterID = value
+        Set(value As UInteger)
+            muintMitarbeiterID = value
         End Set
     End Property
 

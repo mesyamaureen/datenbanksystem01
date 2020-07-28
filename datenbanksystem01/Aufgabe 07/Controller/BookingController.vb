@@ -71,10 +71,9 @@
         Return aryBuchung
     End Function
 
-    Public Function changeBooking(strBuchungsID As String, decPreis As Decimal, datDatum As Date, bearbBuchung As Buchung) As Boolean
+    Public Function changeBooking(puintBuchungsID As UInteger, bearbBuchung As Buchung) As Boolean
         'Initialisierung der Parameter
-        bearbBuchung.Preis = decPreis
-        bearbBuchung.BuchungsDatum = datDatum
+
         'Rückgabewert
         Return True
     End Function
