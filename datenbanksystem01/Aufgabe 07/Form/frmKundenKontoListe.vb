@@ -25,7 +25,7 @@
 
     Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
 
-        Dim uintKundenID As UInteger
+        Dim uintBenutzerID As UInteger
         Dim strBenutzername As String
         Dim strVorname As String
         Dim strName As String
@@ -34,7 +34,7 @@
         Dim lviZeile As ListViewItem
         lviZeile = lstviewKundenKonten.SelectedItems(0)
 
-        uintKundenID = lviZeile.SubItems(0).Text
+        uintBenutzerID = lviZeile.SubItems(0).Text
         strBenutzername = lviZeile.SubItems(1).Text
         strVorname = lviZeile.SubItems(2).Text
         strName = lviZeile.SubItems(3).Text
@@ -42,7 +42,7 @@
     End Sub
 
     ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Buchung übergeben </remark>
-    Sub anzeigenZeile(plngIndex As Long, puintKundenID As UInteger, pstrBenutzername As String, pstrVorname As String, pstrName As String)
+    Sub anzeigenZeile(plngIndex As Long, puintBenutzerID As UInteger, pstrBenutzername As String, pstrVorname As String, pstrName As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -53,7 +53,7 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintKundenID)
+            .Add(puintBenutzerID)
             .Add(pstrBenutzername)
             .Add(pstrVorname)
             .Add(pstrName)
@@ -86,7 +86,7 @@
             anzuzeigenderKunde = mlstKunde.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            uintKundenID = anzuzeigenderKunde.KundenID
+            uintKundenID = anzuzeigenderKunde.BenutzerID
             strBenutzername = anzuzeigenderKunde.Benutzername
             strVorname = anzuzeigenderKunde.Vorname
             strName = anzuzeigenderKunde.Name

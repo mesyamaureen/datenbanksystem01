@@ -185,12 +185,10 @@
         Dim buchung01, buchung02 As Buchung
         'Buchung initialisieren ohne Parameter
         buchung01 = New Buchung()
-        buchung01.Kurse = kurs01
-        buchung01.Weiterbildung = agiles.Bezeichnung
-        buchung01.Preis = kurs01.Preis
-        buchung01.OrtKurs = kurs01.Ort
+        buchung01.BuchungsID = Nothing
+        buchung01.gebuchterKurs = Nothing
         'Buchung initialisieren mit Parameter
-        buchung02 = New Buchung(kurs03, kurs03.Zeitpunkt, scrum.Bezeichnung, kurs03.Preis, kurs03.Ort)
+        buchung02 = New Buchung(kurs03, scrum.Bezeichnung)
         'Buchung ID
         buchung01.BuchungsID = "1"
         buchung02.BuchungsID = "2"
@@ -229,65 +227,61 @@
 
     End Function
 
-    Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date, pstrFirma As String) As Integer
+    Public Function createKunde(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date, uintBenutzerID As UInteger, pstrFirma As String) As Integer
 
-        Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat, pstrFirma)
+        Dim kunde As Kunde = New Kunde(strBenutzername, strPasswort, strName, strVorname, datGebDat, uintBenutzerID, pstrFirma)
         mlstKunde.Add(kunde)
-        Dim strKundenID As String = kunde.KundenID
-        Return strKundenID
+        Return uintBenutzerID
 
     End Function
 
-    Public Function viewKunde(strKundenID) As Array
+    Public Function viewKunde(uintBenutzerID) As Array
 
-        Return userController.viewKunde(strKundenID)
-
-    End Function
-
-    Public Function changeKunde(strKundenId As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
-
-        Return userController.changeKunde(strKundenId, strBenutzername, strPasswort, strVorname, strName)
+        Return userController.viewKunde(uintBenutzerID)
 
     End Function
 
-    Public Function deleteKunde(strKundenID As Integer) As Boolean
+    Public Function changeKunde(uintBenutzerId As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
 
-        Return userController.deleteKunde(strKundenID)
+        Return userController.changeKunde(uintBenutzerId, strBenutzername, strPasswort, strVorname, strName)
+
+    End Function
+
+    Public Function deleteKunde(uintBenutzerID As Integer) As Boolean
+
+        Return userController.deleteKunde(uintBenutzerID)
 
     End Function
 
 
-    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date) As Integer
+    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String, strName As String, strVorname As String, datGebDat As Date, puintBenutzerID As UInteger) As Integer
 
-        Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat)
+        Dim mitarbeiter As Mitarbeiter = New Mitarbeiter(strBenutzername, strPasswort, strName, strVorname, datGebDat, puintBenutzerID)
         mlstMitarbeiter.Add(mitarbeiter)
 
-        Dim strMitarbeiterID As String = mitarbeiter.MitarbeiterID()
-        Return strMitarbeiterID
+        Dim uintBenutzerID As UInteger = mitarbeiter.BenutzerID()
+        Return uintBenutzerID
 
     End Function
 
-    Public Function viewMitarbeiter(strMitarbeiterID As String) As Array
+    Public Function viewMitarbeiter(uintBenutzerID As String) As Array
 
-        Return userController.viewMitarbeiter(strMitarbeiterID)
-
-    End Function
-
-    Public Function changeMitarbeiter(strMitarbeiterID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
-
-        Return userController.changeMitarbeiter(strMitarbeiterID, strBenutzername, strPasswort, strVorname, strName)
+        Return userController.viewMitarbeiter(uintBenutzerID)
 
     End Function
 
-    Public Function deleteMitarbeiter(strMitarbeiterID As Integer) As Boolean
+    Public Function changeMitarbeiter(uintBenutzerID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+
+        Return userController.changeMitarbeiter(uintBenutzerID, strBenutzername, strPasswort, strVorname, strName)
+
+    End Function
+
+    Public Function deleteMitarbeiter(uintBenutzerID As Integer) As Boolean
 
         'remember to also remove the ListItem in fachkonzept
-        Return userController.deleteMitarbeiter(strMitarbeiterID)
+        Return userController.deleteMitarbeiter(uintBenutzerID)
 
     End Function
-
-    'TODO Datenbank erstellen (fill with records)
-
 
     'WeiterbildungsController
     Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As Kurs
@@ -296,40 +290,36 @@
 
     End Function
 
-    Public Function viewKurs(pstrKundenID As String) As Array
+    Public Function viewKurs(puintKursID As String) As Array
 
-        Return weiterbildungscontroller.viewKurs(pstrKundenID)
-
-    End Function
-
-    Public Function changeKurs(pstrKundenID As String, pstrOrt As String, pdatZeitpunkt As Date, pdecPreis As Decimal, pbearbKurs As Kurs) As Boolean
-
-        Return weiterbildungscontroller.changeKurs(pstrKundenID, pstrOrt, pdatZeitpunkt, pdecPreis, pbearbKurs)
+        Return weiterbildungscontroller.viewKurs(puintKursID)
 
     End Function
 
-    Public Function deleteKurs(pstrKundenID As String) As Boolean
+    Public Function changeKurs(puintKursID As String, pstrOrt As String, pdatZeitpunkt As Date, pdecPreis As Decimal, pbearbKurs As Kurs) As Boolean
 
-        Return weiterbildungscontroller.deleteKurs(pstrKundenID)
+        Return weiterbildungscontroller.changeKurs(puintKursID, pstrOrt, pdatZeitpunkt, pdecPreis, pbearbKurs)
+
+    End Function
+
+    Public Function deleteKurs(puintKursID As String) As Boolean
+
+        Return weiterbildungscontroller.deleteKurs(puintKursID)
 
     End Function
 
     'BookingController
-    Public Function createBooking(pKurs As Kurs, pdatDatum As Date, pdecPreis As Decimal, pweiterbil As Weiterbildung) As Buchung
+    Public Function createBooking(pKurs As Kurs, pbenTeilnehmer As Benutzer) As Buchung
 
-        Return bookingController.createBooking(pKurs, pdatDatum, pdecPreis, pweiterbil)
-
-    End Function
-
-    Public Function viewBooking(pstrBuchungsID) As Array
-
-        Return bookingController.viewBooking(pstrBuchungsID)
+        Return bookingController.createBooking(pKurs, pbenTeilnehmer)
 
     End Function
 
-    Public Function changeBooking(pstrBuchungsID As String, pdecPreis As Decimal, pdatDatum As Date, pbearbBuchung As Buchung) As Boolean
+    'Public function view Booking wegen Gui überflüssig
 
-        Return bookingController.changeBooking(pstrBuchungsID, pdecPreis, pdatDatum, pbearbBuchung)
+    Public Function changeBooking(puintBuchungsID As String, pbearbBuchung As Buchung) As Boolean
+
+        Return bookingController.changeBooking(puintBuchungsID, pbearbBuchung)
 
     End Function
 

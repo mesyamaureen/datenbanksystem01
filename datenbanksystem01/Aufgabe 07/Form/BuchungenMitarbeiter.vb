@@ -11,11 +11,12 @@
     ''' Wird aufgerufen, um die Daten aller Buchungen in der Liste der Buchungen als Zeile anzuzeigen
     ''' </summary>
     ''' <param name="plngIndex"></param>
-    ''' <param name="pstrBuchungIDM"></param>
-    ''' <param name="pdatBuchungM"></param>
+    ''' <param name="uintBuchungIDM"></param>
+    ''' <param name="pdatKursM"></param>
     ''' <param name="pstrWeiterbilNameM"></param>
-    ''' <param name="pstrKundenIDM"></param>
-    Sub anzeigenZeile(plngIndex As Long, pstrBuchungIDM As String, pdatBuchungM As Date, pstrWeiterbilNameM As String, pstrKundenIDM As String, pdecPreisM As Decimal)
+    ''' <param name="uintBenutzerIDM"></param>
+    ''' <param name="pstrKundenBenutzername"></param>
+    Sub anzeigenZeile(plngIndex As Long, uintBuchungIDM As UInteger, pdatKursM As Date, pstrWeiterbilNameM As String, uintBenutzerIDM As UInteger, pstrKundenBenutzername As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -26,19 +27,16 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(pstrBuchungIDM)
-            .Add(pdatBuchungM)
+            .Add(uintBuchungIDM)
+            .Add(pdatKursM)
             .Add(pstrWeiterbilNameM)
-            .Add(pstrKundenIDM)
-            .Add(pdecPreisM)
+            .Add(uintBenutzerIDM)
+            .Add(pstrKundenBenutzername)
         End With
 
     End Sub
 
     ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
-
-
-
     ''' <summary>
     ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
     ''' dann mit allen Einträgen aus der Liste der Kunden neu gefüllt wird.
@@ -49,11 +47,12 @@
         Dim lviBuchung As Buchung 'Buchung
 
         'Anzuzeigende Attribute
-        Dim strBuchungsID As String
-        Dim datBuchung As Date
+        Dim uintBuchungsID As UInteger
+        Dim uintKundenID As UInteger
+        Dim strKndBenutzername As String
+        Dim uintKursID As UInteger
         Dim strWeiterbildung As String
-        Dim strKundenID As String
-        Dim decPreis As Decimal
+        Dim datKurs As Date
 
         'leeren der Tabelle
         leeren()
@@ -63,14 +62,12 @@
             lviBuchung = ListeBuchung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            strBuchungsID = lviBuchung.BuchungsID
-            datBuchung = lviBuchung.BuchungsDatum
-            strWeiterbildung = lviBuchung.Weiterbildung
-            strKundenID = lviBuchung.KundenID
-            decPreis = lviBuchung.Preis
+            uintBuchungsID = lviBuchung.BuchungsID
+            strWeiterbildung = lviBuchung.gebuchterKurs.Weiterbildung.Bezeichnung
+            uintKundenID = Convert.ChangeType(lviBuchung.Teilnehmer, GetType(Kunde))
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, strBuchungsID, datBuchung, strWeiterbildung, strKundenID, decPreis)
+            anzeigenZeile(i, uintBuchungsID, strWeiterbildung, uintKundenID, )
         Next
     End Sub
 

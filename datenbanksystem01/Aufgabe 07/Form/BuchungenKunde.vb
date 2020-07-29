@@ -29,11 +29,10 @@
     ''' Wird aufgerufen, um die Daten einer Buchung in der Liste der buchung als Zeile anzuzeigen
     ''' </summary>
     ''' <param name="plngIndex"></param>
-    ''' <param name="pstrBuchungID"></param>
+    ''' <param name="puintBuchungID"></param>
     ''' <param name="pdatKurs"></param>
     ''' <param name="pstrWeiterbilName"></param>
-    ''' <param name="pdecPreis"></param>
-    Sub anzeigenZeile(plngIndex As Long, pstrBuchungID As String, pdatKurs As Date, pstrWeiterbilName As String, pdecPreis As Decimal) ', pstrOrt As String)
+    Sub anzeigenZeile(plngIndex As Long, puintBuchungID As UInteger, pdatKurs As Date, pstrWeiterbilName As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
@@ -44,11 +43,9 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(pstrBuchungID)
+            .Add(puintBuchungID)
             .Add(pdatKurs)
             .Add(pstrWeiterbilName)
-            .Add(pdecPreis)
-            '.Add(pstrOrt)
         End With
     End Sub
 
@@ -58,29 +55,27 @@
     ''' </summary>
     Private Sub anzeigen()
         'Deklaration
-        Dim buchungen As Buchung
+        Dim buchung As Buchung
 
         'Anzuzeigende Attribute
-        Dim strBuchungId As String
-        Dim datKurs As Date
+        Dim uintBuchungsID As UInteger
         Dim strWeiterbilName As String
-        Dim decPreis As Decimal
-        'Dim strOrt As String
+        Dim datKurs As Date
 
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To ListeBuchung.Count - 1
-            buchungen = ListeBuchung.Item(i)
+            buchung = ListeBuchung.Item(i)
             'Attributwerte aus der Buchung lesen
-            strBuchungId = buchungen.BuchungsID
-            datKurs = buchungen.BuchungsDatum 'Buchungsdatum als Kursdatum und Kursdatum von Attribute des Kurses, which has to be connected in Klasse Kurs
-            strWeiterbilName = buchungen.Weiterbildung 'needs to be proved; is it possible to just connect the Weiterbildung with this Windows form?
-            decPreis = buchungen.Preis
+            uintBuchungsID = buchung.BuchungsID
+            datKurs = buchung.gebuchterKurs.Zeitpunkt
+            strWeiterbilName = buchung.gebuchterKurs.Weiterbildung.Bezeichnung
+
             'strOrt = buchungen.Ort
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, strBuchungId, datKurs, strWeiterbilName, decPreis)
+            anzeigenZeile(i, uintBuchungsID, datKurs, strWeiterbilName)
         Next
         'In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()

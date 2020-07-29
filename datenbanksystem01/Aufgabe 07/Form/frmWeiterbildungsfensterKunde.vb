@@ -83,7 +83,7 @@
         Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, mWeiterbil)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
 
         'Meldungsfenster vorbereiten
-        MsgBox("Sie haben einen neuen Kurs zu Ihrer Buchungen hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
+        MsgBox("Sie haben eine neue Buchung hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
 
     End Sub
 

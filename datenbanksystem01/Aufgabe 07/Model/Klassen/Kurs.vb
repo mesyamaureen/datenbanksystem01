@@ -11,6 +11,7 @@ Public Class Kurs
     Private mdecPreis As Decimal
     Private mbolAbgesagt As Boolean
     Private mBuchungen As Buchung
+    Private mWeiterbildung As Weiterbildung
 
     'Konstruktoren
     'Parameterloser Konstruktor
@@ -20,17 +21,19 @@ Public Class Kurs
         mbolVerfuegbar = False
         mdecPreis = Nothing
         mbolAbgesagt = False
+        mWeiterbildung = New Weiterbildung()
         'mBuchungen = New Buchung
     End Sub
 
     'Konstruktor mit Parameter
-    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean) ', mBuchungen As Buchung)
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean, pWeiterbildung As Weiterbildung) ', mBuchungen As Buchung)
 
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
         mbolVerfuegbar = pbolVerfuegbar
         mdecPreis = pdecPreis
         mbolAbgesagt = pbolAbgesagt
+        mWeiterbildung = pWeiterbildung
 
     End Sub
 
@@ -98,6 +101,15 @@ Public Class Kurs
         End Get
         Set(value As Buchung)
             mBuchungen = value
+        End Set
+    End Property
+
+    Public Property Weiterbildung As Weiterbildung
+        Get
+            Return mWeiterbildung
+        End Get
+        Set(value As Weiterbildung)
+            mWeiterbildung = value
         End Set
     End Property
 

@@ -10,6 +10,7 @@ Public Class Benutzer
     Private mstrBenutzername As String
     Private mstrPasswort As String
     Private mdatGebDat As Date
+    Private muintBenutzerID As UInteger
 
 
     'Konstruktoren
@@ -19,16 +20,18 @@ Public Class Benutzer
         mstrBenutzername = String.Empty
         mstrPasswort = String.Empty
         mdatGebDat = Date.MinValue
+        muintBenutzerID = Nothing
     End Sub
 
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, puintBenutzerID As UInteger)
 
         mstrBenutzername = pstrBenutzername
         mstrPasswort = pstrPasswort
         mstrName = pstrName
         mstrVorname = pstrVorname
         mdatGebDat = pdatGebDat
+        muintBenutzerID = puintBenutzerID
 
         ' TODO: create record In Database And Set intKundenID
 
@@ -83,9 +86,17 @@ Public Class Benutzer
                 Debug.Print("Fehler: Geburtsdatum muss in der Vergangenheit liegen.")
             End If
         End Set
+
     End Property
 
-
+    Public Property BenutzerID As UInteger
+        Get
+            Return muintBenutzerID
+        End Get
+        Set(value As UInteger)
+            muintBenutzerID = value
+        End Set
+    End Property
 
 
 

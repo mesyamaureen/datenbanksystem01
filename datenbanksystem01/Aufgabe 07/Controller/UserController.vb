@@ -2,15 +2,12 @@
 
     Private mlstKunde As List(Of Kunde)
     Private mlstMitarbeiter As List(Of Mitarbeiter)
-    Private muintMitarbeiterID As UInteger
-    Private muintKundenID As UInteger
-
+    Private muintBenutzerID As UInteger
 
     Sub New()
         mlstKunde = New List(Of Kunde)
         mlstMitarbeiter = New List(Of Mitarbeiter)
-        muintKundenID = String.Empty
-        muintMitarbeiterID = String.Empty
+        muintBenutzerID = String.Empty
     End Sub
 
 
@@ -40,24 +37,14 @@
         End Set
     End Property
 
-    Public Property MitarbeiterID As String
+    Public Property ID As String
         Get
-            Return muintMitarbeiterID
+            Return muintBenutzerID
         End Get
         Set(value As String)
-            muintMitarbeiterID = value
+            muintBenutzerID = value
         End Set
     End Property
-
-    Public Property KundenID As String
-        Get
-            Return muintKundenID
-        End Get
-        Set(value As String)
-            muintKundenID = value
-        End Set
-    End Property
-
 
 
     'Funktionen
@@ -111,15 +98,15 @@
     End Function
 
 
-    Public Function viewKunde(intKundenID As Integer) As Array
+    Public Function viewKunde(uintBenutzerID As UInteger) As Array
 
     End Function
 
-    Public Function changeKunde(intKundenID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+    Public Function changeKunde(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
 
     End Function
 
-    Public Function deleteKunde(intKundenID As Integer) As Boolean
+    Public Function deleteKunde(uintBenutzerID As UInteger) As Boolean
 
     End Function
 
@@ -128,15 +115,15 @@
 
     End Function
 
-    Public Function viewMitarbeiter(intMitarbeiterID As Integer) As Array
+    Public Function viewMitarbeiter(uintBenutzerID As UInteger) As Array
 
     End Function
 
-    Public Function changeMitarbeiter(intMitarbeiterID As Integer, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+    Public Function changeMitarbeiter(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
 
     End Function
 
-    Public Function deleteMitarbeiter(iintMitarbeiterID As Integer) As Boolean
+    Public Function deleteMitarbeiter(uintBenutzerID As UInteger) As Boolean
 
     End Function
 

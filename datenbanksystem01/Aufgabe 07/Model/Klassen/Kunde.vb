@@ -6,7 +6,6 @@ Public Class Kunde
 
 
     'Attribute
-    Private muintKundenID As UInteger
     Private mstrFirma As String
     Private mlstListeEigeneBuchungen As List(Of Buchung)
 
@@ -18,9 +17,9 @@ Public Class Kunde
         mlstListeEigeneBuchungen = New List(Of Buchung)
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, pstrFirma As String)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, puintBenutzerID As UInteger, pstrFirma As String)
 
-        MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat)
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat, puintBenutzerID)
         mstrFirma = pstrFirma
         ' TODO: create record In Database And Set intKundenID
 
@@ -36,14 +35,6 @@ Public Class Kunde
         End Set
     End Property
 
-    Public Property KundenID As UInteger
-        Get
-            Return muintKundenID
-        End Get
-        Set(value As UInteger)
-            muintKundenID = value
-        End Set
-    End Property
 
     Public Property EigeneBuchungen As List(Of Buchung)
         Get

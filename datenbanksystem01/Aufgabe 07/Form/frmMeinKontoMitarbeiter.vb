@@ -15,7 +15,7 @@
         txtboxName.Text = anzumeldenderMitarbeiter.Name
         txtboxVorname.Text = anzumeldenderMitarbeiter.Vorname
         dtpGebDatMitarbeiter.Value = anzumeldenderMitarbeiter.Geburtsdatum
-        txtboxMitarbeiterID.Text = anzumeldenderMitarbeiter.MitarbeiterID
+        txtboxMitarbeiterID.Text = anzumeldenderMitarbeiter.BenutzerID
 
     End Sub
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click

@@ -24,6 +24,5 @@ Public Class dlgAnmeldung
 
     Private Sub lblNeuesKonto_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblNeuesKonto.LinkClicked
         frmKundenkontoerstellung.ShowDialog()
-
     End Sub
 End Class
