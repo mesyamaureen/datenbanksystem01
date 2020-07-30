@@ -16,18 +16,17 @@
     ''' <param name="pstrWeiterbilNameM"></param>
     ''' <param name="uintBenutzerIDM"></param>
     ''' <param name="pstrKundenBenutzername"></param>
-    Sub anzeigenZeile(plngIndex As Long, uintBuchungIDM As UInteger, pdatKursM As Date, pstrWeiterbilNameM As String, uintBenutzerIDM As UInteger, pstrKundenBenutzername As String)
+    Sub anzeigenZeile(uintBuchungIDM As UInteger, pstrKundenBenutzername As String, uintBenutzerIDM As UInteger, pstrWeiterbilNameM As String, pdatKursM As Date, puintKursID As UInteger)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.LstViewAlleBuchungen.Items.Add(plngIndex)
+        zeile = Me.LstViewAlleBuchungen.Items.Add(uintBuchungIDM)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(uintBuchungIDM)
             .Add(pdatKursM)
             .Add(pstrWeiterbilNameM)
             .Add(uintBenutzerIDM)
@@ -48,7 +47,7 @@
 
         'Anzuzeigende Attribute
         Dim uintBuchungsID As UInteger
-        Dim uintKundenID As UInteger
+        Dim uintBenutzerID As UInteger
         Dim strKndBenutzername As String
         Dim uintKursID As UInteger
         Dim strWeiterbildung As String
@@ -64,10 +63,13 @@
             'Attributwerte aus der Weiterbildung lesen
             uintBuchungsID = lviBuchung.BuchungsID
             strWeiterbildung = lviBuchung.gebuchterKurs.Weiterbildung.Bezeichnung
-            uintKundenID = Convert.ChangeType(lviBuchung.Teilnehmer, GetType(Kunde))
+            uintBenutzerID = lviBuchung.Teilnehmer.BenutzerID
+            datKurs = lviBuchung.gebuchterKurs.Zeitpunkt
+            strKndBenutzername = lviBuchung.Teilnehmer.Benutzername
+            uintKursID = lviBuchung.gebuchterKurs.KursID
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, uintBuchungsID, strWeiterbildung, uintKundenID, )
+            anzeigenZeile(uintBuchungsID, strKndBenutzername, uintBenutzerID, strWeiterbildung, datKurs, uintKursID)
         Next
     End Sub
 

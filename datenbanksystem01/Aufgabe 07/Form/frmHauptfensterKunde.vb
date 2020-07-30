@@ -156,7 +156,7 @@
         Next
 
         'Fenster vorbereiten
-        dlg = New frmWeiterbildungsfensterKunde(weiterbil)
+        dlg = New frmWeiterbildungsfensterKunde(weiterbil, angemeldeterKunde)
         dlg.ShowDialog()
 
     End Sub

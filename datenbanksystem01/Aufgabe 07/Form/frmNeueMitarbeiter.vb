@@ -21,12 +21,20 @@
     End Sub
 
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click
+        Dim weiterID As UInteger = 0
+        For Each mitarbeiter As Mitarbeiter In Logic.ListeMitarbeiter
+            If mitarbeiter.BenutzerID > weiterID Then
+                weiterID = mitarbeiter.BenutzerID
+            End If
+        Next
+        weiterID += 1
 
         Dim neuerMitarbeiter As Mitarbeiter = New Mitarbeiter(Me.txtboxBenutzername.Text,
                                             Me.txtboxPasswort.Text,
                                             Me.txtboxName.Text,
                                             Me.txtboxVorname.Text,
-                                            Me.datboxGebDatM.Value)
+                                            Me.datboxGebDatM.Value,
+                                            weiterID)
 
         mlstMitarbeiter.Add(neuerMitarbeiter)
 

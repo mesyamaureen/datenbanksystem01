@@ -21,13 +21,20 @@
     End Sub
 
     Private Sub btnNeu_Click(sender As Object, e As EventArgs) Handles btnNeu.Click
-
+        Dim id As UInteger = 0
+        For Each kunde As Kunde In Logic.ListeKunden
+            If kunde.BenutzerID > id Then
+                id = kunde.BenutzerID
+            End If
+        Next
+        id += 1
 
         Dim neuerKunde As Kunde = New Kunde(Me.txtBenutzername.Text,
                                             Me.txtPasswort.Text,
                                             Me.txtNachname.Text,
                                             Me.txtVorname.Text,
                                             Me.datboxGebDat.Value,
+                                            id,
                                             Me.txtFirma.Text)
 
         mlstKunde.Add(neuerKunde)

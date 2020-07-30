@@ -78,7 +78,7 @@
     End Function
 
 
-    Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As String
+    Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As Kunde
         ' If Not (mlstKunde.Contains(Me)) Then
         'mlstKunde.Add(Me)
 

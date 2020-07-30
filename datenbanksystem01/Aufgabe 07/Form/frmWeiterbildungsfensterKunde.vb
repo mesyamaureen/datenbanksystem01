@@ -3,6 +3,7 @@
     Public mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
     Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
     Public mBookingControl As BookingController
+    Private kunde As Kunde
 
     Public Sub New()
 
@@ -12,9 +13,10 @@
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = New Weiterbildung
         mKurse = New List(Of Kurs)
+        kunde = New Kunde
     End Sub
 
-    Public Sub New(pWeiterbildung As Weiterbildung)
+    Public Sub New(pWeiterbildung As Weiterbildung, kunde As Kunde)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
@@ -22,6 +24,7 @@
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = pWeiterbildung
         mKurse = New List(Of Kurs)
+        Me.kunde = kunde
     End Sub
 
     ''' <summary>
@@ -80,7 +83,7 @@
 
         'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
         'und zur Liste aller Buchungen hinzufügen
-        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, mWeiterbil)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
+        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, kunde)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
 
         'Meldungsfenster vorbereiten
         MsgBox("Sie haben eine neue Buchung hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
