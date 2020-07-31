@@ -77,7 +77,7 @@
         Dim abgesagt As Boolean = Me.chkAbgesagtNein.Checked
 
         'Aufrufen changeWeiterbildung() in Weiterbildungscontroller
-        mweiterbilController.createKurs(ort, datum, verfuegbarkeit, preis)
+        mweiterbilController.createKurs(ort, datum, verfuegbarkeit, preis, New Weiterbildung)
         'Passende bearbeitende Weiterbildung in Datenbank
         Logic.mlstKurs.Item(frmWeiterbildungsfensterMitarb.intIndex) = mneuerKurs
     End Sub

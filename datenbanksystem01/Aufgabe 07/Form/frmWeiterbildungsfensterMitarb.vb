@@ -174,7 +174,6 @@ Public Class frmWeiterbildungsfensterMitarb
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeileKurs(i, uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
-
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächenKurs()

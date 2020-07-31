@@ -66,24 +66,24 @@
 
     'Funktionen
     'Kurse
-    Private kurseId As UInteger
-    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal) As Kurs
-        'Deklaration neue Variabel
+    Public Shared Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
+        'Deklaration neue Variable
         Dim neuerKurs As New Kurs
         'Initialisierung der Parameter
         neuerKurs.Ort = pstrOrt
         neuerKurs.Zeitpunkt = pdatZeitpunkt
         neuerKurs.Verfuegbar = pbolavailable
         neuerKurs.Preis = pdecPreis
+        neuerKurs.Weiterbildung = pweiterbildung
 
         'KursID generieren
-        Dim weiterId As UInteger = 0
+        Dim Id As UInteger = 0
         For Each kurs In Logic.ListeKurse
-            If kurs.KursID > weiterId Then
-                weiterId = kurs.KursID
+            If kurs.KursID > Id Then
+                Id = kurs.KursID
             End If
         Next
-        neuerKurs.KursID = weiterId + 1
+        neuerKurs.KursID = Id + 1
 
         'Return als Neuer Kurs
         Return neuerKurs

@@ -53,20 +53,20 @@
         Dim anzumeldenderBenutzer As Benutzer
         Dim result = New Dictionary(Of String, String) From {{"attempt", "failed"}, {"role", Nothing}}
 
-        For Each mitarbeiter As Mitarbeiter In mlstMitarbeiter
+        For Each mitarbeiter As Mitarbeiter In Logic.ListeMitarbeiter
             If strBenutzername.Equals(mitarbeiter.Benutzername) And strPasswort.Equals(mitarbeiter.Passwort) Then
                 anzumeldenderBenutzer = mitarbeiter
-                mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
+                Logic.AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
 
             End If
         Next
 
-        For Each kunde As Kunde In mlstKunde
+        For Each kunde As Kunde In Logic.ListeKunden
             If strBenutzername.Equals(kunde.Benutzername) And strPasswort.Equals(kunde.Passwort) Then
                 anzumeldenderBenutzer = kunde
-                mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
+                Logic.mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "kunde"
             End If

@@ -94,7 +94,7 @@ Partial Class BuchungenKunde
         '
         'colKurs
         '
-        Me.colKurs.Text = "Kurs"
+        Me.colKurs.Text = "Kurs Datum"
         Me.colKurs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colKurs.Width = 177
         '

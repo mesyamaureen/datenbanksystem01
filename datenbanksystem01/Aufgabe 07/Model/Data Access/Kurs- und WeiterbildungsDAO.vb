@@ -17,7 +17,7 @@ Public Class Kurs__und_WeiterbildungsDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strPfadXMLKurs) Then
-            lstKurs = Aufgabe_07.Logic.ListeKurse
+            lstKurs = Logic.ListeKurse
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstKurs = ladenXml(strPfadXMLKurs, GetType(List(Of Kurs)))
 

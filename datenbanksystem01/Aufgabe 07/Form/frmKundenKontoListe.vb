@@ -42,21 +42,22 @@
     End Sub
 
     ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Buchung übergeben </remark>
-    Sub anzeigenZeile(plngIndex As Long, puintBenutzerID As UInteger, pstrBenutzername As String, pstrVorname As String, pstrName As String)
+    Sub anzeigenZeile(puintBenutzerID As UInteger, pstrBenutzername As String, pstrVorname As String, pstrName As String, pdatGebDat As Date, pstrFirma As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.lstviewKundenKonten.Items.Add(plngIndex)
+        zeile = Me.lstviewKundenKonten.Items.Add(puintBenutzerID)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintBenutzerID)
             .Add(pstrBenutzername)
             .Add(pstrVorname)
             .Add(pstrName)
+            .Add(pdatGebDat)
+            .Add(pstrFirma)
         End With
 
     End Sub
@@ -73,10 +74,12 @@
         Dim anzuzeigenderKunde As Kunde 'Kunden
 
         'Anzuzeigende Attribute
-        Dim uintKundenID As UInteger
+        Dim uintBenutzerID As UInteger
         Dim strBenutzername As String
         Dim strName As String
         Dim strVorname As String
+        Dim datGebDat As Date
+        Dim strFirma As String
 
         'leeren der Tabelle
         leeren()
@@ -86,13 +89,15 @@
             anzuzeigenderKunde = mlstKunde.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            uintKundenID = anzuzeigenderKunde.BenutzerID
+            uintBenutzerID = anzuzeigenderKunde.BenutzerID
             strBenutzername = anzuzeigenderKunde.Benutzername
             strVorname = anzuzeigenderKunde.Vorname
             strName = anzuzeigenderKunde.Name
+            datGebDat = anzuzeigenderKunde.Geburtsdatum
+            strFirma = anzuzeigenderKunde.Firma
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, uintKundenID, strBenutzername, strName, strVorname)
+            anzeigenZeile(uintBenutzerID, strBenutzername, strVorname, strName, datGebDat, strFirma)
 
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern

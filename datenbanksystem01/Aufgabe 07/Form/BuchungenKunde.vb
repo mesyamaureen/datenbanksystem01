@@ -1,5 +1,16 @@
 ﻿Public Class BuchungenKunde
 
+    Private angemeldeterKunde As Kunde
+
+    Sub New(angemeldeterKunde As Kunde)
+
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+        Me.angemeldeterKunde = angemeldeterKunde
+    End Sub
+
     ''' <summary>
     ''' aktiviert oder deakt abhängig von der in der Tabelle Benutzer getroffenen Auswahl die Schaltflächen die zur Tabelle gehören
     ''' </summary>
@@ -32,18 +43,17 @@
     ''' <param name="puintBuchungID"></param>
     ''' <param name="pdatKurs"></param>
     ''' <param name="pstrWeiterbilName"></param>
-    Sub anzeigenZeile(plngIndex As Long, puintBuchungID As UInteger, pdatKurs As Date, pstrWeiterbilName As String)
+    Sub anzeigenZeile(puintBuchungID As UInteger, pdatKurs As Date, pstrWeiterbilName As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.ListViewAktBuchungen.Items.Add(plngIndex)
+        zeile = Me.ListViewAktBuchungen.Items.Add(puintBuchungID)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintBuchungID)
             .Add(pdatKurs)
             .Add(pstrWeiterbilName)
         End With
@@ -54,9 +64,6 @@
     ''' dann mit allen Einträgen aus der Liste der Buchung neu gefüllt wird.
     ''' </summary>
     Private Sub anzeigen()
-        'Deklaration
-        Dim buchung As Buchung
-
         'Anzuzeigende Attribute
         Dim uintBuchungsID As UInteger
         Dim strWeiterbilName As String
@@ -66,8 +73,7 @@
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To ListeBuchung.Count - 1
-            buchung = ListeBuchung.Item(i)
+        For Each buchung As Buchung In Logic.ListeBuchung
             'Attributwerte aus der Buchung lesen
             uintBuchungsID = buchung.BuchungsID
             datKurs = buchung.gebuchterKurs.Zeitpunkt
@@ -75,7 +81,7 @@
 
             'strOrt = buchungen.Ort
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, uintBuchungsID, datKurs, strWeiterbilName)
+            anzeigenZeile(uintBuchungsID, datKurs, strWeiterbilName)
         Next
         'In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()

@@ -106,22 +106,20 @@
     ''' <summary>
     ''' Liste von Kurse anzeigen
     ''' </summary>
-    ''' <param name="plngIndex"></param>
     ''' <param name="puintKursID"></param>
     ''' <param name="pdatKursDatum"></param>
     ''' <param name="pbolVerfuegbarkeit"></param>
     ''' <param name="pdecKursPreis"></param>
-    Sub anzeigenZeileKurs(plngIndex As Long, puintKursID As String, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
+    Sub anzeigenZeileKurs(puintKursID As String, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.lstviewKurse.Items.Add(plngIndex)
+        zeile = Me.lstviewKurse.Items.Add(puintKursID)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintKursID)
             .Add(pdatKursDatum)
             .Add(pbolVerfuegbarkeit)
             .Add(pdecKursPreis)
@@ -155,7 +153,7 @@
             decKursPreis = Kurs.Preis
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeileKurs(i, uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+            anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
 
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern

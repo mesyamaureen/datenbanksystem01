@@ -184,7 +184,7 @@
 
     Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
         Dim dlg As BuchungenKunde
-        dlg = New BuchungenKunde()
+        dlg = New BuchungenKunde(angemeldeterKunde)
         dlg.ShowDialog()
     End Sub
 
