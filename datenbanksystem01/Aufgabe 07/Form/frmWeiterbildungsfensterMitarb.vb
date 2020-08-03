@@ -132,17 +132,16 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' <param name="pdatKursDatum"></param>
     ''' <param name="pbolVerfuegbarkeit"></param>
     ''' <param name="pdecKursPreis"></param>
-    Sub anzeigenZeileKurs(plngIndex As Long, puintKursID As UInteger, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
+    Sub anzeigenZeileKurs(puintKursID As UInteger, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.lstviewKurseM.Items.Add(plngIndex)
+        zeile = Me.lstviewKurseM.Items.Add(puintKursID)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintKursID)
             .Add(pdatKursDatum)
             .Add(pbolVerfuegbarkeit)
             .Add(pdecKursPreis)
@@ -150,9 +149,6 @@ Public Class frmWeiterbildungsfensterMitarb
     End Sub
 
     Private Sub anzeigenKurs()
-        'Deklaration
-        Dim Kurs As Kurs 'Kurs
-
         'Anzuzeigende Attribute
         Dim uintKursID As UInteger
         Dim datKursDatum As Date
@@ -163,9 +159,7 @@ Public Class frmWeiterbildungsfensterMitarb
         Me.lstviewKurseM.Items.Clear()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To ListeKurse.Count - 1
-            Kurs = ListeKurse.Item(i)
-
+        For Each Kurs As Kurs In mBearbWeiterbildung.LstKurs
             'Attributwerte aus der Weiterbildung lesen
             uintKursID = Kurs.KursID
             datKursDatum = Kurs.Zeitpunkt
@@ -173,7 +167,7 @@ Public Class frmWeiterbildungsfensterMitarb
             decKursPreis = Kurs.Preis
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeileKurs(i, uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+            anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächenKurs()

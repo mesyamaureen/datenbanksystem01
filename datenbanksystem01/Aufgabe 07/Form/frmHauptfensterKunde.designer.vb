@@ -31,7 +31,6 @@ Partial Class frmHauptfensterKunde
         Me.grpboxWeiterbildung = New System.Windows.Forms.GroupBox()
         Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstviewWeiterbildungKunde = New System.Windows.Forms.ListView()
-        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildung = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colThema = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -125,7 +124,7 @@ Partial Class frmHauptfensterKunde
         '
         'lstviewWeiterbildungKunde
         '
-        Me.lstviewWeiterbildungKunde.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colWeiterbildungID, Me.colWeiterbildung, Me.colThema})
+        Me.lstviewWeiterbildungKunde.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colWeiterbildungID, Me.colWeiterbildung, Me.colThema})
         Me.lstviewWeiterbildungKunde.FullRowSelect = True
         Me.lstviewWeiterbildungKunde.GridLines = True
         Me.lstviewWeiterbildungKunde.HideSelection = False
@@ -138,26 +137,22 @@ Partial Class frmHauptfensterKunde
         Me.lstviewWeiterbildungKunde.UseCompatibleStateImageBehavior = False
         Me.lstviewWeiterbildungKunde.View = System.Windows.Forms.View.Details
         '
-        'colIndex
-        '
-        Me.colIndex.Text = "Nr"
-        '
         'colWeiterbildungID
         '
         Me.colWeiterbildungID.Text = "Weiterbildung ID"
-        Me.colWeiterbildungID.Width = 225
+        Me.colWeiterbildungID.Width = 150
         '
         'colWeiterbildung
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 545
+        Me.colWeiterbildung.Width = 250
         '
         'colThema
         '
         Me.colThema.Text = "Thema"
         Me.colThema.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colThema.Width = 346
+        Me.colThema.Width = 250
         '
         'lblSuchen
         '
@@ -221,5 +216,4 @@ Partial Class frmHauptfensterKunde
     Friend WithEvents colThema As ColumnHeader
     Friend WithEvents lblSuchen As Label
     Friend WithEvents colWeiterbildung As ColumnHeader
-    Friend WithEvents colIndex As ColumnHeader
 End Class

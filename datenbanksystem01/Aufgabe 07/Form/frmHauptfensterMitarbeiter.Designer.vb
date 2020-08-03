@@ -34,7 +34,6 @@ Partial Class frmHauptfensterMitarbeiter
         Me.btnHinzufuegen = New System.Windows.Forms.Button()
         Me.btnOeffnenM = New System.Windows.Forms.Button()
         Me.lstviewWeiterbildungenM = New System.Windows.Forms.ListView()
-        Me.colIndex = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungIdM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colThemaM = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -163,7 +162,7 @@ Partial Class frmHauptfensterMitarbeiter
         '
         'lstviewWeiterbildungenM
         '
-        Me.lstviewWeiterbildungenM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndex, Me.colWeiterbildungIdM, Me.colWeiterbildungM, Me.colThemaM})
+        Me.lstviewWeiterbildungenM.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colWeiterbildungIdM, Me.colWeiterbildungM, Me.colThemaM})
         Me.lstviewWeiterbildungenM.FullRowSelect = True
         Me.lstviewWeiterbildungenM.GridLines = True
         Me.lstviewWeiterbildungenM.HideSelection = False
@@ -176,26 +175,22 @@ Partial Class frmHauptfensterMitarbeiter
         Me.lstviewWeiterbildungenM.UseCompatibleStateImageBehavior = False
         Me.lstviewWeiterbildungenM.View = System.Windows.Forms.View.Details
         '
-        'colIndex
-        '
-        Me.colIndex.Text = "Nr"
-        '
         'colWeiterbildungIdM
         '
         Me.colWeiterbildungIdM.Text = "Weiterbildung ID"
-        Me.colWeiterbildungIdM.Width = 225
+        Me.colWeiterbildungIdM.Width = 150
         '
         'colWeiterbildungM
         '
         Me.colWeiterbildungM.Text = "Weiterbildung"
         Me.colWeiterbildungM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildungM.Width = 546
+        Me.colWeiterbildungM.Width = 300
         '
         'colThemaM
         '
         Me.colThemaM.Text = "Thema"
         Me.colThemaM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colThemaM.Width = 346
+        Me.colThemaM.Width = 300
         '
         'lblSucheM
         '
@@ -263,6 +258,5 @@ Partial Class frmHauptfensterMitarbeiter
     Friend WithEvents colWeiterbildungM As ColumnHeader
     Friend WithEvents colThemaM As ColumnHeader
     Friend WithEvents btnLoeschen As Button
-    Friend WithEvents colIndex As ColumnHeader
     Friend WithEvents btnBeendenProgramm As Button
 End Class

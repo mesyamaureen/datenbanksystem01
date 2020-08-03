@@ -86,18 +86,17 @@
     ''' Wird aufgerufen, um die Daten einer Weiterbldung in der Liste der Weiterbildung als Zeile anzuzeigen
     ''' </summary>
     ''' <remark> Als Parameter werden die einzelnen Werte der Attribute einer einzelnen Weiterbildung übergeben </remark>
-    Sub anzeigenZeile(plngIndex As Long, puintWeiterbilID As UInteger, pstrWeiterbilName As String, pstrWeiterbilThema As String)
+    Sub anzeigenZeile(puintWeiterbilID As UInteger, pstrWeiterbilName As String, pstrWeiterbilThema As String)
 
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
         'Auf den Inhalt der Liste zugreifen und neue Zeile erzeugen, indem
         'Index als Wert in der ersten Spalte eingetragen wird
-        zeile = Me.lstviewWeiterbildungenM.Items.Add(plngIndex)
+        zeile = Me.lstviewWeiterbildungenM.Items.Add(puintWeiterbilID)
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(puintWeiterbilID)
             .Add(pstrWeiterbilName)
             .Add(pstrWeiterbilThema)
         End With
@@ -131,7 +130,7 @@
             strWeiterbilThema = weiterbil.Thema
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(i, uintWeiterbilID, strWeiterbilName, strWeiterbilThema)
+            anzeigenZeile(uintWeiterbilID, strWeiterbilName, strWeiterbilThema)
 
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
@@ -179,7 +178,13 @@
         Dim dlg As frmWeiterbildungsfensterMitarb  ' Detaildialog zum Anzeigen der Weiterbildung
 
         'Element an der Position der Liste, die der ID entspricht ermitteln
-        weiterbil = Logic.mlstWeiterbildungen.Item(GetListViewIndex())
+        For Each weiterbildung As Weiterbildung In ListeWeiterbildung
+            If weiterbildung.WeiterbildungsID = lstviewWeiterbildungenM.SelectedItems(0).Text Then
+                weiterbil = weiterbildung
+                Exit For
+            End If
+        Next
+        'weiterbil = Logic.ListeWeiterbildung.Item(GetListViewIndex())
 
         'Fenster vorbereiten
         dlg = New frmWeiterbildungsfensterMitarb(weiterbil, GetListViewIndex())

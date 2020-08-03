@@ -10,7 +10,7 @@
     Public mlstKurs As List(Of Kurs) = New List(Of Kurs)
     Public mlstWeiterbildungen As List(Of Weiterbildung) = New List(Of Weiterbildung)
     Private userController As UserController
-    Private weiterbildungscontroller As WeiterbildungsController
+    Private weiterbildungscontroller As WeiterbildungsController = New WeiterbildungsController
     Private bookingController As BookingController
 
     'init funktion
@@ -81,8 +81,8 @@
         mlstMitarbeiter = BenutzerDAO.ladenMitarbeiter()
         mlstKunde = BenutzerDAO.ladenKunden()
         mlstBuchung = BuchungsDAO.ladenBuchung()
-        mlstKurs = Kurs__und_WeiterbildungsDAO.ladenKurse()
-        mlstWeiterbildungen = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
+        'mlstKurs = Kurs__und_WeiterbildungsDAO.ladenKurse()
+        'mlstWeiterbildungen = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
 
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
 
@@ -97,18 +97,7 @@
         'Dim agiles, scrum, controlling, bmc As Weiterbildung
 
         ''Weiterbildungen initialisieren ohne Parameter
-        'agiles = New Weiterbildung()
-        'agiles.Bezeichnung = "Agiles Projektmanagement"
-        'agiles.Curriculum = "1) Grundlagen des agilen Projektmanagement
-        '                     2) Scrum
-        '                     3) Kanban
-        '                     4) Design Thinking
-        '                     5) User Journey Mapping"
-        'agiles.Thema = "Projekt-, Prozess- und Changemanagement"
-        'agiles.Teilnehmerkreis = "Projektmanager und Projektleiter sowie Projektcontroller, -assistenten,
-        '                         -mitarbeiter und jeder, der seine Fähigkeiten während der Projektarbeit effizienter gestalten möchte."
-        'agiles.lstKurs.Add(kurs01)
-        'agiles.lstKurs.Add(kurs04)
+
 
         '' Weiterbildungen initialisieren mit Parameter
         'scrum = New Weiterbildung("SCRUM", "Projekt-, Prozess- und Changemanagement", "1) Scrum - Herkunft und Entwicklung
@@ -137,15 +126,60 @@
         'mlstWeiterbildungen.Add(bmc)
 
 
+        'weiterbildungen erstellen
+        Dim agil As Weiterbildung = weiterbildungscontroller.createWeiterbildung("Agiles Projektmanagement",
+                                                                            "1) Grundlagen des agilen Projektmanagement
+                                                                            2) Scrum
+                                                                            3) Kanban 
+                                                                            4) Design Thinking
+                                                                            5) User Journey Mapping",
+                                                                            "Projektmanager und Projektleiter sowie Projektcontroller, -assistenten, -mitarbeiter und jeder, der seine Fähigkeiten während der Projektarbeit effizienter gestalten möchte.",
+                                                                            "Projekt-, Prozess- und Changemanagement")
+        ListeWeiterbildung.Add(agil)
+
+
+        Dim Scrum As Weiterbildung = weiterbildungscontroller.createWeiterbildung("SCRUM",
+                                                                            "1) Scrum - Herkunft und Entwicklung
+                                                                            2) Die Scrum Philosophie
+                                                                            3) Die Agile Phase",
+                                                                            "Dieser Workshop richtet sich an alle, die in ihrem Unternehmen die mögliche Umstellung auf agiles Produkt- und Projektmanagement übernehmen sollen und dafür z.B. die Anforderungen liefern mussen",
+                                                                            "Projekt-, Prozess- und Changemanagement")
+        ListeWeiterbildung.Add(Scrum)
+
+        Dim controlling As Weiterbildung = weiterbildungscontroller.createWeiterbildung("Controlling Kompaktseminar",
+                                                                            "1) Grundlagen des Controllings,
+                                                                            2) Controlling - Übersicht,
+                                                                            3) Kosten- und Erfolgsrechnung",
+                                                                            "Fach- und Führungskräfte, Mitarbeiter der entsprechnenden Fachabteilung, Finanz- und Budgetverantwortliche, Mitarbeiter des Rechnungswesens sowie der Buchhaltung",
+                                                                            "Controlling")
+
+
+        Dim bmv As Weiterbildung = weiterbildungscontroller.createWeiterbildung("Business Model Canvas",
+                                                                            "1) Wer sind meine Kunden und welche Bedürfnisse und Interessen haben Sie?
+                                                                             2) Was biete ich an und welchen Mehrwert schaffe ich für meine Kunden?
+                                                                             3) Wie sieht meine Einnahme- und Kostenstruktur aus?",
+                                                                            "Unternehmer, Projektmanager oder Marketingmitarbeiter, die kreative Methoden ausprobieren wollen, um Ihre Projekte schneller und effizientre zu planen. 
+                                                                            Start-Ups, die Ihr Geschäftsmodell gestalten möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.",
+                                                                            "Digital Business")
+        ListeWeiterbildung.Add(bmv)
+
         'Kurse erstellen & zur Liste hinzufügen
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #07/30/2020#, True, 1500, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #08/21/2020#, True, 800, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #09/13/2020#, True, 1800, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Hamburg", #12/12/2020#, True, 1200, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/14/2020#, True, 800, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/21/2020#, True, 1800, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/24/2020#, True, 1200, New Weiterbildung))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/05/2020#, True, 800, New Weiterbildung))
+
+        Dim kurs1 As Kurs = WeiterbildungsController.createKurs("Berlin", #07/30/2020#, True, 1500, agil)
+        ListeKurse.Add(kurs1)
+        Dim kurs2 As Kurs = WeiterbildungsController.createKurs("Berlin", #08/21/2020#, True, 800, Scrum)
+        ListeKurse.Add(kurs2)
+        Dim kurs3 As Kurs = WeiterbildungsController.createKurs("Stuttgart", #09/13/2020#, True, 1800, bmv)
+        ListeKurse.Add(kurs3)
+        'ListeKurse.Add(WeiterbildungsController.createKurs("Hamburg", #12/12/2020#, True, 1200, controlling))
+        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/14/2020#, True, 800, agil))
+        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/21/2020#, True, 1800, controlling))
+        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/24/2020#, True, 1200, Scrum))
+        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/05/2020#, True, 800, agil))
+
+        agil.LstKurs.Add(kurs1)
+        Scrum.LstKurs.Add(kurs2)
+        bmv.LstKurs.Add(kurs3)
 
 
         ''Weitere Kurse zur Weiterbildung hinzufügen
