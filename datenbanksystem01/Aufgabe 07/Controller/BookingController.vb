@@ -37,7 +37,7 @@
 
 
     'Funktionen
-    Public Function createBooking(mKurs As Kurs, pbenTeilnehmer As Benutzer) As Buchung
+    Public Shared Function createBooking(mKurs As Kurs, pbenTeilnehmer As Benutzer) As Buchung
         'Deklaration neue Buchung
         Dim neueBuchung As New Buchung
         neueBuchung.gebuchterKurs = mKurs

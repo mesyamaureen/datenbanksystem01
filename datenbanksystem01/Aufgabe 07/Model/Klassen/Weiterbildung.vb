@@ -9,7 +9,6 @@ Public Class Weiterbildung
     Private mstrThema As String
     Private mstrCurriculum As String
     Private mstrTeilnehmerkreis As String
-    Private mlstKurs As List(Of Kurs)
     'Konstruktor
     'Parameterloser Konstruktor
     Sub New()
@@ -22,14 +21,12 @@ Public Class Weiterbildung
 
 
     'Konstruktor mit Parametern
-    Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pKurs As Kurs)
+    Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String)
 
         mstrBezeichnung = pstrBezeichnung
         mstrThema = pstrThema
         mstrCurriculum = pstrCurriculum
         mstrTeilnehmerkreis = pstrTeilnehmerkreis
-        mlstKurs = New List(Of Kurs)
-        mlstKurs.Add(pKurs)
     End Sub
 
     Public Property WeiterbildungsID As UInteger
@@ -75,15 +72,6 @@ Public Class Weiterbildung
         End Get
         Set(value As String)
             mstrTeilnehmerkreis = value
-        End Set
-    End Property
-
-    Public Property LstKurs As List(Of Kurs)
-        Get
-            Return mlstKurs
-        End Get
-        Set(value As List(Of Kurs))
-            mlstKurs = value
         End Set
     End Property
 

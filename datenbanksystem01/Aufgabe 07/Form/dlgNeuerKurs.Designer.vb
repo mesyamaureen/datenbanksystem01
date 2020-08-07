@@ -44,18 +44,18 @@ Partial Class dlgNeuerKurs
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(316, 246)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(312, 246)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(64, 23)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(68, 23)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(241, 246)
-        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSpeichern.Location = New System.Drawing.Point(238, 246)
+        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSpeichern.Name = "btnSpeichern"
         Me.btnSpeichern.Size = New System.Drawing.Size(70, 23)
         Me.btnSpeichern.TabIndex = 1
@@ -105,7 +105,7 @@ Partial Class dlgNeuerKurs
         'txtOrt
         '
         Me.txtOrt.Location = New System.Drawing.Point(98, 6)
-        Me.txtOrt.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtOrt.Margin = New System.Windows.Forms.Padding(2)
         Me.txtOrt.Multiline = True
         Me.txtOrt.Name = "txtOrt"
         Me.txtOrt.ReadOnly = True
@@ -114,8 +114,8 @@ Partial Class dlgNeuerKurs
         '
         'txtPreis
         '
-        Me.txtPreis.Location = New System.Drawing.Point(97, 77)
-        Me.txtPreis.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPreis.Location = New System.Drawing.Point(98, 146)
+        Me.txtPreis.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPreis.Multiline = True
         Me.txtPreis.Name = "txtPreis"
         Me.txtPreis.Size = New System.Drawing.Size(286, 22)
@@ -185,8 +185,8 @@ Partial Class dlgNeuerKurs
         '
         'txtKursID
         '
-        Me.txtKursID.Location = New System.Drawing.Point(97, 147)
-        Me.txtKursID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtKursID.Location = New System.Drawing.Point(97, 76)
+        Me.txtKursID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtKursID.Multiline = True
         Me.txtKursID.Name = "txtKursID"
         Me.txtKursID.Size = New System.Drawing.Size(286, 22)
@@ -226,7 +226,7 @@ Partial Class dlgNeuerKurs
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "dlgNeuerKurs"
         Me.Text = "Neuer Kurs"
         Me.ResumeLayout(False)

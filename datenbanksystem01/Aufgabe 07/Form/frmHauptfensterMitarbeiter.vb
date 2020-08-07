@@ -174,7 +174,7 @@
     ''' <param name="e"></param>
     Private Sub btnOeffnenM_Click(sender As Object, e As EventArgs) Handles btnOeffnenM.Click
         'Deklaration
-        Dim weiterbil As Weiterbildung  ' Zu bearbeitener Weiterbildung
+        Dim weiterbil As Weiterbildung = New Weiterbildung  ' Zu bearbeitener Weiterbildung
         Dim dlg As frmWeiterbildungsfensterMitarb  ' Detaildialog zum Anzeigen der Weiterbildung
 
         'Element an der Position der Liste, die der ID entspricht ermitteln

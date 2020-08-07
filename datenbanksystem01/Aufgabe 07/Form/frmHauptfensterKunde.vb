@@ -148,7 +148,7 @@
         'Weiterbildung aus Liste suchen
         weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
         For Each weiterbildung In Logic.ListeWeiterbildung
-            If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungKunde.SelectedItems(0).SubItems(1).Text) Then
+            If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungKunde.SelectedItems(0).SubItems(0).Text) Then
                 weiterbil = weiterbildung
                 Exit For
             End If

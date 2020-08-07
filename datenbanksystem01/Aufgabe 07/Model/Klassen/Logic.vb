@@ -77,14 +77,14 @@
     '''<remarks>funktion initialise
     '''</remarks>
     Public Function initialise()
-        'initialise lists from database
-        mlstMitarbeiter = BenutzerDAO.ladenMitarbeiter()
-        mlstKunde = BenutzerDAO.ladenKunden()
-        mlstBuchung = BuchungsDAO.ladenBuchung()
-        'mlstKurs = Kurs__und_WeiterbildungsDAO.ladenKurse()
-        'mlstWeiterbildungen = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
-
         mlstAktuellAngemeldeterBenutzer = New List(Of Benutzer)
+
+        'initialise lists from database
+        ListeMitarbeiter = BenutzerDAO.ladenMitarbeiter()
+        ListeKunden = BenutzerDAO.ladenKunden()
+        ListeBuchung = BuchungsDAO.ladenBuchung()
+        'ListeKurse = Kurs__und_WeiterbildungsDAO.ladenKurse()
+        'ListeWeiterbildung = Kurs__und_WeiterbildungsDAO.ladenWeiterbildung()
 
         ''Beispieldatensätze erstellen
         'mlstMitarbeiter = New List(Of Mitarbeiter) From
@@ -152,7 +152,7 @@
                                                                             3) Kosten- und Erfolgsrechnung",
                                                                             "Fach- und Führungskräfte, Mitarbeiter der entsprechnenden Fachabteilung, Finanz- und Budgetverantwortliche, Mitarbeiter des Rechnungswesens sowie der Buchhaltung",
                                                                             "Controlling")
-
+        ListeWeiterbildung.Add(controlling)
 
         Dim bmv As Weiterbildung = weiterbildungscontroller.createWeiterbildung("Business Model Canvas",
                                                                             "1) Wer sind meine Kunden und welche Bedürfnisse und Interessen haben Sie?
@@ -164,22 +164,14 @@
         ListeWeiterbildung.Add(bmv)
 
         'Kurse erstellen & zur Liste hinzufügen
-
-        Dim kurs1 As Kurs = WeiterbildungsController.createKurs("Berlin", #07/30/2020#, True, 1500, agil)
+        MessageBox.Show(ListeKurse.Count)
+        Dim kurs1 As Kurs = weiterbildungscontroller.createKurs("Berlin", #07/30/2020#, True, 1500, agil)
         ListeKurse.Add(kurs1)
-        Dim kurs2 As Kurs = WeiterbildungsController.createKurs("Berlin", #08/21/2020#, True, 800, Scrum)
+        Dim kurs2 As Kurs = weiterbildungscontroller.createKurs("Berlin", #08/21/2020#, True, 800, Scrum)
         ListeKurse.Add(kurs2)
-        Dim kurs3 As Kurs = WeiterbildungsController.createKurs("Stuttgart", #09/13/2020#, True, 1800, bmv)
+        Dim kurs3 As Kurs = weiterbildungscontroller.createKurs("Stuttgart", #09/13/2020#, True, 1800, bmv)
         ListeKurse.Add(kurs3)
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Hamburg", #12/12/2020#, True, 1200, controlling))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/14/2020#, True, 800, agil))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/21/2020#, True, 1800, controlling))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Berlin", #10/24/2020#, True, 1200, Scrum))
-        'ListeKurse.Add(WeiterbildungsController.createKurs("Stuttgart", #11/05/2020#, True, 800, agil))
-
-        agil.LstKurs.Add(kurs1)
-        Scrum.LstKurs.Add(kurs2)
-        bmv.LstKurs.Add(kurs3)
+        MessageBox.Show(ListeKurse.Count)
 
 
         ''Weitere Kurse zur Weiterbildung hinzufügen
@@ -214,7 +206,7 @@
         'Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
 
         userController = New UserController(ListeMitarbeiter, ListeKunden)
-        weiterbildungscontroller = New WeiterbildungsController(ListeKurse, ListeWeiterbildung)
+        'weiterbildungscontroller = New WeiterbildungsController(ListeKurse, ListeWeiterbildung)
         bookingController = New BookingController(ListeBuchung)
     End Function
 

@@ -1,16 +1,16 @@
 ﻿Public Class WeiterbildungsController
 
     'Properties
-    Private mlstKurse As List(Of Kurs)
-    Private mlstWeiterbildungen As List(Of Weiterbildung)
+    'Private mlstKurse As List(Of Kurs)
+    'Private mlstWeiterbildungen As List(Of Weiterbildung)
     Private mstrKursID As String
     Private mstrWeiterbildungsID As String
 
     'Konstruktor
 
     Sub New()
-        mlstKurse = New List(Of Kurs)
-        mlstWeiterbildungen = New List(Of Weiterbildung)
+        'mlstKurse = New List(Of Kurs)
+        'mlstWeiterbildungen = New List(Of Weiterbildung)
         mstrKursID = String.Empty
         mstrWeiterbildungsID = String.Empty
 
@@ -18,30 +18,30 @@
 
     Sub New(plstKurse As List(Of Kurs), plstWeiterbildungen As List(Of Weiterbildung))
 
-        mlstKurse = plstKurse
-        mlstWeiterbildungen = plstWeiterbildungen
+        'mlstKurse = plstKurse
+        'mlstWeiterbildungen = plstWeiterbildungen
 
     End Sub
 
     'Getter & Setter
 
-    Public Property ListeKurse As List(Of Kurs)
-        Get
-            Return mlstKurse
-        End Get
-        Set(value As List(Of Kurs))
-            mlstKurse = value
-        End Set
-    End Property
+    'Public Property ListeKurse As List(Of Kurs)
+    '    Get
+    '        Return mlstKurse
+    '    End Get
+    '    Set(value As List(Of Kurs))
+    '        mlstKurse = value
+    '    End Set
+    'End Property
 
-    Public Property ListeWeiterbildungen As List(Of Weiterbildung)
-        Get
-            Return mlstWeiterbildungen
-        End Get
-        Set(value As List(Of Weiterbildung))
-            mlstWeiterbildungen = value
-        End Set
-    End Property
+    'Public Property ListeWeiterbildungen As List(Of Weiterbildung)
+    '    Get
+    '        Return mlstWeiterbildungen
+    '    End Get
+    '    Set(value As List(Of Weiterbildung))
+    '        mlstWeiterbildungen = value
+    '    End Set
+    'End Property
 
     Public Property KursID As String
         Get
@@ -66,7 +66,7 @@
 
     'Funktionen
     'Kurse
-    Public Shared Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
+    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
         'Deklaration neue Variable
         Dim neuerKurs As New Kurs
         'Initialisierung der Parameter
@@ -78,7 +78,7 @@
 
         'KursID generieren
         Dim Id As UInteger = 0
-        For Each kurs In Logic.ListeKurse
+        For Each kurs In ListeKurse
             If kurs.KursID > Id Then
                 Id = kurs.KursID
             End If
@@ -102,14 +102,6 @@
             End If
         Next
         Return aryKurse
-    End Function
-
-    Public Function addKurs(pstrWeiterbildungsID As UInteger, pKurs As Kurs)
-        For Each weiterbil As Weiterbildung In ListeWeiterbildungen
-            If weiterbil.WeiterbildungsID = pstrWeiterbildungsID Then
-                weiterbil.lstKurs.Add(pKurs)
-            End If
-        Next
     End Function
 
     Public Function changeKurs(strKundenID As String, strOrt As String, datZeitpunkt As Date, decPreis As Decimal, bearbKurs As Kurs) As Boolean 'strKundenId ????
@@ -137,7 +129,7 @@
 
         'WeiterbildungsID generieren
         Dim weiterId As UInteger = 0
-        For Each weiterbildung In Logic.ListeWeiterbildung
+        For Each weiterbildung In ListeWeiterbildung
             If weiterbildung.WeiterbildungsID > weiterId Then
                 weiterId = weiterbildung.WeiterbildungsID
             End If
@@ -151,7 +143,7 @@
     Public Function viewWeiterbildung(strWeiterbildungsID As String) As Array
         'Deklaration neue Variablen
         Dim aryWeiterbil(4) As String
-        For Each weiterbil As Weiterbildung In ListeWeiterbildungen
+        For Each weiterbil As Weiterbildung In ListeWeiterbildung
             If weiterbil.WeiterbildungsID = strWeiterbildungsID Then
                 aryWeiterbil(0) = weiterbil.Bezeichnung
                 aryWeiterbil(1) = weiterbil.Thema
@@ -162,7 +154,7 @@
         Return aryWeiterbil
     End Function
 
-    Public Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
+    Public Shared Function changeWeiterbildung(strBezeichnung As String, strThema As String, strCurriculum As String, strTeilnehmerkreis As String,
                                         bearbWeiterbildung As Weiterbildung) As Weiterbildung
         'Initialisierung der Parameter
         bearbWeiterbildung.Bezeichnung = strBezeichnung

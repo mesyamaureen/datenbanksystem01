@@ -90,10 +90,14 @@ Public Class frmWeiterbildungsfensterMitarb
         Dim teilkreis As String = Me.rtxtboxTeilnkreisM.Text
 
         'Aufrufen changeWeiterbildung() in Weiterbildungscontroller
-        mBearbWeiterbildung = mWeiterbController.changeWeiterbildung(titel, thema, curri, teilkreis, mBearbWeiterbildung)
+        mBearbWeiterbildung = WeiterbildungsController.changeWeiterbildung(titel, thema, curri, teilkreis, mBearbWeiterbildung)
 
         'Passende bearbeitende Weiterbildung in Datenbank
-        Logic.mlstWeiterbildungen.Item(index) = mBearbWeiterbildung
+        For i = 0 To ListeWeiterbildung.Count - 1
+            If ListeWeiterbildung.Item(i).WeiterbildungsID = mBearbWeiterbildung.WeiterbildungsID Then
+                ListeWeiterbildung.Item(i) = mBearbWeiterbildung
+            End If
+        Next
     End Sub
 
 
@@ -127,7 +131,6 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' <summary>
     ''' Wird aufgerufen, um die Daten der Kurse aus der Liste als Zeile anzuzeigen
     ''' </summary>
-    ''' <param name="plngIndex"></param>
     ''' <param name="puintKursID"></param>
     ''' <param name="pdatKursDatum"></param>
     ''' <param name="pbolVerfuegbarkeit"></param>
@@ -152,6 +155,7 @@ Public Class frmWeiterbildungsfensterMitarb
         'Anzuzeigende Attribute
         Dim uintKursID As UInteger
         Dim datKursDatum As Date
+        Dim strKursOrt As String
         Dim bolVerfuegbarkeit As Boolean
         Dim decKursPreis As Decimal
 
@@ -159,15 +163,18 @@ Public Class frmWeiterbildungsfensterMitarb
         Me.lstviewKurseM.Items.Clear()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For Each Kurs As Kurs In mBearbWeiterbildung.LstKurs
-            'Attributwerte aus der Weiterbildung lesen
-            uintKursID = Kurs.KursID
-            datKursDatum = Kurs.Zeitpunkt
-            bolVerfuegbarkeit = Kurs.Verfuegbar
-            decKursPreis = Kurs.Preis
+        For Each Kurs As Kurs In ListeKurse
+            If Kurs.Weiterbildung.WeiterbildungsID = mBearbWeiterbildung.WeiterbildungsID Then
+                'Attributwerte aus der Weiterbildung lesen
+                uintKursID = Kurs.KursID
+                datKursDatum = Kurs.Zeitpunkt
+                strKursOrt = Kurs.Ort
+                bolVerfuegbarkeit = Kurs.Verfuegbar
+                decKursPreis = Kurs.Preis
 
-            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+                'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+                anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+            End If
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächenKurs()
@@ -184,7 +191,7 @@ Public Class frmWeiterbildungsfensterMitarb
         Dim dlg As dlgNeuerKurs 'Detaildialog zum Anzeigen des neuen Kurses
 
         'Fenster vorbereiten
-        dlg = New dlgNeuerKurs()
+        dlg = New dlgNeuerKurs(mBearbWeiterbildung)
         dlg.ShowDialog()
 
         'Auswertung des Dialogergebnisses
@@ -192,9 +199,7 @@ Public Class frmWeiterbildungsfensterMitarb
             ' Dialog mit positivem Ergebnis geschlossen
             neuerKurs = dlg.mneuerKurs
             'Neuer Kurs zur Liste des Kurses hinzufügen
-            Logic.mlstKurs.Add(neuerKurs)
-            'Neuer Kurs zur Weiterbildung hinzufügen
-            mWeiterbController.addKurs(mBearbWeiterbildung.WeiterbildungsID, neuerKurs)
+            ListeKurse.Add(neuerKurs)
             ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigenKurs()
         End If
@@ -224,22 +229,14 @@ Public Class frmWeiterbildungsfensterMitarb
             End If
         End If
 
-        'Kurs löschen
-        'aus Liste aller Kurse der Weiterbildung entfernen
-        'Logic.mlstKurs.RemoveAt(intIndex)
-        mBearbWeiterbildung.lstKurs.RemoveAt(intIndex)
-
-        'Überprüfen, ob noch Kurse von der Weiterbildung vorhanden ist
-        If mBearbWeiterbildung.lstKurs.Count = 0 Then
-            'Wenn nichts vorhanden, wird die ganze Weiterbildung gelöscht
-            Logic.mlstWeiterbildungen.Remove(mBearbWeiterbildung)
-        Else
-            'Wenn es noch Kurse gibt, nichts passiert
-        End If
+        For Each Kurs As Kurs In ListeKurse
+            If Kurs.KursID = intIndex Then
+                ListeKurse.Remove(Kurs)
+            End If
+        Next
 
         'Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Kurs nicht mehr zeigt
         anzeigenKurs()
-
     End Sub
 
     Private Sub frmWeiterbildungsfensterMitarb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -247,5 +244,9 @@ Public Class frmWeiterbildungsfensterMitarb
         anzeigenWeiterbildung()
         anzeigenKurs()
 
+    End Sub
+
+    Private Sub lstviewKurseM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKurseM.SelectedIndexChanged
+        aktivierenSchaltflächenKurs()
     End Sub
 End Class

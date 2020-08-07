@@ -10,7 +10,6 @@ Public Class Kurs
     Private mbolVerfuegbar As Boolean
     Private mdecPreis As Decimal
     Private mbolAbgesagt As Boolean
-    Private mBuchungen As Buchung
     Private mWeiterbildung As Weiterbildung
 
     'Konstruktoren
@@ -92,15 +91,6 @@ Public Class Kurs
         End Get
         Set(value As Decimal)
             mbolAbgesagt = value
-        End Set
-    End Property
-
-    Public Property Buchungen As Buchung
-        Get
-            Return mBuchungen
-        End Get
-        Set(value As Buchung)
-            mBuchungen = value
         End Set
     End Property
 

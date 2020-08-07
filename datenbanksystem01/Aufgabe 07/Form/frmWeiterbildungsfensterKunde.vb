@@ -75,7 +75,7 @@
 
         'Kurs Objekt aus Liste suchen
         For Each kurs As Kurs In Logic.ListeKurse
-            If kurs.KursID = Convert.ToUInt32(Me.lstviewKurse.SelectedItems(0).SubItems(1).Text) Then
+            If kurs.KursID = Convert.ToUInt32(Me.lstviewKurse.SelectedItems(0).SubItems(0).Text) Then
                 buchenderKurs = kurs
                 Exit For
             End If
@@ -83,7 +83,8 @@
 
         'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
         'und zur Liste aller Buchungen hinzufügen
-        Logic.ListeBuchung.Add(mBookingControl.createBooking(buchenderKurs, kunde)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
+        Logic.ListeBuchung.Add(BookingController.createBooking(buchenderKurs, kunde)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
+        BuchungsDAO.speichernBuchung(ListeBuchung)
 
         'Meldungsfenster vorbereiten
         MsgBox("Sie haben eine neue Buchung hinzugefügt.", MsgBoxStyle.OkOnly, "Neue Buchung")
@@ -130,9 +131,6 @@
     ''' Tabelle mit der Liste von Kurs in Datenbank verknüpfen
     ''' </summary>
     Private Sub anzeigenKurs()
-        'Deklaration
-        Dim Kurs As Kurs 'Kurs
-
         'Anzuzeigende Attribute
         Dim uintKursID As String
         Dim datKursDatum As Date
@@ -143,18 +141,17 @@
         Me.lstviewKurse.Items.Clear()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To ListeKurse.Count - 1
-            Kurs = ListeKurse.Item(i)
+        For Each Kurs As Kurs In ListeKurse
+            If Kurs.Weiterbildung.WeiterbildungsID = mWeiterbil.WeiterbildungsID Then
+                'Attributwerte aus der Weiterbildung lesen
+                uintKursID = Kurs.KursID
+                datKursDatum = Kurs.Zeitpunkt
+                bolVerfuegbarkeit = Kurs.Verfuegbar
+                decKursPreis = Kurs.Preis
 
-            'Attributwerte aus der Weiterbildung lesen
-            uintKursID = Kurs.KursID
-            datKursDatum = Kurs.Zeitpunkt
-            bolVerfuegbarkeit = Kurs.Verfuegbar
-            decKursPreis = Kurs.Preis
-
-            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
-
+                'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
+                anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+            End If
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächenKurs()
