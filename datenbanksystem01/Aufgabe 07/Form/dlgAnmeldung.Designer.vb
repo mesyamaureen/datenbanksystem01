@@ -58,36 +58,36 @@ Partial Class dlgAnmeldung
         Me.lblNeuesKonto.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNeuesKonto.Name = "lblNeuesKonto"
         Me.lblNeuesKonto.Size = New System.Drawing.Size(111, 13)
-        Me.lblNeuesKonto.TabIndex = 3
+        Me.lblNeuesKonto.TabIndex = 5
         Me.lblNeuesKonto.TabStop = True
         Me.lblNeuesKonto.Text = "Neues Konto erstellen"
         '
         'txtBenutzername
         '
         Me.txtBenutzername.Location = New System.Drawing.Point(94, 19)
-        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
         Me.txtBenutzername.Size = New System.Drawing.Size(225, 24)
-        Me.txtBenutzername.TabIndex = 4
+        Me.txtBenutzername.TabIndex = 0
         '
         'txtPasswort
         '
         Me.txtPasswort.Location = New System.Drawing.Point(94, 49)
-        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPasswort.Name = "txtPasswort"
         Me.txtPasswort.Size = New System.Drawing.Size(225, 20)
-        Me.txtPasswort.TabIndex = 5
+        Me.txtPasswort.TabIndex = 1
         Me.txtPasswort.UseSystemPasswordChar = True
         '
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAbbrechen.Location = New System.Drawing.Point(245, 110)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
         Me.btnAbbrechen.Size = New System.Drawing.Size(73, 27)
-        Me.btnAbbrechen.TabIndex = 6
+        Me.btnAbbrechen.TabIndex = 4
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
@@ -95,10 +95,10 @@ Partial Class dlgAnmeldung
         '
         Me.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOK.Location = New System.Drawing.Point(159, 110)
-        Me.btnOK.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnOK.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(73, 27)
-        Me.btnOK.TabIndex = 0
+        Me.btnOK.TabIndex = 3
         Me.btnOK.Text = "&OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '

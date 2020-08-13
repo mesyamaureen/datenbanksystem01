@@ -1,7 +1,6 @@
 ﻿Public Class dlgNeuerKurs
     'Attribute
-    Public mneuerKurs As Kurs
-    Public mweiterbilController As WeiterbildungsController
+    Private mneuerKurs As Kurs
     Private mWeiterbildung As Weiterbildung
 
     Public Sub New(weiterbildung As Weiterbildung)
@@ -11,7 +10,6 @@
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mneuerKurs = New Kurs
-        mweiterbilController = New WeiterbildungsController
         mWeiterbildung = weiterbildung
     End Sub
 
@@ -22,7 +20,6 @@
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mneuerKurs = pKurs
-        mweiterbilController = New WeiterbildungsController
     End Sub
 
     ''' <summary>
@@ -79,11 +76,11 @@
         Dim abgesagt As Boolean = Me.chkAbgesagtNein.Checked
 
         'Kurs erstellen
-        Dim wbcontroller As WeiterbildungsController = New WeiterbildungsController
-        Dim neuerKurs As Kurs = wbcontroller.createKurs(ort, datum, verfuegbarkeit, preis, mWeiterbildung)
+        Dim neuerKurs As Kurs = WeiterbildungsController.createKurs(ort, datum, verfuegbarkeit, preis, mWeiterbildung)
 
         'Kurs der Kursliste hinzufügen
-        Logic.ListeKurse.Add(neuerKurs)
+        ListeKurse.Add(neuerKurs)
+        Kurs__und_WeiterbildungsDAO.speichernKurs(ListeKurse)
 
         DialogResult = Windows.Forms.DialogResult.OK
 
@@ -91,7 +88,6 @@
     End Sub
 
     Private Sub dlgNeuerKurs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Logic.initialise()
         anzeigenNeuerKurs()
     End Sub
 End Class

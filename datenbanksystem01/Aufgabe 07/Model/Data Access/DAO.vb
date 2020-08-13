@@ -1,11 +1,11 @@
-﻿
-Imports System.IO
+﻿Imports System.IO
 Imports System.Xml.Serialization
 
 Public Class DAO
 
     ' Get the current user dir
-    Protected Shared Property strDBDir As String = My.Settings.Datenspeicherort
+    'Protected Shared Property strDBDir As String = My.Settings.Datenspeicherort
+    Protected Shared Property strDBDir As String = Path.Combine(Application.StartupPath, "Weiterbildungsanbieter Speicherort")
     ' Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) & '
     Protected Shared Function ladenXml(pstrDateipfad As String, pType As Type) As Object
         ' Deklaration der notwendigen Objekte Variablen für den Dateizugriff

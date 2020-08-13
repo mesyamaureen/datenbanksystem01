@@ -50,26 +50,17 @@
     ''' </summary>
     ''' <remarks> Tabelle = momentan nur Einfachauswahl </remarks>
     Protected Sub aktivierenSchaltflächen()
-        'Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer
-
-        'Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lstviewWeiterbildungenM.SelectedItems.Count
-
         'Schaltfläche zurücksetzen
-        Me.btnOeffnenM.Enabled = False
         Me.btnHinzufuegen.Enabled = True
-        Me.btnLoeschen.Enabled = False
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
+        If lstviewWeiterbildungenM.SelectedItems.Count = 1 Then
             Me.btnOeffnenM.Enabled = True 'kann geöffnet oder löschen
             Me.btnLoeschen.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        Else
             Me.btnOeffnenM.Enabled = False 'kann nicht geöffnet oder gelöscht
             Me.btnLoeschen.Enabled = False
         End If
-
     End Sub
 
     ''' <summary>
@@ -109,58 +100,43 @@
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub anzeigen()
-        'Deklaration
-        Dim weiterbil As Weiterbildung 'Weiterbildung
-
-        'Anzuzeigende Attribute
-        Dim uintWeiterbilID As UInteger
-        Dim strWeiterbilName As String
-        Dim strWeiterbilThema As String
-
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To ListeWeiterbildung.Count - 1
-            weiterbil = ListeWeiterbildung.Item(i)
+            Dim weiterbil As Weiterbildung = ListeWeiterbildung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            uintWeiterbilID = weiterbil.WeiterbildungsID
-            strWeiterbilName = weiterbil.Bezeichnung
-            strWeiterbilThema = weiterbil.Thema
+            Dim uintWeiterbilID As UInteger = weiterbil.WeiterbildungsID
+            Dim strWeiterbilName As String = weiterbil.Bezeichnung
+            Dim strWeiterbilThema As String = weiterbil.Thema
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(uintWeiterbilID, strWeiterbilName, strWeiterbilThema)
-
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()
-
     End Sub
 
     ''' <summary>
     ''' Laden allen Weiterbildungen mit und füllen die Oberfläche mit den geladenen Daten
     ''' </summary>
     Private Sub frmHauptfensterMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Alle Weiterbildungen laden
-        mlstWeiterbildungen = Logic.mlstWeiterbildungen
-
         'Anzeigen der Weiterbildungen in der Tabelle
         anzeigen()
-
     End Sub
 
     ''' <summary>
     ''' Verlassen des Hauptfensters
     ''' </summary>
-
     Private Sub btnBeendenProgramm_Click(sender As Object, e As EventArgs) Handles btnBeendenProgramm.Click
         Me.Close()
     End Sub
 
     Private lastIndex As Integer
     Public Function GetListViewIndex() As Integer
-        If lstviewWeiterbildungenM.SelectedIndices.Count <> 0 Then
+        If lstviewWeiterbildungenM.SelectedIndices.Count = 1 Then
             lastIndex = lstviewWeiterbildungenM.SelectedItems(0).Text
         End If
 
@@ -184,18 +160,13 @@
                 Exit For
             End If
         Next
-        'weiterbil = Logic.ListeWeiterbildung.Item(GetListViewIndex())
 
         'Fenster vorbereiten
-        dlg = New frmWeiterbildungsfensterMitarb(weiterbil, GetListViewIndex())
+        dlg = New frmWeiterbildungsfensterMitarb(weiterbil)
         dlg.ShowDialog()
 
         'Auswertung des Dialogergebnisses
         If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
-
-            ' Dialog mit positivem Ergebnis geschlossen
-            weiterbil = dlg.gibWeiterbildung
-
             'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigen()
         End If
@@ -208,21 +179,13 @@
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub btnHinzufuegen_Click(sender As Object, e As EventArgs) Handles btnHinzufuegen.Click
-        'Deklaration
-        Dim neueWeiterbil As Weiterbildung 'Zu bearbeitener Weiterbildung
-        Dim dlg As frmNeueWeiterbildung 'Detaildialog zum Anzeigen der Weiterbildung
-
         'Fenster vorbereiten
-        dlg = New frmNeueWeiterbildung()
+        Dim dlg As frmNeueWeiterbildung = New frmNeueWeiterbildung()
         dlg.ShowDialog()
 
         'Auswertung des Dialogergebnisses
         If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
-            ' Dialog mit positivem Ergebnis geschlossen
-            neueWeiterbil = dlg.mneueWeiterbildung
-            'Neue Weiterbildung zur Liste der Weiterbildung hinzufügen
-            Logic.mlstWeiterbildungen.Add(neueWeiterbil)
-            ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
+            'Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigen()
         End If
     End Sub
@@ -246,15 +209,7 @@
         End If
 
         'Weiterbildung löschen
-        'aus Liste aller Weiterbildungen entfernen
-        For Each weiterbildung As Weiterbildung In mlstWeiterbildungen
-            If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungenM.SelectedItems(0).SubItems(1).Text) Then
-                Logic.mlstWeiterbildungen.Remove(weiterbildung)
-                Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
-                Exit For
-            End If
-        Next
-
+        WeiterbildungsController.deleteWeiterbildung(Convert.ToInt32(lstviewWeiterbildungenM.SelectedItems(0).SubItems(0).Text))
 
         'Fensterinhalt aktualisieren, so dass Tabelle die gelöschte Weiterbildung nicht mehr zeigt
         anzeigen()
@@ -281,13 +236,12 @@
     End Sub
 
     Private Sub lstviewWeiterbildungenM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungenM.SelectedIndexChanged
-        If lstviewWeiterbildungenM.SelectedItems.Count = 0 Then
-            btnLoeschen.Enabled = False
-            btnOeffnenM.Enabled = False
+        aktivierenSchaltflächen()
+    End Sub
 
-        Else
-            btnLoeschen.Enabled = True
-            btnOeffnenM.Enabled = True
-        End If
+    Private Sub BtnNeuerMitarbeiter_Click(sender As Object, e As EventArgs) Handles btnNeuerMitarbeiter.Click
+        Dim dlg As frmNeueMitarbeiter
+        dlg = New frmNeueMitarbeiter()
+        dlg.ShowDialog()
     End Sub
 End Class

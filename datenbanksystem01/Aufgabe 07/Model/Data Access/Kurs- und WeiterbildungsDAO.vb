@@ -32,7 +32,6 @@ Public Class Kurs__und_WeiterbildungsDAO
 
         speichernXml(strPfadXMLKurs, plstKurs, GetType(List(Of Kurs)))
 
-
     End Sub
 
 
@@ -44,7 +43,7 @@ Public Class Kurs__und_WeiterbildungsDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strPfadXMLWeiterbildung) Then
-            lstWeiterbildung = Aufgabe_07.Logic.initialise()
+            lstWeiterbildung = ListeWeiterbildung
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstWeiterbildung = ladenXml(strPfadXMLWeiterbildung, GetType(List(Of Weiterbildung)))
 
@@ -58,7 +57,6 @@ Public Class Kurs__und_WeiterbildungsDAO
     Public Shared Sub speichernWeiterbildung(plstWeiterbildung As List(Of Weiterbildung))
 
         speichernXml(strPfadXMLWeiterbildung, plstWeiterbildung, GetType(List(Of Weiterbildung)))
-
 
     End Sub
 

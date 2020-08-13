@@ -9,7 +9,7 @@
         aktuellerKunde = pstrangemeldeterKunde
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         tbBenutzername.Text = aktuellerKunde.Benutzername
-        txtboxAltesPasswort.Text = aktuellerKunde.Passwort
+        txtboxNeuesPasswort.Text = aktuellerKunde.Passwort
         txtboxName.Text = aktuellerKunde.Name
         txtboxVorname.Text = aktuellerKunde.Vorname
         dtpGebDatKunde.Value = aktuellerKunde.Geburtsdatum
@@ -38,19 +38,20 @@
             DialogResult = Windows.Forms.DialogResult.None
             Exit Sub
         Else
-            Me.Close()
-            msgErgebnis = MsgBox("Ihr Kundenkonto wurde erfolgreich gelöscht. Danke, dass Sie unsere Services genutzt haben.")
-            aktuellerKunde = Nothing
-
+            UserController.deleteKunde(aktuellerKunde.BenutzerID)
+            MsgBox("Ihr Kundenkonto wurde erfolgreich gelöscht. Danke, dass Sie unsere Services genutzt haben.")
+            Application.Exit()
         End If
-        End
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-
-        aktuellerKunde.Passwort = Me.txtboxNeuesPasswort.Text
-        aktuellerKunde.Name = Me.txtboxName.Text
-        aktuellerKunde.Geburtsdatum = Me.dtpGebDatKunde.Value
+        UserController.changeKunde(aktuellerKunde.BenutzerID,
+                                   aktuellerKunde.Benutzername,
+                                   txtboxNeuesPasswort.Text,
+                                   txtboxVorname.Text,
+                                   txtboxName.Text,
+                                   txtboxFirma.Text,
+                                   dtpGebDatKunde.Value)
     End Sub
 
     Private Sub frmKundeKonto_Load(sender As Object, e As EventArgs) Handles MyBase.Load

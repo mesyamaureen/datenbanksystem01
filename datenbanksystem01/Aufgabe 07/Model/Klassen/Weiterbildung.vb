@@ -12,21 +12,20 @@ Public Class Weiterbildung
     'Konstruktor
     'Parameterloser Konstruktor
     Sub New()
-        mstrBezeichnung = String.Empty
-        mstrThema = String.Empty
-        mstrCurriculum = String.Empty
-        mstrTeilnehmerkreis = String.Empty
-        mlstKurs = New List(Of Kurs)
+        Bezeichnung = String.Empty
+        Thema = String.Empty
+        Curriculum = String.Empty
+        Teilnehmerkreis = String.Empty
     End Sub
 
 
     'Konstruktor mit Parametern
     Sub New(pstrBezeichnung As String, pstrThema As String, pstrCurriculum As String, pstrTeilnehmerkreis As String)
 
-        mstrBezeichnung = pstrBezeichnung
-        mstrThema = pstrThema
-        mstrCurriculum = pstrCurriculum
-        mstrTeilnehmerkreis = pstrTeilnehmerkreis
+        Bezeichnung = pstrBezeichnung
+        Thema = pstrThema
+        Curriculum = pstrCurriculum
+        Teilnehmerkreis = pstrTeilnehmerkreis
     End Sub
 
     Public Property WeiterbildungsID As UInteger
@@ -90,7 +89,5 @@ Public Class Weiterbildung
         Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(pstrWeiterbildung)
 
     End Sub
-
-
 
 End Class

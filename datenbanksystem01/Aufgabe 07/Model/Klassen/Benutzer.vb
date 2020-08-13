@@ -15,26 +15,22 @@ Public Class Benutzer
 
     'Konstruktoren
     Sub New()
-        mstrName = String.Empty
-        mstrVorname = String.Empty
-        mstrBenutzername = String.Empty
-        mstrPasswort = String.Empty
-        mdatGebDat = Date.MinValue
-        muintBenutzerID = Nothing
+        Name = String.Empty
+        Vorname = String.Empty
+        Benutzername = String.Empty
+        Passwort = String.Empty
+        Geburtsdatum = Date.MinValue
+        BenutzerID = Nothing
     End Sub
 
 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, puintBenutzerID As UInteger)
-
-        mstrBenutzername = pstrBenutzername
-        mstrPasswort = pstrPasswort
-        mstrName = pstrName
-        mstrVorname = pstrVorname
-        mdatGebDat = pdatGebDat
-        muintBenutzerID = puintBenutzerID
-
-        ' TODO: create record In Database And Set intKundenID
-
+        Benutzername = pstrBenutzername
+        Passwort = pstrPasswort
+        Name = pstrName
+        Vorname = pstrVorname
+        Geburtsdatum = pdatGebDat
+        BenutzerID = puintBenutzerID
     End Sub
 
     Public Property Name As String
@@ -97,9 +93,5 @@ Public Class Benutzer
             muintBenutzerID = value
         End Set
     End Property
-
-
-
-
 
 End Class

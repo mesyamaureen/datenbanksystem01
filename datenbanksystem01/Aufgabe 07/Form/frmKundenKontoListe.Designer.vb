@@ -31,7 +31,7 @@ Partial Class frmKundenKontoListe
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colGebDat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colFirma = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnLaden = New System.Windows.Forms.Button()
+        Me.btnBearbeiten = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSchliessen
@@ -95,25 +95,25 @@ Partial Class frmKundenKontoListe
         Me.colFirma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colFirma.Width = 150
         '
-        'btnLaden
+        'btnBearbeiten
         '
-        Me.btnLaden.Location = New System.Drawing.Point(414, 348)
-        Me.btnLaden.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btnLaden.Name = "btnLaden"
-        Me.btnLaden.Size = New System.Drawing.Size(91, 29)
-        Me.btnLaden.TabIndex = 2
-        Me.btnLaden.Text = "Details"
-        Me.btnLaden.UseVisualStyleBackColor = True
+        Me.btnBearbeiten.Location = New System.Drawing.Point(414, 348)
+        Me.btnBearbeiten.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnBearbeiten.Name = "btnBearbeiten"
+        Me.btnBearbeiten.Size = New System.Drawing.Size(91, 29)
+        Me.btnBearbeiten.TabIndex = 2
+        Me.btnBearbeiten.Text = "Bearbeiten"
+        Me.btnBearbeiten.UseVisualStyleBackColor = True
         '
         'frmKundenKontoListe
         '
-        Me.AcceptButton = Me.btnLaden
+        Me.AcceptButton = Me.btnBearbeiten
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSchliessen
         Me.ClientSize = New System.Drawing.Size(631, 388)
-        Me.Controls.Add(Me.btnLaden)
         Me.Controls.Add(Me.lstviewKundenKonten)
+        Me.Controls.Add(Me.btnBearbeiten)
         Me.Controls.Add(Me.btnSchliessen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -131,5 +131,5 @@ Partial Class frmKundenKontoListe
     Friend WithEvents colName As ColumnHeader
     Friend WithEvents colGebDat As ColumnHeader
     Friend WithEvents colFirma As ColumnHeader
-    Friend WithEvents btnLaden As Button
+    Friend WithEvents btnBearbeiten As Button
 End Class

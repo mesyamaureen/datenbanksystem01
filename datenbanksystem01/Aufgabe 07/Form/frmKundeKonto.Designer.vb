@@ -24,7 +24,6 @@ Partial Class frmKundeKonto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKundeKonto))
         Me.tbBenutzername = New System.Windows.Forms.TextBox()
-        Me.txtboxAltesPasswort = New System.Windows.Forms.TextBox()
         Me.txtboxNeuesPasswort = New System.Windows.Forms.TextBox()
         Me.txtboxName = New System.Windows.Forms.TextBox()
         Me.txtboxVorname = New System.Windows.Forms.TextBox()
@@ -46,6 +45,7 @@ Partial Class frmKundeKonto
         '
         'tbBenutzername
         '
+        Me.tbBenutzername.Enabled = False
         Me.tbBenutzername.Location = New System.Drawing.Point(121, 8)
         Me.tbBenutzername.Margin = New System.Windows.Forms.Padding(2)
         Me.tbBenutzername.Multiline = True
@@ -53,19 +53,9 @@ Partial Class frmKundeKonto
         Me.tbBenutzername.Size = New System.Drawing.Size(502, 26)
         Me.tbBenutzername.TabIndex = 0
         '
-        'txtboxAltesPasswort
-        '
-        Me.txtboxAltesPasswort.Location = New System.Drawing.Point(121, 41)
-        Me.txtboxAltesPasswort.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtboxAltesPasswort.Multiline = True
-        Me.txtboxAltesPasswort.Name = "txtboxAltesPasswort"
-        Me.txtboxAltesPasswort.Size = New System.Drawing.Size(502, 28)
-        Me.txtboxAltesPasswort.TabIndex = 1
-        Me.txtboxAltesPasswort.UseSystemPasswordChar = True
-        '
         'txtboxNeuesPasswort
         '
-        Me.txtboxNeuesPasswort.Location = New System.Drawing.Point(121, 80)
+        Me.txtboxNeuesPasswort.Location = New System.Drawing.Point(121, 41)
         Me.txtboxNeuesPasswort.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxNeuesPasswort.Multiline = True
         Me.txtboxNeuesPasswort.Name = "txtboxNeuesPasswort"
@@ -74,7 +64,7 @@ Partial Class frmKundeKonto
         '
         'txtboxName
         '
-        Me.txtboxName.Location = New System.Drawing.Point(121, 115)
+        Me.txtboxName.Location = New System.Drawing.Point(121, 76)
         Me.txtboxName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxName.Multiline = True
         Me.txtboxName.Name = "txtboxName"
@@ -83,7 +73,7 @@ Partial Class frmKundeKonto
         '
         'txtboxVorname
         '
-        Me.txtboxVorname.Location = New System.Drawing.Point(121, 154)
+        Me.txtboxVorname.Location = New System.Drawing.Point(121, 115)
         Me.txtboxVorname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxVorname.Multiline = True
         Me.txtboxVorname.Name = "txtboxVorname"
@@ -92,7 +82,7 @@ Partial Class frmKundeKonto
         '
         'txtboxFirma
         '
-        Me.txtboxFirma.Location = New System.Drawing.Point(121, 228)
+        Me.txtboxFirma.Location = New System.Drawing.Point(121, 189)
         Me.txtboxFirma.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxFirma.Multiline = True
         Me.txtboxFirma.Name = "txtboxFirma"
@@ -101,7 +91,7 @@ Partial Class frmKundeKonto
         '
         'txtboxKundenID
         '
-        Me.txtboxKundenID.Location = New System.Drawing.Point(121, 267)
+        Me.txtboxKundenID.Location = New System.Drawing.Point(121, 228)
         Me.txtboxKundenID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtboxKundenID.Multiline = True
         Me.txtboxKundenID.Name = "txtboxKundenID"
@@ -125,14 +115,13 @@ Partial Class frmKundeKonto
         Me.lblAltesPasswort.Location = New System.Drawing.Point(14, 43)
         Me.lblAltesPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAltesPasswort.Name = "lblAltesPasswort"
-        Me.lblAltesPasswort.Size = New System.Drawing.Size(76, 13)
+        Me.lblAltesPasswort.Size = New System.Drawing.Size(0, 13)
         Me.lblAltesPasswort.TabIndex = 9
-        Me.lblAltesPasswort.Text = "Altes Passwort"
         '
         'lblNeuesPasswort
         '
         Me.lblNeuesPasswort.AutoSize = True
-        Me.lblNeuesPasswort.Location = New System.Drawing.Point(14, 81)
+        Me.lblNeuesPasswort.Location = New System.Drawing.Point(14, 42)
         Me.lblNeuesPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNeuesPasswort.Name = "lblNeuesPasswort"
         Me.lblNeuesPasswort.Size = New System.Drawing.Size(84, 13)
@@ -142,7 +131,7 @@ Partial Class frmKundeKonto
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(14, 116)
+        Me.lblName.Location = New System.Drawing.Point(14, 77)
         Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(35, 13)
@@ -152,7 +141,7 @@ Partial Class frmKundeKonto
         'lblVorname
         '
         Me.lblVorname.AutoSize = True
-        Me.lblVorname.Location = New System.Drawing.Point(14, 155)
+        Me.lblVorname.Location = New System.Drawing.Point(14, 116)
         Me.lblVorname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblVorname.Name = "lblVorname"
         Me.lblVorname.Size = New System.Drawing.Size(49, 13)
@@ -162,7 +151,7 @@ Partial Class frmKundeKonto
         'lblGebDat
         '
         Me.lblGebDat.AutoSize = True
-        Me.lblGebDat.Location = New System.Drawing.Point(14, 192)
+        Me.lblGebDat.Location = New System.Drawing.Point(14, 153)
         Me.lblGebDat.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblGebDat.Name = "lblGebDat"
         Me.lblGebDat.Size = New System.Drawing.Size(73, 13)
@@ -172,7 +161,7 @@ Partial Class frmKundeKonto
         'lblFirma
         '
         Me.lblFirma.AutoSize = True
-        Me.lblFirma.Location = New System.Drawing.Point(14, 229)
+        Me.lblFirma.Location = New System.Drawing.Point(14, 190)
         Me.lblFirma.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFirma.Name = "lblFirma"
         Me.lblFirma.Size = New System.Drawing.Size(32, 13)
@@ -182,7 +171,7 @@ Partial Class frmKundeKonto
         'lblKundenID
         '
         Me.lblKundenID.AutoSize = True
-        Me.lblKundenID.Location = New System.Drawing.Point(14, 268)
+        Me.lblKundenID.Location = New System.Drawing.Point(14, 229)
         Me.lblKundenID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblKundenID.Name = "lblKundenID"
         Me.lblKundenID.Size = New System.Drawing.Size(58, 13)
@@ -192,7 +181,7 @@ Partial Class frmKundeKonto
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(553, 349)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(553, 277)
         Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
         Me.btnAbbrechen.Size = New System.Drawing.Size(68, 24)
@@ -202,7 +191,8 @@ Partial Class frmKundeKonto
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(473, 349)
+        Me.btnSpeichern.DialogResult = System.Windows.Forms.DialogResult.OK
+        Me.btnSpeichern.Location = New System.Drawing.Point(473, 277)
         Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSpeichern.Name = "btnSpeichern"
         Me.btnSpeichern.Size = New System.Drawing.Size(68, 24)
@@ -212,7 +202,7 @@ Partial Class frmKundeKonto
         '
         'btnKontoLoeschen
         '
-        Me.btnKontoLoeschen.Location = New System.Drawing.Point(376, 349)
+        Me.btnKontoLoeschen.Location = New System.Drawing.Point(376, 277)
         Me.btnKontoLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKontoLoeschen.Name = "btnKontoLoeschen"
         Me.btnKontoLoeschen.Size = New System.Drawing.Size(82, 24)
@@ -222,7 +212,7 @@ Partial Class frmKundeKonto
         '
         'dtpGebDatKunde
         '
-        Me.dtpGebDatKunde.Location = New System.Drawing.Point(121, 192)
+        Me.dtpGebDatKunde.Location = New System.Drawing.Point(121, 153)
         Me.dtpGebDatKunde.Name = "dtpGebDatKunde"
         Me.dtpGebDatKunde.Size = New System.Drawing.Size(339, 20)
         Me.dtpGebDatKunde.TabIndex = 19
@@ -233,7 +223,7 @@ Partial Class frmKundeKonto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(627, 379)
+        Me.ClientSize = New System.Drawing.Size(629, 320)
         Me.Controls.Add(Me.dtpGebDatKunde)
         Me.Controls.Add(Me.btnKontoLoeschen)
         Me.Controls.Add(Me.btnSpeichern)
@@ -251,7 +241,6 @@ Partial Class frmKundeKonto
         Me.Controls.Add(Me.txtboxVorname)
         Me.Controls.Add(Me.txtboxName)
         Me.Controls.Add(Me.txtboxNeuesPasswort)
-        Me.Controls.Add(Me.txtboxAltesPasswort)
         Me.Controls.Add(Me.tbBenutzername)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -263,7 +252,6 @@ Partial Class frmKundeKonto
     End Sub
 
     Friend WithEvents tbBenutzername As TextBox
-    Friend WithEvents txtboxAltesPasswort As TextBox
     Friend WithEvents txtboxNeuesPasswort As TextBox
     Friend WithEvents txtboxName As TextBox
     Friend WithEvents txtboxVorname As TextBox

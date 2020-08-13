@@ -10,7 +10,6 @@
     ''' <summary>
     ''' Wird aufgerufen, um die Daten aller Buchungen in der Liste der Buchungen als Zeile anzuzeigen
     ''' </summary>
-    ''' <param name="plngIndex"></param>
     ''' <param name="uintBuchungIDM"></param>
     ''' <param name="pdatKursM"></param>
     ''' <param name="pstrWeiterbilNameM"></param>
@@ -27,10 +26,11 @@
 
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
-            .Add(pdatKursM)
-            .Add(pstrWeiterbilNameM)
-            .Add(uintBenutzerIDM)
             .Add(pstrKundenBenutzername)
+            .Add(uintBenutzerIDM)
+            .Add(pstrWeiterbilNameM)
+            .Add(pdatKursM)
+            .Add(puintKursID)
         End With
 
     End Sub
@@ -42,31 +42,20 @@
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub anzeigen()
-        'Deklaration
-        Dim lviBuchung As Buchung 'Buchung
-
-        'Anzuzeigende Attribute
-        Dim uintBuchungsID As UInteger
-        Dim uintBenutzerID As UInteger
-        Dim strKndBenutzername As String
-        Dim uintKursID As UInteger
-        Dim strWeiterbildung As String
-        Dim datKurs As Date
-
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
         For i = 0 To ListeBuchung.Count - 1
-            lviBuchung = ListeBuchung.Item(i)
+            Dim lviBuchung As Buchung = ListeBuchung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            uintBuchungsID = lviBuchung.BuchungsID
-            strWeiterbildung = lviBuchung.gebuchterKurs.Weiterbildung.Bezeichnung
-            uintBenutzerID = lviBuchung.Teilnehmer.BenutzerID
-            datKurs = lviBuchung.gebuchterKurs.Zeitpunkt
-            strKndBenutzername = lviBuchung.Teilnehmer.Benutzername
-            uintKursID = lviBuchung.gebuchterKurs.KursID
+            Dim uintBuchungsID As UInteger = lviBuchung.BuchungsID
+            Dim strWeiterbildung As String = lviBuchung.gebuchterKurs.Weiterbildung.Bezeichnung
+            Dim uintBenutzerID As UInteger = lviBuchung.Teilnehmer.BenutzerID
+            Dim datKurs As Date = lviBuchung.gebuchterKurs.Zeitpunkt
+            Dim strKndBenutzername As String = lviBuchung.Teilnehmer.Benutzername
+            Dim uintKursID As UInteger = lviBuchung.gebuchterKurs.KursID
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(uintBuchungsID, strKndBenutzername, uintBenutzerID, strWeiterbildung, datKurs, uintKursID)
@@ -83,8 +72,6 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub BuchungenMitarbeiter_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Alle Buchungen laden
-        ListeBuchung = Logic.ListeBuchung
         'anzeigen der Buchungen in der Tabelle
         anzeigen()
     End Sub

@@ -2,7 +2,6 @@
     'Deklaration
 
     Public mneueWeiterbildung As Weiterbildung
-    Public mWeiterbControl As WeiterbildungsController
 
     Public Sub New()
 
@@ -11,7 +10,6 @@
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mneueWeiterbildung = New Weiterbildung
-        mWeiterbControl = New WeiterbildungsController
     End Sub
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
@@ -39,7 +37,6 @@
         Me.rtxtboxSeminarbeschreibung.Text = mneueWeiterbildung.Curriculum
         Me.rtxtboxSeminarinfo.Text = mneueWeiterbildung.Thema
         Me.rtxtboxTeilnehmerkreis.Text = mneueWeiterbildung.Teilnehmerkreis
-        'TODO: list Kurse?
     End Sub
 
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click
@@ -49,13 +46,8 @@
         Dim teilkreis As String = Me.rtxtboxTeilnehmerkreis.Text
         'Aufrufen createWeiterbildung() in Weiterbildungscontroller
         'Zuweisen Oberflächenelemente in Parameter von createWeiterbildung
-        'Zuweisen mneueWeiterbildung in Rückgabewert createWeiterbildung
-        mneueWeiterbildung = mWeiterbControl.createWeiterbildung(titel, curri, teilkreis, theme)
-        ' mlstWeiterbildungen = mlstWeiterbildungen.Add(item)
-
-        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(mlstWeiterbildungen)
-
-
+        ListeWeiterbildung.Add(WeiterbildungsController.createWeiterbildung(titel, curri, teilkreis, theme))
+        Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(ListeWeiterbildung)
     End Sub
 
     Private Sub frmNeueWeiterbildung_Load(sender As Object, e As EventArgs) Handles MyBase.Load

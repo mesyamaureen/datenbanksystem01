@@ -5,21 +5,21 @@ Public Class Buchung
 
     Private muintBuchungsID As UInteger
     Private mKurs As Kurs
-    Private mbenTeilnehmer As Benutzer
+    Private mbenTeilnehmer As Kunde
 
 
     'Konstruktor
 
     Sub New()
-        mKurs = New Kurs
-        mbenTeilnehmer = New Benutzer
+        gebuchterKurs = New Kurs
+        Teilnehmer = New Kunde
     End Sub
 
 
-    Sub New(pKurs As Kurs, pintBuchungsID As UInteger, pbenTeilnehmer As Benutzer) '
-        muintBuchungsID = pintBuchungsID
-        mKurs = pKurs
-        mbenTeilnehmer = pbenTeilnehmer
+    Sub New(pKurs As Kurs, pintBuchungsID As UInteger, pbenTeilnehmer As Kunde) '
+        BuchungsID = pintBuchungsID
+        gebuchterKurs = pKurs
+        Teilnehmer = pbenTeilnehmer
     End Sub
 
 
@@ -42,11 +42,11 @@ Public Class Buchung
         End Set
     End Property
 
-    Public Property Teilnehmer As Benutzer
+    Public Property Teilnehmer As Kunde
         Get
             Return mbenTeilnehmer
         End Get
-        Set(value As Benutzer)
+        Set(value As Kunde)
             mbenTeilnehmer = value
         End Set
     End Property

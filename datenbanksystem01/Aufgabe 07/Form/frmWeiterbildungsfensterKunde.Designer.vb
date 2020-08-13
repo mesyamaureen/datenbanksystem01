@@ -40,6 +40,7 @@ Partial Class frmWeiterbildungsfensterKunde
         Me.colKursPreis = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblSeminartitelWeiterb = New System.Windows.Forms.Label()
         Me.txtboxSeminartitel = New System.Windows.Forms.TextBox()
+        Me.colKursOrt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabctrlWeiterb.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -165,7 +166,7 @@ Partial Class frmWeiterbildungsfensterKunde
         '
         'lstviewKurse
         '
-        Me.lstviewKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursID, Me.colKursDatum, Me.colVerfuegbarkeit, Me.colKursPreis})
+        Me.lstviewKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursID, Me.colKursDatum, Me.colKursOrt, Me.colVerfuegbarkeit, Me.colKursPreis})
         Me.lstviewKurse.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstviewKurse.FullRowSelect = True
         Me.lstviewKurse.GridLines = True
@@ -182,25 +183,25 @@ Partial Class frmWeiterbildungsfensterKunde
         'colKursID
         '
         Me.colKursID.Text = "Kurs ID"
-        Me.colKursID.Width = 94
+        Me.colKursID.Width = 75
         '
         'colKursDatum
         '
         Me.colKursDatum.Text = "Datum"
         Me.colKursDatum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursDatum.Width = 159
+        Me.colKursDatum.Width = 100
         '
         'colVerfuegbarkeit
         '
         Me.colVerfuegbarkeit.Text = "Verfügbarkeit"
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVerfuegbarkeit.Width = 127
+        Me.colVerfuegbarkeit.Width = 100
         '
         'colKursPreis
         '
         Me.colKursPreis.Text = "Preis"
         Me.colKursPreis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursPreis.Width = 248
+        Me.colKursPreis.Width = 100
         '
         'lblSeminartitelWeiterb
         '
@@ -222,6 +223,12 @@ Partial Class frmWeiterbildungsfensterKunde
         Me.txtboxSeminartitel.ReadOnly = True
         Me.txtboxSeminartitel.Size = New System.Drawing.Size(271, 27)
         Me.txtboxSeminartitel.TabIndex = 3
+        '
+        'colKursOrt
+        '
+        Me.colKursOrt.Text = "Ort"
+        Me.colKursOrt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colKursOrt.Width = 200
         '
         'frmWeiterbildungsfensterKunde
         '
@@ -264,4 +271,5 @@ Partial Class frmWeiterbildungsfensterKunde
     Friend WithEvents colKursPreis As ColumnHeader
     Friend WithEvents txtboxSeminartitel As TextBox
     Friend WithEvents btnBuchen As Button
+    Friend WithEvents colKursOrt As ColumnHeader
 End Class
