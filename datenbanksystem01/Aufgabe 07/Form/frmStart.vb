@@ -46,11 +46,12 @@
         Me.Close()
 
     End Sub
-    Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
+
+    Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click 'Beenden Schaltfläche
         Me.Close()
     End Sub
 
-    Private Sub frmStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'Wird beim Laden des Fensters aufgerufen
 
     End Sub
 End Class

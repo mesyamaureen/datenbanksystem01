@@ -3,10 +3,8 @@
     Private angemeldeterKunde As Kunde
 
     Sub New(angemeldeterKunde As Kunde)
-
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
-
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         Me.angemeldeterKunde = angemeldeterKunde
     End Sub
@@ -29,8 +27,10 @@
         End If
 
     End Sub
+    ''' <summary>
+    ''' Tabelle leeren
+    ''' </summary>
     Sub leeren()
-        'Liste leeren
         Me.ListViewAktBuchungen.Items.Clear()
         'Schaltflächen aktivieren/deaktivieren
         aktivierenSchaltflächen()
@@ -105,32 +105,23 @@
             Exit Sub
         End If
     End Sub
-
-    ''' <summary>
-    ''' Laden Schaltfläche
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-
-
+    'Textbox von Kunden ID wird deklariert
     Private Sub txtKundenID_TextChanged(sender As Object, e As EventArgs) Handles txtKundenID.TextChanged
         txtKundenID = Me.txtKundenID
     End Sub
 
+    'Beim Löschen einer Buchung
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         ' Deklaration
         ' Index des ausgewählten Eintrags der Tabelle
         Dim intIndex As Integer
         Dim msgErgebnis As MsgBoxResult
 
-        ' Ausbaustufe1: Ergebnis der Warnmeldung, ob wirklich gelöscht werden soll
-        ' Ausbaustufe2: Zu löschender Benutzer
-
         ' aus der ausgwählten Zeile im Dialog die ID der Buchung auslesen
         intIndex = Me.ListViewAktBuchungen.SelectedItems(0).Text
 
 
-        ' Rückfrage mit Warnmeldung
+        ' Ausbaustufe 1: Rückfrage mit Warnmeldung, ob es wirklich gelöscht werden soll
         msgErgebnis = MsgBox("Möchten Sie Ihre Buchung wirklich löschen?", vbQuestion + vbYesNo, "Abbrechen")
 
         If msgErgebnis = vbNo Then
@@ -140,13 +131,19 @@
             Me.Close()
         End If
 
-        ' Buchung löschen
+        'Ausbaustufe2: Buchung löschen
         BookingController.deleteBooking(intIndex)
 
         ' Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Benutzer nicht mehr zeigt
         anzeigen()
 
     End Sub
+
+    ''' <summary>
+    ''' Laden Schaltfläche
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
 
     Private Sub BuchungenKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Anzeigen der Buchungen in der Tabelle

@@ -61,7 +61,7 @@
             anzeigenZeile(uintBuchungsID, strKndBenutzername, uintBenutzerID, strWeiterbildung, datKurs, uintKursID)
         Next
     End Sub
-
+    'Schließen Schaltfläche zum Verlassen des Fensters
     Private Sub btnSchließen_Click(sender As Object, e As EventArgs) Handles btnSchließen.Click
         'Nichts zu tun, Standardverhalten
     End Sub

@@ -7,6 +7,7 @@ Public Class frmWeiterbildungsfensterMitarb
     'Attribute
     Private mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
 
+    'Parameterloser Konstruktor
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -17,6 +18,7 @@ Public Class frmWeiterbildungsfensterMitarb
 
     End Sub
 
+    'Konstruktor mit Parameter
     Public Sub New(pWeiterbil As Weiterbildung)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -43,6 +45,7 @@ Public Class frmWeiterbildungsfensterMitarb
         End If
     End Sub
 
+    'Alle Oberflächenelemente beim Anzeigen der Weiterbildung
     Private Sub anzeigenWeiterbildung()
         Me.txtboxSeminartitel.Enabled = True
 

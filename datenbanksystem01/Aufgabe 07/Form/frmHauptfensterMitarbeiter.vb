@@ -2,23 +2,20 @@
 
     Dim anzumeldenderMitarbeiter As Mitarbeiter
 
+    'Parameterloser Konstruktor
+    Sub New()
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+    End Sub
+
+    'Konstruktor mit Parameter
     Sub New(pstranzumeldenderMitarbeiter As String)
-
-
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
         setUserContext(pstranzumeldenderMitarbeiter)
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-
     End Sub
 
-    Sub New()
-
-        ' Dieser Aufruf ist für den Designer erforderlich.
-        InitializeComponent()
-
-    End Sub
-
+    'Wird beim Laden des Fensters aufgerufen
     Private Sub frmHauptfensterMitarbeiter_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         'Deklaration
         Dim strBegruessungMitarbeiter As String
@@ -65,7 +62,7 @@
 
     ''' <summary>
     ''' Leert die Liste mit den Urlaubsanträgen komplett. Weil nach dem leeren keine Auswahl in der Liste mehr getroffen ist,
-    ''' setzt den Status des Formulars zurük, z.B. deaktiviert sie die Schaltflächen Bearbeiten und Löschen
+    ''' setzt den Status des Formulars zurück, z.B. deaktiviert sie die Schaltflächen Bearbeiten und Löschen
     ''' </summary>
     Sub leeren()
         'Liste leeren
@@ -216,6 +213,11 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Schaltfläche im Menü GroupBox
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnBuchungenM_Click(sender As Object, e As EventArgs) Handles btnBuchungenM.Click
         Dim dlg As BuchungenMitarbeiter
         dlg = New BuchungenMitarbeiter()

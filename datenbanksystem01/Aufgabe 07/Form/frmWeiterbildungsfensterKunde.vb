@@ -3,6 +3,7 @@
     Private mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
     Private kunde As Kunde
 
+    'Parameterloser Konstruktor
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -13,6 +14,7 @@
         kunde = New Kunde
     End Sub
 
+    'Konstruktor mit Parameter
     Public Sub New(pWeiterbildung As Weiterbildung, kunde As Kunde)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -33,6 +35,7 @@
         'Nichts zu tun, Standardverhalten
     End Sub
 
+    'Alle Oberflächenelemente beim Anzeigen der Weiterbildung
     Private Sub anzeigen()
         Me.txtboxSeminartitel.Enabled = False
         Me.rtxtboxSeminarbeschreibung.Enabled = False

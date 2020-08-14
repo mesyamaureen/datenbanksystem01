@@ -3,7 +3,7 @@
 <System.Serializable()>
 Public Class Weiterbildung
 
-    'Attribiute
+    'Attribute
     Private muintWeiterbildungsID As UInteger
     Private mstrBezeichnung As String
     Private mstrThema As String

@@ -10,18 +10,18 @@ Public Class dlgAnmeldung
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         'Nichts zu tun
     End Sub
-
+    'Abbrechen Schaltfläche zum Verlassen des Fensters
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         Dim msgErgebnis As MsgBoxResult
 
-        msgErgebnis = MsgBox("Möchten Sie wirklich abbrechen?", vbQuestion + vbYesNo, "Abbrechen")
+        msgErgebnis = MsgBox("Möchten Sie wirklich abbrechen?", vbQuestion + vbYesNo, "Abbrechen") 'Meldungsfenster wird gezeigt
 
         If msgErgebnis = vbNo Then
             DialogResult = Windows.Forms.DialogResult.None
             Exit Sub
         End If
     End Sub
-
+    'Neues Kundenkonto erstellen und das Dialogfenster frmKundeKonto wird geöffnet
     Private Sub lblNeuesKonto_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblNeuesKonto.LinkClicked
         frmKundenkontoerstellung.ShowDialog()
     End Sub

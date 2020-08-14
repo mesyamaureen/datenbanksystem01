@@ -1,8 +1,6 @@
 ﻿Public Class WeiterbildungsController
 
-    'Funktionen
-
-    'Kurse
+    'Funktionen für Kurse
     Public Shared Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
         'Deklaration neue Variable
         Dim neuerKurs As New Kurs
@@ -73,7 +71,7 @@
         Return False
     End Function
 
-    'Weiterbildung
+    'Funktionen für Weiterbildung
     Public Shared Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
         'Deklaration neue Variabel als Zuweisung von Weiterbildung
         Dim neueWeiterbildung As New Weiterbildung
