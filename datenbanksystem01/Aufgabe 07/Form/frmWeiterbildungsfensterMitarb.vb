@@ -5,11 +5,7 @@
 Public Class frmWeiterbildungsfensterMitarb
 
     'Attribute
-    Public mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
-    Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    Public mWeiterbController As WeiterbildungsController 'Weiterbildungscontroller aufrufen
-    Public frmHFM As frmHauptfensterMitarbeiter
-    Private index As UInteger
+    Private mBearbWeiterbildung As Weiterbildung 'der zu bearbeitende Weiterbildung
 
     Public Sub New()
 
@@ -18,19 +14,16 @@ Public Class frmWeiterbildungsfensterMitarb
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = New Weiterbildung
-        mWeiterbController = New WeiterbildungsController
 
     End Sub
 
-    Public Sub New(pWeiterbil As Weiterbildung, tableIndex As UInteger)
+    Public Sub New(pWeiterbil As Weiterbildung)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mBearbWeiterbildung = pWeiterbil
-        index = tableIndex
-        mWeiterbController = New WeiterbildungsController
     End Sub
 
     ''' <summary>
@@ -64,19 +57,6 @@ Public Class frmWeiterbildungsfensterMitarb
         Me.rtxtboxSeminarinfoM.Text = mBearbWeiterbildung.Thema
     End Sub
 
-    Function gibWeiterbildung() As Weiterbildung
-        'Eigenschaften der Weiterbildung aus den Feldern der Oberfläche lesen
-        mBearbWeiterbildung.Bezeichnung = Me.txtboxSeminartitel.Text
-        mBearbWeiterbildung.Curriculum = Me.rtxtboxSeminarbeschreibungM.Text
-        mBearbWeiterbildung.Teilnehmerkreis = Me.rtxtboxTeilnkreisM.Text
-        mBearbWeiterbildung.Thema = Me.rtxtboxSeminarinfoM.Text
-        ' TODO: m... = Me.listview.Kurs ????
-
-        'Bearbeitete Weiterbildung als Ergebnis zurückgeben
-        Return mBearbWeiterbildung
-
-    End Function
-
     ''' <summary>
     '''  Beim Klick auf Speichern bzw. OK müssen nur die Pflichtangaben geprüft werden, der Rest ist Standardverhalten von OK
     ''' </summary>
@@ -96,6 +76,8 @@ Public Class frmWeiterbildungsfensterMitarb
         For i = 0 To ListeWeiterbildung.Count - 1
             If ListeWeiterbildung.Item(i).WeiterbildungsID = mBearbWeiterbildung.WeiterbildungsID Then
                 ListeWeiterbildung.Item(i) = mBearbWeiterbildung
+                Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(ListeWeiterbildung)
+                Exit For
             End If
         Next
     End Sub
@@ -105,27 +87,16 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' Listview Kurse
     ''' </summary>
     Protected Sub aktivierenSchaltflächenKurs()
-        'Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer
-
-        'Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lstviewKurseM.SelectedItems.Count
-
         'Schaltfläche zurücksetzen
         Me.btnNeuerKurs.Enabled = True
         Me.btnLeerenKurs.Enabled = True
-        Me.btnLoeschen.Enabled = False
 
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
+        If lstviewKurseM.SelectedItems.Count = 1 Then
             Me.btnLoeschen.Enabled = True
         Else
             Me.btnLoeschen.Enabled = False 'kann nicht geöffnet oder gelöscht
         End If
-
-        'Me.lstviewKurs.SelectedItems = mBearbWeiterbildung.Kurs
-        'Me.lstviewKurseM.SelectedItems = mKurse.
-
     End Sub
 
     ''' <summary>
@@ -135,7 +106,7 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' <param name="pdatKursDatum"></param>
     ''' <param name="pbolVerfuegbarkeit"></param>
     ''' <param name="pdecKursPreis"></param>
-    Sub anzeigenZeileKurs(puintKursID As UInteger, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
+    Sub anzeigenZeileKurs(puintKursID As UInteger, pdatKursDatum As Date, pstrOrt As String, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
@@ -146,34 +117,21 @@ Public Class frmWeiterbildungsfensterMitarb
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
             .Add(pdatKursDatum)
+            .Add(pstrOrt)
             .Add(pbolVerfuegbarkeit)
             .Add(pdecKursPreis)
         End With
     End Sub
 
     Private Sub anzeigenKurs()
-        'Anzuzeigende Attribute
-        Dim uintKursID As UInteger
-        Dim datKursDatum As Date
-        Dim strKursOrt As String
-        Dim bolVerfuegbarkeit As Boolean
-        Dim decKursPreis As Decimal
-
         'leeren der Tabelle
         Me.lstviewKurseM.Items.Clear()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For Each Kurs As Kurs In ListeKurse
-            If Kurs.Weiterbildung.WeiterbildungsID = mBearbWeiterbildung.WeiterbildungsID Then
-                'Attributwerte aus der Weiterbildung lesen
-                uintKursID = Kurs.KursID
-                datKursDatum = Kurs.Zeitpunkt
-                strKursOrt = Kurs.Ort
-                bolVerfuegbarkeit = Kurs.Verfuegbar
-                decKursPreis = Kurs.Preis
-
+        For Each kurs As Kurs In ListeKurse
+            If kurs.Weiterbildung.WeiterbildungsID = mBearbWeiterbildung.WeiterbildungsID Then
                 'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-                anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+                anzeigenZeileKurs(kurs.KursID, kurs.Zeitpunkt, kurs.Ort, kurs.Verfuegbar, kurs.Preis)
             End If
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
@@ -186,20 +144,13 @@ Public Class frmWeiterbildungsfensterMitarb
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btnNeuerKurs_Click(sender As Object, e As EventArgs) Handles btnNeuerKurs.Click
-        'Deklaration
-        Dim neuerKurs As Kurs 'Hinzufügen neuer Kurs
-        Dim dlg As dlgNeuerKurs 'Detaildialog zum Anzeigen des neuen Kurses
-
-        'Fenster vorbereiten
-        dlg = New dlgNeuerKurs(mBearbWeiterbildung)
+        'Detaildialog zum Anzeigen des neuen Kurses
+        Dim dlg As dlgNeuerKurs = New dlgNeuerKurs(mBearbWeiterbildung)
         dlg.ShowDialog()
 
         'Auswertung des Dialogergebnisses
         If dlg.DialogResult = Windows.Forms.DialogResult.OK Then
             ' Dialog mit positivem Ergebnis geschlossen
-            neuerKurs = dlg.mneuerKurs
-            'Neuer Kurs zur Liste des Kurses hinzufügen
-            ListeKurse.Add(neuerKurs)
             ' Fensterinhalt aktualisieren, so dass Tabelle auch die Änderungen des Benutzers zeigt
             anzeigenKurs()
         End If
@@ -212,38 +163,32 @@ Public Class frmWeiterbildungsfensterMitarb
     End Sub
 
     'Integer Index deklarieren
-    Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
+    'Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         ' aus der ausgewählten Zeile im Dialog die ID der Weiterbildung auslesen
-        intIndex = Me.lstviewKurseM.SelectedItems(0).Text
+        Dim intIndex As UInteger = Me.lstviewKurseM.SelectedItems(0).Text
 
         'Messagebox beim Löschen
         Dim mbrResult As MsgBoxResult
         'Verzweigung des Msgbox
         If Me.DialogResult = Windows.Forms.DialogResult.None Then
-            mbrResult = MsgBox("Möchten Sie diese Weiterbildung permanent löschen?",
+            mbrResult = MsgBox("Möchten Sie diesen Kurs wirklich permanent löschen?",
                                 MsgBoxStyle.Question + vbYesNo, "Abbrechen")
             If mbrResult = vbNo Then
-                Me.Close()
+                Return
             End If
         End If
 
-        For Each Kurs As Kurs In ListeKurse
-            If Kurs.KursID = intIndex Then
-                ListeKurse.Remove(Kurs)
-            End If
-        Next
+        WeiterbildungsController.deleteKurs(intIndex)
 
         'Fensterinhalt aktualisieren, so dass Tabelle den gelöschten Kurs nicht mehr zeigt
         anzeigenKurs()
     End Sub
 
     Private Sub frmWeiterbildungsfensterMitarb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mKurse = Logic.initialise 'PLEASE DO DOUBLE CHECK  
         anzeigenWeiterbildung()
         anzeigenKurs()
-
     End Sub
 
     Private Sub lstviewKurseM_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKurseM.SelectedIndexChanged

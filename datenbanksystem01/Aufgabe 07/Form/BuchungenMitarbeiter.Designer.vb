@@ -28,27 +28,27 @@ Partial Class BuchungenMitarbeiter
         Me.tbsAktBuchungen = New System.Windows.Forms.TabPage()
         Me.LstViewAlleBuchungen = New System.Windows.Forms.ListView()
         Me.colBuchungIDAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colWeiterbildungAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKundenBenutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKundenIDAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.tbsStornoBuchungen = New System.Windows.Forms.TabPage()
+        Me.colWeiterbildungAkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKursDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.tbsInaktBuchungen = New System.Windows.Forms.TabPage()
         Me.ListViewStorniertBuchungen = New System.Windows.Forms.ListView()
         Me.colIndexStorn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colBuchungIDStorn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungStorn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKundenIDStorn = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colKundenBenutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colKursDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbsBuchungen.SuspendLayout()
         Me.tbsAktBuchungen.SuspendLayout()
-        Me.tbsStornoBuchungen.SuspendLayout()
+        Me.tbsInaktBuchungen.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSchließen
         '
         Me.btnSchließen.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSchließen.Location = New System.Drawing.Point(554, 344)
-        Me.btnSchließen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSchließen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchließen.Name = "btnSchließen"
         Me.btnSchließen.Size = New System.Drawing.Size(63, 23)
         Me.btnSchließen.TabIndex = 0
@@ -58,9 +58,9 @@ Partial Class BuchungenMitarbeiter
         'tbsBuchungen
         '
         Me.tbsBuchungen.Controls.Add(Me.tbsAktBuchungen)
-        Me.tbsBuchungen.Controls.Add(Me.tbsStornoBuchungen)
+        Me.tbsBuchungen.Controls.Add(Me.tbsInaktBuchungen)
         Me.tbsBuchungen.Location = New System.Drawing.Point(6, 16)
-        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsBuchungen.Name = "tbsBuchungen"
         Me.tbsBuchungen.SelectedIndex = 0
         Me.tbsBuchungen.Size = New System.Drawing.Size(615, 319)
@@ -70,9 +70,9 @@ Partial Class BuchungenMitarbeiter
         '
         Me.tbsAktBuchungen.Controls.Add(Me.LstViewAlleBuchungen)
         Me.tbsAktBuchungen.Location = New System.Drawing.Point(4, 22)
-        Me.tbsAktBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.tbsAktBuchungen.Name = "tbsAktBuchungen"
-        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbsAktBuchungen.Padding = New System.Windows.Forms.Padding(2)
         Me.tbsAktBuchungen.Size = New System.Drawing.Size(607, 293)
         Me.tbsAktBuchungen.TabIndex = 0
         Me.tbsAktBuchungen.Text = "Aktiv"
@@ -82,11 +82,10 @@ Partial Class BuchungenMitarbeiter
         '
         Me.LstViewAlleBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colBuchungIDAkt, Me.colKundenBenutzername, Me.colKundenIDAkt, Me.colWeiterbildungAkt, Me.colKursDatum, Me.colKursID})
         Me.LstViewAlleBuchungen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LstViewAlleBuchungen.Enabled = False
         Me.LstViewAlleBuchungen.GridLines = True
         Me.LstViewAlleBuchungen.HideSelection = False
         Me.LstViewAlleBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.LstViewAlleBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LstViewAlleBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.LstViewAlleBuchungen.Name = "LstViewAlleBuchungen"
         Me.LstViewAlleBuchungen.Size = New System.Drawing.Size(603, 289)
         Me.LstViewAlleBuchungen.TabIndex = 0
@@ -98,11 +97,10 @@ Partial Class BuchungenMitarbeiter
         Me.colBuchungIDAkt.Text = "Buchung ID"
         Me.colBuchungIDAkt.Width = 100
         '
-        'colWeiterbildungAkt
+        'colKundenBenutzername
         '
-        Me.colWeiterbildungAkt.Text = "Weiterbildung"
-        Me.colWeiterbildungAkt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildungAkt.Width = 170
+        Me.colKundenBenutzername.Text = "Benutzername Kunde"
+        Me.colKundenBenutzername.Width = 150
         '
         'colKundenIDAkt
         '
@@ -110,17 +108,33 @@ Partial Class BuchungenMitarbeiter
         Me.colKundenIDAkt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colKundenIDAkt.Width = 100
         '
-        'tbsStornoBuchungen
+        'colWeiterbildungAkt
         '
-        Me.tbsStornoBuchungen.Controls.Add(Me.ListViewStorniertBuchungen)
-        Me.tbsStornoBuchungen.Location = New System.Drawing.Point(4, 22)
-        Me.tbsStornoBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.tbsStornoBuchungen.Name = "tbsStornoBuchungen"
-        Me.tbsStornoBuchungen.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.tbsStornoBuchungen.Size = New System.Drawing.Size(607, 293)
-        Me.tbsStornoBuchungen.TabIndex = 1
-        Me.tbsStornoBuchungen.Text = "Storniert"
-        Me.tbsStornoBuchungen.UseVisualStyleBackColor = True
+        Me.colWeiterbildungAkt.Text = "Weiterbildung"
+        Me.colWeiterbildungAkt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colWeiterbildungAkt.Width = 170
+        '
+        'colKursDatum
+        '
+        Me.colKursDatum.Text = "Datum des Kurses"
+        Me.colKursDatum.Width = 100
+        '
+        'colKursID
+        '
+        Me.colKursID.Text = "KursID"
+        Me.colKursID.Width = 100
+        '
+        'tbsInaktBuchungen
+        '
+        Me.tbsInaktBuchungen.Controls.Add(Me.ListViewStorniertBuchungen)
+        Me.tbsInaktBuchungen.Location = New System.Drawing.Point(4, 22)
+        Me.tbsInaktBuchungen.Margin = New System.Windows.Forms.Padding(2)
+        Me.tbsInaktBuchungen.Name = "tbsInaktBuchungen"
+        Me.tbsInaktBuchungen.Padding = New System.Windows.Forms.Padding(2)
+        Me.tbsInaktBuchungen.Size = New System.Drawing.Size(607, 293)
+        Me.tbsInaktBuchungen.TabIndex = 1
+        Me.tbsInaktBuchungen.Text = "Inaktiv"
+        Me.tbsInaktBuchungen.UseVisualStyleBackColor = True
         '
         'ListViewStorniertBuchungen
         '
@@ -130,7 +144,7 @@ Partial Class BuchungenMitarbeiter
         Me.ListViewStorniertBuchungen.GridLines = True
         Me.ListViewStorniertBuchungen.HideSelection = False
         Me.ListViewStorniertBuchungen.Location = New System.Drawing.Point(2, 2)
-        Me.ListViewStorniertBuchungen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListViewStorniertBuchungen.Margin = New System.Windows.Forms.Padding(2)
         Me.ListViewStorniertBuchungen.Name = "ListViewStorniertBuchungen"
         Me.ListViewStorniertBuchungen.Size = New System.Drawing.Size(603, 289)
         Me.ListViewStorniertBuchungen.TabIndex = 0
@@ -158,21 +172,6 @@ Partial Class BuchungenMitarbeiter
         Me.colKundenIDStorn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colKundenIDStorn.Width = 158
         '
-        'colKundenBenutzername
-        '
-        Me.colKundenBenutzername.Text = "Benutzername Kunde"
-        Me.colKundenBenutzername.Width = 150
-        '
-        'colKursDatum
-        '
-        Me.colKursDatum.Text = "Datum des Kurses"
-        Me.colKursDatum.Width = 100
-        '
-        'colKursID
-        '
-        Me.colKursID.Text = "KursID"
-        Me.colKursID.Width = 100
-        '
         'BuchungenMitarbeiter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -182,12 +181,12 @@ Partial Class BuchungenMitarbeiter
         Me.Controls.Add(Me.tbsBuchungen)
         Me.Controls.Add(Me.btnSchließen)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BuchungenMitarbeiter"
         Me.Text = "Alle Buchungen"
         Me.tbsBuchungen.ResumeLayout(False)
         Me.tbsAktBuchungen.ResumeLayout(False)
-        Me.tbsStornoBuchungen.ResumeLayout(False)
+        Me.tbsInaktBuchungen.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -199,7 +198,7 @@ Partial Class BuchungenMitarbeiter
     Friend WithEvents colBuchungIDAkt As ColumnHeader
     Friend WithEvents colWeiterbildungAkt As ColumnHeader
     Friend WithEvents colKundenIDAkt As ColumnHeader
-    Friend WithEvents tbsStornoBuchungen As TabPage
+    Friend WithEvents tbsInaktBuchungen As TabPage
     Friend WithEvents ListViewStorniertBuchungen As ListView
     Friend WithEvents colBuchungIDStorn As ColumnHeader
     Friend WithEvents colWeiterbildungStorn As ColumnHeader

@@ -1,8 +1,6 @@
 ﻿Public Class frmWeiterbildungsfensterKunde
     'Attribute
-    Public mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
-    Public mKurse As List(Of Kurs) 'eine Liste von Kursen der Weiterbildung
-    Public mBookingControl As BookingController
+    Private mWeiterbil As Weiterbildung 'die zu öffene Weiterbildung
     Private kunde As Kunde
 
     Public Sub New()
@@ -12,7 +10,6 @@
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = New Weiterbildung
-        mKurse = New List(Of Kurs)
         kunde = New Kunde
     End Sub
 
@@ -23,7 +20,6 @@
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mWeiterbil = pWeiterbildung
-        mKurse = New List(Of Kurs)
         Me.kunde = kunde
     End Sub
 
@@ -39,31 +35,17 @@
 
     Private Sub anzeigen()
         Me.txtboxSeminartitel.Enabled = False
-
         Me.rtxtboxSeminarbeschreibung.Enabled = False
         Me.rtxtboxTeilnkreis.Enabled = False
         Me.rtxtboxSeminarinfo.Enabled = False
-
         Me.lstviewKurse.Enabled = True
 
-        'TODO: Me.listview.Kurs ?????
+        Me.txtboxSeminartitel.Text = mWeiterbil.Bezeichnung
+        Me.rtxtboxSeminarbeschreibung.Text = mWeiterbil.Curriculum
+        Me.rtxtboxTeilnkreis.Text = mWeiterbil.Teilnehmerkreis
+        Me.rtxtboxSeminarinfo.Text = mWeiterbil.Thema
     End Sub
 
-    Function gibWeiterbildung() As Weiterbildung
-        'Eigenschaften der Weiterbildung aus den Feldern der Oberfläche lesen
-        mWeiterbil.Bezeichnung = Me.txtboxSeminartitel.Text
-        mWeiterbil.Curriculum = Me.rtxtboxSeminarbeschreibung.Text
-        mWeiterbil.Teilnehmerkreis = Me.rtxtboxTeilnkreis.Text
-        mWeiterbil.Thema = Me.rtxtboxSeminarinfo.Text
-        'mWeiterbil.LstKurs.Add(Me.lstviewKurse.Items)
-        ' TODO: m... = Me.listview.Kurs ????
-
-        'Bearbeitete Weiterbildung als Ergebnis zurückgeben
-        Return mWeiterbil
-    End Function
-
-    'Long Index deklarieren
-    Public lngIndex As Long ' Index des ausgewählten Eintrags der Tabelle
     ''' <summary>
     ''' Ausgewählter Kurs buchen
     ''' </summary>
@@ -74,7 +56,7 @@
         Dim buchenderKurs = New Kurs()
 
         'Kurs Objekt aus Liste suchen
-        For Each kurs As Kurs In Logic.ListeKurse
+        For Each kurs As Kurs In ListeKurse
             If kurs.KursID = Convert.ToUInt32(Me.lstviewKurse.SelectedItems(0).SubItems(0).Text) Then
                 buchenderKurs = kurs
                 Exit For
@@ -83,7 +65,7 @@
 
         'Buchen Funktion aufrufen mit mWeiterbil als Parameter für Weiterbildung
         'und zur Liste aller Buchungen hinzufügen
-        Logic.ListeBuchung.Add(BookingController.createBooking(buchenderKurs, kunde)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
+        ListeBuchung.Add(BookingController.createBooking(buchenderKurs, kunde)) 'Rückgabewert Als Neue Buchung von Bookingcontroller
         BuchungsDAO.speichernBuchung(ListeBuchung)
 
         'Meldungsfenster vorbereiten
@@ -92,10 +74,6 @@
     End Sub
 
     Protected Sub aktivierenSchaltflächenKurs()
-        'Schaltfläche zurücksetzen
-        'Me.btnBuchen.Enabled = False
-        'braucht nicht zurückgesetzt werden, da default
-
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
         If Me.lstviewKurse.SelectedItems.Count = 1 Then
             Me.btnBuchen.Enabled = True
@@ -111,7 +89,7 @@
     ''' <param name="pdatKursDatum"></param>
     ''' <param name="pbolVerfuegbarkeit"></param>
     ''' <param name="pdecKursPreis"></param>
-    Sub anzeigenZeileKurs(puintKursID As String, pdatKursDatum As Date, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
+    Sub anzeigenZeileKurs(puintKursID As String, pdatKursDatum As Date, pstrOrt As String, pbolVerfuegbarkeit As Boolean, pdecKursPreis As Decimal)
         'Neue Zeile in der Liste deklarieren
         Dim zeile As ListViewItem 'Alternativ Windows.Forms.ListViewItem
 
@@ -122,6 +100,7 @@
         'Weitere Eigenschaften des benutzers in nachfolgenden Spalten der Zeile einfügen
         With zeile.SubItems
             .Add(pdatKursDatum)
+            .Add(pstrOrt)
             .Add(pbolVerfuegbarkeit)
             .Add(pdecKursPreis)
         End With
@@ -131,26 +110,14 @@
     ''' Tabelle mit der Liste von Kurs in Datenbank verknüpfen
     ''' </summary>
     Private Sub anzeigenKurs()
-        'Anzuzeigende Attribute
-        Dim uintKursID As String
-        Dim datKursDatum As Date
-        Dim bolVerfuegbarkeit As Boolean
-        Dim decKursPreis As Decimal
-
         'leeren der Tabelle
         Me.lstviewKurse.Items.Clear()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For Each Kurs As Kurs In ListeKurse
-            If Kurs.Weiterbildung.WeiterbildungsID = mWeiterbil.WeiterbildungsID Then
-                'Attributwerte aus der Weiterbildung lesen
-                uintKursID = Kurs.KursID
-                datKursDatum = Kurs.Zeitpunkt
-                bolVerfuegbarkeit = Kurs.Verfuegbar
-                decKursPreis = Kurs.Preis
-
+        For Each kurs As Kurs In ListeKurse
+            If kurs.Weiterbildung.WeiterbildungsID = mWeiterbil.WeiterbildungsID Then
                 'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-                anzeigenZeileKurs(uintKursID, datKursDatum, bolVerfuegbarkeit, decKursPreis)
+                anzeigenZeileKurs(kurs.KursID, kurs.Zeitpunkt, kurs.Ort, kurs.Verfuegbar, kurs.Preis)
             End If
         Next
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
@@ -158,21 +125,6 @@
     End Sub
 
     Private Sub frmWeiterbildungsfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'Deklaration für jede Oberflächenelemente
-        'Dim titel As String
-        'Dim curriculum As String
-        'Dim teilnkreis As String
-        'Dim thema As String
-
-        For i = 0 To frmHauptfensterKunde.intIndex
-            Me.txtboxSeminartitel.Text = Logic.mlstWeiterbildungen.Item(i).Bezeichnung
-            Me.rtxtboxSeminarbeschreibung.Text = Logic.mlstWeiterbildungen.Item(i).Curriculum
-            Me.rtxtboxTeilnkreis.Text = Logic.mlstWeiterbildungen.Item(i).Teilnehmerkreis
-            Me.rtxtboxSeminarinfo.Text = Logic.mlstWeiterbildungen.Item(i).Thema
-
-        Next
-
         'alle anzeigen Funktion aufrufen
         anzeigen()
         anzeigenKurs()
@@ -183,11 +135,4 @@
         aktivierenSchaltflächenKurs()
     End Sub
 
-    'Function gibBuchung() As Buchung
-    'Eigenschaften des Kurses aus den Feldern der Oberfläche lesen
-    'Neue Buchung als Ergebnis zurückgeben
-    'End Function
-
-
 End Class
-

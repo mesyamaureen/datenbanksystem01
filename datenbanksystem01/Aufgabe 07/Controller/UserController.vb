@@ -1,62 +1,15 @@
 ﻿Public Class UserController
 
-    Private mlstKunde As List(Of Kunde)
-    Private mlstMitarbeiter As List(Of Mitarbeiter)
-    Private muintBenutzerID As UInteger
-
-    Sub New()
-        mlstKunde = New List(Of Kunde)
-        mlstMitarbeiter = New List(Of Mitarbeiter)
-        muintBenutzerID = String.Empty
-    End Sub
-
-
-    Sub New(plstMitarbeiter As List(Of Mitarbeiter), plstKunde As List(Of Kunde))
-
-        mlstMitarbeiter = plstMitarbeiter
-        mlstKunde = plstKunde
-
-    End Sub
-
-    'Properties 
-    Public Property ListeKunde As List(Of Kunde)
-        Get
-            Return mlstKunde
-        End Get
-        Set(value As List(Of Kunde))
-            mlstKunde = value
-        End Set
-    End Property
-
-    Public Property ListeMitarbeiter As List(Of Mitarbeiter)
-        Get
-            Return mlstMitarbeiter
-        End Get
-        Set(value As List(Of Mitarbeiter))
-            mlstMitarbeiter = value
-        End Set
-    End Property
-
-    Public Property ID As String
-        Get
-            Return muintBenutzerID
-        End Get
-        Set(value As String)
-            muintBenutzerID = value
-        End Set
-    End Property
-
-
     'Funktionen
 
-    Public Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
+    Public Shared Function logIn(strBenutzername As String, strPasswort As String) As Dictionary(Of String, String)
         Dim anzumeldenderBenutzer As Benutzer
         Dim result = New Dictionary(Of String, String) From {{"attempt", "failed"}, {"role", Nothing}}
 
         For Each mitarbeiter As Mitarbeiter In Logic.ListeMitarbeiter
             If strBenutzername.Equals(mitarbeiter.Benutzername) And strPasswort.Equals(mitarbeiter.Passwort) Then
                 anzumeldenderBenutzer = mitarbeiter
-                Logic.AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
+                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "mitarbeiter"
 
@@ -66,79 +19,117 @@
         For Each kunde As Kunde In Logic.ListeKunden
             If strBenutzername.Equals(kunde.Benutzername) And strPasswort.Equals(kunde.Passwort) Then
                 anzumeldenderBenutzer = kunde
-                Logic.mlstAktuellAngemeldeterBenutzer.Add(anzumeldenderBenutzer)
+                AngemeldeteBenutzer.Add(anzumeldenderBenutzer)
                 result("attempt") = "successful"
                 result("role") = "kunde"
             End If
         Next
 
-
         Return result
 
     End Function
 
+    Private Shared Function getNextUserID() As UInteger
+        Dim userID As UInteger = 0
+        For Each mitarbeiter As Mitarbeiter In ListeMitarbeiter
+            If mitarbeiter.BenutzerID > userID Then
+                userID = mitarbeiter.BenutzerID
+            End If
+        Next
+        For Each kunde As Kunde In ListeKunden
+            If kunde.BenutzerID > userID Then
+                userID = kunde.BenutzerID
+            End If
+        Next
 
-    Public Function createKunde(strBenutzername As String, strPasswort As String, datGebDat As Date, strFirma As String) As Kunde
-        ' If Not (mlstKunde.Contains(Me)) Then
-        'mlstKunde.Add(Me)
+        Return userID + 1
+    End Function
 
-        'End If
-        ' Dim neuerKunde As Kunde = New Kunde(frmKundenkontoerstellung.txtBenutzername.Text,
-        'frmKundenkontoerstellung.txtPasswort.Text,
-        'frmKundenkontoerstellung.txtNachname.Text,
-        'frmKundenkontoerstellung.txtVorname.Text,
-        'frmKundenkontoerstellung.datboxGebDat.Value,
-        'frmKundenkontoerstellung.txtFirma.Text)
+    Public Shared Function createKunde(strBenutzername As String, strName As String, strVorname As String, strPasswort As String, datGebDat As Date, strFirma As String) As Kunde
+        Return New Kunde(strBenutzername,
+                         strPasswort,
+                         strName,
+                         strVorname,
+                         datGebDat,
+                         getNextUserID,
+                         strFirma)
+    End Function
 
-        'mlstKunde.Add(neuerKunde)
+    Public Shared Function changeKunde(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String, strFirma As String, datGebDat As Date) As Boolean
+        For i = 0 To ListeKunden.Count - 1
+            If ListeKunden(i).BenutzerID = uintBenutzerID Then
+                Dim kunde As Kunde = ListeKunden(i)
+                kunde.Benutzername = strBenutzername
+                kunde.Passwort = strPasswort
+                kunde.Vorname = strVorname
+                kunde.Name = strName
+                kunde.Firma = strFirma
+                kunde.Geburtsdatum = datGebDat
 
-        'BenutzerDAO.speichernKunde(mlstKunde)
+                ListeKunden(i) = kunde
+                BenutzerDAO.speichernKunde(ListeKunden)
+                Return True
+                Exit For
+            End If
+        Next
 
-        'frmKundenkontoerstellung.Close()
+        Return False
+    End Function
+
+    Public Shared Function deleteKunde(uintBenutzerID As UInteger) As Boolean
+        For i = 0 To ListeKunden.Count - 1
+            If ListeKunden(i).BenutzerID = uintBenutzerID Then
+                ListeKunden.RemoveAt(i)
+                BenutzerDAO.speichernKunde(ListeKunden)
+                Return True
+                Exit For
+            End If
+        Next
+
+        Return False
     End Function
 
 
-    Public Function viewKunde(uintBenutzerID As UInteger) As Array
-
+    Public Shared Function createMitarbeiter(strBenutzername As String, strName As String, strVorname As String, strPasswort As String, datGebDat As Date) As Mitarbeiter
+        Return New Mitarbeiter(strBenutzername,
+                               strPasswort,
+                               strName,
+                               strVorname,
+                               datGebDat,
+                               getNextUserID)
     End Function
 
-    Public Function changeKunde(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
+    Public Shared Function changeMitarbeiter(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String, datGebDat As Date) As Boolean
+        For i = 0 To ListeMitarbeiter.Count - 1
+            If ListeMitarbeiter(i).BenutzerID = uintBenutzerID Then
+                Dim mitarbeiter As Mitarbeiter = ListeMitarbeiter(i)
+                mitarbeiter.Benutzername = strBenutzername
+                mitarbeiter.Passwort = strPasswort
+                mitarbeiter.Vorname = strVorname
+                mitarbeiter.Name = strName
+                mitarbeiter.Geburtsdatum = datGebDat
 
+                ListeMitarbeiter(i) = mitarbeiter
+                BenutzerDAO.speichernMitarbeiter(ListeMitarbeiter)
+                Return True
+                Exit For
+            End If
+        Next
+
+        Return False
     End Function
 
-    Public Function deleteKunde(uintBenutzerID As UInteger) As Boolean
+    Public Shared Function deleteMitarbeiter(uintBenutzerID As UInteger) As Boolean
+        For i = 0 To ListeMitarbeiter.Count - 1
+            If ListeMitarbeiter(i).BenutzerID = uintBenutzerID Then
+                ListeMitarbeiter.RemoveAt(i)
+                BenutzerDAO.speichernMitarbeiter(ListeMitarbeiter)
+                Return True
+                Exit For
+            End If
+        Next
 
+        Return False
     End Function
-
-
-    Public Function createMitarbeiter(strBenutzername As String, strPasswort As String) As String
-
-    End Function
-
-    Public Function viewMitarbeiter(uintBenutzerID As UInteger) As Array
-
-    End Function
-
-    Public Function changeMitarbeiter(uintBenutzerID As UInteger, strBenutzername As String, strPasswort As String, strVorname As String, strName As String) As Boolean
-
-    End Function
-
-    Public Function deleteMitarbeiter(uintBenutzerID As UInteger) As Boolean
-
-    End Function
-
-    ' 1. Alle Controller Klassen erstellen mit Properties, Konstruktor, getter, setter 
-    ' 2. Im Modul Logic alle Controller in initialise funktion instanzieren 
-    ' 3. Alle Use Case Funktionen in die Controller schreiben (deklarieren)
-    ' 4. Alle Use case funktionen in die Logic schreiben 
-    ' 5. View kann man nach leeren use case funktionen fertig schreiben (nicht testen weil leer)
-    ' 5. Füllen der Controller mit "Logik"
-
-
-
-
-
-
-
 
 End Class

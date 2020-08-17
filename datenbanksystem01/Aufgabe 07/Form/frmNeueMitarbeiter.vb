@@ -1,44 +1,20 @@
 ﻿Public Class frmNeueMitarbeiter
 
     Private Sub frmKundenkontoerstellung_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        'Deklaration
-        Dim neuerMitarbeiter As Mitarbeiter
-        Dim strVorname As String
-        Dim strNachname As String
-        Dim strBenutzername As String
-        Dim strPasswort As String
-        Dim strPasswortWdrhln As String
-        Dim datGebDat As Date
-
-        'Variable mit dem Dialogfenster verbinden
-        strVorname = Me.txtboxVorname.Text
-        strNachname = Me.txtboxName.Text
-        strBenutzername = Me.txtboxBenutzername.Text
-        strPasswort = Me.txtboxPasswort.Text
-        strPasswortWdrhln = Me.txtboxPasswortW.Text
-        datGebDat = Me.datboxGebDatM.Value
 
     End Sub
 
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click
-        Dim weiterID As UInteger = 0
-        For Each mitarbeiter As Mitarbeiter In Logic.ListeMitarbeiter
-            If mitarbeiter.BenutzerID > weiterID Then
-                weiterID = mitarbeiter.BenutzerID
-            End If
-        Next
-        weiterID += 1
 
-        Dim neuerMitarbeiter As Mitarbeiter = New Mitarbeiter(Me.txtboxBenutzername.Text,
-                                            Me.txtboxPasswort.Text,
-                                            Me.txtboxName.Text,
-                                            Me.txtboxVorname.Text,
-                                            Me.datboxGebDatM.Value,
-                                            weiterID)
+        Dim neuerMitarbeiter As Mitarbeiter = UserController.createMitarbeiter(txtboxBenutzername.Text,
+                                                                               txtboxName.Text,
+                                                                               txtboxVorname.Text,
+                                                                               txtboxPasswort.Text,
+                                                                               datboxGebDatM.Value)
 
-        mlstMitarbeiter.Add(neuerMitarbeiter)
+        ListeMitarbeiter.Add(neuerMitarbeiter)
 
-        BenutzerDAO.speichernMitarbeiter(mlstMitarbeiter)
+        BenutzerDAO.speichernMitarbeiter(ListeMitarbeiter)
 
         Me.Close()
 

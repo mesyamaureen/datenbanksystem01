@@ -6,12 +6,8 @@
     ''' </summary>
 
     Private Sub frmStart_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        'Deklaration
-        Dim strBenutzername As String 'im Anmeldedialog übergegeben werden
-        Dim strPasswort As String 'im Anmeldedialog übergegeben werden
-
         'Initialisierung
-        Logic.mlstAktuellAngemeldeterBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 
+        AngemeldeteBenutzer = Nothing 'Aktuell gibt es keinen angemeldeten Benutzer 
 
         'Aufrufen anderer Funktion
         Logic.initialise()
@@ -28,8 +24,8 @@
             End If
 
             'Benutzername und Passwort von dem Dialogfenster ermitteln
-            strBenutzername = dlgAnmeldung.txtBenutzername.Text
-            strPasswort = dlgAnmeldung.txtPasswort.Text
+            Dim strBenutzername As String = dlgAnmeldung.txtBenutzername.Text
+            Dim strPasswort As String = dlgAnmeldung.txtPasswort.Text
 
             'Benutzer mit der eingegebenen Kombination aus Benutzername und Passwort finden
 
@@ -44,7 +40,7 @@
                 MsgBox("Anmeldung fehlgeschlagen!", MsgBoxStyle.OkOnly, "Fehler")
             End If
 
-        Loop While Logic.mlstAktuellAngemeldeterBenutzer Is Nothing
+        Loop While AngemeldeteBenutzer Is Nothing
 
         'Aktuelles Fenster schließen und Anwendung läuft weiter, weil zuvor ein weiteres Hauptfenster geöffnet wurde
         Me.Close()

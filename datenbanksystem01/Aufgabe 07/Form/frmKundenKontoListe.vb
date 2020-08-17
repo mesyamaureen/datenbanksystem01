@@ -1,43 +1,27 @@
 ﻿Public Class frmKundenKontoListe
 
     Protected Sub aktivierenSchaltflächen()
-        ' Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer ' Anzahl der ausgewählten Zeilen
-
-        ' Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lstviewKundenKonten.SelectedItems.Count ' Anzahl der Zeilen ermitteln
-
-        ' Schatlfächen zurücksetzen
-
-        Me.btnLaden.Enabled = False
-        Me.btnSchliessen.Enabled = True
-
         ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
+        If lstviewKundenKonten.SelectedItems.Count = 1 Then
             ' Wenn genau eine Zeile ausgewählt ist
-            Me.btnSchliessen.Enabled = True ' kann man die Anwendung schließen
-            Me.btnLaden.Enabled = True
-        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
-            Me.btnSchliessen.Enabled = True ' kann man sie schliessen
-            Me.btnLaden.Enabled = False ' und nicht bearbeiten
+            Me.btnBearbeiten.Enabled = True
+        Else
+            Me.btnBearbeiten.Enabled = False ' und nicht bearbeiten
         End If
     End Sub
 
-    Private Sub btnLaden_Click(sender As Object, e As EventArgs) Handles btnLaden.Click
+    Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnBearbeiten.Click
 
-        Dim uintBenutzerID As UInteger
-        Dim strBenutzername As String
-        Dim strVorname As String
-        Dim strName As String
+        For i = 0 To ListeKunden.Count - 1
+            If ListeKunden(i).BenutzerID = Convert.ToUInt32(lstviewKundenKonten.SelectedItems(0).SubItems(0).Text) Then
+                Dim dlg As frmKundeKonto
+                dlg = New frmKundeKonto(ListeKunden(i))
+                dlg.ShowDialog()
 
-
-        Dim lviZeile As ListViewItem
-        lviZeile = lstviewKundenKonten.SelectedItems(0)
-
-        uintBenutzerID = lviZeile.SubItems(0).Text
-        strBenutzername = lviZeile.SubItems(1).Text
-        strVorname = lviZeile.SubItems(2).Text
-        strName = lviZeile.SubItems(3).Text
+                anzeigen()
+                Exit For
+            End If
+        Next
 
     End Sub
 
@@ -70,37 +54,23 @@
     ''' <remarks></remarks>
 
     Private Sub anzeigen()
-        'Deklaration
-        Dim anzuzeigenderKunde As Kunde 'Kunden
-
-        'Anzuzeigende Attribute
-        Dim uintBenutzerID As UInteger
-        Dim strBenutzername As String
-        Dim strName As String
-        Dim strVorname As String
-        Dim datGebDat As Date
-        Dim strFirma As String
-
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To mlstKunde.Count - 1
-            anzuzeigenderKunde = mlstKunde.Item(i)
+        For i = 0 To ListeKunden.Count - 1
+            Dim anzuzeigenderKunde As Kunde = ListeKunden.Item(i)
 
-            'Attributwerte aus der Weiterbildung lesen
-            uintBenutzerID = anzuzeigenderKunde.BenutzerID
-            strBenutzername = anzuzeigenderKunde.Benutzername
-            strVorname = anzuzeigenderKunde.Vorname
-            strName = anzuzeigenderKunde.Name
-            datGebDat = anzuzeigenderKunde.Geburtsdatum
-            strFirma = anzuzeigenderKunde.Firma
-
-            'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
-            anzeigenZeile(uintBenutzerID, strBenutzername, strVorname, strName, datGebDat, strFirma)
-
+            'Hinzufügen einer Zeile in der Tabelle mit den Werten im zuvor bestimmten Kundenobjekt
+            anzeigenZeile(anzuzeigenderKunde.BenutzerID,
+                          anzuzeigenderKunde.Benutzername,
+                          anzuzeigenderKunde.Vorname,
+                          anzuzeigenderKunde.Name,
+                          anzuzeigenderKunde.Geburtsdatum,
+                          anzuzeigenderKunde.Firma)
         Next
-        ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
+
+        'In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()
 
     End Sub
@@ -114,23 +84,7 @@
     End Sub
 
     Private Sub lstviewKundenKonten_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewKundenKonten.SelectedIndexChanged
-
-        'Muss Kunden aus mlstKunden laden
-        ' Deklaration
-        ' Initialisierung
-        Dim intAnzahlAusgewaehlterZeilen As Integer = Me.lstviewKundenKonten.SelectedItems.Count ' Anzahl der Zeilen ermitteln
-
-        ' Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
-            ' Wenn genau eine Zeile ausgewählt ist
-            Me.btnLaden.Enabled = True ' kann man diesen einsehen
-
-        ElseIf intAnzahlAusgewaehlterZeilen <> 1 Then
-            Me.btnLaden.Enabled = False 'nicht bearbeiten
-        End If
-        anzeigen()
-
-
+        aktivierenSchaltflächen()
     End Sub
 
     Private Sub btnSchliessen_Click(sender As Object, e As EventArgs) Handles btnSchliessen.Click
@@ -138,7 +92,6 @@
     End Sub
 
     Private Sub frmKundenKontoListe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mlstKunde = Logic.mlstKunde
         anzeigen()
         aktivierenSchaltflächen()
     End Sub

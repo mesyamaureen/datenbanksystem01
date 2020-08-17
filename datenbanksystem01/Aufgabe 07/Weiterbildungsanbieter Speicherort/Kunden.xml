@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKunde xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kunde>
+    <Name>Mueller</Name>
+    <Vorname>Micha</Vorname>
+    <Benutzername>mueller</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1966-03-22T00:00:00</Geburtsdatum>
+    <BenutzerID>4</BenutzerID>
+    <Firma xsi:type="xsd:string">BlalBla AG</Firma>
+  </Kunde>
+  <Kunde>
+    <Name>Meier</Name>
+    <Vorname>Jens</Vorname>
+    <Benutzername>meier</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1978-05-15T00:00:00</Geburtsdatum>
+    <BenutzerID>5</BenutzerID>
+    <Firma xsi:type="xsd:string">ShareNow</Firma>
+  </Kunde>
+  <Kunde>
+    <Name>Jorisch</Name>
+    <Vorname>Jeremy</Vorname>
+    <Benutzername>jorisch</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1997-08-30T14:40:49</Geburtsdatum>
+    <BenutzerID>6</BenutzerID>
+    <Firma xsi:type="xsd:string">Strato AG</Firma>
+  </Kunde>
+</ArrayOfKunde>

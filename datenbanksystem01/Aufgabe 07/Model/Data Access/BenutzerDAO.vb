@@ -17,7 +17,7 @@ Public Class BenutzerDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strPfadXMLMitarbeiter) Then
-            lstMitarbeiter = Aufgabe_07.Logic.ListeMitarbeiter
+            lstMitarbeiter = Logic.ListeMitarbeiter
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstMitarbeiter = ladenXml(strPfadXMLMitarbeiter, GetType(List(Of Mitarbeiter)))
 
@@ -35,7 +35,6 @@ Public Class BenutzerDAO
     End Sub
 
 
-
     Public Shared Function ladenKunden() As List(Of Kunde)
 
         'Liste aller Kunden
@@ -44,7 +43,7 @@ Public Class BenutzerDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strPfadXMLKunde) Then
-            lstKunde = Aufgabe_07.Logic.ListeKunden
+            lstKunde = Logic.ListeKunden
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstKunde = ladenXml(strPfadXMLKunde, GetType(List(Of Kunde)))
 
@@ -59,7 +58,5 @@ Public Class BenutzerDAO
         speichernXml(strPfadXMLKunde, plstKunde, GetType(List(Of Kunde)))
 
     End Sub
-
-
 
 End Class

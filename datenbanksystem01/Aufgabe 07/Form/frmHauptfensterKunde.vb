@@ -53,22 +53,12 @@
     ''' </summary>
     ''' <remarks> Tabelle = momentan nur Einfachauswahl </remarks>
     Protected Sub aktivierenSchaltflächen()
-        'Deklaration
-        Dim intAnzahlAusgewaehlterZeilen As Integer
-
-        'Initialisierung
-        intAnzahlAusgewaehlterZeilen = Me.lstviewWeiterbildungKunde.SelectedItems.Count
-
-        'Schaltfläche zurücksetzen
-        Me.btnOeffnen.Enabled = True
-
         'Abhängig von Anzahl der ausgewählten Zeilen ggf. Schaltflächen aktivieren
-        If intAnzahlAusgewaehlterZeilen = 1 Then
+        If lstviewWeiterbildungKunde.SelectedItems.Count = 1 Then
             Me.btnOeffnen.Enabled = True 'kann geöffnet
-        ElseIf intAnzahlAusgewaehlterZeilen > 1 Then
+        Else
             Me.btnOeffnen.Enabled = False 'kann nicht geöffnet
         End If
-
     End Sub
 
     Sub leeren()
@@ -105,25 +95,17 @@
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub anzeigen()
-        'Deklaration
-        Dim weiterbil As Weiterbildung 'Weiterbildung
-
-        'Anzuzeigende Attribute
-        Dim uintWeiterbilId As UInteger
-        Dim strWeiterbilName As String
-        Dim strWeiterbilThema As String
-
         'leeren der Tabelle
         leeren()
 
         'Für jedes Element soll eine Zeile in der Tabelle hinzugefügt werden
-        For i = 0 To mlstWeiterbildungen.Count - 1
-            weiterbil = mlstWeiterbildungen.Item(i)
+        For i = 0 To ListeWeiterbildung.Count - 1
+            Dim weiterbil As Weiterbildung = ListeWeiterbildung.Item(i)
 
             'Attributwerte aus der Weiterbildung lesen
-            uintWeiterbilId = weiterbil.WeiterbildungsID
-            strWeiterbilName = weiterbil.Bezeichnung
-            strWeiterbilThema = weiterbil.Thema
+            Dim uintWeiterbilId As UInteger = weiterbil.WeiterbildungsID
+            Dim strWeiterbilName As String = weiterbil.Bezeichnung
+            Dim strWeiterbilThema As String = weiterbil.Thema
 
             'Hinzufügen einer Zeile in der Tabelle mit den zuvor ermittelten Werten
             anzeigenZeile(uintWeiterbilId, strWeiterbilName, strWeiterbilThema)
@@ -131,9 +113,6 @@
         ' In der Tabelle ist keine Zeile ausgewählt, deshalb die Schaltflächen deaktivieren, die eine ausgewählte Zeile erfordern
         aktivierenSchaltflächen()
     End Sub
-
-    'Index deklarieren
-    Public intIndex As Integer ' Index des ausgewählten Eintrags der Tabelle
 
     ''' <summary>
     ''' Schaltfläche Öffnen, um die ausgewählte Weiterbildung zu zeigen
@@ -146,8 +125,7 @@
         Dim dlg As frmWeiterbildungsfensterKunde  ' Detaildialog zum Anzeigen der Weiterbildung
 
         'Weiterbildung aus Liste suchen
-        weiterbil = Logic.mlstWeiterbildungen.Item(intIndex)
-        For Each weiterbildung In Logic.ListeWeiterbildung
+        For Each weiterbildung In ListeWeiterbildung
             If weiterbildung.WeiterbildungsID = Convert.ToInt32(lstviewWeiterbildungKunde.SelectedItems(0).SubItems(0).Text) Then
                 weiterbil = weiterbildung
                 Exit For
@@ -166,9 +144,6 @@
     ''' <remarks></remarks>
     Private Sub frmHauptfensterKunde_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Alle Weiterbildungen laden
-        mlstWeiterbildungen = Logic.ListeWeiterbildung
-
         'Anzeigen der Weiterbildungen in der Tabelle
         anzeigen()
 
@@ -182,24 +157,18 @@
     End Sub
 
     Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
-        Dim dlg As BuchungenKunde
-        dlg = New BuchungenKunde(angemeldeterKunde)
+        Dim dlg As BuchungenKunde = New BuchungenKunde(angemeldeterKunde)
         dlg.ShowDialog()
     End Sub
 
 
 
     Private Sub btnKonto_Click(sender As Object, e As EventArgs) Handles btnKonto.Click
-        Dim dlg As frmKundeKonto
-        dlg = New frmKundeKonto(angemeldeterKunde)
+        Dim dlg As frmKundeKonto = New frmKundeKonto(angemeldeterKunde)
         dlg.ShowDialog()
     End Sub
 
     Private Sub lstviewWeiterbildungKunde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstviewWeiterbildungKunde.SelectedIndexChanged
-        If lstviewWeiterbildungKunde.SelectedItems.Count = 1 Then
-            btnOeffnen.Enabled = True
-        Else
-            btnOeffnen.Enabled = False
-        End If
+        aktivierenSchaltflächen()
     End Sub
 End Class

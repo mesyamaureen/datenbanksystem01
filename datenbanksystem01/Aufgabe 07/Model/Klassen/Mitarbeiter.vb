@@ -12,8 +12,6 @@ Public Class Mitarbeiter
     End Sub
 
 
-
-
     'Konstruktor mit Parametern 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, puintBenutzerID As UInteger)
 
@@ -26,21 +24,9 @@ Public Class Mitarbeiter
 
     'Keine Get & Sets weil erbt von Benutzer
 
-
-
-    Function deleteMitarbeiter()
-        'TODO delete object in database
-
-        Finalize()
-    End Function
-
     Public Shared Function zeigenAlle() As List(Of Mitarbeiter)
 
-        Dim lstMitarbeiter As List(Of Mitarbeiter)
-
-        lstMitarbeiter = BenutzerDAO.ladenMitarbeiter()
-
-        Return lstMitarbeiter
+        Return BenutzerDAO.ladenMitarbeiter()
 
     End Function
 
@@ -49,8 +35,5 @@ Public Class Mitarbeiter
         BenutzerDAO.speichernMitarbeiter(pstrMitarbeiter)
 
     End Sub
-
-
-
 
 End Class

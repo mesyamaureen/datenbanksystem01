@@ -7,21 +7,17 @@ Public Class Kunde
 
     'Attribute
     Private mstrFirma As String
-    Private mlstListeEigeneBuchungen As List(Of Buchung)
 
     'Konstruktoren
-
     Sub New()
         MyBase.New
-        mstrFirma = String.Empty
-        mlstListeEigeneBuchungen = New List(Of Buchung)
+        Firma = String.Empty
     End Sub
 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrName As String, pstrVorname As String, pdatGebDat As Date, puintBenutzerID As UInteger, pstrFirma As String)
 
         MyBase.New(pstrBenutzername, pstrPasswort, pstrName, pstrVorname, pdatGebDat, puintBenutzerID)
-        mstrFirma = pstrFirma
-        ' TODO: create record In Database And Set intKundenID
+        Firma = pstrFirma
 
     End Sub
 
@@ -32,16 +28,6 @@ Public Class Kunde
         End Get
         Set(value)
             mstrFirma = value
-        End Set
-    End Property
-
-
-    Public Property EigeneBuchungen As List(Of Buchung)
-        Get
-            Return mlstListeEigeneBuchungen
-        End Get
-        Set(value As List(Of Buchung))
-            mlstListeEigeneBuchungen = value
         End Set
     End Property
 
@@ -59,11 +45,5 @@ Public Class Kunde
         BenutzerDAO.speichernKunde(pstrKunde)
 
     End Sub
-
-
-
-
-
-
 
 End Class

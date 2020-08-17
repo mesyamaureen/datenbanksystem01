@@ -14,7 +14,7 @@ Public Class BuchungsDAO
         'Prüfen, ob datei mit Beispieldaten NICHT existiert
 
         If Not existiertXml(strPfadXMLBuchung) Then
-            lstBuchung = Aufgabe_07.Logic.mlstBuchung
+            lstBuchung = ListeBuchung
         Else 'in allen anderen fällen existiert eine Liste - übernehmen
             lstBuchung = ladenXml(strPfadXMLBuchung, GetType(List(Of Buchung)))
 
@@ -25,10 +25,7 @@ Public Class BuchungsDAO
     End Function
 
     Public Shared Sub speichernBuchung(plstBuchung As List(Of Buchung))
-
         speichernXml(strPfadXMLBuchung, plstBuchung, GetType(List(Of Buchung)))
-
-
     End Sub
 
 End Class

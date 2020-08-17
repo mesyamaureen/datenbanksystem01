@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBuchung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Buchung>
+    <BuchungsID>2</BuchungsID>
+    <gebuchterKurs>
+      <KursID>6</KursID>
+      <Zeitpunkt>2020-08-11T00:00:00</Zeitpunkt>
+      <Ort />
+      <Verfuegbar>true</Verfuegbar>
+      <Preis>300</Preis>
+      <Abgesagt>false</Abgesagt>
+      <Weiterbildung>
+        <WeiterbildungsID>4</WeiterbildungsID>
+        <Bezeichnung>Business Model Canvas</Bezeichnung>
+        <Thema>Digital Business</Thema>
+        <Curriculum>1) Wer sind meine Kunden und welche Bedürfnisse und Interessen haben Sie?
+2) Was biete ich an und welchen Mehrwert schaffe ich für meine Kunden?
+3) Wie sieht meine Einnahme- und Kostenstruktur aus?</Curriculum>
+        <Teilnehmerkreis>Unternehmer, Projektmanager oder Marketingmitarbeiter, die kreative Methoden ausprobieren wollen, um Ihre Projekte schneller und effizientre zu planen. 
+                                                                            Start-Ups, die Ihr Geschäftsmodell gestalten möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.</Teilnehmerkreis>
+      </Weiterbildung>
+    </gebuchterKurs>
+    <Teilnehmer>
+      <Name>Meier</Name>
+      <Vorname>Jens</Vorname>
+      <Benutzername>meier</Benutzername>
+      <Passwort>pw</Passwort>
+      <Geburtsdatum>1978-05-15T00:00:00</Geburtsdatum>
+      <BenutzerID>5</BenutzerID>
+      <Firma xsi:type="xsd:string">ShareNow</Firma>
+    </Teilnehmer>
+  </Buchung>
+  <Buchung>
+    <BuchungsID>3</BuchungsID>
+    <gebuchterKurs>
+      <KursID>3</KursID>
+      <Zeitpunkt>2020-09-13T00:00:00</Zeitpunkt>
+      <Ort>Stuttgart</Ort>
+      <Verfuegbar>true</Verfuegbar>
+      <Preis>1800</Preis>
+      <Abgesagt>false</Abgesagt>
+      <Weiterbildung>
+        <WeiterbildungsID>4</WeiterbildungsID>
+        <Bezeichnung>Business Model Canvas</Bezeichnung>
+        <Thema>Digital Business</Thema>
+        <Curriculum>1) Wer sind meine Kunden und welche Bedürfnisse und Interessen haben Sie?
+                                                                             2) Was biete ich an und welchen Mehrwert schaffe ich für meine Kunden?
+                                                                             3) Wie sieht meine Einnahme- und Kostenstruktur aus?</Curriculum>
+        <Teilnehmerkreis>Unternehmer, Projektmanager oder Marketingmitarbeiter, die kreative Methoden ausprobieren wollen, um Ihre Projekte schneller und effizientre zu planen. 
+                                                                            Start-Ups, die Ihr Geschäftsmodell gestalten möchten. Menschen, die sich strategisch und oranisatorisch mit Produkt- und Serviceinnovationen beschäftigen.</Teilnehmerkreis>
+      </Weiterbildung>
+    </gebuchterKurs>
+    <Teilnehmer>
+      <Name>Meier</Name>
+      <Vorname>Jens</Vorname>
+      <Benutzername>meier</Benutzername>
+      <Passwort>pw</Passwort>
+      <Geburtsdatum>1978-05-15T00:00:00</Geburtsdatum>
+      <BenutzerID>5</BenutzerID>
+      <Firma xsi:type="xsd:string">ShareNow</Firma>
+    </Teilnehmer>
+  </Buchung>
+  <Buchung>
+    <BuchungsID>4</BuchungsID>
+    <gebuchterKurs>
+      <KursID>5</KursID>
+      <Zeitpunkt>2020-08-27T00:00:00</Zeitpunkt>
+      <Ort />
+      <Verfuegbar>true</Verfuegbar>
+      <Preis>1000</Preis>
+      <Abgesagt>false</Abgesagt>
+      <Weiterbildung>
+        <WeiterbildungsID>3</WeiterbildungsID>
+        <Bezeichnung>Controlling Kompaktseminar</Bezeichnung>
+        <Thema>Controlling</Thema>
+        <Curriculum>1) Grundlagen des Controllings,
+                                                                            2) Controlling - Übersicht,
+                                                                            3) Kosten- und Erfolgsrechnung</Curriculum>
+        <Teilnehmerkreis>Fach- und Führungskräfte, Mitarbeiter der entsprechnenden Fachabteilung, Finanz- und Budgetverantwortliche, Mitarbeiter des Rechnungswesens sowie der Buchhaltung</Teilnehmerkreis>
+      </Weiterbildung>
+    </gebuchterKurs>
+    <Teilnehmer>
+      <Name>Meier</Name>
+      <Vorname>Jens</Vorname>
+      <Benutzername>meier</Benutzername>
+      <Passwort>pw</Passwort>
+      <Geburtsdatum>1978-05-15T00:00:00</Geburtsdatum>
+      <BenutzerID>5</BenutzerID>
+      <Firma xsi:type="xsd:string">ShareNow</Firma>
+    </Teilnehmer>
+  </Buchung>
+</ArrayOfBuchung>

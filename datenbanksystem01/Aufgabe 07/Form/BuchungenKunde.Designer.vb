@@ -31,12 +31,9 @@ Partial Class BuchungenKunde
         Me.colWeiterbildung = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tbsInaktiv = New System.Windows.Forms.TabPage()
         Me.ListViewInaktBuchungen = New System.Windows.Forms.ListView()
-        Me.colIndexInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colBuchungIDInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colKursInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colWeiterbildungenInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colPreisInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colOrtInakt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.lblKundenID = New System.Windows.Forms.Label()
         Me.txtKundenID = New System.Windows.Forms.TextBox()
@@ -90,19 +87,19 @@ Partial Class BuchungenKunde
         'colBuchungID
         '
         Me.colBuchungID.Text = "Buchung ID"
-        Me.colBuchungID.Width = 133
+        Me.colBuchungID.Width = 100
         '
         'colKurs
         '
         Me.colKurs.Text = "Kurs Datum"
         Me.colKurs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKurs.Width = 177
+        Me.colKurs.Width = 125
         '
         'colWeiterbildung
         '
         Me.colWeiterbildung.Text = "Weiterbildung"
         Me.colWeiterbildung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildung.Width = 374
+        Me.colWeiterbildung.Width = 350
         '
         'tbsInaktiv
         '
@@ -118,9 +115,8 @@ Partial Class BuchungenKunde
         '
         'ListViewInaktBuchungen
         '
-        Me.ListViewInaktBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colIndexInakt, Me.colBuchungIDInakt, Me.colKursInakt, Me.colWeiterbildungenInakt, Me.colPreisInakt, Me.colOrtInakt})
+        Me.ListViewInaktBuchungen.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colBuchungIDInakt, Me.colKursInakt, Me.colWeiterbildungenInakt})
         Me.ListViewInaktBuchungen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListViewInaktBuchungen.Enabled = False
         Me.ListViewInaktBuchungen.GridLines = True
         Me.ListViewInaktBuchungen.HideSelection = False
         Me.ListViewInaktBuchungen.Location = New System.Drawing.Point(2, 3)
@@ -131,39 +127,22 @@ Partial Class BuchungenKunde
         Me.ListViewInaktBuchungen.UseCompatibleStateImageBehavior = False
         Me.ListViewInaktBuchungen.View = System.Windows.Forms.View.Details
         '
-        'colIndexInakt
-        '
-        Me.colIndexInakt.Text = "Nr"
-        Me.colIndexInakt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'colBuchungIDInakt
         '
         Me.colBuchungIDInakt.Text = "Buchung ID"
-        Me.colBuchungIDInakt.Width = 133
+        Me.colBuchungIDInakt.Width = 100
         '
         'colKursInakt
         '
         Me.colKursInakt.Text = "Kurs"
         Me.colKursInakt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colKursInakt.Width = 177
+        Me.colKursInakt.Width = 125
         '
         'colWeiterbildungenInakt
         '
         Me.colWeiterbildungenInakt.Text = "Weiterbildung"
         Me.colWeiterbildungenInakt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colWeiterbildungenInakt.Width = 374
-        '
-        'colPreisInakt
-        '
-        Me.colPreisInakt.Text = "Preis"
-        Me.colPreisInakt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colPreisInakt.Width = 322
-        '
-        'colOrtInakt
-        '
-        Me.colOrtInakt.Text = "Ort"
-        Me.colOrtInakt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colOrtInakt.Width = 136
+        Me.colWeiterbildungenInakt.Width = 350
         '
         'btnAbbrechen
         '
@@ -243,9 +222,6 @@ Partial Class BuchungenKunde
     Friend WithEvents colBuchungIDInakt As ColumnHeader
     Friend WithEvents colKursInakt As ColumnHeader
     Friend WithEvents colWeiterbildungenInakt As ColumnHeader
-    Friend WithEvents colIndexInakt As ColumnHeader
-    Friend WithEvents colPreisInakt As ColumnHeader
     Friend WithEvents btnHinzufuegen As Button
     Friend WithEvents btnLoeschen As Button
-    Friend WithEvents colOrtInakt As ColumnHeader
 End Class

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMitarbeiter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Mitarbeiter>
+    <Name>Jeynie</Name>
+    <Vorname>Mesya Maureen</Vorname>
+    <Benutzername>jeynie</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1997-09-24T00:00:00</Geburtsdatum>
+    <BenutzerID>1</BenutzerID>
+  </Mitarbeiter>
+  <Mitarbeiter>
+    <Name>Hochtritt</Name>
+    <Vorname>Nina</Vorname>
+    <Benutzername>hochtritt</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1999-10-21T00:00:00</Geburtsdatum>
+    <BenutzerID>2</BenutzerID>
+  </Mitarbeiter>
+  <Mitarbeiter>
+    <Name>Off</Name>
+    <Vorname>Thomas</Vorname>
+    <Benutzername>off</Benutzername>
+    <Passwort>pw</Passwort>
+    <Geburtsdatum>1969-10-23T00:00:00</Geburtsdatum>
+    <BenutzerID>3</BenutzerID>
+  </Mitarbeiter>
+</ArrayOfMitarbeiter>

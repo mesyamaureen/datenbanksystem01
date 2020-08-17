@@ -15,24 +15,23 @@ Public Class Kurs
     'Konstruktoren
     'Parameterloser Konstruktor
     Sub New()
-        mdatZeitpunkt = Date.MinValue
-        mstrOrt = String.Empty
-        mbolVerfuegbar = False
-        mdecPreis = Nothing
-        mbolAbgesagt = False
-        mWeiterbildung = New Weiterbildung()
-        'mBuchungen = New Buchung
+        Zeitpunkt = Date.MinValue
+        Ort = String.Empty
+        Verfuegbar = False
+        Preis = Nothing
+        Abgesagt = False
+        Weiterbildung = New Weiterbildung()
     End Sub
 
     'Konstruktor mit Parameter
     Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbolVerfuegbar As Boolean, pdecPreis As Decimal, pbolAbgesagt As Boolean, pWeiterbildung As Weiterbildung) ', mBuchungen As Buchung)
 
-        mdatZeitpunkt = pdatZeitpunkt
-        mstrOrt = pstrOrt
-        mbolVerfuegbar = pbolVerfuegbar
-        mdecPreis = pdecPreis
-        mbolAbgesagt = pbolAbgesagt
-        mWeiterbildung = pWeiterbildung
+        Zeitpunkt = pdatZeitpunkt
+        Ort = pstrOrt
+        Verfuegbar = pbolVerfuegbar
+        Preis = pdecPreis
+        Abgesagt = pbolAbgesagt
+        Weiterbildung = pWeiterbildung
 
     End Sub
 
@@ -79,17 +78,15 @@ Public Class Kurs
             Return mdecPreis
         End Get
         Set(value As Decimal)
-            If mdecPreis > 0 Then
-                mdecPreis = value
-            End If
+            mdecPreis = value
         End Set
     End Property
 
-    Public Property Abgesagt As Decimal
+    Public Property Abgesagt As Boolean
         Get
             Return mbolAbgesagt
         End Get
-        Set(value As Decimal)
+        Set(value As Boolean)
             mbolAbgesagt = value
         End Set
     End Property
@@ -119,7 +116,5 @@ Public Class Kurs
         Kurs__und_WeiterbildungsDAO.speichernKurs(pstrKurs)
 
     End Sub
-
-
 
 End Class

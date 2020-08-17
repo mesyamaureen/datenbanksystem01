@@ -1,72 +1,9 @@
 ﻿Public Class WeiterbildungsController
 
-    'Properties
-    'Private mlstKurse As List(Of Kurs)
-    'Private mlstWeiterbildungen As List(Of Weiterbildung)
-    Private mstrKursID As String
-    Private mstrWeiterbildungsID As String
-
-    'Konstruktor
-
-    Sub New()
-        'mlstKurse = New List(Of Kurs)
-        'mlstWeiterbildungen = New List(Of Weiterbildung)
-        mstrKursID = String.Empty
-        mstrWeiterbildungsID = String.Empty
-
-    End Sub
-
-    Sub New(plstKurse As List(Of Kurs), plstWeiterbildungen As List(Of Weiterbildung))
-
-        'mlstKurse = plstKurse
-        'mlstWeiterbildungen = plstWeiterbildungen
-
-    End Sub
-
-    'Getter & Setter
-
-    'Public Property ListeKurse As List(Of Kurs)
-    '    Get
-    '        Return mlstKurse
-    '    End Get
-    '    Set(value As List(Of Kurs))
-    '        mlstKurse = value
-    '    End Set
-    'End Property
-
-    'Public Property ListeWeiterbildungen As List(Of Weiterbildung)
-    '    Get
-    '        Return mlstWeiterbildungen
-    '    End Get
-    '    Set(value As List(Of Weiterbildung))
-    '        mlstWeiterbildungen = value
-    '    End Set
-    'End Property
-
-    Public Property KursID As String
-        Get
-            Return mstrKursID
-        End Get
-        Set(value As String)
-            mstrKursID = value
-        End Set
-    End Property
-
-    Public Property WeiterbildungsID As UInteger
-        Get
-            Return mstrWeiterbildungsID
-        End Get
-        Set(value As UInteger)
-            mstrWeiterbildungsID = value
-        End Set
-    End Property
-
-
-
-
     'Funktionen
+
     'Kurse
-    Public Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
+    Public Shared Function createKurs(pstrOrt As String, pdatZeitpunkt As Date, pbolavailable As Boolean, pdecPreis As Decimal, pweiterbildung As Weiterbildung) As Kurs
         'Deklaration neue Variable
         Dim neuerKurs As New Kurs
         'Initialisierung der Parameter
@@ -89,11 +26,11 @@
         Return neuerKurs
     End Function
 
-    Public Function viewKurs(strKundenID As String) As Array
+    Public Shared Function viewKurs(uintKundenID As UInteger) As Array
         'Deklaration neue Variablen
         Dim aryKurse(5) As String
         For Each kurs As Kurs In ListeKurse
-            If kurs.KursID = strKundenID Then
+            If kurs.KursID = uintKundenID Then
                 aryKurse(0) = kurs.Zeitpunkt
                 aryKurse(1) = kurs.Ort
                 aryKurse(2) = kurs.Verfuegbar
@@ -104,21 +41,40 @@
         Return aryKurse
     End Function
 
-    Public Function changeKurs(strKundenID As String, strOrt As String, datZeitpunkt As Date, decPreis As Decimal, bearbKurs As Kurs) As Boolean 'strKundenId ????
-        'Initialisierung der Parameter
-        bearbKurs.Ort = strOrt
-        bearbKurs.Zeitpunkt = datZeitpunkt
-        bearbKurs.Preis = decPreis
-        'Rückgabewert
-        Return True
+    Public Shared Function changeKurs(uintKursID As UInteger, strOrt As String, datZeitpunkt As Date, decPreis As Decimal, boolAbgesagt As Boolean) As Boolean
+        For i = 0 To ListeKurse.Count - 1
+            If ListeKurse(i).KursID = uintKursID Then
+                Dim kurs As Kurs = ListeKurse(i)
+                kurs.Ort = strOrt
+                kurs.Zeitpunkt = datZeitpunkt
+                kurs.Preis = decPreis
+                kurs.Abgesagt = boolAbgesagt
+                ListeKurse(i) = kurs
+
+                Kurs__und_WeiterbildungsDAO.speichernKurs(ListeKurse)
+                Return True
+                Exit For
+            End If
+        Next
+
+        Return False
     End Function
 
-    Public Function deleteKurs(intKundenID) As Boolean
+    Public Shared Function deleteKurs(intKursID As UInteger) As Boolean
+        For i = 0 To ListeKurse.Count - 1
+            If ListeKurse(i).KursID = intKursID Then
+                ListeKurse.RemoveAt(i)
+                Kurs__und_WeiterbildungsDAO.speichernKurs(ListeKurse)
+                Return True
+                Exit For
+            End If
+        Next
 
+        Return False
     End Function
 
     'Weiterbildung
-    Public Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
+    Public Shared Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
         'Deklaration neue Variabel als Zuweisung von Weiterbildung
         Dim neueWeiterbildung As New Weiterbildung
         'Initialisierung der Parameter
@@ -140,11 +96,11 @@
         Return neueWeiterbildung
     End Function
 
-    Public Function viewWeiterbildung(strWeiterbildungsID As String) As Array
+    Public Function viewWeiterbildung(uintWeiterbildungsID As UInteger) As Array
         'Deklaration neue Variablen
         Dim aryWeiterbil(4) As String
         For Each weiterbil As Weiterbildung In ListeWeiterbildung
-            If weiterbil.WeiterbildungsID = strWeiterbildungsID Then
+            If weiterbil.WeiterbildungsID = uintWeiterbildungsID Then
                 aryWeiterbil(0) = weiterbil.Bezeichnung
                 aryWeiterbil(1) = weiterbil.Thema
                 aryWeiterbil(2) = weiterbil.Curriculum
@@ -166,9 +122,14 @@
         Return bearbWeiterbildung
     End Function
 
-    Public Function deleteWeiterbildung(intWeiterbildungID) As Boolean
-        'Logic.mlstWeiterbildungen.RemoveAt(intWeiterbildungID)
-        'Return True
-    End Function
+    Public Shared Sub deleteWeiterbildung(intWeiterbildungID As UInteger)
+        For i = 0 To ListeWeiterbildung.Count
+            If ListeWeiterbildung(i).WeiterbildungsID = intWeiterbildungID Then
+                ListeWeiterbildung.RemoveAt(i)
+                Kurs__und_WeiterbildungsDAO.speichernWeiterbildung(ListeWeiterbildung)
+                Exit For
+            End If
+        Next
+    End Sub
 
 End Class
