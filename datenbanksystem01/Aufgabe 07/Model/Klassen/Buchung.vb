@@ -9,13 +9,17 @@ Public Class Buchung
 
 
     'Konstruktor
-
+    'Paremeterloser Konstruktor
     Sub New()
         gebuchterKurs = New Kurs
         Teilnehmer = New Kunde
     End Sub
 
+<<<<<<< HEAD
 
+=======
+    'Konstruktor mit Parameter
+>>>>>>> 9c47551af1e69c03e0d9fdb4c44054fe1ca98698
     Sub New(pKurs As Kurs, pintBuchungsID As UInteger, pbenTeilnehmer As Kunde) '
         BuchungsID = pintBuchungsID
         gebuchterKurs = pKurs

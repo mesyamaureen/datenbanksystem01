@@ -1,23 +1,20 @@
 ﻿Public Class frmHauptfensterKunde
 
     Dim angemeldeterKunde As Kunde
+    'Parameterloser Konstruktor
+    Sub New()
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+    End Sub
 
+    'Konstruktor mit Parameter
     Sub New(pstrangemeldeterKunde As String)
-
-
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
         setKundenContext(pstrangemeldeterKunde)
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-
     End Sub
 
-    Sub New()
-
-        ' Dieser Aufruf ist für den Designer erforderlich.
-        InitializeComponent()
-    End Sub
-
+    'Wird beim Laden des Fenster aufgerufen
     Private Sub frmHauptfensterKunde_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         'Deklaration
         Dim strBegruessungKunde As String
@@ -90,7 +87,7 @@
     End Sub
 
     ''' <summary>
-    ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und 
+    ''' Zeigt die Weiterbildung als Liste an, indem zunächst die Tabelle geleert und
     ''' dann mit allen Einträgen aus der Liste der Weiterbildung neu gefüllt wird.
     ''' </summary>
     ''' <remarks></remarks>
@@ -146,7 +143,6 @@
 
         'Anzeigen der Weiterbildungen in der Tabelle
         anzeigen()
-
     End Sub
 
     ''' <summary>
@@ -156,6 +152,11 @@
         Me.Close()
     End Sub
 
+    ''' <summary>
+    ''' Schaltfläche im Menü GroupBox
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnBuchungen_Click(sender As Object, e As EventArgs) Handles btnBuchungen.Click
         Dim dlg As BuchungenKunde = New BuchungenKunde(angemeldeterKunde)
         dlg.ShowDialog()

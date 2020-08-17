@@ -3,7 +3,8 @@
     Private mneuerKurs As Kurs
     Private mWeiterbildung As Weiterbildung
 
-    Public Sub New(weiterbildung As Weiterbildung)
+    'Parameterloser Konstruktor
+    Public Sub New(pKurs As Kurs)
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
@@ -12,12 +13,10 @@
         mneuerKurs = New Kurs
         mWeiterbildung = weiterbildung
     End Sub
-
-    Public Sub New(pKurs As Kurs)
-
+    'Konstruktor mit Parameter
+    Public Sub New(weiterbildung As Weiterbildung)
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
-
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         mneuerKurs = pKurs
     End Sub
@@ -37,7 +36,9 @@
             Exit Sub
         End If
     End Sub
-
+    ''' <summary>
+    ''' Alle Oberflächenelemente beim Anzeigen des Fensters
+    ''' </summary>
     Private Sub anzeigenNeuerKurs()
         Me.dtpKursDatum.Enabled = True
         Me.txtOrt.Enabled = True
