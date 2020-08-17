@@ -18,10 +18,8 @@ Public Class frmWeiterbildungsfensterMitarb
 
     End Sub
 
-<<<<<<< HEAD
-=======
     'Konstruktor mit Parameter
->>>>>>> 9c47551af1e69c03e0d9fdb4c44054fe1ca98698
+
     Public Sub New(pWeiterbil As Weiterbildung)
 
         ' Dieser Aufruf ist für den Designer erforderlich.

@@ -10,15 +10,16 @@
         InitializeComponent()
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-        mneuerKurs = New Kurs
-        mWeiterbildung = weiterbildung
+        mneuerKurs = pKurs
+
     End Sub
     'Konstruktor mit Parameter
     Public Sub New(weiterbildung As Weiterbildung)
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-        mneuerKurs = pKurs
+        mneuerKurs = New Kurs
+        mWeiterbildung = weiterbildung
     End Sub
 
     ''' <summary>
