@@ -74,7 +74,7 @@
 
     'Funktionen für Weiterbildung
     Public Shared Function createWeiterbildung(pstrBezeichnung As String, pstrCurriculum As String, pstrTeilnehmerkreis As String, pstrThema As String) As Weiterbildung
-        'Deklaration neue Variabel als Zuweisung von Weiterbildung
+
         Dim neueWeiterbildung As New Weiterbildung
         'Initialisierung der Parameter
         neueWeiterbildung.Bezeichnung = pstrBezeichnung
