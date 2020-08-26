@@ -241,9 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +259,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\list04.png" />
+    <None Include="Resources\kundenkonten.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\abbrechen.png" />
+    <None Include="Resources\kreuz %283%29.png" />
+    <None Include="Resources\kreuz %282%29.png" />
+    <None Include="Resources\Mein Konto.png" />
+    <None Include="Resources\neuer Mitarbeiter.png" />
+    <None Include="Resources\preview copy.png" />
+    <None Include="Resources\list03.png" />
     <Content Include="Weiterbildungsanbieter Speicherort\Buchungen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
