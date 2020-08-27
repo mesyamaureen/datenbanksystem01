@@ -46,7 +46,7 @@
             Exit Sub
         Else
             UserController.deleteMitarbeiter(anzumeldenderMitarbeiter.BenutzerID)
-            MsgBox("Ihr Mitarbeiterkonto wurde erfolgreich gelöscht. Danke, dass Sie unsere Services genutzt haben.")
+            MsgBox("Ihr Mitarbeiterkonto wurde erfolgreich gelöscht.")
             Application.Exit()
         End If
     End Sub
