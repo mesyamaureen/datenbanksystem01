@@ -1,4 +1,8 @@
+#DIESES PROJEKT HAT SICH BEENDET, WEIL ALLE ANFORDERUNGEN BEREITS ERFÜLLT SIND.
+
 # datenbanksystem01
+Weiterbildungsverwaltung Windows-Anwendung.
+
 ## How to setup git repo in local computer:
 ### Prepare repository folder
 1) Create a folder in local drive (mine is on my desktop) name: `yourname_datenbanksystem01`
